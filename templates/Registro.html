@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Registro</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="description" content="Website Horizontal Scrolling with jQuery" />
+    <meta name="keywords" content="jquery, horizontal, scrolling, scroll, smooth"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0;">
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/menuR.css">
+	 <!--script de Jquery-->
+
+</head>
+<body>
+	<!--imagen de tu perfil-->
+
+	<section class="pag1"id="1">
+
+		<div id="logo">
+			<img src="img/logo-pequeño.png" alt="">
+		</div>
+
+		<div id="tex_B">
+			Bienvenido kjdfhkhgdjkhgsjhgfd !
+		</div>
+
+		<div id="tex_p">
+			queremos saber cómo te ves
+		</div>
+
+		<!--boton de pantalla siguiente-->
+		<div id="boton1">
+		<a href="#2"><img src="img/siguiente.png" alt=""></a>
+		</div>
+
+		<!--insertar imagenes-->
+		<div id="imagen_N">
+			<img style="display:block;margin:0 auto 0 auto;" src="img/foto-perfil.png" alt="">
+		</div>
+
+		<!--texto de abajo de la imagen-->
+		<div id="tex_nf">
+			Sube tu fotografia
+		</div>
+
+		<div id="recom_1">
+			<div id="conten_1">
+				<h1>Recomendación</h1>
+				Sube una foto que refleje tu personalidad recuerda que la primera impresión es la que mas cuenta.
+			</div>
+		</div>
+
+		<div id="recom_2">
+			<div id="conten_2">
+				<h1>Recomendación</h1>
+				Lo ideal es el "plano americano", en donde se vean bien los rasgos de tu rostro.
+			</div>
+		
+		</div>
+
+
+	
+	</section>
+
+	<section class="pag2"id="2">
+		<div id="logo2">
+			<img src="img/logo-pequeño.png" alt="">
+		</div>
+
+		<div id="tex_B2">
+			¡Necesitamos saber más sobre ti!
+		</div>
+
+		<div id="tex_p2">
+			compartenos la siguiente información
+		</div>
+
+		<div id="camposP">
+			<!--input para llenar registro de los datos personales del usuario-->
+			<input type="text"placeholder="Nombre">
+			<input type="text"placeholder="Campo de trabajo">
+			<input type="text"placeholder="Edad">
+			<input type="text"placeholder="Telefono">
+			<input type="text"placeholder="Correo">
+			<input type="text"placeholder="Trabajo actual/último">
+
+			<!--imagenes representativas de cada campo de los datos personales-->
+			<img src="img/nombre.png" alt="" id="nombre">
+			<img src="img/profesion.png" alt=""id="profesion">
+			<img src="img/edad.png" alt=""id="edad">
+			<img src="img/telefono.png" alt=""id="telefono">
+			<img src="img/mail-propio.png" alt=""id="mail">
+			<img src="img/trabajo.png" alt=""id="trabajo">
+		</div>
+		<div id="boton2_1">
+			<a href="#1"><img src="img/flecha-izq.png" alt=""></a>
+		</div>
+		<div id="boton2_2">
+		<a href="#3"><img src="img/siguiente.png" alt=""></a>
+		</div>
+
+	</section>
+
+<section class="pag3"id="3">
+
+		<!--en este div se coloco el logo de profileme-->
+		<div id="logo3">
+			<img src="img/logo-pequeño.png" alt="">
+		</div>
+
+		<!--texto uno que aparece en este section-->
+		<div id="tex_B3">
+			¡Queremos saber en qué eres bueno!
+		</div>
+		<!--texto uno que aparece en este section-->
+		<div id="tex_p3">
+			Agrega todas tus habilidades
+		</div>
+
+		<div id="editarH">
+
+			 <div id="Totalhe">
+                      
+             </div> 
+                     <!--es el div donde agregas habilidades-->
+
+                   <div class="Nherramientas">
+                      <input type="text">
+                      <input type="button"value="Agregar">
+                      <!--es el slider de putos que tienes en cada habilidad-->
+                      
+                        <div id="slider">
+                            <!--slider-->
+                              <form oninput="amount.value=rangeInput.value">
+                               <input id="rangeInput"name="rangeInput" type="range" min="1" max="100" />
+                               <!--numero que elige el usuario en el slider-->
+                              <output name="amount" for="rangeInput">50</output>
+                              </form>
+                        </div>
+                        <img src="img/mas.png" alt="" id="mas">
+
+                </div>
+		</div>
+
+					<div id="boton3_1">
+						<a href="#2"><img src="img/flecha-izq.png" alt=""></a>
+					</div>
+
+					<div id="boton3_2">
+					<a href="#4"><img src="img/siguiente.png" alt=""></a>
+					</div>
+</section>
+
+	<section class="pag4"id="4">
+		<div id="logo4">
+			<img src="img/logo-pequeño.png" alt="">
+		</div>
+
+		<div id="tex_B4">
+			¡Queremos saber que herramientas utilizas!
+		</div>
+
+		<div id="tex_p4">
+			Agrega todas las herramientas con las que trabajas
+		</div>
+		<div id="editarH2">
+
+                     <!--es el div donde agregas habilidades-->
+
+               <div class="formrow">
+                      <input type="text" name="name[]" value="habilidad" size="20">
+                      <div id="addrow">
+                      <input type="button"value="Agregar"name="addbtn" id="addbtn">
+                      </div>
+                      <!--es el slider de putos que tienes en cada habilidad-->
+                      
+                            <!--slider-->
+                         <form oninput="amount.value=rangeInput.value" id="slider2">
+                          <input id="rangeInput"name="rangeInput" type="range" min="1" max="100" />
+                               <!--numero que elige el usuario en el slider-->
+                         <output name="amount" for="rangeInput">50</output>
+                         </form>
+                       
+                        <img src="img/mas.png" alt="" id="mas2">
+                </div>
+		</div>
+		
+			 <div id="Totalhe2">
+                      
+             </div> 
+
+		<div id="boton4_1">
+			<a href="#3"><img src="img/flecha-izq.png" alt=""></a>
+		</div>
+		<div id="boton4_2">
+			<a href="#5"><img src="img/siguiente.png" alt=""></a>
+		</div>
+	</section>
+
+	<section class="pag5"id="5">
+		<div id="logo5">
+			<img src="img/logo-pequeño.png" alt="">
+		</div>
+
+		<div id="tex_B5">
+			¡Cuéntanos que te gusta hacer en tu tiempo libre!
+		</div>
+
+		<div id="tex_p5">
+			Selecciona los hobbies que más disfrutas
+		</div>
+		<div id="h1"><p>Leer</p></div>
+
+		<div id="h2"><p>Fotografía</p></div>
+
+		<div id="h3"><p>Música</p></div>
+
+		<div id="h4"><p>Correr</p></div>
+
+		<div id="h5"><p>Pintar</p></div>
+
+		<div id="h6"><p>Ejercicio</p></div>
+
+		<div id="h7"><p>Soccer</p></div>
+
+		<div id="h8"><p>Viajar</p></div>
+
+		<div id="h9"><p>video<br>Juegos</p></div>
+		
+		<div id="h10"><p>Cine</p></div>
+		<div id="boton5_1">
+		<a href="#4"><img src="img/flecha-izq.png" alt=""></a>
+		</div>
+		<div id="boton5_2">
+			<a href="#6"><img src="img/siguiente.png" alt=""></a>
+		</div>
+	</section>
+
+	<section class="pag6"id="6">
+	
+		<div id="boton6">
+			<a href="#5"><img src="img/flecha-izq.png" alt=""></a>
+		</div>
+	</section>
+
+	 
+  <!-- The JavaScript -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>     
+		<script src="js/utilities.js"></script>
+		<script src="js/addelements.js"></script> 	
+        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript"src="js/scrollH.js"></script>
+
+	
+
+         
+    </body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+   
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Login</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0">
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <link href="{{MEDIA_URL}}css/menu.css" rel="stylesheet"media="screen">
+
+
+  <!--script de Jquery-->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>    
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+
+   
+    <!--funcion de aparecer y desaparecer patallas de registro -->
+  
+<script>
+   
+  $(document).ready(function(){
+
+      $('.mover').click(function(){
+
+                $('#imagen').animate({
+                 
+                  width:'60%',
+                  });
+                $('#imagenD').animate({
+                  top:'17%',
+                  left: '37%',
+
+                });
+                $('#slogan').animate({
+                  opacity:'0.0',
+                });
+
+        });
+
+         
+      $('.restore').click(function(){
+                $('#imagen').animate({
+                
+                  width:'100%'
+                });
+                  $('#imagenD').animate({
+                    top:'30%',
+                    left: '32%',
+
+                  });
+                 $('#slogan').animate({
+                    opacity:'1',
+
+                });
+      });
+
+      
+      $('.fade2').click(function(){
+
+             $('.contenido').toggle('fade',500);
+
+      });
+
+      $('.BuscasE').click(function(){
+          $('.Registro1').css('background','rgba(69,159,255,0.7)');
+          $('#BEmpleados').css('display','block');
+          $('#OfreceE').css('display','none');
+
+      });
+
+        $('.Ofrece').click(function(){
+         
+          $('.Registro1').css('background','#6f88c2')
+          $('#OfreceE').css('display','block');
+          $('#BEmpleados').css('display','none');
+
+          });
+
+
+
+      $('#OfreceE').css('display','none');
+      $('.BuscasE').css('background','rgba(69,159,255,0.7)')
+      $('.Ofrece').css('background','#6f88c2')
+       
+      
+
+  });
+</script>
+<!--fin de scripts -->
+</head>
+
+
+<body>
+
+  <!-- primera pantalla de login page-->
+ 
+<div class="video"id="0">
+    
+     <!-- estos son los input para accesar ala aplicacion-->
+        <input type="text"placeholder="Usuario">
+       <input type="password" placeholder="Contraseña" style="color:black;">
+       <input type="button"value="Entrar">
+
+      <!--este es el logo "de profileMe que se muestra al centro de la pantalla-->  
+            <div class="logo"id="imagenD"><img src="{{MEDIA_URL}}img/logo.png" alt=""id="imagen"> </div>
+            <div class="slogan"id="slogan">Tus habilidades son tu marca</div>
+
+       <!--este es el boton de registrar con su funcion de aparecer y desaparecer cuadro de dialogo-->
+      <div id="registro"class="fade2 "><img src="{{MEDIA_URL}}img/registrate.png" alt=""class="mover desaparecer"> </div>
+
+      <!-- este es la pantalla que aparece con el clic ala imagen de registro-->
+      <div class="Registro1 contenido" style="display:none;"> 
+            <input type="button" value="Buscas Empleo" class="BuscasE">
+            <input type="button" value="Ofreces Empleo" class="Ofrece">
+
+            <input type="button" value="Omitir" class="restore fade2">
+            <input type="button" value="Unirme">
+
+           <div id="BEmpleados">
+            <input type="text"placeholder="Nombre">
+            <input type="text"placeholder="Apellido">
+            <input type="text"placeholder="Correo electronico">
+            <input type="text"placeholder="Vuelve escribir tu correo">
+            <input type="password"placeholder="Contraseña">
+            </div>
+
+
+            <div id="OfreceE">
+              <input type="text"placeholder="Nombre de la empresa">
+              <input type="text"placeholder="Correo electrónico">
+              <input type="text"placeholder="Vuelve escribir tu correo">
+              <input type="password"placeholder="Contraseña">
+            </div>
+           
+            
+      </div>
+
+
+      <!-- este es el boton de login de Linkedin -->
+       <div id="redesI">
+            <h1>Logueate</h1>
+            <img src="{{MEDIA_URL}}img/linke2.png" alt="">
+      </div>
+
+   
+
+
+    <!--este es el boton de login de facebook-->
+
+    <div id="redesF" >
+          <h1>Logueate</h1>
+         <img src="{{MEDIA_URL}}img/face2.png" alt="">
+    </div>
+
+      
+
+
+    <!--boton de pag Siguiente -->
+    <a href="#1">
+        <div class="siguiente"><img src="{{MEDIA_URL}}img/flecha-azul.png" alt=""></div>
+    </a>
+
+</div>
+
+
+<!--fin de la pantalla de login -->
+
+
+
+
+<!--segunda pantalla-->
+<div class="pantalla1"id="1">
+    <div id="conteni">
+
+            <img src="{{MEDIA_URL}}img/paso1.png" alt="">
+            <img src="{{MEDIA_URL}}img/paso2.png" alt="">
+            <img src="{{MEDIA_URL}}img/paso3.png" alt="">
+            <img src="{{MEDIA_URL}}img/paso4.png" alt="">
+            <img src="{{MEDIA_URL}}img/paso5.png" alt="">
+            <img src="{{MEDIA_URL}}img/paso6.png" alt="">
+
+    <!--titulos o el texto que aparece en la segunda pag-->
+      <div id="titulo1">
+            <center>
+               <div id="L">en</div>
+                <div id="l"> tan sólo</div>
+            </center> 
+     </div>
+
+
+    <div id="titulo2">
+          <center>
+            <div id="L2">no más</div><br>
+            <div id="l2">curriculums<br>aburridos</div>
+          </center> 
+    </div>
+
+     <div id="titulo3">
+          <center>
+            <div id="L3">mejor<br></div>
+            <div id="l3"> métricas que<br>de resultados</div>
+          </center> 
+    </div>
+
+    <div id="titulo4">
+          <center>
+            <div id="L4">Sólo<br></div>
+            <div id="l4"> sigue<br>nuestros</div>
+          </center> 
+    </div>
+
+    
+    <!--imagenes que aparecen en el segunda pag-->
+         
+
+
+  </div>
+
+      <!--boton de pag2 Siguiente -->
+      <a href="#2">
+        <div class="siguiente2"><img src="{{MEDIA_URL}}img/flecha-blanca.png" alt=""></div>
+     </a>
+
+</div>
+<!--finde la segunda pantalla-->
+
+
+<!--inicio de la 3 pantalla-->
+<div class="pantalla2"id="2">
+    <div id="conteni2">
+            <!--primer imagen con su texto-->
+         
+                <img src="{{MEDIA_URL}}img/p2_1.png" alt="">
+                <img src="{{MEDIA_URL}}img/p2_2.png" alt="">
+                <img src="{{MEDIA_URL}}img/p2_3.png" alt="">
+
+        
+
+
+       
+                <div id="L5">Crea tu cuenta</div>
+                <div id="l5"> ò conectate automáticamente<br>información se mostrará de forma<br>gráfica automáticamente en tu perfil</div>
+
+
+            <!--segundo imagen con su texto-->
+            
+         
+
+
+                <div id="L6">Si entraste</div>
+                <div id="l6"> con tu cuenta de Linkedin,toda tu<br>con Likedin</div>
+ 
+
+            
+
+
+                 <div id="L7">Si no entraste</div>
+                <div id="l7"> con Linkedin,puedes ingresar<br>tu información de forma manual<br>en cada una de las distintas características</div>
+ 
+
+  </div>
+        <!--boton de siguiente pag-->
+       <a href="#3">
+            <div class="siguiente3"><img src="{{MEDIA_URL}}img/flecha-blanca.png" alt=""></div>
+        </a>
+
+</div>
+<!--fin de la pantalla-->
+
+
+<!--pantalla 4-->
+<div class="pantalla3"id="3">
+    <div id="conteni3">
+
+          <!--primer imagen con su texto-->
+  
+            <img src="{{MEDIA_URL}}img/p3_1.png" alt="">
+            <img src="{{MEDIA_URL}}img/p3_2.png" alt="">
+            <img src="{{MEDIA_URL}}img/p3_3.png" alt="">
+
+
+         
+               <div id="L8">Es hora</div>
+              <div id="l8"> de personalizar el diseño de tu CV<br>con los temas disponibles</div>
+
+
+          <!--segunda imagen con su texto-->
+          
+
+      
+              <div id="L9">Así de secillo!!</div>
+              <div id="l9"> Tu CV gráfico está terminando</div>
+
+
+          <!--tercer imagen con su texto-->
+          
+
+             <div id="L10">Y listo</div>
+              <div id="l10"> para compartirlo</div>
+
+
+    </div>
+     <a href="#0">
+            <div class="siguiente4"><img src="{{MEDIA_URL}}img/flecha-hacia-arriba.png" alt=""></div>
+      </a>
+
+</div>
+
+
+ <script src="js/script.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+
+  </body>
+  </html>

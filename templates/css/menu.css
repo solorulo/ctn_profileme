@@ -1,0 +1,922 @@
+/*pantalla un login page*/
+
+
+
+.video{
+position: absolute;
+background-color:white;
+top:0px;
+left: 0px;
+width:100%;
+height:100%;
+}
+
+/*input para accesar ala aplicacion*/
+.video>input:nth-child(1){
+position:absolute;
+font-family: verdana;
+font-size: 10px;
+color:black;
+padding-left:7px;
+height:25px;
+width: 170px;
+right: 380px;
+background-color: rgba(255,255,255,0.8);
+border: 1px solid #c6c6c6;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+top:20px;
+z-index: 4;
+
+
+}
+.video>input:nth-child(2){
+position:absolute;
+font-family: verdana;
+font-size: 10px;
+color:white;
+padding-left:7px;
+height:25px;
+width: 190px;
+right: 160px;
+background-color: rgba(255,255,255,0.8);
+border: 1px solid #c6c6c6;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+top:20px;
+z-index: 5;
+}
+
+.video>input:nth-child(3){
+position:absolute;
+font-family: 'Raleway';
+font-size: 11px;
+font-style: bold;
+
+background-color:#459fff;
+color:white;
+padding-bottom: 4px;
+height:29px;
+width: 70px;
+right: 70px;
+border: 2px solid #459fff;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+top:20px;
+z-index: 4;
+}
+.video>input:nth-child(3):hover{
+ background-color: rgba(69,159,255,0.6);
+ color: white;
+ 
+}
+
+/*logo grande que aparece en medio de la pag*/
+.logo{
+  position: absolute;
+  left: 32%;
+  top:30%;
+  width: 35%;
+  height: 15%;
+  text-align: center;
+}
+.logo>img{
+
+}
+.slogan{
+  position: absolute;
+  left: 49%;
+  top:43%;
+  font-family: 'Raleway';
+  font-size: 100%;
+  font-style: bold;
+  color:#ff738f;
+  display: block;
+}
+/*boton del primer registro*/
+#registro{
+ position: absolute;
+bottom: 245px;
+left: 0px;
+width: 70px;
+height: 50.5px;
+background: #ff738f;
+}
+#registro>img{
+ position: absolute;
+ top: -5.8px;
+left: 8px; 
+}
+
+
+/*caja de dialogo de registro*/
+.Registro1{
+  background-color:rgba(69,159,255,0.7);
+  position: absolute;
+  left: 35%;
+  top:35%;
+  width: 40%;
+  height: 50%;
+  -webkit-border-radius: 31px;
+  -moz-border-radius: 31px;
+  border-radius: 31px;
+  z-index:1;
+
+}
+/*boton Buscas Empleo*/
+.Registro1>input:nth-child(1){
+    position: absolute;
+    font-family:'Raleway';
+    font-size:15px;
+    font-style: bold;
+     background: #ff738f;
+    color:white;
+    top:-15%;
+    left:15%;
+    width: 30%;
+    height: 10%;
+    border:solid 0px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+/*input Ofreces Empleo*/
+.Registro1>input:nth-child(2){
+    position: absolute;
+    font-family:'Raleway';
+     background: #ff738f;
+    font-size:15px;
+    font-style: bold;
+    color:white;
+    top:-15%;
+    right:15%;
+    width: 30%;
+    height: 10%;
+    border:solid 0px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+/*input boton cancelar*/
+
+.Registro1>input:nth-child(3){
+    background: #ff738f;
+    color:white;
+    font-family:'Raleway';
+    font-size:15px;
+    font-style: bold;
+    position: absolute;
+    top:80%;
+    left:15%;
+    width: 30%;
+    height: 9%;
+    border:solid 0px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+/*input boton Unirse*/
+.Registro1>input:nth-child(4){
+    background: #ff738f;
+    color:white;
+    font-family:'Raleway';
+    font-size:15px;
+    font-style: bold;
+    position: absolute;
+    top:80%;
+    right:15%;
+    width: 30%;
+    height: 9%;
+    border:solid 0px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/*input Nombre*/
+.Registro1>#BEmpleados>input:nth-child(1){
+    position: absolute;
+    font-family:'Raleway';
+    font-size:15px;
+    padding-left:10px;
+    top:10%;
+    left:10%;
+    width: 35%;
+    height: 9%;
+    border:solid 1px #cccccc;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+/*input Apellido*/
+
+.Registro1>#BEmpleados>input:nth-child(2){
+    position: absolute;
+    font-family:'Raleway';
+    font-size:15px;
+    padding-left:10px;
+    top:10%;
+    right:10%;
+    width: 35%;
+    height: 9%;
+    border:solid 1px #cccccc;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+/*input Correo*/
+
+.Registro1>#BEmpleados>input:nth-child(3){
+    position: absolute;
+    font-family:'Raleway';
+    font-size:15px;
+    padding-left:10px;
+    top:28%;
+    right:10%;
+    width: 77%;
+    height: 9%;
+    border:solid 1px #cccccc;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+/*input Correo2*/
+
+.Registro1>#BEmpleados>input:nth-child(4){
+    position: absolute;
+    font-family:'Raleway';
+    font-size:15px;
+    padding-left:10px;
+    top:46%;
+    right:10%;
+    width: 77%;
+    height: 9%;
+    border:solid 1px #cccccc;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+/*input Contraseña*/
+
+.Registro1>#BEmpleados>input:nth-child(5){
+    position: absolute;
+    font-family:'Raleway';
+    font-size:15px;
+    padding-left:10px;
+    top:64%;
+    right:10%;
+    width: 77%;
+    height: 9%;
+    border:solid 1px #cccccc;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+.Registro1>#OfreceE>input:nth-child(1){
+    position: absolute;
+    font-family:'Raleway';
+    font-size:15px;
+    padding-left:10px;
+    top:10%;
+    left:10%;
+    width: 77%;
+    height: 9%;
+    border:solid 1px #cccccc;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.Registro1>#OfreceE>input:nth-child(2){
+    position: absolute;
+    font-family:'Raleway';
+    font-size:15px;
+    padding-left:10px;
+    top:28%;
+    right:10%;
+    width: 77%;
+    height: 9%;
+    border:solid 1px #cccccc;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+/*input Correo2*/
+
+.Registro1>#OfreceE>input:nth-child(3){
+    position: absolute;
+    font-family:'Raleway';
+    font-size:15px;
+    padding-left:10px;
+    top:46%;
+    right:10%;
+    width: 77%;
+    height: 9%;
+    border:solid 1px #cccccc;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+/*input Contraseña*/
+
+.Registro1>#OfreceE>input:nth-child(4){
+    position: absolute;
+    font-family:'Raleway';
+    font-size:15px;
+    padding-left:10px;
+    top:64%;
+    right:10%;
+    width: 77%;
+    height: 9%;
+    border:solid 1px #cccccc;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+
+/*boton de login facebook*/
+#redesF{
+ position: absolute;
+bottom: 100px;
+left: 0px;
+width: 89.5px;
+height: 48px;
+background: #459fff;
+
+}
+#redesF>h1{
+   color: white;
+  position:absolute;
+ left:24px;
+  top:5px;
+  font-family: 'Raleway';
+  font-size: 13px;
+  font-style: bold;
+}
+
+#redesF>img{
+ position: absolute;
+  left: 25.4px;
+  width: 86.7px;
+  height:59.58px;
+  top:-6.09px;
+  -webkit-transition: all 0.40s ease;
+    -moz-transition: all 0.40s ease;
+    -o-transition: all 0.40s ease;
+  }
+
+#redesF>img:hover{
+   position: absolute;
+   width: 75px;
+  height:60px;
+  top:-6.13px;
+  left: 89.5px;
+}
+/*caja de dialogo de login de facebook*/
+.facebook{
+  background-color: white;
+  border:2px solid red;
+   position: absolute;
+  margin-left: 30%;
+  margin-top:-20%;
+  width: 40%;
+  height: 60%;
+  z-index:100000;
+}
+
+/*boton de linkedin*/
+#redesI{
+ position: absolute;
+bottom: 170px;
+left: 0px;
+width: 89.5px;
+height: 48px;
+background: #459fff;
+
+}
+#redesI>h1{
+  color: white;
+  position:absolute;
+ left:24px;
+  top:5px;
+  font-family: 'Raleway';
+  font-size: 13px;
+  font-style: bold;
+}
+#redesI>img{
+   position: absolute;
+  left: 25.4px;
+  width: 86.7px;
+  height:59.58px;
+  top:-6.09px;
+  -webkit-transition: all 0.40s ease;
+    -moz-transition: all 0.40s ease;
+    -o-transition: all 0.40s ease;
+  }
+
+#redesI>img:hover{
+   position: absolute;
+   width: 75px;
+  height:60px;
+  top:-6.13px;
+  left: 89.5px;
+}
+/*caja de dialogo de linkedin*/
+.linkedin{
+  background-color: white;
+  border:2px solid blue;
+   position: absolute;
+  margin-left: 30%;
+  margin-top:-20%;
+  width: 40%;
+  height: 60%;
+  z-index:100000;
+}
+/*boton de siguiente pagina*/
+.siguiente{
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  bottom:-5.5%;
+  left:50%; 
+  -webkit-border-radius: 40px;
+-moz-border-radius: 40px;
+border-radius: 40px;
+}
+.siguiente>img{
+position: absolute;
+  bottom:52%;
+  left:33%; 
+  z-index: 2;
+}
+/*fin de la primer pantalla*/
+
+
+
+/*<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+
+
+
+
+/*inicio de la siguiente  pagina*/
+.pantalla1{
+  background:#459fff;
+  position: absolute;
+  top:100%;
+  left:0px;
+  color: white;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0;
+}
+/*Contenedor de las imagenes y texto*/
+
+.pantalla1>#conteni{
+  position: absolute;
+  width: 100%;
+  height:100%;
+  top:10%;
+  left:0%;
+  max-width:100%;
+
+  }
+
+/*imagenes de la pantalla2*/
+.pantalla1>#conteni>img:nth-child(1){
+position: absolute;
+left: 5%;
+top:6%;
+max-width: 100%;
+
+}
+.pantalla1>#conteni>img:nth-child(2){
+position: absolute;
+left: 46%;
+top:6%;
+max-width: 100%;
+}
+.pantalla1>#conteni>img:nth-child(3){
+position: absolute;
+left: 80%;
+top:3%;
+max-width: 100%;
+}
+
+.pantalla1>#conteni>img:nth-child(4){
+position: absolute;
+left: 5%;
+top:50%;
+}
+.pantalla1>#conteni>img:nth-child(5){
+position: absolute;
+left: 48%;
+top:50%;
+max-width: 100%;
+}
+.pantalla1>#conteni>img:nth-child(6){
+position: absolute;
+left: 80%;
+top:50%;
+max-width: 100%;
+}
+/*texto de la pantalla2*/
+#titulo1{
+  position: absolute;
+  width: 80px;
+  height: 95px;
+  left: 33%;
+  top:20%;
+  max-width: 100%;
+ 
+}
+#L{
+   position: absolute;
+   top:0px;
+font-family: 'Raleway';
+font-size:28px;
+font-stwight:900;
+font-weight:900;
+}
+#l{
+   position: absolute;
+   top:30px;
+   left: -8px;
+font-family: 'Raleway';
+font-size:13px;
+}
+#titulo2{
+  position: absolute;
+  width: 100px;
+  height: 55px;
+  left: 65%;
+  top:20%;
+  font-family: 'Raleway';
+  font-size: 15px;
+  font-style: normal;
+  padding-left:20px;
+
+
+}
+#L2{
+   position: absolute;
+   top:0px;
+font-family: 'Raleway';
+font-size:28px;
+font-stwebold;
+}
+#l2{
+   position: absolute;
+   top:30px;
+   left:30px;
+font-family: 'Raleway';
+font-size:13px;
+}
+#titulo3{
+  position: absolute;
+  width: 100px;
+  height: 55px;
+  left: 30%;
+  top:58%;
+  font-family: 'Raleway';
+  font-size: 15px;
+  font-style: normal;
+  padding-left:20px;
+
+
+}
+#L3{
+   position: absolute;
+   top:0px;
+font-family: 'Raleway';
+font-size:28px;
+font-stwebold;
+font-weight:900px;
+}
+#l3{
+   position: absolute;
+   top:30px;
+   left:15px;
+font-family: 'Raleway';
+font-size:13px;
+}
+
+#titulo4{
+  position: absolute;
+  width: 100px;
+  height: 55px;
+  left: 67%;
+  top:58%;
+  font-family: 'Raleway';
+  font-size: 15px;
+  font-style: normal;
+  padding-left:20px;
+
+}
+#L4{
+   position: absolute;
+   top:0px;
+font-family: 'Raleway';
+font-size:28px;
+font-stwebold;
+}
+#l4{
+   position: absolute;
+   top:30px;
+   left:20px;
+font-family: 'Raleway';
+font-size:13px;
+}
+.siguiente2{
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  bottom:-5.5%;
+  left:50%; 
+  -webkit-border-radius: 40px;
+-moz-border-radius: 40px;
+border-radius: 40px;
+}
+/*boton de siguiente pagina*/
+.siguiente2>img{
+  position: absolute;
+  bottom:52%;
+  left:33%; 
+  z-index: 2;
+}
+/*fin de la pagina2*/
+
+
+/*<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+
+
+
+/*inicio de la pagina3*/
+.pantalla2{
+background:#5fddff;
+position: absolute;
+top:200%;
+left:0px;
+color: white;
+width: 100%;
+height: 100%;
+padding: 100px 0 0 0; 
+
+}
+/*div que contiene imagenes y texto*/
+.pantalla2>#conteni2{
+  position: absolute;
+  width: 100%;
+  height:90%;
+  top:10%;
+  left:0%;
+
+ }
+
+ /*imagenes y contenido 1 pagina3*/
+  .pantalla2>#conteni2>img:nth-child(1){
+position: absolute;
+left: 8%;
+top:10%;
+}
+ /*imagenes y contenido 2 pagina3*/
+ .pantalla2>#conteni2>img:nth-child(2){
+position: absolute;
+left: 49%;
+top:10%;
+}
+ .pantalla2>#conteni2>img:nth-child(3){
+position: absolute;
+left: 78%;
+top:12%;
+}
+
+#L5{
+  position: absolute;
+  top:50%;
+  left:8%;
+  font-family: 'Raleway';
+  font-size:28px;
+  font-weight:900;
+
+}
+#l5{
+  position: absolute;
+  top:56%;
+  left:7%;
+  font-family: 'Raleway';
+  font-size:13px;
+  text-align: center;
+
+}
+
+
+#L6{
+  position: absolute;
+  top:50%;
+  left:48%;
+  font-family: 'Raleway';
+  font-size:28px;
+  font-weight:900;
+
+}
+#l6{
+  position: absolute;
+  top:56%;
+  left:45%;
+  font-family: 'Raleway';
+  font-size:13px;
+
+  text-align: center;
+
+}
+
+ /*imagenes y contenido 3 pagina3*/
+
+#L7{
+  position: absolute;
+  top:50%;
+  left:78%;
+  font-family: 'Raleway';
+  font-size:28px;
+  font-weight:900;
+
+}
+#l7{
+  position: absolute;
+  top:56%;
+  left:75%;
+  font-family: 'Raleway';
+  font-size:13px;
+  text-align: center;
+}
+/*boton de siguiente pagina3*/
+.siguiente3{
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  bottom:9.3%;
+  left:50%; 
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+  z-index: 2;
+}
+.siguiente3>img{
+    position: absolute;
+  bottom:52%;
+  left:33%; 
+  z-index: 2;
+
+}
+/*fin de la pagina3*/
+
+
+
+
+/*<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+
+
+
+
+
+/*inicio pagina 4*/
+.pantalla3{
+  background:#ff738f;
+  position: absolute;
+  top:300%;
+  left:0px;
+  color: white;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/*div de contenido de texto e imagenes*/
+.pantalla3>#conteni3{
+  position: absolute;
+  width: 100%;
+  height:90%;
+  top:10%;
+  left:0%;
+ }
+  .pantalla3>#conteni3>img:nth-child(1){
+position: absolute;
+left: 10%;
+top:10%;
+}
+ .pantalla3>#conteni3>img:nth-child(2){
+position: absolute;
+left: 46%;
+top:10%;
+}
+ .pantalla3>#conteni3>img:nth-child(3){
+position: absolute;
+left: 78%;
+top:33%;
+}
+ 
+
+
+#L8{
+  position: absolute;
+  top:55%;
+  left:11%;
+  font-family: 'Raleway';
+  font-size:28px;
+  font-weight:900;
+
+}
+#l8{
+  position: absolute;
+  top:62%;
+  left:7%;
+  font-family: 'Raleway';
+  font-size:13px;
+
+  text-align: center;
+
+}
+
+
+#L9{
+  position: absolute;
+  top:55%;
+  left:46%;
+  font-family: 'Raleway';
+  font-size:28px;
+  font-weight:900;
+
+}
+#l9{
+  position: absolute;
+  top:60%;
+  left:46%;
+  font-family: 'Raleway';
+  font-size:13px;
+
+
+}
+
+#L10{
+  position: absolute;
+  top:55%;
+  left:83%;
+  font-family: 'Raleway';
+  font-size:28px;
+  font-weight:900;
+
+}
+#l10{
+  position: absolute;
+  top:60%;
+  left:83%;
+  font-family: 'Raleway';
+  font-size:13px;
+  }
+.siguiente4{
+  background:#ff738f;
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  bottom:9.3%;
+  left:50%; 
+  -webkit-border-radius: 40px;
+-moz-border-radius: 40px;
+border-radius: 40px;
+z-index: 2;
+}
+.siguiente4>img{
+    position: absolute;
+  top:135%;
+  left:33%; 
+  z-index: 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

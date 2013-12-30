@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta name="description" content="">
+          <meta name="author" content="">
+
+          <title>Perfiles</title>
+
+          <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+          <link href="css/menuP.css" rel="stylesheet">
+         
+          <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>    
+          <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+         
+        <script>
+             $(document).ready(function(){
+
+              $('.explode2').click(function(){
+               $('#contenido').toggle('fade',500); 
+              });
+             
+               $('.explode3').click(function(){
+               $('#contenido2').toggle('fade',500); 
+              });
+              $('.explode').click(function(){
+               $('.contenido').toggle('fade',500);
+
+                $('#datos1').toggle('fade',500);
+                  
+              });
+               $('.explode4').click(function(){
+               $('#contenido3').toggle('fade',500);
+              });
+              $('.explode5').click(function(){
+              $('#contenido4').toggle('fade',500);
+              });
+              $('.imprimir').click(function(){
+              window.print()
+              });
+
+             });
+      </script>
+      <script>
+        
+             $('.foo1').carouFredSel({
+
+              auto : false,
+
+              prev : "#foo1_prev",
+
+              next : "#foo1_next"
+
+      });
+      </script>
+        <script src="js/highcharts.js"></script>
+        <script src="js/highcharts-more.js"></script>
+        <script src="js/modules/exporting.js"></script>
+        <script>
+            $(document).ready(nalgasychichis);
+
+            function nalgasychichis()
+            {
+              $('#container').highcharts({
+
+                      
+              chart: {
+                  polar: true,
+                  backgroundColor: 'transparent',
+                  type: 'line'
+
+              },
+                credits: {
+                  enabled: false
+              },
+              title: {
+                  text: 'Habilidades',
+                  x: -80,
+                   style: {
+                      color: '#459fff',
+                      fontWeight: 'Verdana, sans-serif'
+                  }
+
+              },
+              
+              pane: {
+                  size: '80%'
+              },
+              
+              xAxis: {
+                  categories: ['Pert,CPM', 'Business Intelligence', 'Gantt', 'Canvas Bussiness Model', 
+                          'Plan de negocios'],
+                              labels: {
+                          align: 'right',
+                          style: {
+                            color: '#459fff',
+                              fontSize: '11px',
+                              fontFamily: 'Verdana, sans-serif'
+                          }
+                      },
+                  tickmarkPlacement: 'on',
+                  lineWidth: 0
+
+              },
+
+                  
+              yAxis: {
+                  gridLineInterpolation: 'polygon',
+                  lineWidth: 0,
+                  min: 0
+              },
+              
+              tooltip: {
+                  shared: true,
+                  pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}</b><br/>'
+              },
+              
+              legend: {
+                enabled:false,
+                  align: 'right',
+                  verticalAlign: 'top',
+                  y: 70,
+                  layout: 'vertical'
+              },
+
+              exporting: {
+                  enabled: false
+                  
+              },
+              
+              series: [{
+             
+                  name: "Choko",
+                  data: [990,4440,660,770,1000],
+                  color:'#459fff',
+                  pointPlacement: 'on',
+
+             }]
+           });
+                 // the button action
+           var i = 0;
+          $('#button').click(function() {
+              var chart = $('#agregar').highcharts();
+              chart.data[0].addPoint(50 * (i % 3));
+              i++;
+          });
+      }
+
+          
+
+        $(function () {
+              $('#container2').highcharts({
+                  chart: {
+                      type: 'column',
+                      backgroundColor: 'transparent',
+                      margin: [ 60, 60, 100, 80],
+                  },
+                    credits: {
+                  enabled: false
+              },
+                  title: {
+                      text: 'Herramientas',
+                       style: {
+                        marginleft:'0px',
+                        color: '#ff738f',
+                        fontWeight:'Verdana, sans-serif'
+                    }
+
+                  },
+                  xAxis: {
+                      categories: [
+                          'Java',
+                          'JavaScript',
+                          'CSS',
+                          'HTML',
+                          'C#',
+                          'jQuery'
+                         
+                      ],
+                      labels: {
+                          rotation: -90,
+                          align: 'right',
+                          style: {
+                            color: '#ff738f',
+                              fontSize: '11px',
+                              fontFamily:'Verdana, sans-serif'
+
+                          }
+                      }
+                  },
+                  yAxis: {
+                      min: 0,
+                      title: {
+                        style: {
+                      color: '#ff738f',
+                      fontWeight:'Verdana, sans-serif'
+                  }
+                          
+                      }
+            
+                  },
+                  legend: {
+                      enabled: false
+                  },
+                  tooltip: {
+                      formatter: function() {
+                          return '<b>'+ this.x +'</b><br/>'+
+                               Highcharts.numberFormat(this.y) ;
+                      }
+                  },
+                  exporting: {
+                  enabled: false
+                  
+              },
+                  series: [{
+                      name: 'Population',
+                      data: [100,60,50, 80, 10, 40],
+                      color:'#459fff',
+                      dataLabels: {
+                          enabled: true,
+                          rotation: -90,
+                          color: 'white',
+                          align: 'right',
+                          x: 4,
+                          y: 10,
+                          style: {
+                              fontSize: '10px',
+                              fontFamily:'Verdana, sans-serif'
+                          }
+                      }
+                  }]
+              });
+          });
+          
+      </script>
+  </head>
+<body>
+    <!--menu de la pagina de perfiles-->
+        <nav>
+              <ul>
+                  <li><a href="#"class="imprimir"><img src="img/profile-me-blanco.png" alt="" ></a></li>
+                  <li><a href="#"><img src="img/casa.png" alt=""></a></li>
+                  <li><a href="#"><img src="img/perfil.png" alt=""></a></li>
+                  <li><input type="text"><img src="img/buscar.png" alt=""id="buscar"></li>
+              </ul>
+         </nav>
+
+
+
+      <section class="container1">
+            <!-- Foto de perfil -->
+              <div id="fperfil">
+                     <img src="img/choko.png" alt="image del perfil">
+              </div>
+
+            
+              <!--Datos personales del usuario (nombre,campo de trabajo y edad)-->
+              <div id="datos1">
+
+                    
+                    <div id="nombre"> Alexis Ivan Chavez Robles</div>
+                    <div id="profesion">Desarrollador</div>
+                    <div id="edad">20 años</div>
+                    <div id="numero"> 784684765478645</div>
+                    <div id="correo">chavez.aivan@gmail.com</div>
+                    <div id="trabajo">Ctin</div>
+                    <div id="live">Mexico/NL</div>
+             </div>
+
+             
+              <div id="datos2">
+                   <img src="img/nombre.png" alt=""id="nombre1">
+                    <img src="img/profesion.png" alt=""id="profesion1">
+                    <img src="img/edad.png" alt=""id="edad1">
+                    <img src="img/telefono.png" alt=""id="numero1"> 
+                    <img src="img/mail-propio.png" alt=""id="correo1">      
+                    <img src="img/trabajo.png" alt=""id="trabajo1">  
+                    
+
+
+            </div>
+          <!--boton y div para editar todos los datos personales -->
+          <input type="button" value="Editar información"class="explode">
+          <!--input para editar los campos-->
+
+              <div class="contenido" id="camposD">
+                  <input type="text"placeholder="Nombre Completo">
+                  <input type="text"placeholder="Campo de Trabajo">
+                  <input type="text"placeholder="Edad">
+                  <input type="text"placeholder="Telefono">
+                  <input type="text"placeholder="Correo Electronico">
+                  <input type="text"placeholder="Trabajo">
+              </div>
+           
+               <hr>
+
+      </section>
+
+
+
+           
+
+    <section class="container2">
+
+                <!--esta es la grafica de las habilidades-->
+              <div id="habilidades">
+                    <!--boton de editar-->
+                    <input type="button" value="Editar" class="explode2">
+                        <div id="container"class="verticalLine" style="min-width: 300px; max-width: 800px; height: 450px; margin: 1 auto"> </div>
+              </div>
+          <!--editable de las habilidades -->
+
+              <div class="chabilidades"id="contenido">
+                  <!--es el div donde contiene todas las habilidades agregadas-->
+                     <div id="Totalh">
+                      
+                     </div> 
+                     <!--es el div donde agregas habilidades-->
+
+                  <div class="Nhabilidad">
+                      <input type="text">
+                      <input type="button"value="Agregar">
+                      <!--es el slider de putos que tienes en cada habilidad-->
+                      
+                        <div id="slider">
+                            <!--slider-->
+                              <form oninput="amount.value=rangeInput.value">
+                               <input id="rangeInput"name="rangeInput" type="range" min="1" max="100" />
+                               <!--numero que elige el usuario en el slider-->
+                              <output name="amount" for="rangeInput">50</output>
+                              </form>
+                        </div>
+
+                   </div>
+                     
+              </div>
+
+                     
+
+
+                <!--Es la grafica de las herramientas-->
+              <div class="herramientas">
+                    <input type="button" value="Editar"class="explode3">
+
+                  <div  id="container2" class="verticalLine2" style="height: 400px; min-width:300px; max-width: 1000px; margin: 1 auto"></div>
+              </div>
+                <!--editable de las herramientas -->
+
+            <div class="cherramientas"id="contenido2">
+                  <!--es el div donde contiene todas las habilidades agregadas-->
+                     <div id="Totalhe">
+                      
+                     </div> 
+                     <!--es el div donde agregas habilidades-->
+
+                    <div class="Nherramientas">
+                      <input type="text">
+                      <input type="button"value="Agregar">
+                      <!--es el slider de putos que tienes en cada habilidad-->
+                      
+                        <div id="slider2">
+                            <!--slider-->
+                              <form oninput="amount.value=rangeInput.value">
+                               <input id="rangeInput"name="rangeInput" type="range" min="1" max="100" />
+                               <!--numero que elige el usuario en el slider-->
+                              <output name="amount" for="rangeInput">50</output>
+                              </form>
+                        </div>
+
+                   </div>
+                     
+          </div>
+
+      <hr>
+      <!--fin del container2-->            
+ </section>
+
+
+
+<section class="container3">
+       
+        <div class="escolaridad">
+                      <!--boton editar-->
+                <input type="button" value="Editar"class="explode5">
+                  <div id="contenido4">
+                    <select>
+                      <option value="0">Escolaridad</option>
+                      <option value="1">Ingenieria</option>
+                      <option value="2">Doctorado</option>
+                      <option value="3">Licenciatura</option>
+                      <option value="4">Preparatoria</option>
+                    </select>
+                     <textarea id="carrera"name="comentarios" rows="10" cols="40"placeholder="Nombre de la carrera"></textarea>
+
+                      <textarea id="certificaciones" name="comentarios" rows="10" cols="40"placeholder="certificaciónes"></textarea>
+
+                  </div>
+
+
+                   <h1>Escolaridad</h1>
+                   <!--imagen del tipo de escuela que es-->
+                    <img src="img/ing..png" alt=""id="Esc">
+
+
+                  <!--nombre de escuela en la que esta actualmente-->
+                  <div id="nescuela">
+                      <p>Nombre de la escuela o carrera cursada</p>
+                  </div>
+                  
+                   <!--certificaciones del usuario-->
+                   <div id="certificaciones">
+                     <p>Aqui van todas las certificaciones del usuario</p>
+                   </div>   
+        </div>
+
+
+
+    <div id="hobbies">
+          <!--boton editar-->
+            <input type="button" value="Editar"class="explode4">
+            <!--elejir hobbies-->
+            <div id="contenido3">
+                  <ul>
+                    <li><img src="img/musica.png"> <input type="checkbox" name="radio-btn"id="musica" /></li>
+                    <li><img src="img/musica.png"><input type="checkbox" name="radio-btn2" id="pintura"/></li>
+                    <li><img src="img/musica.png"><input type="checkbox" name="radio-btn3"id="gym"/></li>
+                    <li><img src="img/musica.png"><input type="checkbox" name="radio-btn4"id="futbol"/></li>
+                    <li><img src="img/musica.png"><input type="checkbox" name="radio-btn5"id="soccer"/></li>
+                    <li><img src="img/musica.png"><input type="checkbox" name="radio-btn6" id="leer"/></li>
+                    <li><img src="img/musica.png"><input type="checkbox" name="radio-btn7"id="correr"/></li>
+                    <li><img src="img/musica.png"><input type="checkbox" name="radio-btn8" id="fumar"/></li>
+                    <li><img src="img/musica.png"><input type="checkbox" name="radio-btn9"id="tomar" /></li>
+                    <li><img src="img/musica.png"><input type="checkbox" name="radio-btn10"id="programar" /></li>
+                  </ul>
+              
+            </div>
+              <!--hobbies que se muestran en el perfil-->
+             <h1>Hobbies</h1>
+              <ul>
+                   
+                    <li><img src="img/pintura.png"></li>
+                    <li><img src="img/pintura.png"></li>
+                    <li><img src="img/leer.png"></li>
+                    <li><img src="img/fotografia.png"></li>
+                    
+              </ul>
+      </div>
+      <hr>
+</section>
+
+
+
+
+
+
+
+  <section class="container4">
+            <h1>Proyectos</h1>
+
+          <div class="proyectos">
+              <div id="NDE">
+                <ul>
+                  <li>Nombre</li>
+                  <li>Descripción</li>
+                  <li>Enlace</li>
+                </ul>
+              </div>
+
+              <div id="proyecto">
+                <ul>
+                  <li>Erbol</li>
+                  <li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
+                  <li>www.erbol.com</li>
+                </ul>
+                <ul>
+                  <li>Erbol</li>
+                  <li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
+                  <li>www.erbol.com</li>
+                </ul>
+                <ul>
+                  <li>Erbol</li>
+                  <li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
+                  <li>www.erbol.com</li>
+                </ul>
+                <ul>
+                  <li>Erbol</li>
+                  <li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
+                  <li>www.erbol.com</li>
+                </ul>
+                <ul>
+                  <li>Erbol</li>
+                  <li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
+                  <li>www.erbol.com</li>
+                </ul>
+                 <ul>
+                  <li>Erbol</li>
+                  <li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
+                  <li>www.erbol.com</li>
+                </ul>
+                 <ul>
+                  <li>Erbol</li>
+                  <li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
+                  <li>www.erbol.com</li>
+                </ul>
+              </div>
+
+          </div>
+          
+ </section>
+    <div class="footer">
+  
+          </div
+
+
+
+
+
+
+
+
+
+</body>
+</html>

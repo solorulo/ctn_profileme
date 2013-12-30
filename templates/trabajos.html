@@ -1,0 +1,118 @@
+<html>
+	<head>
+		<title>Inicio</title>
+	
+
+		<link rel="stylesheet" href="css/mas.css">
+		<link rel="stylesheet" href="css/screen.css" media="screen"/>
+		<link rel="stylesheet" href="css/lightbox.css" media="screen"/>
+			<script src='js/jquery-1.10.2.min.js'></script>
+		<script src="js/lightbox-2.6.min.js"></script>
+		<script src="js/mason.js"></script>
+	</head>
+	<body>
+		<nav>
+			  <ul>
+                  <li><a href="#"class="imprimir"><img src="img/profile-me-blanco.png" alt="" ></a></li>
+                  <li><a href="#"><img src="img/casa.png" alt=""></a></li>
+                  <li><a href="#"><img src="img/perfil.png" alt=""></a></li>
+                  <li><input type="text"><img src="img/buscar.png" alt=""id="buscar"></li>
+              </ul>
+
+		</nav>
+
+
+		<div id='grid'>
+			
+			<div class='box'>
+			<h1>puto</h1>
+			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
+			</div>
+		
+			<div class='box'>
+			<h1>sjkhddsjkhkdash</h1>
+			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
+			</div>
+			<div class='box'>
+			<h1>sjkhddsjkhkdash</h1>
+			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
+			</div>
+			<div class='box'>
+			<h1>sjkhddsjkhkdash</h1>
+			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
+			</div>
+		
+		</div>
+		<div id='fillers'>
+			<div class='fillerBox'>
+			<h1>sjkhddsjkhkdash</h1>
+			</div>
+			<div class='box2'>
+			<h1>sjkhddsjkhkdash</h1>
+			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
+			</div>
+			<div class='box2'>
+			<h1>sjkhddsjkhkdash</h1>
+			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
+			</div>
+			<div class='box2'>
+			<h1>sjkhddsjkhkdash</h1>
+			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
+			</div>
+			<div class='box3'>
+			<h1>sjkhddsjkhkdash</h1>
+			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
+			</div>
+			<div class='box3'>
+			<h1>sjkhddsjkhkdash</h1>
+			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
+			</div>
+			<div class='box3'>
+			<h1>sjkhddsjkhkdash</h1>
+			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
+			</div>
+			<div class='fillerBox'>
+			<h1>sjkhddsjkhkdash</h1>
+			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
+			</div>
+			<div class='box2'>
+			<h1>sjkhddsjkhkdash</h1>
+			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
+			</div>
+			<div class='fillerBox'>
+			<h1>sjkhddsjkhkdash</h1>
+			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
+
+			</div>
+		</div> 
+
+
+		<script>
+		$(function(){
+			$("#grid").mason({
+				itemSelector: ".box",
+				ratio: 1.5,
+				sizes: [
+					[1,1],
+					[1,2],
+					[2,2]
+				],
+				columns: [
+					[0,480,1],
+					[480,780,2],
+					[780,1080,3],
+					[1080,1320,4],
+					[1320,1680,5]
+				],
+				filler: {
+					itemSelector: '.fillerBox,.box2,.box3',
+					filler_class: 'custom_filler'
+				},
+				layout: 'fluid',
+				gutter: 2,
+			});
+		});
+		</script>
+
+	</body>
+</html>
