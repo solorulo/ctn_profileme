@@ -21,4 +21,11 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
+
+    url(r'^postTest$', 'profile_app.views.postTest', name='postTest'),
+    url(r'^registerUser$', 'profile_app.views.registerUser', name='registerUser'),
+    url(r'^createJobOffer$', 'profile_app.views.createJobOffer', name='createJobOffer'),
+    url(r'^registro$', 'profile_app.views.registro', name='registro'),
+
+    url(r'^uploadUserPhoto$', 'profile_app.views.uploadUserPhoto', name='uploadUserPhoto'),    
 )

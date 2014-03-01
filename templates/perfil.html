@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <meta name="description" content="">
-          <meta name="author" content="">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-          <title>Perfiles</title>
+        <title>Perfiles</title>
 
-          <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-          <link href="css/menuP.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <link href="css/menuP.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/slicknav.css">
          
-          <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>    
-          <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>    
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
          
         <script>
-             $(document).ready(function(){
+            $(document).ready(function(){
 
               $('.explode2').click(function(){
                $('#contenido').toggle('fade',500); 
@@ -24,17 +28,27 @@
                $('.explode3').click(function(){
                $('#contenido2').toggle('fade',500); 
               });
+
               $('.explode').click(function(){
                $('.contenido').toggle('fade',500);
 
                 $('#datos1').toggle('fade',500);
                   
               });
+
                $('.explode4').click(function(){
                $('#contenido3').toggle('fade',500);
               });
+
               $('.explode5').click(function(){
               $('#contenido4').toggle('fade',500);
+              });
+
+               $('.explode6').click(function(){
+               $('.contenido5').toggle('fade',500);
+
+                $('#datosP').toggle('fade',500);
+                  
               });
               $('.imprimir').click(function(){
               window.print()
@@ -42,6 +56,8 @@
 
              });
       </script>
+
+      
       <script>
         
              $('.foo1').carouFredSel({
@@ -235,20 +251,23 @@
           
       </script>
   </head>
+
+
+
+
 <body>
     <!--menu de la pagina de perfiles-->
-        <nav>
-              <ul>
-                  <li><a href="#"class="imprimir"><img src="img/profile-me-blanco.png" alt="" ></a></li>
-                  <li><a href="#"><img src="img/casa.png" alt=""></a></li>
-                  <li><a href="#"><img src="img/perfil.png" alt=""></a></li>
-                  <li><input type="text"><img src="img/buscar.png" alt=""id="buscar"></li>
-              </ul>
-         </nav>
+    <nav>
+        <ul id="menu">
+          <li><a href="#"class="imprimir"><img src="img/profile-me-blanco.png" alt="" ></a></li>
+          <li><a href="trabajos.html"><img src="img/casa.png" alt=""></a></li>
+          <li><a href="perfil.html"><img src="img/perfil.png" alt=""></a></li>
+          <li><input type="text"><img src="img/buscar.png" alt=""id="buscar"></li>
+        </ul>
+    </nav>
 
 
-
-      <section class="container1">
+    <section class="container1">
             <!-- Foto de perfil -->
               <div id="fperfil">
                      <img src="img/choko.png" alt="image del perfil">
@@ -262,7 +281,7 @@
                     <div id="nombre"> Alexis Ivan Chavez Robles</div>
                     <div id="profesion">Desarrollador</div>
                     <div id="edad">20 años</div>
-                    <div id="numero"> 784684765478645</div>
+                    <div id="numero"> 78468476</div>
                     <div id="correo">chavez.aivan@gmail.com</div>
                     <div id="trabajo">Ctin</div>
                     <div id="live">Mexico/NL</div>
@@ -274,8 +293,9 @@
                     <img src="img/profesion.png" alt=""id="profesion1">
                     <img src="img/edad.png" alt=""id="edad1">
                     <img src="img/telefono.png" alt=""id="numero1"> 
-                    <img src="img/mail-propio.png" alt=""id="correo1">      
-                    <img src="img/trabajo.png" alt=""id="trabajo1">  
+                    <img src="img/mail-propio.png" alt=""id="correo1"> 
+                    <img src="img/trabajo.png" alt=""id="trabajo1"> 
+                    <img src="img/ubicacion.png"id="pais"> 
                     
 
 
@@ -291,6 +311,7 @@
                   <input type="text"placeholder="Telefono">
                   <input type="text"placeholder="Correo Electronico">
                   <input type="text"placeholder="Trabajo">
+                  <input type="text"placeholder="Pais/municipio">
               </div>
            
                <hr>
@@ -343,18 +364,18 @@
               <div class="herramientas">
                     <input type="button" value="Editar"class="explode3">
 
-                  <div  id="container2" class="verticalLine2" style="height: 400px; min-width:300px; max-width: 1000px; margin: 1 auto"></div>
+                  <div  id="container2" class="verticalLine2" style="height: 400px; min-width:350px; max-width: 1000px; margin: 1 auto"></div>
               </div>
                 <!--editable de las herramientas -->
 
             <div class="cherramientas"id="contenido2">
                   <!--es el div donde contiene todas las habilidades agregadas-->
-                     <div id="Totalhe">
+              <div id="Totalhe">
                       
-                     </div> 
+              </div> 
                      <!--es el div donde agregas habilidades-->
 
-                    <div class="Nherramientas">
+                     <div class="Nherramientas">
                       <input type="text">
                       <input type="button"value="Agregar">
                       <!--es el slider de putos que tienes en cada habilidad-->
@@ -422,16 +443,16 @@
             <!--elejir hobbies-->
             <div id="contenido3">
                   <ul>
-                    <li><img src="img/musica.png"> <input type="checkbox" name="radio-btn"id="musica" /></li>
-                    <li><img src="img/musica.png"><input type="checkbox" name="radio-btn2" id="pintura"/></li>
-                    <li><img src="img/musica.png"><input type="checkbox" name="radio-btn3"id="gym"/></li>
+                    <li><img src="img/cine.png"> <input type="checkbox" name="radio-btn"id="musica" /></li>
+                    <li><img src="img/leer.png"><input type="checkbox" name="radio-btn2" id="pintura"/></li>
+                    <li><img src="img/fotografia.png"><input type="checkbox" name="radio-btn3"id="gym"/></li>
                     <li><img src="img/musica.png"><input type="checkbox" name="radio-btn4"id="futbol"/></li>
-                    <li><img src="img/musica.png"><input type="checkbox" name="radio-btn5"id="soccer"/></li>
-                    <li><img src="img/musica.png"><input type="checkbox" name="radio-btn6" id="leer"/></li>
-                    <li><img src="img/musica.png"><input type="checkbox" name="radio-btn7"id="correr"/></li>
-                    <li><img src="img/musica.png"><input type="checkbox" name="radio-btn8" id="fumar"/></li>
-                    <li><img src="img/musica.png"><input type="checkbox" name="radio-btn9"id="tomar" /></li>
-                    <li><img src="img/musica.png"><input type="checkbox" name="radio-btn10"id="programar" /></li>
+                    <li><img src="img/viajar.png"><input type="checkbox" name="radio-btn5"id="soccer"/></li>
+                    <li><img src="img/pintar.png"><input type="checkbox" name="radio-btn6" id="leer"/></li>
+                    <li><img src="img/correr.png"><input type="checkbox" name="radio-btn7"id="correr"/></li>
+                    <li><img src="img/soccer.png"><input type="checkbox" name="radio-btn8" id="fumar"/></li>
+                    <li><img src="img/ejercicio.png"><input type="checkbox" name="radio-btn9"id="tomar" /></li>
+                    <li><img src="img/videojuegos.png"><input type="checkbox" name="radio-btn10"id="programar" /></li>
                   </ul>
               
             </div>
@@ -439,8 +460,8 @@
              <h1>Hobbies</h1>
               <ul>
                    
-                    <li><img src="img/pintura.png"></li>
-                    <li><img src="img/pintura.png"></li>
+                    <li><img src="img/pintar.png"></li>
+                    <li><img src="img/ejercicio.png"></li>
                     <li><img src="img/leer.png"></li>
                     <li><img src="img/fotografia.png"></li>
                     
@@ -451,14 +472,26 @@
 
 
 
-
-
-
-
-  <section class="container4">
+<section class="container4">
             <h1>Proyectos</h1>
 
-          <div class="proyectos">
+            <input type="button" value="Editar"class="explode6">
+
+            <div id="editarPro"class="contenido5">
+
+                <div id="agregarP">
+                  <textarea placeholder="Nombre del proyecto"></textarea>
+                  <textarea placeholder="Descripción del proyecto"></textarea>
+                  <textarea placeholder="Enlace"></textarea>
+                  <input type="button"value="Agregar"id="aproyecto">
+
+                </div> 
+
+            </div>
+
+
+
+          <div class="proyectos"id="datosP">
               <div id="NDE">
                 <ul>
                   <li>Nombre</li>
@@ -508,15 +541,23 @@
           </div>
           
  </section>
+
+
     <div class="footer">
   
-          </div
+    </div>
 
 
 
 
 
+<script src="js/jquery.slicknav.js"></script>
 
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#menu').slicknav();
+});
+</script>
 
 
 

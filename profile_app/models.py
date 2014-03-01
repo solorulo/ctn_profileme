@@ -148,9 +148,9 @@ class Hobbie(models.Model):
 # Create your models here.
 class PersonalData(models.Model):
 	"""docstring for PersonalData"""
-	def __init__(self, arg):
-		super(PersonalData, self).__init__()
-		self.arg = arg
+	# def __init__(self, arg):
+	# 	super(PersonalData, self).__init__()
+	# 	self.arg = arg
 
 	user = models.OneToOneField(User, primary_key=True)
 	telefono = models.CharField(max_length=15)
@@ -162,5 +162,3 @@ class PersonalData(models.Model):
 
 	def __unicode__(self):
 		return self.user.username
-
-		
