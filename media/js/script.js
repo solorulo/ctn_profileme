@@ -13,4 +13,7 @@ $(document).ready(function(){
       }
     }
   });
+  $('#redesI').click(function() {
+    window.location = "/login/linkedin/";
+  });
 });

@@ -4,10 +4,11 @@ import os
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+LOGIN_URL='/'
+
 AUTH_PROFILE_MODULE='profile_app.PersonalData'
 LINKEDIN_TOKEN='75jjffqcztuv6i'
 LINKEDIN_SECRET='6ouOGh6oozhhEB8g'
-LOGIN_URL='/login/'
 # Add email to requested authorizations.
 LINKEDIN_SCOPE = ['r_basicprofile', 'r_emailaddress']
 # Add the fields so they will be requested from linkedin.
@@ -27,15 +28,15 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASES = {
-	'default': {
-		'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-		'NAME': 'chokodb',                      # Or path to database file if using sqlite3.
-		# The following settings are not used with sqlite3:
-		'USER': '',
-		'PASSWORD': '',
-		'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-		'PORT': '',                      # Set to empty string for default.
-	}
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'profileme.db',                      # Or path to database file if using sqlite3.
+        # The following settings are not used with sqlite3:
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'PORT': '',                      # Set to empty string for default.
+    }
 }
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
@@ -174,3 +175,11 @@ LOGGING = {
 		},
 	}
 }
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.request',
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug"
+    )

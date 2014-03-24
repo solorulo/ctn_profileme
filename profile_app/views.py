@@ -1,5 +1,6 @@
 ##########
 # from profile_app.forms import *
+from profile_app.forms import UploadFileForm
 from profile_app.models import *
 ##########
 from django.conf import settings
@@ -23,45 +24,6 @@ import oauth2 as oauth
 import random
 import re
 
-# from settings.py
-consumer = oauth.Consumer(settings.LINKEDIN_TOKEN, settings.LINKEDIN_SECRET)
-client = oauth.Client(consumer)
-request_token_url = 'https://api.linkedin.com/uas/oauth/requestToken'
-access_token_url = 'https://api.linkedin.com/uas/oauth/accessToken'
-authenticate_url = 'https://www.linkedin.com/uas/oauth/authenticate'
-
-def oauth_login(request):
-	# Step 0. Get the current hostname and port for the callback
-	if request.META['SERVER_PORT'] == 443:
-		current_server = "https://" + request.META['HTTP_HOST']
-	else:
-		current_server = "http://" + request.META['HTTP_HOST']
-		oauth_callback = current_server + "/login/authenticated"
-	# Step 1. Get a request token from Provider.
-	resp, content = client.request("%s?oauth_callback=%s" % (request_token_url,oauth_callback), "GET")
-	if resp['status'] != '200':
-		raise Exception("Invalid response from Provider.")
-	# Step 2. Store the request token in a session for later use.
-	request.session['request_token'] = dict(cgi.parse_qsl(content))
-	# Step 3. Redirect the user to the authentication URL.
-	url = "%s?oauth_token=%s" % (authenticate_url,
-		request.session['request_token']['oauth_token'])
-	print url
-	return HttpResponseRedirect(url)
-
-# / (requires login)
-@login_required
-def home(request):
-	html = "<html><body>"
-	token = oauth.Token(request.user.get_profile().oauth_token,request.user.get_profile().oauth_secret)
-	client = oauth.Client(consumer,token)
-	headers = {'x-li-format':'json'}
-	url = "http://api.linkedin.com/v1/people/~:(id,first-name,last-name,headline)"
-	resp, content = client.request(url, "GET", headers=headers)
-	profile = json.loads(content)
-	html += profile['firstName'] + " " + profile['lastName'] + "<br/>" + profile['headline']
-	return HttpResponse(html)
-
 # /logout (requires login)
 @login_required
 def oauth_logout(request):
@@ -70,76 +32,101 @@ def oauth_logout(request):
 	auth_logout(request)
 	return HttpResponseRedirect('/')
 
-#/login/authenticated/
-def oauth_authenticated(request):
-	# Step 1. Use the request token in the session to build a new client.
-	token = oauth.Token(request.session['request_token']['oauth_token'],
-		request.session['request_token']['oauth_token_secret'])
-	if 'oauth_verifier' in request.GET:
-		token.set_verifier(request.GET['oauth_verifier'])
-		client = oauth.Client(consumer, token)
-	# Step 2. Request the authorized access token from Provider.
-	resp, content = client.request(access_token_url, "GET")
-	print 'status %s' % resp['status']
-	if resp['status'] != '200':
-		print content
-		raise Exception("Invalid response from Provider.")
-	access_token = dict(cgi.parse_qsl(content))
-	headers = {'x-li-format':'json'}
-	url = "http://api.linkedin.com/v1/people/~:(id,first-name,last-name,industry,picture-url,email-address)"
-	token = oauth.Token(access_token['oauth_token'],
-		access_token['oauth_token_secret'])
-	client = oauth.Client(consumer,token)
-	resp, content = client.request(url, "GET", headers=headers)
-	print content
-	profile = json.loads(content)  
-	# url = "http://api.linkedin.com/v1/people/~/email-address:()" 
-	# resp, content = client.request(url, "GET", headers=headers)
-	# email =  json.loads(content)  
-	print content
-	# Step 3. Lookup the user or create them if they don't exist.
-	firstname = profile['firstName']
-	lastname = profile['lastName']
-	# email = profile['email']
-	identifier = profile['id']
+# / (requires login)
+# @login_required
+# def home(request):
+# 	html = "<html><body>"
+# 	# token = oauth.Token(request.user.get_profile().oauth_token,request.user.get_profile().oauth_secret)
+# 	# client = oauth.Client(consumer,token)
+# 	# headers = {'x-li-format':'json'}
+# 	# url = "http://api.linkedin.com/v1/people/~:(id,first-name,last-name,headline)"
+# 	# resp, content = client.request(url, "GET", headers=headers)
+# 	# profile = json.loads(content)
+# 	# html += profile['firstName'] + " " + profile['lastName'] + "<br/>" + profile['headline']
+# 	user = request.user
+# 	html += user.first_name + " " + user.last_name + "<br/>" + user.email
+# 	return HttpResponse(html)
+
+# Create your views here.
+def index(request):
+	#return HttpResponse("Inicio")
+	if (request.user.is_authenticated()) :
+		return render(request,'perfil.html')
+	return render(request,'inicio.html')
+
+def registro(request):
+	return render(request, 'Registro.html')
+
+def postTest(request):
+	return render(request, 'trabajos.html')
+
+# Register User
+def registerUser(request):
+	if request.method != "POST":
+		return render(request, 'simple_post_response.html', {'response_message': 'invalid_http_method'})
+
+	name = request.POST['name'].strip()
+	lastname = request.POST['lastname'].strip()
+	username = request.POST['email'].strip()
+	email = request.POST['email'].strip()
+	password = request.POST['password'].strip()
+
+	if name == "" or lastname == "" or username == "" or email == "" or password == "":
+		return render(request, 'simple_post_response.html', {'response_message': 'incomplete_data'})
+
+	if request.POST['email'] != request.POST['emailVerif']:
+		return render(request, 'simple_post_response.html', {'response_message': 'email_missmatch'})
+
+	user = User.objects.create_user(
+			first_name=request.POST['name'],
+			last_name=request.POST['lastname'],
+			username=request.POST['email'],
+			email=request.POST['email'],
+			password=request.POST['password'])
+
 	try:
-		user = User.objects.get(username=identifier)
-	except User.DoesNotExist:
-		user = User.objects.create_user(identifier,
-			'%s@linkedin.com' % identifier,
-			access_token['oauth_token_secret'])                 
-		user.first_name = firstname
-		user.last_name = lastname
 		user.save()
-		# Save our permanent token and secret for later.
-		userprofile = PersonalData(user=user,
-			oauth_token=access_token['oauth_token'],
-			oauth_secret=access_token['oauth_token_secret'])
-		# userprofile.user = user
-		# userprofile.oauth_token = access_token['oauth_token']
-		# userprofile.oauth_secret = access_token['oauth_token_secret']
-		userprofile.save()
-	# Authenticate the user and log them in using Django's pre-built
-	# functions for these things.
-	user = authenticate(username=identifier,
-		password=access_token['oauth_token_secret'])
+	except IntegrityError as e:
+		return render(request, 'simple_post_response', {'response_message': 'duplicated_user'})
+
+	user = authenticate(username=request.POST['email'], password=request.POST['password'])
+	if user == None:
+		return render(request, 'simple_post_response.html', {'response_message': 'registration_error'})
 	auth_login(request, user)
-	return HttpResponseRedirect('/')
 
-# class Index(View):
+	return render(request, 'simple_post_response.html', {'response_message': 'ok'})
 
-# 	def get(self, request, *args, **kwargs):
-# 		if not request.user.is_authenticated() :
-# 			return render(request,'inicio.html')
-# 		return render(request,'perfil.html')
+# Create Job Offer
+@login_required
+def createJobOffer(request):
 
-# 	def post(self, request, *args, **kwargs):
-# 		if (not 'user' in request.POST) or (not 'password' in request.POST):
-# 			return 'faltan parametros'
-# 		return render(request,'perfil.html')
+	context = {
+	'response_message':':)'
+	}
 
-# class Jobs(View):
-# 	def get(self, request, *args, **kwargs):
-# 		if not request.user.is_authenticated() :
-# 			return redirect('index')
-# 		return render(request,'trabajos.html')
+	return render(request, 'simple_post_response.html', context)
+
+def uploadUserPhoto(request):
+	file = None
+	fName = None
+
+	for f in request.FILES:
+		fName = f
+
+	file = request.FILES[fName]
+
+	if file == None:
+		return HttpResponseRedirect('/')
+
+	with open('/Users/mkfnx/dev/ctn_profileme/media/' + file.name, 'wb+') as d:
+		for c in file.chunks():
+			d.write(c)
+
+	response = "{'files': [{'name':'newFile.png','size': "+ str(file.size) +",'url': 'http://localhost:8000/media/" + file.name + "','thumbnailUrl':'','deleteUrl':'','deleteType': 'DELETE'}]}"
+
+	pd = PersonalData.objects.create(user=request.user, img="/media/" + file.name)
+	# pd.user = request.user
+	# pd.img = "/media/" + file.name
+	pd.save();
+
+	return HttpResponse(response, content_type="application/json")

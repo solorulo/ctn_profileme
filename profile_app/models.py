@@ -79,12 +79,7 @@ class Educacion(models.Model):
 	titulo = models.ForeignKey(Titulo)
 	persona = models.ForeignKey(User)
 
-class Hobbie(models.Model):
-	"""docstring for Hobbie"""
-	def __init__(self, arg):
-		super(Hobbie, self).__init__()
-		self.arg = arg
-	
+class Hobbie(models.Model):	
 	nombre = models.CharField(max_length=100)
 	foto = models.CharField(max_length=100)
 
@@ -106,5 +101,3 @@ class PersonalData(models.Model):
 
 	def __unicode__(self):
 		return self.user.username
-
-		
