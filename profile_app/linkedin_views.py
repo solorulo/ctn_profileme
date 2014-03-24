@@ -105,6 +105,12 @@ def oauth_authenticated(request):
 	identifier = profile['id']
 	try:
 		user = User.objects.get(username=identifier)
+		# Authenticate the user and log them in using Django's pre-built
+		# functions for these things.
+		user = authenticate(username=identifier,
+			password=access_token['oauth_token_secret'])
+		auth_login(request, user)
+		return HttpResponseRedirect('/')
 	except User.DoesNotExist:
 		user = User.objects.create_user(identifier,
 			email,
@@ -119,10 +125,9 @@ def oauth_authenticated(request):
 		# userprofile.user = user
 		# userprofile.oauth_token = access_token['oauth_token']
 		# userprofile.oauth_secret = access_token['oauth_token_secret']
-		userprofile.save()
-	# Authenticate the user and log them in using Django's pre-built
-	# functions for these things.
-	user = authenticate(username=identifier,
-		password=access_token['oauth_token_secret'])
-	auth_login(request, user)
-	return HttpResponseRedirect('/')
+		userprofile.save()# Authenticate the user and log them in using Django's pre-built
+		# functions for these things.
+		user = authenticate(username=identifier,
+			password=access_token['oauth_token_secret'])
+		auth_login(request, user)
+		return HttpResponseRedirect('/registro')
