@@ -23,6 +23,7 @@ import json
 import oauth2 as oauth
 import random
 import re
+import urllib
 
 # from settings.py
 consumer = oauth.Consumer(settings.LINKEDIN_TOKEN, settings.LINKEDIN_SECRET)
@@ -87,22 +88,39 @@ def oauth_authenticated(request):
 		raise Exception("Invalid response from Provider.")
 	access_token = dict(cgi.parse_qsl(content))
 	headers = {'x-li-format':'json'}
-	url = "http://api.linkedin.com/v1/people/~:(id,first-name,last-name,industry,picture-url,email-address)"
+	url = "http://api.linkedin.com/v1/people/~:(id,first-name,last-name,industry,email-address,courses,phone-numbers,picture-urls::(original))"
 	token = oauth.Token(access_token['oauth_token'],
 		access_token['oauth_token_secret'])
 	client = oauth.Client(consumer,token)
 	resp, content = client.request(url, "GET", headers=headers)
 	print content
 	profile = json.loads(content)  
-	# url = "http://api.linkedin.com/v1/people/~/email-address:()" 
-	# resp, content = client.request(url, "GET", headers=headers)
-	# email =  json.loads(content)  
-	print content
 	# Step 3. Lookup the user or create them if they don't exist.
 	firstname = profile['firstName']
 	lastname = profile['lastName']
 	email = profile['emailAddress']
 	identifier = profile['id']
+	profesion = profile['industry']
+	phoneNumbers = profile['phoneNumbers']
+	phone = None
+	if phoneNumbers['_total'] > 0 :
+		phone = phoneNumbers['values'][0]['phoneNumber']
+		print "phone : "+phone
+
+	cursos = []
+	if 'courses' in profile and profile['courses']['_total'] > 0:
+		__cursos = profile['courses']['values']
+		for curso in __cursos:
+			cursos.append(curso['name'])
+			print "curso : "+curso['name']
+
+	if 'pictureUrls' in profile and profile['pictureUrls']['_total'] > 0:
+		urlImg = profile['pictureUrls']['values'][0]
+		urllib.urlretrieve (urlImg, '/Users/mkfnx/dev/ctn_profileme/media/' + identifier + ".jpg")
+		# url2 = "http://api.linkedin.com/v1/people/~/picture-urls::(original)"
+		# resp2, content2 = client.request(url, "GET", headers=headers)
+		print 'url-img:'+urlImg
+	
 	try:
 		user = User.objects.get(username=identifier)
 		# Authenticate the user and log them in using Django's pre-built

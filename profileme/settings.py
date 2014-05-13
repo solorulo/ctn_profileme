@@ -10,16 +10,19 @@ AUTH_PROFILE_MODULE='profile_app.PersonalData'
 LINKEDIN_TOKEN='75jjffqcztuv6i'
 LINKEDIN_SECRET='6ouOGh6oozhhEB8g'
 # Add email to requested authorizations.
-LINKEDIN_SCOPE = ['r_basicprofile', 'r_emailaddress']
+LINKEDIN_SCOPE = ['r_fullprofile', 'r_emailaddress', 'r_contactinfo']
 # Add the fields so they will be requested from linkedin.
-LINKEDIN_EXTRA_FIELD_SELECTORS = ['email-address', 'headline', 'industry']
+LINKEDIN_EXTRA_FIELD_SELECTORS = ['email-address', 'headline', 'industry', 'skills', 'courses', 'phone-numbers']
 # Arrange to add the fields to UserSocialAuth.extra_data
 LINKEDIN_EXTRA_DATA = [('id', 'id'),
 					   ('first-name', 'first_name'),
 					   ('last-name', 'last_name'),
 					   ('email-address', 'email_address'),
 					   ('headline', 'headline'),
-					   ('industry', 'industry')]
+					   ('industry', 'industry'),
+					   ('skills', 'skills'),
+					   ('courses', 'courses'),
+					   ('phone-numbers', 'phone-numbers') ]
 
 ADMINS = (
 	# ('Your Name', 'your_email@example.com'),
