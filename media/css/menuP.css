@@ -89,7 +89,7 @@ nav>ul>li:nth-child(4)>#buscar{
 
 .container1{
     position: relative;
-    background-color:white;
+    background-color:transparent;
     height: 60vh;
     max-height: 100vh;
     width: auto; 
@@ -111,22 +111,24 @@ nav>ul>li:nth-child(4)>#buscar{
 
 
 /*boton de editar*/
-.container1>input{
+#datos1>input{
     position:absolute;
-    top: 30%;
-    right: 6%;
+    top: 3%;
+    right: -28%;
     background-color:#459fff;
     color:white;
     border: 1px solid #459fff;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+    z-index: 2222;
     display: block;
 }
 
 
-.container1>input:hover{
+#datos1>input:hover{
     background: #ff738f;
+    border: 1px solid #ff738f;
     position:absolute;
 }
 
@@ -138,6 +140,19 @@ nav>ul>li:nth-child(4)>#buscar{
     width: 40%;
     height: 60%; 
     display: none;    
+}
+#camposD>img{
+    position: absolute;
+    top:-16%;
+    left:-52%;
+    width:34%;
+    height:74%;
+    background: white;
+    -webkit-border-radius: 300px;
+    -moz-border-radius: 300px;
+    border-radius: 300px;
+    border:solid 2px #cccccc;;
+        
 }
 #camposD>input:nth-child(1){
     position: absolute;
@@ -225,24 +240,24 @@ nav>ul>li:nth-child(4)>#buscar{
     -moz-border-radius: 8px;
     border-radius: 8px;   
 }
-/*imagen de perfil*/
-.container1>#fperfil{
+#camposD>input:nth-child(8){
     position: absolute;
-    top:25%;
-    left: 12%;
-    width:12%;
-    height: 40%;
-    -webkit-border-radius: 300px;
-    -moz-border-radius: 300px;
-    border-radius: 300px;
+    top:2%;
+    right:-45%;
+    background-color:#459fff;
+    color:white;
+    width:15%;
+    border: 1px solid #459fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+#camposD>input:nth-child(8):hover{
+    background: #ff738f;
+    border: 1px solid #ff738f;
 
 }
-.container1>#fperfil>img{
-    -webkit-border-radius: 300px;
-    -moz-border-radius: 300px;
-    border-radius: 300px;
-}
-/*especialidad o campo de trabajo*/
+
 
 /*Nombre,campo de trabajo,edad*/
 .container1>#datos1{
@@ -252,6 +267,28 @@ nav>ul>li:nth-child(4)>#buscar{
     width: 50%;
     height: 60%;
 }
+/*imagen de perfil*/
+.container1>#datos1>#fperfil{
+    position: absolute;
+    top:-16%;
+    left:-36%;
+    width:27%;
+    height:74%;
+    background: white;
+    -webkit-border-radius: 300px;
+    -moz-border-radius: 300px;
+    border-radius: 300px;
+    border:solid 2px #cccccc;;
+
+}
+.container1>#datos1>#fperfil>img{
+    height: 100%;
+    width: 100%;
+    -webkit-border-radius: 300px;
+    -moz-border-radius: 300px;
+    border-radius: 300px;
+}
+/*especialidad o campo de trabajo*/
 
 #nombre{
     position: absolute;
@@ -361,17 +398,10 @@ nav>ul>li:nth-child(4)>#buscar{
 
 
 
-
-
-
-
-
-
-
 /*graficas */
 .container2{
     position: relative;
-    background-color:white;
+    background-color:transparent;
     height: 70vh;
     max-height: 100vh;
     width: auto; 
@@ -414,14 +444,23 @@ nav>ul>li:nth-child(4)>#buscar{
     background: #ff738f;
     position:absolute;  
 }
-
+.chabilidades>input{
+    position: absolute;
+    top:-10%;
+    right:-1%;
+    background-color:#459fff;
+    color:white;
+    border: 1px solid #459fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
 .chabilidades{
     position:absolute;
     top:13%;
     left: 4%;
     width: 45%;
     height: 80%;
-    background: white;
     border:solid 1px #cccccc; 
     z-index:3;
     -webkit-border-radius: 8px;
@@ -443,6 +482,24 @@ nav>ul>li:nth-child(4)>#buscar{
     border-top-left-radius: 8px;
 
 }
+.chabilidades>#Totalh>#links>.dynamic-link{
+    cursor:pointer;
+    color: #ff738f;
+    font-family: arial;
+    font-size: 15px;
+    padding:15px;
+    margin:5px 0;
+    border-bottom: solid 1px #459fff; 
+}
+.borrar{
+    margin-left:95%;
+    background:red;
+    width:4%;
+    height:100%;
+    color:white;
+    border-radius:20px;
+    border: solid 0px;
+}
 .chabilidades>.Nhabilidad{
     position: absolute;
     bottom: 0%;
@@ -455,13 +512,20 @@ nav>ul>li:nth-child(4)>#buscar{
     background:#459fff;
 
 }
-.chabilidades>.Nhabilidad>input:nth-child(1){
+.Nhabilidad>#slider>.generate{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    top: 5%;
+}
+.Nhabilidad>#slider>.generate>input:nth-child(1){
     position:absolute;
     top:30%;
     left:2%;
     border:solid 1px #cccccc;
-    width:30%;
-    height:40%;
+    width:33%;
+    height:50%;
+    padding-left:2%;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     border-radius: 8px;
@@ -469,11 +533,11 @@ nav>ul>li:nth-child(4)>#buscar{
 
 }
 /*boton agregar habilidad*/
-.chabilidades>.Nhabilidad>input:nth-child(2){
+.Nhabilidad>#slider>.generate>input:nth-child(2){
     position:absolute;
-    top:25%;
-    right:10%;
-    height:50%;
+    top:30%;
+    right:4%;
+    height:60%;
     width:20%;
     background:rgba(255,255,255,0.6);
     color:#459fff;
@@ -487,13 +551,22 @@ nav>ul>li:nth-child(4)>#buscar{
     background:rgba(255,255,255,0.9);
     
 }
-
-.chabilidades>.Nhabilidad>#slider{
+.chabilidades>.Nhabilidad>#slider>.generate>input[type="range"]{
     position: absolute;
-    top:30%;
-    left:37%;
-  
+    background: blue;
+    left: 40%;
+    top: 40%;
 }
+
+.chabilidades>.Nhabilidad>#slider>.generate>.num1{
+    position: absolute;
+    margin-left:66%;
+    margin-top: 3%;
+    color:white;
+}
+
+
+
 
 
 .chabilidades>input:nth-child(1){
@@ -525,7 +598,7 @@ nav>ul>li:nth-child(4)>#buscar{
     -moz-border-radius: 10px;
     border-radius: 10px;
     display: block;
-    z-index: 6000;
+    z-index: 6;
 }
 
 .container2>.herramientas>input:hover{
@@ -546,6 +619,18 @@ nav>ul>li:nth-child(4)>#buscar{
     border-radius: 8px;
     display: none;
 }
+
+.cherramientas>input{
+    position: absolute;
+    top:-10%;
+    right:-1%;
+    background-color:#459fff;
+    color:white;
+    border: 1px solid #459fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
 .cherramientas>#Totalhe{
     position: absolute;
     top:0%;
@@ -560,6 +645,15 @@ nav>ul>li:nth-child(4)>#buscar{
     border-top-left-radius: 8px;
 
 }
+.cherramientas>#Totalhe>#h>.lista{
+    cursor:pointer;
+    color: #459fff;
+    font-family: arial;
+    font-size: 15px;
+    padding:15px;
+    margin:5px 0;
+    border-bottom: solid 1px #459fff; 
+}
 .cherramientas>.Nherramientas{
     position: absolute;
     bottom: 0%;
@@ -572,12 +666,20 @@ nav>ul>li:nth-child(4)>#buscar{
     background:#ff738f;
 
 }
-.cherramientas>.Nherramientas>input:nth-child(1){
+.cherramientas>.Nherramientas>#slider2{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    top:7%;
+    left:0%;
+}
+.cherramientas>.Nherramientas>#slider2>.formulario2>input:nth-child(1){
     position:absolute;
     top:25%;
     left:2%;
-    width:30%;
-    height:40%;
+    width:33%;
+    height:50%;
+    padding-left:2%;
     border:solid 1px #cccccc;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -585,11 +687,11 @@ nav>ul>li:nth-child(4)>#buscar{
 
 }
 /*boton agregar habilidad*/
-.cherramientas>.Nherramientas>input:nth-child(2){
+.cherramientas>.Nherramientas>#slider2>.formulario2>input:nth-child(2){
     position:absolute;
     top:25%;
-    right:10%;
-    height:50%;
+    right:4%;
+    height:60%;
     width:20%;
     background:rgba(255,255,255,0.6);
     color:#ff738f;
@@ -604,14 +706,19 @@ nav>ul>li:nth-child(4)>#buscar{
     
 }
 
-.cherramientas>.Nherramientas>#slider2{
+
+.cherramientas>.Nherramientas>#slider2>.formulario2>input[type="range"]{
     position: absolute;
-    top:30%;
-    left:37%;
-      
+    left:40%;
+    top:40%;
 }
-.cherramientas>.Nherramientas>#slider2>input[type="range"]{
-    background: blue;
+
+.cherramientas>.Nherramientas>#slider2>.formulario2>.num2{
+    position: absolute;
+    margin-left:66%;
+    margin-top: 3%;
+    color:white;
+
 }
 
 .cherramientas>input:nth-child(1){
@@ -625,26 +732,17 @@ nav>ul>li:nth-child(4)>#buscar{
 
 
 
-
-
-
-
-
-
-
-
-
 /*hobbies que le gustan al usuario*/
 .container3{
     position: relative;
-    background-color:white;
+    background-color:transparent;
     height: 50vh;
-     max-height: 100vh;
-     width: auto; 
-     min-width: 100vw; 
-     margin-top: 0%;
-     margin-left:0%;
-     overflow: hidden;
+    max-height: 100vh;
+    width: auto; 
+    min-width: 100vw; 
+    margin-top: 0%;
+    margin-left:0%;
+    overflow: hidden;
 }
 .container3>hr{
     position: absolute;
@@ -665,11 +763,11 @@ nav>ul>li:nth-child(4)>#buscar{
 } 
 .container3>.escolaridad>input{
     position:absolute;
-    top: 10%;
+    top: -10%;
     right: 0%;
     background-color:#459fff;
     color:white;
-    z-index:3333333;
+    z-index:3;
     border: 1px solid #459fff;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -687,17 +785,35 @@ nav>ul>li:nth-child(4)>#buscar{
     left: 10%;   
     color:#459fff;  
 }
-.container3>.escolaridad>#contenido4{
+#contenido4{
     position:absolute;
-    background:white;
-    top:8%;
-    right:0%;
+    background:transparent;
+    top:10%;
+    left:54%;
     display: none;
-    width: 100%;
-    height: 90%;
+    width: 40%;
+    height: 65%;
     z-index: 30;
+    border-left:2px solid #459fff
 }
-.container3>.escolaridad>#contenido4>select{
+#contenido4>input{
+    position: absolute;
+    right:-8%;
+    top:-10%;
+    background-color:#459fff;
+    color:white;
+    z-index:3333333;
+    border: 1px solid #459fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#contenido4>input:hover{
+    background: #ff738f;
+}
+
+#contenido4>select{
     position:absolute;
     top:34%;
     left:10%;
@@ -708,7 +824,7 @@ nav>ul>li:nth-child(4)>#buscar{
     background:white;
    
   }
-  .container3>.escolaridad>#contenido4>#carrera{
+#contenido4>#carrera{
     position:absolute;
     top:10%;
     right:10%;
@@ -723,7 +839,7 @@ nav>ul>li:nth-child(4)>#buscar{
    
     border-radius: 8px;
 }
-.container3>.escolaridad>#contenido4>#certificaciones{
+#contenido4>#certificaciones{
     position:absolute;
     top:50%;
     right:10%;
@@ -772,12 +888,13 @@ nav>ul>li:nth-child(4)>#buscar{
     top: 10%;
     width: 43%;
     height: 63%;
+    z-index:1;
 
 }
 
 .container3>#hobbies>input{
     position:absolute;
-    top: 10%;
+    top: -10%;
     right: 0%;
     background-color:#459fff;
     color:white;
@@ -794,28 +911,51 @@ nav>ul>li:nth-child(4)>#buscar{
     background: #ff738f;
     position:absolute;
 }
-
-.container3>#hobbies>#contenido3{
+.EditH{
     position:absolute;
-    top:25%;
-    left:5%;
+    width: 45%;
+    height:70%;
+    left:8%;
+    top:0%;
+    display: none;
+    background:transparent;
+}
+
+.EditH>#contenido3{
+    position:absolute;
     background: white;
     width: 100%;
     height: 70%;
+    top:30%;
     border:solid 1px #cccccc; 
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-    display: none;
     overflow: scroll;
-    z-index: 30;
+    z-index:3;
 }
 
-.container3>#hobbies>#contenido3>ul{
+.EditH>#btnG{
+    position: absolute;
+    top:5%;
+    right:2%;
+    background-color:#459fff;
+    color:white;
+    border:1px solid #459fff;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    z-index:3;
+}
+.EditH>#btnG:hover{
+    background: #ff738f;
+}
+
+.EditH>#contenido3>ul{
     margin: auto;
 }
 
-.container3>#hobbies>#contenido3>ul>li:nth-child(1){
+.EditH>#contenido3>ul>li:nth-child(1){
     position: absolute;
     left:3%;
     top:20%;
@@ -823,100 +963,98 @@ nav>ul>li:nth-child(4)>#buscar{
     padding-right: 50px;
 }
 
-.container3>#hobbies>#contenido3>ul>li>#musica{
+.EditH>#contenido3>ul>li>#musica{
     position: absolute;
     left:60%;
     top:0%;
     width:10%;
  }
     
-
-
-.container3>#hobbies>#contenido3>ul>li:nth-child(2){
+.EditH>#contenido3>ul>li:nth-child(2){
     position: absolute;
     top:20%;
     left:28%;
     display: inline-block;
     padding-right: 50px;
 }
-.container3>#hobbies>#contenido3>ul>li>#pintura{
+.EditH>#contenido3>ul>li>#pintura{
     position: absolute;
     left:60%;
     top:0%;
    }
-.container3>#hobbies>#contenido3>ul>li:nth-child(3){
+.EditH>#contenido3>ul>li:nth-child(3){
     position: absolute;
     top:20%;
     left:53%;
     display: inline-block;
     padding-right: 50px;
 }
-.container3>#hobbies>#contenido3>ul>li>#gym{
+.EditH>#contenido3>ul>li>#gym{
     position: absolute;
     left:60%;
     top:0%;
     }
-.container3>#hobbies>#contenido3>ul>li:nth-child(4){
+.EditH>#contenido3>ul>li:nth-child(4){
     position: absolute;
     top:20%;
     left:78%;
     display: inline-block;
     padding-right: 50px;
 }
-.container3>#hobbies>#contenido3>ul>li>#futbol{
+.EditH>#contenido3>ul>li>#futbol{
     position: absolute;
     left:60%;
     top:0%;
 }
-.container3>#hobbies>#contenido3>ul>li:nth-child(5){
+.EditH>#contenido3>ul>li:nth-child(5){
     position: absolute;
     top:20%;
     left:103%;
     display: inline-block;
     padding-right: 50px;
 }
-.container3>#hobbies>#contenido3>ul>li>#soccer{
+.EditH>#contenido3>ul>li>#soccer{
     position: absolute;
     left:140%;
     top:0%;
 }
-.container3>#hobbies>#contenido3>ul>li:nth-child(6){
+.EditH>#contenido3>ul>li:nth-child(6){
     position: absolute;
     top:20%;
     left:128%;
     display: inline-block;
     padding-right: 50px;
 }
-.container3>#hobbies>#contenido3>ul>li>#leer{
+.EditH>#contenido3>ul>li>#leer{
     position: absolute;
     left:140%;
     top:0%;
 }
-.container3>#hobbies>#contenido3>ul>li:nth-child(7){
+.EditH>#contenido3>ul>li:nth-child(7){
     position: absolute;
     top:20%;
     left:153%;
     display: inline-block;
     padding-right: 50px;
 }
-.container3>#hobbies>#contenido3>ul>li>#correr{
+.EditH>#contenido3>ul>li>#correr{
     position: absolute;
     left:140%;
     top:0%;
 }
-.container3>#hobbies>#contenido3>ul>li:nth-child(8){
+.EditH>#contenido3>ul>li:nth-child(8){
     position: absolute;
     top:20%;
     left:178%;
     display: inline-block;
     padding-right: 50px;
 }
-.container3>#hobbies>#contenido3>ul>li>#fumar{
+.EditH>#contenido3>ul>li>#fumar{
     position: absolute;
     left:140%;
     top:0%;
 }
-.container3>#hobbies>#contenido3>ul>li:nth-child(9){
+.EditH>#contenido3>ul>li:nth-child(9){
     position: absolute;
     top:20%;
     left:203%;
@@ -925,24 +1063,25 @@ nav>ul>li:nth-child(4)>#buscar{
     height: auto;
     padding-right: 50px;
 }
-.container3>#hobbies>#contenido3>ul>li>#tomar{
+.EditH>#contenido3>ul>li>#tomar{
     position: absolute;
     left:60%;
     top:0%;
 }
-.container3>#hobbies>#contenido3>ul>li:nth-child(10){
+.EditH>#contenido3>ul>li:nth-child(10){
     position: absolute;
     top:20%;
     left:228%;
     display: inline-block;
     padding-right: 50px;
 }
-.container3>#hobbies>#contenido3>ul>li>#programar{
+.EditH>#contenido3>ul>li>#programar{
     position: absolute;
     left:140%;
     padding-left:10%;
     top:0%;
 }
+
 .container3>#hobbies>#contenido3>ul{
 
     margin: auto;
@@ -991,27 +1130,38 @@ nav>ul>li:nth-child(4)>#buscar{
 /*proyectos*/
 .container4{
     position: relative;
-    background-color:white;
-    height: 60vh;
+    background-color:transparent;
+    height: 100vh;
     max-height: 100vh;
     width: auto; 
     min-width: 100vw; 
     margin-top: 0%;
     margin-left:0%;
     overflow: hidden;
-
+}
+.borrar2{
+    margin-left:95%;
+    background:red;
+    width:2.5%;
+    height:100%;
+    color:white;
+    border-radius:20px;
+    border: solid 0px;
 }
 
-.container4>input{
+
+
+#datosP>input{
     position:absolute;
-    top:0%;
-    right:6%;
+    top:-15%;
+    right:1%;
     background-color:#459fff;
     color:white;
     border: 1px solid #459fff;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+    z-index: 2222;
     display: block;
 }
 .container4>#editarPro{
@@ -1020,7 +1170,7 @@ nav>ul>li:nth-child(4)>#buscar{
     width:85%;
     z-index:222222;
     display:none;
-    height:100%;
+    height:60%;
     left:8%;
     top:20%; 
     border:solid 1px #459fff;
@@ -1028,11 +1178,49 @@ nav>ul>li:nth-child(4)>#buscar{
     -moz-border-radius: 10px;
     border-radius: 10px; 
 }
+.container4>#editarPro>#listaproyectos{
+    position: relative;
+    top:0%;
+    left:0%;
+    width: 100%;
+    height:80%;
+    display: inline-block;
+    overflow: scroll;
+    z-index: 3;
+    background:transparent;
+    -webkit-border-top-right-radius: 8px;
+    -webkit-border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+.container4>#editarPro>#listaproyectos>#p>.proyecto{
+    cursor:pointer;
+    color: #459fff;
+    font-family: arial;
+    font-size: 15px;
+    padding:15px;
+    margin:5px 0;
+    border-bottom: solid 1px #459fff; 
+}
+.container4>#editarPro>input{
+    position:absolute;
+    top:-15%;
+    right:1%;
+    background-color:#459fff;
+    color:white;
+    border: 1px solid #459fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 2222;
+    display: block;
 
-#agregarP{
+}
+
+.formulario3{
     position: absolute;
     background:  #459fff;
-    bottom:20%;
+    bottom:0%;
     left:0%;
     z-index:22222;
     -webkit-border-bottom-left-radius: 10px;
@@ -1046,13 +1234,13 @@ nav>ul>li:nth-child(4)>#buscar{
 }
 
 
-#agregarP>textarea:nth-child(1){
+.formulario3>textarea:nth-child(1){
     position: absolute;
-    left: 5%;
+    left: 3%;
     top: 30%;
-    width:17%;
+    width:19%;
     height:25%;
-    padding-left:3%;
+    padding-left:1%;
     padding-top: 1%;
     border: solid 1px #cccccc;
     -webkit-border-radius: 10px;
@@ -1061,13 +1249,13 @@ nav>ul>li:nth-child(4)>#buscar{
     
 }
 
-#agregarP>textarea:nth-child(2){
+.formulario3>textarea:nth-child(2){
     position: absolute;
-    left: 28%;
+    left: 26%;
     top: 30%;
-    width:17%;
+    width:19%;
     height:25%;
-    padding-left:3%;
+    padding-left:1%;
     padding-top: 1%;
     border: solid 1px #cccccc;
     -webkit-border-radius: 10px;
@@ -1075,13 +1263,13 @@ nav>ul>li:nth-child(4)>#buscar{
     border-radius: 10px; 
 
 }
-#agregarP>textarea:nth-child(3){
+.formulario3>textarea:nth-child(3){
     position: absolute;
-    left: 51%;
+    left: 49%;
     top: 30%;
-    width:17%;
+    width:19%;
     height:25%;
-    padding-left:3%;
+    padding-left:1%;
     padding-top: 1%;
     border: solid 1px #cccccc;
     -webkit-border-radius: 10px;
@@ -1106,9 +1294,9 @@ nav>ul>li:nth-child(4)>#buscar{
 .container4>.proyectos{
     position: absolute;
     background:white;
-    width:85%;
-    height:100%;
-    left:8%;
+    width:90%;
+    height:70%;
+    left:5%;
     top:20%;
     border:solid 1px #459fff;
     -webkit-border-radius: 10px;
@@ -1169,7 +1357,7 @@ nav>ul>li:nth-child(4)>#buscar{
     position: absolute;
     font-style: bold;
     font-size:20px;
-    border-bottom:2px solid #459fff ;
+    border-bottom:2px solid #459fff;
     right:8%;
     top: 30%;  
 }
@@ -1358,9 +1546,22 @@ nav>ul>li:nth-child(4)>#buscar{
         right: 3%;
         top:2%;
         z-index: 5000;
+    }
+    .container1{
+        background: red;
+    }
 
-       
-
+    #camposD>img{
+        position: absolute;
+        top:-16%;
+        left:-58%;
+        width:44%;
+        height:74%;
+        background: white;
+        -webkit-border-radius: 300px;
+        -moz-border-radius: 300px;
+        border-radius: 300px;
+        border:solid 2px #cccccc;
     }
 
     .container1>hr{
@@ -1370,6 +1571,18 @@ nav>ul>li:nth-child(4)>#buscar{
         top:90%;
         border:solid 1px #459fff;
 
+    }
+    .container1>#datos1>#fperfil{
+        position: absolute;
+        top:-16%;
+        left:-40%;
+        width:35%;
+        height:74%;
+        background: white;
+        -webkit-border-radius: 300px;
+        -moz-border-radius: 300px;
+        border-radius: 300px;
+        border:solid 2px #cccccc;;
     }
 
     /*boton de editar*/
@@ -1383,9 +1596,7 @@ nav>ul>li:nth-child(4)>#buscar{
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         border-radius: 10px;
-        display: block;
-
-
+        display: block; 
     }
 
     .container1>input:hover{
@@ -1483,10 +1694,6 @@ nav>ul>li:nth-child(4)>#buscar{
         top:25%;
         left: 10%;
         width:20%;
-        -webkit-border-radius: 500px;
-        -moz-border-radius: 500px;
-        border-radius: 500px;
-
     }
 
     .container1>#fperfil>img{
@@ -1494,43 +1701,62 @@ nav>ul>li:nth-child(4)>#buscar{
         height: 150px;
         
     }
-
-
-
-
-
-    /*fin de los datos personales*/
-    .container2{
-        position: relative;
-        background-color:white;
-        height: 70vh;
-        max-height: 100vh;
-        width: auto; 
-        min-width: 100vw; 
-        margin: 0 auto;
-        overflow: hidden; 
+    .borrar{
+        margin-left:95%;
+        background:red;
+        width:6%;
+        height:100%;
+        color:white;
+        border-radius:20px;
+        border: solid 0px;
     }
 
-
-  
-    .chabilidades>.Nhabilidad>input:nth-child(2){
+    .Nhabilidad>#slider>.generate>input:nth-child(1){
         position:absolute;
-        top:25%;
-        right:7%;
+        top:30%;
+        left:2%;
+        width:30%;
         height:50%;
-        width:15%;
-        color:#459fff;
-        border:0px;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        border-radius: 4px;
     }
-    .cherramientas>.Nherramientas>input:nth-child(2){
+    /*boton agregar habilidad*/
+    .Nhabilidad>#slider>.generate>input:nth-child(2){
+        position:absolute;
+        top:30%;
+        right:2%;    
+    }
+
+    .chabilidades>.Nhabilidad>#slider>.generate>input[type="range"]{
+        position: absolute;
+        background: blue;
+        left: 35%;
+        top: 40%;
+    }
+
+    .chabilidades>.Nhabilidad>#slider>.generate>.num1{
+        position: absolute;
+        margin-left:69%;
+        margin-top: 4%;
+    }
+    .cherramientas>.Nherramientas>#slider2>.formulario2>input:nth-child(1){
         position:absolute;
         top:25%;
-        right:7%;
+        left:2%;
+        width:30%;
         height:50%;
-        width:15%;
+        padding-left:2%;
+        border:solid 1px #cccccc;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+
+    }
+    /*boton agregar habilidad*/
+    .cherramientas>.Nherramientas>#slider2>.formulario2>input:nth-child(2){
+        position:absolute;
+        top:25%;
+        right:2%;
+        height:60%;
+        width:20%;
         background:rgba(255,255,255,0.6);
         color:#ff738f;
         border:0px;
@@ -1538,23 +1764,26 @@ nav>ul>li:nth-child(4)>#buscar{
         -moz-border-radius: 4px;
         border-radius: 4px;
     }
-    .chabilidades>.Nhabilidad>#slider{
+    .cherramientas>.Nherramientas>input:hover:nth-child(2){
+       
+        background:rgba(255,255,255,0.9);
+        
+    }
+
+
+    .cherramientas>.Nherramientas>#slider2>.formulario2>input[type="range"]{
         position: absolute;
-        top:30%;
         left:35%;
-  
+        top:40%;
     }
-    .cherramientas>.Nherramientas>#slider2{
+
+    .cherramientas>.Nherramientas>#slider2>.formulario2>.num2{
         position: absolute;
-        top:30%;
-        left:35%;  
+        margin-left:69%;
+        margin-top: 4%;
+        color:white;
+
     }
-
-
-
-
-
-
 
     .container3{
         position: relative;
@@ -1686,11 +1915,6 @@ nav>ul>li:nth-child(4)>#buscar{
         display: inline-block;
         padding-right: 50px;
     }
-
-
-
-
-
 
     .container3>#hobbies>#contenido3>ul{
         margin: auto;
@@ -1874,6 +2098,47 @@ nav>ul>li:nth-child(4)>#buscar{
     .container4>.proyectos>#proyecto>ul>li:nth-child(3){
         font-size:12px;
     
+    }
+    .formulario3>textarea:nth-child(1){
+        position: absolute;
+        left: 2%;
+        top: 30%;
+        width:22%;
+        height:25%;
+        padding-left:1%;
+        padding-top: 1%;
+        border: solid 1px #cccccc;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px; 
+    }
+
+    .formulario3>textarea:nth-child(2){
+        position: absolute;
+        left: 29%;
+        top: 30%;
+        width:20%;
+        height:27%;
+        padding-left:1%;
+        padding-top: 1%;
+        border: solid 1px #cccccc;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px; 
+    }
+    .formulario3>textarea:nth-child(3){
+        position: absolute;
+        left: 55%;
+        top: 30%;
+        width:20%;
+        height:27%;
+        padding-left:1%;
+        padding-top: 1%;
+        border: solid 1px #cccccc;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px; 
+
     }
 
 }
@@ -2249,309 +2514,975 @@ nav>ul>li:nth-child(4)>#buscar{
 
 
 @media handheld, only screen and (max-width: 480px) {
-  .container1{
-    position: relative;
-    background-color:white;
-    height: 60vh;
-    max-height: 100vh;
-    width: auto; 
-    min-width: 100vw; 
-    margin-top: 10px;
-    margin-left:0%;
-    overflow: hidden; 
+      .container1{
+        position: relative;
+        background-color:transparent;
+        height: 60vh;
+        max-height: 100vh;
+        width: auto; 
+        min-width: 100vw; 
+        margin-top: 10px;
+        margin-left:0%;
+        overflow: hidden; 
 
 
-}
-.container1>hr{
-    position: absolute;
-    width:85%;
-    left:8%;
-    top:90%;
-    border:solid 1px #459fff;
+    }
+    .container1>hr{
+        position: absolute;
+        width:85%;
+        left:8%;
+        top:90%;
+        border:solid 1px #459fff;
 
-}
+    }
 
-
-/*boton de editar*/
-.container1>input{
-    position:absolute;
-    top: 3%;
-    right: 4%;
-    background-color:#459fff;
-    color:white;
-    border: 1px solid #459fff;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    display: block;
-}
-
-
-.container1>input:hover{
-    background: #ff738f;
-    position:absolute;
-}
-
-/*campos editables*/
-#camposD{
-    position: absolute;
-    left: 33%;
-    top: 30%;
-    width: 40%;
-    height: 60%; 
-    display: none;    
-}
-#camposD>input:nth-child(1){
-    position: absolute;
-    left: 2%;
-    top: -2%;
-    width:40%;
-    height:15%;
-    padding-left: 2%;
-    border:solid 1px #cccccc;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;   
-}
-#camposD>input:nth-child(2){
-    position: absolute;
-    left: 2%;
-    top: 25%;
-    width:40%;
-    height:15%;
-    padding-left: 2%;
-    border:solid 1px #cccccc;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;   
-}
-
-#camposD>input:nth-child(3){
-    position: absolute;
-    left: 2%;
-    top: 50%;
-    width:40%;
-    height:15%;
-    padding-left: 2%;
-    border:solid 1px #cccccc;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;   
-}
-
-#camposD>input:nth-child(4){
-    position: absolute;
-    left: 65%;
-    top: -2%;
-    width:40%;
-    height:15%;
-    padding-left: 2%;
-    border:solid 1px #cccccc;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;   
-}
-#camposD>input:nth-child(5){
-    position: absolute;
-    left: 65%;
-    top: 25%;
-    width:40%;
-    height:15%;
-    padding-left: 2%;
-    border:solid 1px #cccccc;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;   
-}
-#camposD>input:nth-child(6){
-    position: absolute;
-    left: 65%;
-    top: 50%;
-    width:40%;
-    height:15%;
-    padding-left: 2%;
-    border:solid 1px #cccccc;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;   
-}
-#camposD>input:nth-child(7){
-    position: absolute;
-    top:70%;
-    left:-45%;
-    width:25%;
-    height:15%;
-    padding-left: 2%;
-    border:solid 1px #cccccc;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;   
-}
-/*imagen de perfil*/
-.container1>#fperfil{
-    position: absolute;
-    top:%;
-    left: 3%;
-    width:50%;
-    height:56%;
-    -webkit-border-radius: 300px;
-    -moz-border-radius: 300px;
-    border-radius: 300px;
-
-}
-.container1>#fperfil>img{
-    width:70%;
-    height:80%;
-    -webkit-border-radius: 300px;
-    -moz-border-radius: 300px;
-    border-radius: 300px;
-}
-/*especialidad o campo de trabajo*/
-
-/*Nombre,campo de trabajo,edad*/
-.container1>#datos1{
-    position: absolute;
-    top:10%;
-    left: 50%;
-    width: 40%;
-    height: 68%;
-}
-
-#nombre{
-    position: absolute;
-    top:2%;
-    left:3%; 
-    font-size:100%; 
-    color:#6E6E6E;
-}
-#profesion{
-    position: absolute;
-    top:20%;
-    left:3%;  
-    font-size:100%; 
-    color:#6E6E6E;
-}
-#edad{
-    position: absolute;
-    top:37%;
-    left:3%;
-    font-size:100%;
-    color:#6E6E6E; 
-}
-
-#numero{
-    position: absolute;
-    top:55%;
-    left:3%;  
-    font-size:100%; 
-    color:#6E6E6E;
-}
-#correo{
-    position: absolute;
-    top:73%;
-    left:3%; 
-    font-size:100%;
-    color:#6E6E6E;  
-}
-#trabajo{
-    position: absolute;
-    top:90%;
-    left:3%;   
-    font-size:100%;
-    color:#6E6E6E;
-}
-#live{
-    position: absolute;
-    top:110%;
-    left:3%;
-    font-size:100%;
-    color:#6E6E6E;
-}
-/*telefono,correo electronico,trabajo actual */
-
-.container1>#datos2{
-    position: absolute;
-    top:10%;
-    left: 43%; 
-    width: 8%;
-    height: 60%;  
- }
-#numero1{
-    position: absolute;
-    top:60%;
-    left:0%;   
-}
-#correo1{
-    position: absolute;
-    top:80%;
-    left:0%;   
-}
-#trabajo1{
-    position: absolute;
-    top:100%;
-    left:0%;   
-}
-#nombre1{
-    position: absolute;
-    top:0%;
-    left:0%;   
-}
-#profesion1{
-    position: absolute;
-    top:20%;
-    left:0%;   
-}
-#edad1{
-    position: absolute;
-    top:40%;
-    left:0%;   
-}
-#pais{
-    position: absolute;
-    top:120%;
-    left:0%;
-    font-size:100%;
-    color:#6E6E6E;
-}
-
-/*graficas */
-.container2{
-    position: relative;
-    background-color:white;
-    height: 125vh;
-    max-height: 200vh;
-    width: auto; 
-    min-width: 100vw; 
-    margin: 0 auto;
-    overflow: hidden; 
-}
-.container2>#habilidades{
-    position: absolute;
-    top: 0%;
-    left: 18%;
-    width: 40%;
-    height: auto;
-    z-index:2;
-}
-/*grafica2 */
-.container2>.herramientas{
-    position: absolute;
-    top: 50%;
-    left: 6%;
-    width: 40%;
-    height: auto;
-} 
-.container2>#habilidades>input{
-    position:absolute;
-    top: 1%;
-    right: -80%;
-  
-}
+    #datos1>input{
+        position:absolute;
+        top:-10%;
+        right:-9%;
+        background-color:#459fff;
+        color:white;
+        border: 1px solid #459fff;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        z-index: 2222;
+        display: block;
+    }
 
 
+    /*boton de editar*/
+    .container1>input{
+        position:absolute;
+        top: 3%;
+        right: 4%;
+        background-color:#459fff;
+        color:white;
+        border: 1px solid #459fff;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        display: block;
+    }
 
 
-/*fin de los datos personales*/
+    .container1>input:hover{
+        background: #ff738f;
+        position:absolute;
+    }
+
+    /*campos editables*/
+    #camposD{
+        position: absolute;
+        left: 33%;
+        top: 30%;
+        width: 40%;
+        height: 60%; 
+        display: none;    
+    }
+
+    #camposD>input:nth-child(1){
+        position: absolute;
+        left:45%;
+        top: -35%;
+        width:90%;
+        height:12%;
+        padding-left: 2%;
+        border:solid 1px #cccccc;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;   
+    }
+    #camposD>input:nth-child(2){
+        position: absolute;
+        left: 45%;
+        top: -14%;
+        width:90%;
+        height:12%;
+        padding-left: 2%;
+        border:solid 1px #cccccc;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;   
+    }
+
+    #camposD>input:nth-child(3){
+        position: absolute;
+        left:45%;
+        top: 6%;
+        width:90%;
+        height:12%;
+        padding-left: 2%;
+        border:solid 1px #cccccc;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;   
+    }
+
+    #camposD>input:nth-child(4){
+        position: absolute;
+        left: 45%;
+        top: 27%;
+        width:90%;
+        height:12%;
+        padding-left: 2%;
+        border:solid 1px #cccccc;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;   
+    }
+    #camposD>input:nth-child(5){
+        position: absolute;
+        left: 45%;
+        top: 47%;
+        width:90%;
+        height:12%;
+        padding-left: 2%;
+        border:solid 1px #cccccc;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;   
+    }
+    #camposD>input:nth-child(6){
+        position: absolute;
+        left: 45%;
+        top: 67%;
+        width:90%;
+        height:12%;
+        padding-left: 2%;
+        border:solid 1px #cccccc;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;   
+    }
+    #camposD>input:nth-child(7){
+        position: absolute;
+        left:45%;
+        top:87%;
+        width:90%;
+        height:12%;
+        padding-left: 2%;
+        border:solid 1px #cccccc;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;   
+    }
+    #camposD>input:nth-child(8){
+        position: absolute;
+        top:-48%;
+        right:-45%;
+        background-color:#459fff;
+        color:white;
+        width:33%;
+        border: 1px solid #459fff;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }
+    /*imagen de perfil*/
+    .container1>#fperfil{
+        position: absolute;
+        top:15%;
+        left: 3%;
+        width:32%;
+        height:41%;
+        border:solid 2px #cccccc;
+        -webkit-border-radius: 300px;
+        -moz-border-radius: 300px;
+        border-radius: 300px;
+
+    }
+    .container1>#fperfil>img{
+        width:100%;
+        height:100%;
+        -webkit-border-radius: 300px;
+        -moz-border-radius: 300px;
+        border-radius: 300px;
+    }
+    /*especialidad o campo de trabajo*/
+
+    /*Nombre,campo de trabajo,edad*/
+    .container1>#datos1{
+        position: absolute;
+        top:10%;
+        left: 50%;
+        width: 40%;
+        height: 68%;
+    }
+
+    #nombre{
+        position: absolute;
+        top:2%;
+        left:3%; 
+        font-size:100%; 
+        color:#6E6E6E;
+    }
+    #profesion{
+        position: absolute;
+        top:20%;
+        left:3%;  
+        font-size:100%; 
+        color:#6E6E6E;
+    }
+    #edad{
+        position: absolute;
+        top:37%;
+        left:3%;
+        font-size:100%;
+        color:#6E6E6E; 
+    }
+
+    #numero{
+        position: absolute;
+        top:55%;
+        left:3%;  
+        font-size:100%; 
+        color:#6E6E6E;
+    }
+    #correo{
+        position: absolute;
+        top:73%;
+        left:3%; 
+        font-size:100%;
+        color:#6E6E6E;  
+    }
+    #trabajo{
+        position: absolute;
+        top:90%;
+        left:3%;   
+        font-size:100%;
+        color:#6E6E6E;
+    }
+    #live{
+        position: absolute;
+        top:110%;
+        left:3%;
+        font-size:100%;
+        color:#6E6E6E;
+    }
+    /*telefono,correo electronico,trabajo actual */
+
+    .container1>#datos2{
+        position: absolute;
+        top:10%;
+        left: 43%; 
+        width: 8%;
+        height: 60%;  
+     }
+    #numero1{
+        position: absolute;
+        top:60%;
+        left:0%;   
+    }
+    #correo1{
+        position: absolute;
+        top:80%;
+        left:0%;   
+    }
+    #trabajo1{
+        position: absolute;
+        top:100%;
+        left:0%;   
+    }
+    #nombre1{
+        position: absolute;
+        top:0%;
+        left:0%;   
+    }
+    #profesion1{
+        position: absolute;
+        top:20%;
+        left:0%;   
+    }
+    #edad1{
+        position: absolute;
+        top:40%;
+        left:0%;   
+    }
+    #pais{
+        position: absolute;
+        top:120%;
+        left:0%;
+        font-size:100%;
+        color:#6E6E6E;
+    }
+
+    /*graficas */
+    .container2{
+        position: relative;
+        background-color:transparent;
+        border-bottom: 0px;
+        height: 125vh;
+        max-height: 200vh;
+        width: auto; 
+        min-width: 100vw; 
+        margin: 0 auto;
+        overflow: hidden; 
+    }
+
+    .container2>#habilidades{
+        position: absolute;
+        top: 0%;
+        left: 5%;
+        background: transparent;
+        border-bottom: 2px solid #459fff;
+        background: transparent;
+        width: 90%;
+        height: 50%;
+        z-index:2;
+    }
+    .container2>#habilidades>input{
+        position:absolute;
+        top: 1%;
+        left: 80%;
+        background-color:#459fff;
+        color:white;
+        border: 1px solid #459fff;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        display: block;
+        z-index: 64;
+    }
+    .chabilidades{
+        position:absolute;
+        top:5%;
+        left: 5%;
+        width: 90%;
+        height: 40%;
+        border:solid 1px #cccccc; 
+        z-index:3;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        display: none;
+    }
+    
+    .borrar{
+        margin-left:95%;
+        background:red;
+        width:6%;
+        height:100%;
+        color:white;
+        border-radius:20px;
+        border: solid 0px;
+    }
+    .chabilidades>.Nhabilidad{
+        position: absolute;
+        bottom: 0%;
+        width: 100%;
+        height:15%;
+        -webkit-border-bottom-right-radius: 8px;
+        -webkit-border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        background:#459fff;
+
+    }
+    .Nhabilidad>#slider{
+        position: absolute;
+        width:100%;
+        height:100%;
+    }
+    .Nhabilidad>#slider>.generate{
+        position: absolute;
+        width: 100%;
+        height: 80%;
+        left:-35%;
+        top:-17%;
+    }
+    .Nhabilidad>#slider>.generate>input:nth-child(1){
+        position:absolute;
+        top:30%;
+        left:2%;
+        border:solid 1px #cccccc;
+        width:30%;
+        height:50%;
+        padding-left:2%;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+
+
+    }
+    /*boton agregar habilidad*/
+    .Nhabilidad>#slider>.generate>input:nth-child(2){
+        position:absolute;
+        top:30%;
+        right:2%;
+        height:60%;
+        width:20%;
+        background:rgba(255,255,255,0.6);
+        color:#459fff;
+        border:0px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+    .chabilidades>.Nhabilidad>input:hover:nth-child(2){
+       
+        background:rgba(255,255,255,0.9);
+        
+    }
+    .chabilidades>.Nhabilidad>#slider>.generate>input[type="range"]{
+        position: absolute;
+        background: blue;
+        left: 37%;
+        top: 35%;
+    }
+
+    .chabilidades>.Nhabilidad>#slider>.generate>.num1{
+        position: absolute;
+        margin-left:70%;
+        color: white;
+        margin-top: 3%;
+    }
+
+
+    .chabilidades>input{
+        top:-12%;
+        right:7%;
+
+    }
+
+
+    /*grafica2 */
+    .container2>.herramientas{
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        width: 90%;
+        border-bottom: 2px solid #459fff;
+        background: transparent;
+        height: auto;
+    }
+    .cherramientas{
+        position:absolute;
+        top:56%;
+        left: 5%;
+        width: 90%;
+        height: 40%;
+    }
+
+    .cherramientas>input{
+        position: absolute;
+        top:-10%;
+        right:-1%;
+        background-color:#459fff;
+        color:white;
+        border: 1px solid #459fff;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }
+      .cherramientas>.Nherramientas{
+        position: absolute;
+        bottom: 0%;
+        width: 100%;
+        height:15%;
+        -webkit-border-bottom-right-radius: 8px;
+        -webkit-border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        background:#ff738f;
+
+    }
+    .cherramientas>.Nherramientas>#slider2{
+        position: absolute;
+        width: 100%;
+        height: 80%;
+        top:7%;
+        left:0%;
+    }
+    .cherramientas>.Nherramientas>#slider2>.formulario2>input:nth-child(1){
+        position:absolute;
+        top:25%;
+        left:2%;
+        width:30%;
+        height:50%;
+        padding-left:2%;
+        border:solid 1px #cccccc;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+
+    }
+    /*boton agregar habilidad*/
+    .cherramientas>.Nherramientas>#slider2>.formulario2>input:nth-child(2){
+        position:absolute;
+        top:25%;
+        right:4%;
+        height:60%;
+        width:20%;
+        background:rgba(255,255,255,0.6);
+        color:#ff738f;
+        border:0px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+    .cherramientas>.Nherramientas>input:hover:nth-child(2){
+       
+        background:rgba(255,255,255,0.9);
+        
+    }
+
+
+    .cherramientas>.Nherramientas>#slider2>.formulario2>input[type="range"]{
+        position: absolute;
+        left:36%;
+        top:38%;
+    }
+
+    .cherramientas>.Nherramientas>#slider2>.formulario2>.num2{
+        position: absolute;
+        margin-left:68%;
+        margin-top: 3%;
+        color: white;
+    }
+
+    .cherramientas>input:nth-child(1){
+        position:absolute;
+        top:0%;
+        right:28%;
+        width:28%;
+        z-index: 1;
+
+    }
+
+
+    .container2>hr{
+        display: none;
+    }
+    .container3{
+        height: 100vh;
+        max-height: 100vh;
+        width: auto; 
+        min-width: 100vw; 
+      
+    }
+    .container3>.escolaridad{
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        border-bottom: 2px solid #459fff;
+        width: 100%;
+        height: 50%;
+    } 
+    .container3>.escolaridad>input{
+        position:absolute;
+        top: 5%;
+        right:6%;
+    }
+    #contenido4{
+        position:absolute;
+        top:6%;
+        left:5%;
+        width: 90%;
+        height: 40%;
+        border-left:0px solid #459fff;
+        border-bottom:2px solid #459fff;
+
+    }
+    #contenido4>input{
+        position: absolute;
+        right:-1%;
+        top:-10%;
+        background-color:#459fff;
+        color:white;
+        z-index:3333333;
+        border: 1px solid #459fff;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }
+
+    #contenido4>input:hover{
+        background: #ff738f;
+    }
+
+    #contenido4>select{
+        position:absolute;
+        top:34%;
+        left:5%;
+        height:20%;
+        width:40%;
+        box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0);
+        border:solid 1px #cccccc; 
+        background:white;
+
+      }
+    #contenido4>#carrera{
+        position:absolute;
+        top:10%;
+        right:10%;
+        height:18%;
+        width:40%;
+        border:solid 1px #cccccc; 
+        padding-left:2%;
+        padding-top:2%;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        background: white;
+       
+        border-radius: 8px;
+    }
+    #contenido4>#certificaciones{
+        position:absolute;
+        top:50%;
+        right:10%;
+        height:18%;
+        width:40%;
+        padding-left:2%;
+        padding-top:2%;
+        border:solid 1px #cccccc; 
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        background: white;
+        border-radius: 8px;
+    }
+    .container3>#hobbies{
+        position: absolute;
+        left:0%;
+        top: 50%;
+        background: transparent;
+        width: 100%;
+        border-bottom: 2px solid #459fff;
+        height: 50%;
+        z-index:1;
+    }
+    .container3>#hobbies>input{
+        top:3%;
+        right:5%;
+    }
+    .container3>#hobbies>h1{
+        top: 5%;
+    }
+    .EditH{
+        position:absolute;
+        width: 100%;
+        height:40%;
+        left:1%;
+        top:50%;
+        display: none;
+        background:transparent;
+    }
+
+    .EditH>#contenido3{
+        position:absolute;
+        background: white;
+        width: 98%;
+        height: 70%;
+        top:30%;
+        border:solid 1px #cccccc; 
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        overflow: scroll;
+        z-index:3;
+    }
+
+    .EditH>#btnG{
+        position: absolute;
+        top:5%;
+        right:2%;
+        background-color:#459fff;
+        color:white;
+        border:1px solid #459fff;
+        -webkit-border-radius:10px;
+        -moz-border-radius:10px;
+        border-radius:10px;
+        z-index:3;
+    }
+    .EditH>#btnG:hover{
+        background: #ff738f;
+    }
+
+
+
+   .container4>.proyectos{
+        width: 100%;
+        left: 0%;
+   }
+   .container4>.proyectos>#proyecto{
+        position: absolute;
+        top:15%;
+        left:0%;
+        width:100%;
+        height:85%;
+        overflow:scroll;
+
+    }
+    .container4>.proyectos>#NDE{
+        position: absolute;
+        top:0%;
+        left:0%;
+        width:100%;
+        height:15%;
+        color:white;
+        background:#459fff;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+
+
+    }
+    .container4>.proyectos>#NDE>ul{
+         margin: auto;
+         width:100%;
+    }
+
+    .container4>.proyectos>#NDE>ul>li:nth-child(1){
+        display: inline-block;
+        position: absolute;
+        font-size:18px;
+        font-style: bold;
+        border-bottom:2px solid #459fff ;
+        left:5%; 
+        top: 30%;  
+    }
+    .container4>.proyectos>#NDE>ul>li:nth-child(2){
+        display: inline-block;
+        position: absolute;
+        font-size:18px;
+        font-style: bold;
+        border-bottom:2px solid #459fff ;
+        left:35%; 
+        top: 30%;   
+    }
+
+    .container4>.proyectos>#NDE>ul>li:nth-child(3){
+        display: inline-block;
+        position: absolute;
+        font-style: bold;
+        font-size:18px;
+        border-bottom:2px solid #459fff;
+        right:9%;
+        top: 30%;  
+    }
+    .container4>.proyectos>#proyecto{
+        position: absolute;
+        top:15%;
+        left:0%;
+        width:100%;
+        height:85%;
+        overflow:scroll;
+    }
+    .container4>.proyectos>#proyecto>ul:nth-child(1){
+        position: absolute;
+        margin: auto;
+        width:96%;
+        top: 10%;
+    }
+    .container4>.proyectos>#proyecto>ul:nth-child(2){
+        position: absolute;
+        margin: auto;
+        width:96%;
+        top: 30%;
+    }
+    .container4>.proyectos>#proyecto>ul:nth-child(3){
+        position: absolute;
+        margin: auto;
+        width:96%;
+        top: 50%;
+    }
+    .container4>.proyectos>#proyecto>ul:nth-child(4){
+        position: absolute;
+        margin: auto;
+        width:96%;
+        top: 70%;
+    }
+    .container4>.proyectos>#proyecto>ul:nth-child(5){
+        position: absolute;
+        margin: auto;
+        width:96%;
+        top: 90%;
+    }
+    .container4>.proyectos>#proyecto>ul:nth-child(6){
+        position: absolute;
+        margin: auto;
+        width:96%;
+        top: 110%;
+    }
+    .container4>.proyectos>#proyecto>ul:nth-child(7){
+        position: absolute;
+        margin: auto;
+        width:96%;
+        top: 130%;
+    }
+
+
+    .container4>.proyectos>#proyecto>ul>li:nth-child(1){
+        display: inline-block;
+        position: absolute;
+        font-size:12px;
+        font-style: bold;
+        left:5%; 
+        top: 5%; 
+        height:30%;
+        width: 10%;
+        word-wrap: break-word;      /* IE 5.5-7 */
+        white-space: -moz-normal; /* Firefox 1.0-2.0 */
+        white-space: normal;      /* current browsers */
+
+    }
+
+    .container4>.proyectos>#proyecto>ul>li:nth-child(2){
+        display: inline-block;
+        position: absolute;
+        font-size:12px;
+        font-style: bold;
+        height:30%;
+        width: 55%;
+        left:20%; 
+        top: 5%;  
+        word-wrap: break-word;      /* IE 5.5-7 */
+        white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
+        white-space: pre-wrap;      /* current browsers */
+    } 
+
+
+    .container4>.proyectos>#proyecto>ul>li:nth-child(3){
+        display: inline-block;
+        position: absolute;
+        font-style: bold;
+        font-size:12px;
+        height:30%;
+        width: 15%;
+        right:9%;
+        top: 3%;  
+        word-wrap: break-word;      /* IE 5.5-7 */
+        white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
+        white-space: pre-wrap;      /* current browsers */
+    }
+    .container4>#editarPro{
+        position: absolute;
+        background:white;
+        width:98%;
+        z-index:222222;
+        display:none;
+        height:80%;
+        left:1%;
+        top:18%; 
+        border:solid 1px #459fff;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px; 
+    }
+    .container4>#editarPro>#listaproyectos{
+        position: relative;
+        top:0%;
+        left:0%;
+        width: 100%;
+        height:60%;
+        display: inline-block;
+        overflow: scroll;
+        z-index: 3;
+        background:transparent;
+        -webkit-border-top-right-radius: 8px;
+        -webkit-border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+    }
+    .container4>#editarPro>#listaproyectos>#p>.proyecto{
+        cursor:pointer;
+        color: #459fff;
+        font-family: arial;
+        font-size: 15px;
+        padding:15px;
+        margin:5px 0;
+        border-bottom: solid 1px #459fff; 
+    }
+    .container4>#editarPro>input{
+        position:absolute;
+        top:-10%;
+        right:1%;
+        background-color:#459fff;
+        color:white;
+        border: 1px solid #459fff;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        z-index: 2222;
+        display: block;
+
+    }
+
+    .formulario3{
+        position: absolute;
+        background:  #459fff;
+        bottom:0%;
+        left:0%;
+        z-index:22222;
+        -webkit-border-bottom-left-radius: 10px;
+        -webkit-border-bottom-right-radius: 10px;
+        -moz-border-radius-topleft: 10px;
+        -moz-border-radius-topright: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        height:40%;
+        width:100%;
+    }
+
+
+    .formulario3>textarea:nth-child(1){
+        position: absolute;
+        left: 3%;
+        top: 8%;
+        width:60%;
+        height:20%;
+        padding-left:1%;
+        padding-top: 1%;
+        border: solid 1px #cccccc;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px; 
+        
+    }
+
+    .formulario3>textarea:nth-child(2){
+        position: absolute;
+        left: 3%;
+        top: 35%;
+        width:60%;
+        height:20%;
+        padding-left:1%;
+        padding-top: 1%;
+        border: solid 1px #cccccc;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px; 
+
+    }
+    .formulario3>textarea:nth-child(3){
+        position: absolute;
+        left: 3%;
+        top: 62%;
+        width:60%;
+        height:20%;
+        padding-left:1%;
+        padding-top: 1%;
+        border: solid 1px #cccccc;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px; 
+
+    }
+    #aproyecto{
+        position:absolute;
+        top:25%;
+        right:2%;
+        height:45%;
+        width:30%;
+        background:rgba(255,255,255,0.6);
+        color:#459fff;
+        border:0px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+
+
 }
 
 

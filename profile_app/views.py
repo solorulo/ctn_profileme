@@ -94,7 +94,7 @@ def registerUser(request):
 		return render(request, 'simple_post_response.html', {'response_message': 'registration_error'})
 	auth_login(request, user)
 
-	return render(request, 'simple_post_response.html', {'response_message': 'ok'})
+	return render(request, 'simple_post_response.html', {'response_message': 'ok'}, content_type='application/json')
 
 # Create Job Offer
 @login_required

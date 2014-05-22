@@ -441,3 +441,427 @@ img{
     top:45px;
     z-index: 4;
 }
+@media handheld, only screen and (max-width: 900px) {
+
+	.sec1>#camposP>input:nth-child(1){
+		position:absolute;
+		padding-left: 2%;
+		top:5%;
+		left:17%;
+		width:30%;
+		height:10%;
+		
+	}
+	.sec1>#camposP>input:nth-child(2){
+		position:absolute;
+		top:25%;
+		left:17%;
+		width:30%;
+		height:10%;
+	
+	}
+	.sec1>#camposP>input:nth-child(3){
+		position:absolute;
+		top:45%;
+		left:17%;
+		width:30%;
+		height:10%;
+	
+	}
+	.sec1>#camposP>input:nth-child(4){
+		position:absolute;
+		top:5%;
+		left:61%;
+		width:30%;
+		height:10%;
+	}
+	.sec1>#camposP>input:nth-child(5){
+		position:absolute;
+		top:25%;
+		left:61%;
+		width:30%;
+		height:10%;
+	
+	}
+	.sec1>#camposP>input:nth-child(6){
+		position:absolute;
+		top:45%;
+		left:61%;
+		width:30%;
+		height:10%;
+	
+	}
+
+	.sec1>#camposP>#nombre{
+		position:absolute;
+		top:5%;
+		left:8%;
+		
+
+	}
+	.sec1>#camposP>#profesion{
+		position:absolute;
+		top:25%;
+		left:8%;
+		
+		
+	}
+	.sec1>#camposP>#edad{
+		position:absolute;
+		top:45%;
+		left:8%;
+		
+		
+	}
+	.sec1>#camposP>#telefono{
+		position:absolute;
+		top:5%;
+		left:52%;
+		
+		
+	}
+	.sec1>#camposP>#mail{
+		position:absolute;
+		top:25%;
+		left:52%;
+		
+		
+	}
+	.sec1>#camposP>#trabajo{
+		position:absolute;
+		top:45%;
+		left:52%;
+		
+		
+	}
+
+	.Dtrabajador{
+		position: relative;
+		width:70%;
+		height:50%;
+		top:5%;
+		left:15%;
+	}
+	
+	.Htrabajador{
+		position: relative;
+		width:80%;
+		height:50%;
+		top:5%;
+		left:10%;
+	}
+	.sec4>input{
+		width: 13%;
+		right: -43.5%;
+	}
+	
+}
+@media handheld, only screen and (max-width: 768px) {
+
+	.sec1>#camposP>input:nth-child(1){
+		position:absolute;
+		padding-left: 2%;
+		top:5%;
+		left:17%;
+		width:33%;
+		height:10%;
+		
+	}
+	.sec1>#camposP>input:nth-child(2){
+		position:absolute;
+		top:25%;
+		left:17%;
+		width:33%;
+		height:10%;
+	
+	}
+	.sec1>#camposP>input:nth-child(3){
+		position:absolute;
+		top:45%;
+		left:17%;
+		width:33%;
+		height:10%;
+	
+	}
+	.sec1>#camposP>input:nth-child(4){
+		position:absolute;
+		top:5%;
+		left:65%;
+		width:33%;
+		height:10%;
+	}
+	.sec1>#camposP>input:nth-child(5){
+		position:absolute;
+		top:25%;
+		left:65%;
+		width:33%;
+		height:10%;
+	
+	}
+	.sec1>#camposP>input:nth-child(6){
+		position:absolute;
+		top:45%;
+		left:65%;
+		width:33%;
+		height:10%;
+	
+	}
+
+	.sec1>#camposP>#nombre{
+		position:absolute;
+		top:5%;
+		left:7%;
+		
+
+	}
+	.sec1>#camposP>#profesion{
+		position:absolute;
+		top:25%;
+		left:7%;
+		
+		
+	}
+	.sec1>#camposP>#edad{
+		position:absolute;
+		top:45%;
+		left:7%;
+		
+		
+	}
+	.sec1>#camposP>#telefono{
+		position:absolute;
+		top:5%;
+		left:54%;
+		
+		
+	}
+	.sec1>#camposP>#mail{
+		position:absolute;
+		top:25%;
+		left:54%;
+		
+		
+	}
+	.sec1>#camposP>#trabajo{
+		position:absolute;
+		top:45%;
+		left:54%;
+		
+		
+	}
+
+	.Dtrabajador{
+		position: relative;
+		width:80%;
+		height:50%;
+		top:5%;
+		left:10%;
+	}
+	
+	.Htrabajador{
+		position: relative;
+		width:90%;
+		height:50%;
+		top:5%;
+		left:5%;
+	}
+	.sec4>input{
+		width: 15%;
+		right: -43%;
+	}
+}
+@media handheld, only screen and (max-width: 480px) {
+
+ 	.sec1{
+		background:red;
+ 	}
+ 	.sec1>#tex_B{
+		font-size:20px;
+	}
+	.sec1>#tex_p{
+		font-size:15px;
+		
+	}
+
+	 .sec1>#camposP>input:nth-child(1){
+		position:absolute;
+		padding-left: 2%;
+		top:5%;
+		left:17%;
+		width:80%;
+		height:10%;
+		
+	}
+	.sec1>#camposP>input:nth-child(2){
+		top:25%;
+		left:17%;
+		width:80%;
+		height:10%;
+		
+	}
+	.sec1>#camposP>input:nth-child(3){
+		top:45%;
+		left:17%;
+		width:80%;
+		height:10%;
+		
+	}
+	.sec1>#camposP>input:nth-child(4){
+		top:65%;
+		left:17%;
+		width:80%;
+		height:10%;
+		
+	}
+	.sec1>#camposP>input:nth-child(5){
+		top:85%;
+		left:17%;
+		width:80%;
+		height:10%;
+		
+	}
+	.sec1>#camposP>input:nth-child(6){
+		top:105%;
+		left:17%;
+		width:80%;
+		height:10%;
+		
+	}
+
+	.sec1>#camposP>#nombre{
+		position:absolute;
+		top:5%;
+		left:1%;
+		
+
+	}
+	.sec1>#camposP>#profesion{
+		position:absolute;
+		top:25%;
+		left:1%;
+		
+		
+	}
+	.sec1>#camposP>#edad{
+		position:absolute;
+		top:45%;
+		left:1%;
+		
+		
+	}
+	.sec1>#camposP>#telefono{
+		position:absolute;
+		top:65%;
+		left:1%;
+		
+		
+	}
+	.sec1>#camposP>#mail{
+		position:absolute;
+		top:85%;
+		left:1%;
+		
+		
+	}
+	.sec1>#camposP>#trabajo{
+		position:absolute;
+		top:105%;
+		left:1%;
+	}
+
+	.sec2>#tex_B2{
+		font-size:20px;
+	}
+	.sec2>#tex_p2{
+		font-size:15px;
+	}
+	.Dtrabajador{
+		position: relative;
+		width:50%;
+		height:50%;
+		left:25%;
+	}
+	.Dtrabajador>#puesto{
+		left:5%;
+		width:90%;
+	}
+	.Dtrabajador>#sexo{
+		left:5%;
+		width:90%;
+	}
+	.Dtrabajador>#edad{
+		left:5%;
+		width:90%;
+	}
+	.Dtrabajador>#exp{
+		left:5%;
+		width:90%;
+	}
+	.Dtrabajador>#Esc{
+		left:5%;
+		width:90%;
+	}
+
+
+	.sec3>#tex_B3{
+		font-size:20px;
+	}
+	.sec3>#tex_p3{
+		font-size:15px;
+	}
+	.Htrabajador{
+		position: relative;
+		width:50%;
+		height:50%;
+		left:25%;
+	}
+	.Htrabajador>#hab{
+		position: absolute;
+		left:0%;
+		top:8%;
+		width:100%;
+		border:solid 1px #cccccc;
+		height:15%;
+		padding-left:1%;
+		padding-top:1%;
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+	}
+	.Htrabajador>#Des{
+		position: absolute;
+		left:0%;
+		top:30%;
+		width:100%;
+		border:solid 1px #cccccc;
+		height:15%;
+		padding-left:1%;
+		padding-top:1%;
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+	}
+	.Htrabajador>#sueldo{
+		position: absolute;
+		left:0%;
+		top:53%;
+		height:8%;
+		width:100%;
+		padding-left:1%;
+		border:solid 1px #cccccc;
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+	}
+	.sec4>#imgE{
+		position: relative;
+		top:5%;
+		width:40%;
+		left:30%;
+	}
+	.sec4>input{
+		width: 25%;
+		right: -38%;
+	}
+
+}

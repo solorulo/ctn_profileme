@@ -164,3 +164,8 @@
      		top:2%;
     		z-index: 5000;
 		}
+		#inline_content>p{
+			color:#ff718d;
+			height:70%;
+
+		}

@@ -17,6 +17,7 @@ from django.shortcuts import render_to_response
 from django.shortcuts import redirect
 from django.views.defaults import page_not_found
 from django.views.generic import View
+from profileme.settings import BASE_DIR
 import cgi
 import datetime
 import json
@@ -116,7 +117,7 @@ def oauth_authenticated(request):
 
 	if 'pictureUrls' in profile and profile['pictureUrls']['_total'] > 0:
 		urlImg = profile['pictureUrls']['values'][0]
-		urllib.urlretrieve (urlImg, '/Users/mkfnx/dev/ctn_profileme/media/' + identifier + ".jpg")
+		urllib.urlretrieve (urlImg, BASE_DIR + identifier + ".jpg")
 		# url2 = "http://api.linkedin.com/v1/people/~/picture-urls::(original)"
 		# resp2, content2 = client.request(url, "GET", headers=headers)
 		print 'url-img:'+urlImg
