@@ -47,11 +47,15 @@ def oauth_logout(request):
 # 	html += user.first_name + " " + user.last_name + "<br/>" + user.email
 # 	return HttpResponse(html)
 
+@login_required
+def profile (request):
+	return render(request,'perfil.html')
+
 # Create your views here.
 def index(request):
 	#return HttpResponse("Inicio")
 	if (request.user.is_authenticated()) :
-		return render(request,'perfil.html')
+		return redirect('profile')
 	return render(request,'inicio.html')
 
 def registro(request):
@@ -77,12 +81,14 @@ def registerUser(request):
 	if request.POST['email'] != request.POST['emailVerif']:
 		return render(request, 'simple_post_response.html', {'response_message': 'email_missmatch'})
 
-	user = User.objects.create_user(
+	user = PersonalData(
 			first_name=request.POST['name'],
 			last_name=request.POST['lastname'],
 			username=request.POST['email'],
 			email=request.POST['email'],
-			password=request.POST['password'])
+			password=request.POST['password'],
+			telefono='545678',
+			certificaciones='no se que esta pasando')
 
 	try:
 		user.save()
@@ -94,7 +100,7 @@ def registerUser(request):
 		return render(request, 'simple_post_response.html', {'response_message': 'registration_error'})
 	auth_login(request, user)
 
-	return render(request, 'simple_post_response.html', {'response_message': 'ok'}, content_type='application/json')
+	return render(request, 'simple_post_response.html', {'response_message': 'ok'})
 
 # Create Job Offer
 @login_required

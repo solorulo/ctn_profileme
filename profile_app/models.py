@@ -87,17 +87,20 @@ class Hobbie(models.Model):
 		return self.nombre	
 
 # Create your models here.
-class PersonalData(models.Model):
-	user = models.OneToOneField(User, primary_key=True)
+class PersonalData(User):
 	telefono = models.CharField(max_length=15,null=True,blank=True)
 	certificaciones = models.CharField(max_length=400,null=True,blank=True)
 	camposTrabajo = models.ManyToManyField(CampoTrabajo,null=True,blank=True)
 	img = models.CharField(max_length=100,null=True,blank=True)
 	hobbies = models.CharField(max_length=200,null=True,blank=True)
 	idiomas = models.ManyToManyField(Idioma,null=True,blank=True)
+	ciudad = models.ForeignKey(Ciudad)
 
 	oauth_token = models.CharField(max_length=200)
 	oauth_secret = models.CharField(max_length=200)
 
 	def __unicode__(self):
-		return self.user.username
+		return self.username
+
+	class Meta:
+		db_table = 'personal_data'

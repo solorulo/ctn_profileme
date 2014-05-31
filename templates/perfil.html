@@ -88,6 +88,7 @@
                   li.onclick = function() {
                     dynamicEvent2($(li))
                   }
+                  $('form')[0].habilidad.value="";
                 }
                 
                 // Prevent the form submitting
@@ -130,6 +131,7 @@
                   li.onclick = function() { 
                     Aherramientas2($(li)); 
                   }
+                  $('form')[0].herramientas.value="";
                 }
                 
                 // Prevent the form submitting
@@ -173,6 +175,9 @@
                   li.onclick = function(){
                     Aproyectos2($(li)); 
                   }
+                  $('.nombre').val('');
+                  $('.descripcion').val('');
+                  $('.enlace').val('');
                 }
                 
                 // Prevent the form submitting
@@ -482,13 +487,13 @@
                     <div id="fperfil">
                      <img src="{{MEDIA_URL}}img/choko.png" alt="image del perfil">
                     </div>
-                    <div id="nombre"> Alexis Ivan Chavez Robles</div>
+                    <div id="nombre">{{ user.get_full_name }}</div>
                     <div id="profesion">Desarrollador</div>
                     <div id="edad">20 años</div>
-                    <div id="numero"> 78468476</div>
-                    <div id="correo">chavez.aivan@gmail.com</div>
+                    <div id="numero"> {{ user.personaldata.telefono }}</div>
+                    <div id="correo">{{ user.email }}</div>
                     <div id="trabajo">Ctin</div>
-                    <div id="live">Mexico/NL</div>
+                    <div id="live">{{ user.personaldata.ciudad.nombre }}/{{ user.personaldata.ciudad.estado.nombre }}</div>
                     <!--boton y div para editar todos los datos personales -->
                     <input type="button" value="Editar información"class="explode">
                     <!--input para editar los campos-->
@@ -555,7 +560,7 @@
                             <!--slider-->
                               <form oninput="amount.value=rangeInput.value"class="generate">
 
-                                <input type="text"placeholder="Habilidades" class="generate-input2">
+                                <input name="habilidad" type="text"placeholder="Habilidades" class="generate-input2">
 
                                 <input type="submit"value="Agregar"class="generate-submit">
 
@@ -600,7 +605,7 @@
                         <div id="slider2">
                             <!--slider-->
                               <form oninput="amount.value=rangeInput.value"class="formulario2">
-                              <input type="text" placeholder="Herramientas"class="text">
+                              <input name="herramientas" type="text" placeholder="Herramientas"class="text">
                               <input type="submit"value="Agregar" class="agregarV">
                                <input id="rangeInput"name="rangeInput" type="range" min="1" max="100" class="range" />
                                <!--numero que elige el usuario en el slider-->

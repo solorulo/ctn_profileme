@@ -131,20 +131,34 @@ def oauth_authenticated(request):
 		auth_login(request, user)
 		return HttpResponseRedirect('/')
 	except User.DoesNotExist:
-		user = User.objects.create_user(identifier,
-			email,
-			access_token['oauth_token_secret'])                 
-		user.first_name = firstname
-		user.last_name = lastname
-		user.save()
+		# user = User.objects.create_user(identifier,
+		# 	email,
+		# 	access_token['oauth_token_secret'])                 
+		# user.first_name = firstname
+		# user.last_name = lastname
+		# user.save()
 		# Save our permanent token and secret for later.
-		userprofile = PersonalData(user=user,
-			oauth_token=access_token['oauth_token'],
-			oauth_secret=access_token['oauth_token_secret'])
+		# userprofile = PersonalData(user=user,
+		# 	oauth_token=access_token['oauth_token'],
+		# 	oauth_secret=access_token['oauth_token_secret'])
 		# userprofile.user = user
 		# userprofile.oauth_token = access_token['oauth_token']
 		# userprofile.oauth_secret = access_token['oauth_token_secret']
-		userprofile.save()# Authenticate the user and log them in using Django's pre-built
+		# userprofile.save()
+
+		user = PersonalData(
+			first_name=firstname,
+			last_name=lastname,
+			username=idetifier,
+			email=email,
+			password=access_token['oauth_token_secret'],
+			telefono='545678',
+			certificaciones='no se que esta pasando',
+			oauth_token=access_token['oauth_token'],
+			oauth_secret=access_token['oauth_token_secret'])
+		user.save()
+
+		# Authenticate the user and log them in using Django's pre-built
 		# functions for these things.
 		user = authenticate(username=identifier,
 			password=access_token['oauth_token_secret'])

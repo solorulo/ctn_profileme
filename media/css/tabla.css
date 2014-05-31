@@ -1,0 +1,1903 @@
+*{
+    margin:0;
+    padding:0;
+}
+.box {
+    display:block;
+    width:100%;
+    height:15%;
+    background:red;
+    margin-left:0%;
+    margin-top:1%;
+    cursor:pointer;
+    text-align:center;
+}
+.box>h3{
+    position:absolute;
+    top:5%;
+    left:2%;
+    color:#cccccc;
+    font-size:15px;
+}
+.box>h2{
+    position:absolute;
+    top:5%;
+    left:50%;
+    color:#cccccc;
+    font-size:15px;
+}
+
+.box a {
+   display:block;
+   width:20px;
+   height:20px;
+   color:#fff;
+   text-decoration:none;
+}
+
+body{
+    width:700%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    font-family:'Raleway';
+    left:0px;
+    bottom:0px;
+}
+.borrar{
+    margin-left:95%;
+    background:red;
+    width:3%;
+    height:100%;
+    color:white;
+    border-radius:20px;
+    border: solid 0px;
+}
+.borrar2{
+    margin-left:95%;
+    background:red;
+    width:3%;
+    height:100%;
+    color:white;
+    border-radius:20px;
+    border: solid 0px;
+
+}
+.numero{
+    position: absolute;
+    margin-left: 70%;
+    margin-top:2%;
+}
+.section{
+    background:white;
+    margin:0px;
+    bottom:0px;
+    width:14.28%;
+    float:left;
+    height:100%;
+    text-shadow:1px 1px 2px #f0f0f0;
+}
+
+.section1{
+    position: relative;
+    margin:0px;
+    bottom:0px;
+    float:left;
+    height:100%;
+    text-shadow:1px 1px 2px #f0f0f0;
+    background:white;
+}
+.section1>#logo{
+    position:relative;
+    margin-top:2%;
+    text-align: center;
+
+}
+.section1>#tex_B{
+    position:relative;
+    margin-top:4%;
+    color:#cccccc;
+    font-size:150%;
+    text-align: center;
+
+}
+.section1>#tex_p{
+    position: relative;
+    margin-top:1%;
+    color:#cccccc;
+    font-size:110%;
+    text-align: center;
+
+}
+
+.section1>#imagen_N{
+    position: relative;
+    text-align:center;
+    margin-top: 4%;
+    z-index:3;
+
+}
+.section1>#tex_nf{
+    text-align:center;
+    margin-top:1%;
+    color:#cccccc;
+    font-size:120%;
+    font-family: 'Raleway';
+
+}
+.section1>#recom_1{
+    position: absolute;
+    margin-left: 7%;
+    margin-top:-10%;
+    height:130px;
+    width: 27%;
+    border:solid 2px #ff718d;
+}
+.section1>#recom_1>#conten_1{
+    margin-top:-1%;
+    margin-left: 5%;
+    height:106%;
+    width:90%;
+    color:#cccccc;
+    text-align: center;
+    background: white;
+    z-index:3;
+}
+.section1>#recom_1>#conten_1>h1{
+    text-align: center;
+    color:#ff718d;
+    
+}
+.section1>#recom_2{
+    position: absolute;
+    margin-left: 66%;
+    margin-top: -10%;
+    height:130px;
+    width: 27%;
+    border:solid 2px #3f9cff;
+
+}
+.section1>#recom_2>#conten_2{
+    margin-top:-1%;
+    margin-left: 5%;
+    text-align: center;
+    height:106%;
+    width:90%;
+    color:#cccccc;
+    background: white;
+    z-index:3;
+}
+.section1>#recom_2>#conten_2>h1{
+    position: relative;
+    text-align: center;
+    color:#3f9cff;
+    
+}
+.section1>#boton1{
+    position:absolute;
+    top: 50%;
+    margin-left:95%;
+    height: 2.5%;
+    width:1.5%;
+    z-index:133333;
+}
+.section>input{
+    position:absolute;
+    font-size: 12px;
+    font-style: bold;
+    background-color:#ff718d;
+    color:white;
+    padding-bottom: 4px;
+    text-decoration:none;
+    text-align:center;
+    height:20%;
+    padding-top:0.5%;
+    width: 20%;
+    left:40%;
+    border: 2px solid #ff718d;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    top:32%;
+    opacity:0;
+    z-index: 4;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+.section2{
+    background:white;
+}
+.section2>#logo2{
+    position: relative;
+    margin-top:2%;
+    text-align: center;
+
+}
+
+.section2>#tex_B2{
+    position: relative;
+    margin-top:4%;
+    color:#cccccc;
+    font-size:150%;
+    text-align: center;
+
+}
+.section2>#tex_p2{
+    position: relative;
+    margin-top:1%;
+    color:#cccccc;
+    font-size:110%;
+    text-align: center;
+
+}
+.section2>#camposP{
+    position: relative;
+    top:4%;
+    left:20%;
+    width:60%;
+    height:50%;
+
+}
+.section2>#camposP>input:nth-child(1){
+    position: absolute;
+    padding-left: 2%;
+    top:9%;
+    left:20%;
+    border:solid 1px #cccccc;
+    width:25%;
+    height:35px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+.section2>#camposP>input:nth-child(2){
+    position: absolute; 
+    padding-left: 2%;
+    top:28%;
+    left:20%;
+    border:solid 1px #cccccc;
+    width:25%;
+    height:35px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+.section2>#camposP>input:nth-child(3){
+    position:absolute;
+    padding-left: 2%;
+    top:48%;
+    left:20%;
+    border:solid 1px #cccccc;
+    width:25%;
+    height:35px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+.section2>#camposP>input:nth-child(4){
+    position:absolute;
+    padding-left: 2%;
+    top:9%;
+    left:55%;
+    border:solid 1px #cccccc;
+    width:25%;
+    height:35px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+.section2>#camposP>input:nth-child(5){
+    position:absolute;
+    padding-left: 2%;
+    top:28%;
+    left:55%;
+    border:solid 1px #cccccc;
+    width:25%;
+    height:35px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+.section2>#camposP>input:nth-child(6){
+    position:absolute;
+    padding-left: 2%;
+    top:48%;
+    left:55%;
+    border:solid 1px #cccccc;
+    width:25%;
+    height:35px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.section2>#camposP>#nombre{
+    position:absolute;
+    top:9%;
+    margin-left:15%;
+    
+
+}
+.section2>#camposP>#profesion{
+    position:absolute;
+    top:28%;
+    margin-left:15%;
+    
+    
+}
+.section2>#camposP>#edad{
+    position:absolute;
+    top:48%;
+    margin-left:15%;
+    
+    
+}
+.section2>#camposP>#telefono{
+    position:absolute;
+    top:9%;
+    margin-left:50%;
+    
+    
+}
+.section2>#camposP>#mail{
+    position:absolute;
+    top:28%;
+    margin-left:50%;
+    
+    
+}
+.section2>#camposP>#trabajo{
+    position:absolute;
+    top:48%;
+    margin-left:50%;
+    
+}
+.section2>#boton2_1{
+    position: absolute;
+    margin-left:0.5%;
+    top:50%;
+    height: 2.5%;
+    width:1.5%;
+    z-index:1000;
+}
+
+.section2>#boton2_2{
+    position: absolute;
+    margin-left:13.5%;
+    top:50%;
+    height: 2.5%;
+    width:1.5%;
+    z-index:3333333;
+}
+
+.section2>#boton2_2>img{
+    z-index:22222;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.section3{
+    background:white;
+}
+.section3>#logo3{
+    position: relative;
+    margin-top:2%;
+    text-align: center;
+
+}
+.section3>#tex_B3{
+    position: relative;
+    margin-top:4%;
+    color:#cccccc;
+    font-size:150%;
+    text-align: center;
+
+}
+.section3>#tex_p3{
+    position: relative;
+    margin-top:1%;
+    color:#cccccc;
+    font-size:110%;
+    text-align: center;
+
+}
+
+.section3>#editarH{
+    position:relative;
+    left:30%;
+    top:4%;
+    height:40%;
+    width: 40%;
+    border:solid 1px #cccccc; 
+    z-index:3;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    display: block;
+ }
+.section3>#editarH>#Totalhe{
+    position: relative;
+    top:0%;
+    left:0%;
+    width: 100%;
+    height:85%;
+    overflow: scroll;
+    background: white;
+    -webkit-border-top-right-radius: 8px;
+    -webkit-border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+
+}
+.section3>#editarH>#Totalhe>#links>.dynamic-link{
+    cursor:pointer;
+    color: #459fff;
+    font-family: arial;
+    font-size: 15px;
+    padding:15px;
+    margin:5px 0;
+    border-bottom: solid 1px #459fff;
+}
+.section3>#editarH>.Nherramientas{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height:15%;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    background:#3f9cff;
+
+}
+.section3>#editarH>.Nherramientas>.generate>input:nth-child(1){
+    position:absolute;
+    top:20%;
+    left:2%;
+    width:30%;
+    height:50%;
+    padding-left:2%;
+    border:solid 1px #cccccc;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+
+}
+/*boton agregar habilidad*/
+.section3>#editarH>.Nherramientas>.generate>input:nth-child(2){
+    position:absolute;
+    top:24%;
+    left:80%;
+    width:15%;
+    height:55%;
+    background:rgba(255,255,255,0.6);
+    color:#3f9cff;
+    border:0px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.section3>#editarH>.Nherramientas>.generate>input:hover:nth-child(2){
+   
+    background:rgba(255,255,255,0.9);
+    
+}
+
+.section3>#editarH>.Nherramientas>.generate>#slider{
+     position: absolute;
+     top:30%;
+     left:40%;
+      
+}
+.section3>#editarH>.Nherramientas>#slider>.generate>input[type="range"]{
+    background: blue;
+}
+
+.section3>#editarH>input:nth-child(1){
+   position:absolute;
+   top:0%;
+   right:28%;
+   width:28%;
+   z-index: 1;
+
+}
+.section3>#editarH>.Nherramientas>#mas{
+    position: absolute;
+    right:4%;
+    top:25%;
+}
+
+.section3>#boton3_1{
+    position: absolute;
+    margin-left:0.5%;
+    top:50%;
+    height: 10%;
+    width:10%;
+    z-index:22222;
+}
+.section3>#boton3_2{
+    position: absolute;
+    margin-left:13.5%;
+    top:50%;
+    height: 4.5%;
+    width:1.5%;
+    z-index:1000;
+}
+
+
+
+
+
+
+
+
+
+.section4{
+    background:white;
+}
+.section4>#logo4{
+    position: relative;
+    margin-top:2%;
+    text-align: center;
+
+}
+.section4>#tex_B4{
+    position: relative;
+    margin-top:4%;
+    color:#cccccc;
+    font-size:150%;
+    text-align: center;
+
+}
+.section4>#tex_p4{
+    position: relative;
+    margin-top:1%;
+    color:#cccccc;
+    font-size:110%;
+    text-align: center;
+
+}
+.section4>#editarH2{
+    position:relative;
+    left:30%;
+    top:4%;
+    height:40%;
+    width: 40%;
+    border:solid 1px #cccccc; 
+    z-index:3;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    display: block;
+ }
+.section4>#editarH2>#Totalhe2{
+    position: relative;
+    top:0%;
+    left:0%;
+    width: 100%;
+    height:85%;
+    display: inline-block;
+    overflow: scroll;
+    z-index: 3;
+    background:transparent;
+    -webkit-border-top-right-radius: 8px;
+    -webkit-border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+
+}
+.section4>#editarH2>#Totalhe2>#h>.lista{
+    cursor:pointer;
+    color: #ff718d;
+    font-family: arial;
+    font-size: 15px;
+    padding:15px;
+    margin:5px 0;
+    border-bottom: solid 1px #ff718d;
+}
+.section4>#editarH2>.formrow{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height:15%;
+   -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    background:#ff718d;
+
+}
+.section4>#editarH2>.formrow>.formulario2>input:nth-child(1){
+    position:absolute;
+    top:20%;
+    left:2%;
+    width:30%;
+    height:50%;
+    padding-left:2%;
+    border:solid 1px #cccccc;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+
+}
+/*boton agregar habilidad*/
+.section4>#editarH2>.formrow>.formulario2>input:nth-child(2){
+    position:absolute;
+    top:24%;
+    left:80%;
+    width:15%;
+    height:55%;
+    background:rgba(255,255,255,0.6);
+    color:#ff718d;
+    border:0px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.section4>#editarH2>.formrow>.formulario2>input:hover:nth-child(2){
+   
+    background:rgba(255,255,255,0.9);
+    
+}
+
+.section4>#editarH2>.formrow>.formulario2>{
+     position: absolute;
+     top:30%;
+     left:37%;
+      
+}
+.section4>#editarH2>.formrow>.formulario2>input[type="range"]{
+    position: absolute;
+    left:40%;
+    top: 25%;
+}
+
+.section4>#editarH2>>input:nth-child(1){
+   position:absolute;
+   top:0%;
+   right:28%;
+   width:28%;
+   z-index: 1;
+
+}
+
+.section4>#boton4_1{
+    position: absolute;
+    margin-left:0.5%;
+    top:50%;
+    height: 2.5%;
+    width:1.5%;
+    z-index:1000;
+}
+.section4>#boton4_2{
+    position: absolute;
+    margin-left:13.5%;
+    top:50%;
+    height: 2.5%;
+    width:1.5%;
+    z-index:1000;
+}
+
+
+
+
+
+
+.section5{
+    background:white;
+}
+.section5>#logo5{
+    position: relative;
+    margin-top:2%;
+    text-align: center;
+
+}
+.section5>#tex_B5{
+    position: relative;
+    margin-top:4%;
+    color:#cccccc;
+    font-size:150%;
+    text-align: center;
+
+}
+.section5>#tex_p5{
+    position: relative;
+    margin-top:1%;
+    color:#cccccc;
+    font-size:110%;
+    text-align: center;
+
+}
+.section5>.hobbies{
+    position:relative;
+    margin-left:25%;
+    margin-top:4%;
+    height:50%;
+    width:50%;
+    background:white;
+  }
+.hobbies>#h1{
+    position: absolute;
+    left:0%;
+    top:5%;
+}
+#h1>input{
+    position: absolute;
+    top:0%;
+}
+
+
+.hobbies>#h2{
+    position: absolute;
+    left:22%;
+    top:5%;
+
+}
+#h2>input{
+    position: absolute;
+    top:0%;  
+}
+
+
+
+.hobbies>#h3{
+    position: absolute;
+    left:43%;
+    top:5%;
+
+}
+#h3>input{
+    position: absolute;
+    top:0%; 
+}
+
+.hobbies>#h4{
+    position: absolute;
+    left:65%;
+    top:5%;
+
+}
+#h4>input{
+    position: absolute;
+    top:0%; 
+}
+
+.hobbies>#h5{
+    position: absolute;
+    left:86.5%;
+    top:5%;
+
+}
+#h5>input{
+    position: absolute;
+    top:0%; 
+}
+
+
+.hobbies>#h6{
+    position: absolute;
+    left:0%;
+    top:50%;
+   
+}
+#h6>input{
+    position: absolute;
+    top:0%; 
+}
+
+.hobbies>#h7{
+    position: absolute;
+    left:22%;
+    top:50%;
+
+}
+#h7>input{
+    position: absolute;
+    top:0%; 
+}
+
+.hobbies>#h8{
+    position: absolute;
+    left:43%;
+    top:50%;
+}
+#h8>input{
+    position: absolute;
+    top:0%; 
+}
+
+.hobbies>#h9{
+    position: absolute;
+    left:65%;
+    top:50%;
+    
+}
+#h9>input{
+    position: absolute;
+    top:0%; 
+}
+
+.hobbies>#h10{
+    position: absolute;
+    left:86.5%;
+    top:50%;
+
+}
+#h10>input{
+    position: absolute;
+    top:0%; 
+}
+
+.section5>#boton5_1{
+    position: absolute;
+    margin-left:0.5%;
+    top:50%;
+    height: 2.5%;
+    width:1.5%;
+    z-index:1000;
+}
+.section5>#boton5_2{
+    position: absolute;
+    margin-left:13.5%;
+    top:50%;
+    height: 2.5%;
+    width:1.5%;
+    z-index:1000;
+}
+
+.section6{
+    background:white;
+
+}
+.section6>#logo6{
+    position: relative;
+    margin-top:2%;
+    text-align: center;
+
+}
+.section6>#tex_B6{
+    position: relative;
+    margin-top:4%;
+    color:#cccccc;
+    font-size:150%;
+    text-align: center;
+
+}
+.section6>#tex_p6{
+    position: relative;
+    margin-top:1%;
+    color:#cccccc;
+    font-size:110%;
+    text-align: center;
+
+}
+.section6>.Proyectos{
+    position: relative;
+    background:white;
+    width:60%;
+    z-index:222222;
+    display:block;
+    height:50%;
+    left:20%;
+    top:7%; 
+    border:solid 1px #459fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px; 
+}
+.section6>.Proyectos>#listaproyectos{
+    position: relative;
+    top:0%;
+    left:0%;
+    width: 100%;
+    height:85%;
+    display: inline-block;
+    overflow: scroll;
+    z-index: 3;
+    background:transparent;
+    -webkit-border-top-right-radius: 8px;
+    -webkit-border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+.section6>.Proyectos>#listaproyectos>#p>.proyecto{
+    cursor:pointer;
+    color: #459fff;
+    font-family: arial;
+    font-size: 15px;
+    padding:15px;
+    margin:5px 0;
+    border-bottom: solid 1px #459fff;
+
+}
+.Proyectos>#agregarP{
+    position: absolute;
+    background:  #459fff;
+    bottom:0%;
+    left:0%;
+    z-index:22222;
+    -webkit-border-bottom-left-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height:20%;
+    width:100%;
+}
+
+
+.Proyectos>#agregarP>.formulario3>textarea:nth-child(1){
+    position: absolute;
+    left: 3%;
+    top: 30%;
+    width:22%;
+    height:35%;
+    padding-left:1%;
+    padding-top: 1%;
+    border: solid 1px #cccccc;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px; 
+    
+}
+
+.Proyectos>#agregarP>.formulario3>textarea:nth-child(2){
+    position: absolute;
+    left: 28%;
+    top: 30%;
+    width:22%;
+    height:35%;
+    padding-left:1%;
+    padding-top: 1%;
+    border: solid 1px #cccccc;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px; 
+
+}
+.Proyectos>#agregarP>.formulario3>textarea:nth-child(3){
+    position: absolute;
+    left: 54%;
+    top: 30%;
+    width:22%;
+    height:35%;
+    padding-left:1%;
+    padding-top: 1%;
+    border: solid 1px #cccccc;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px; 
+
+}
+#aproyecto{
+    position:absolute;
+    top:25%;
+    right:7%;
+    height:50%;
+    width:10%;
+    background:rgba(255,255,255,0.6);
+    color:#459fff;
+    border:0px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+#aproyecto:hover{
+    background:rgba(255,255,255,0.9);
+
+}
+.section6>#boton6_1{
+    position: absolute;
+    margin-left:0.5%;
+    top:50%;
+    height: 2.5%;
+    width:1.5%;
+    z-index:1000;
+}
+.section6>#boton6_2{
+    position: absolute;
+    margin-left:13.5%;
+    top:50%;
+    height: 2.5%;
+    width:1.5%;
+    z-index:1000;
+}
+.section7{
+    background:transparent;
+}
+.section7>#logo7{
+    position: relative;
+    margin-top:2%;
+    text-align: center;
+
+}
+.section7>#tex_B7{
+    position: relative;
+    margin-top:4%;
+    color:#cccccc;
+    font-size:150%;
+    text-align: center;
+
+}
+.section7>#tex_p7{
+    position: relative;
+    margin-top:1%;
+    color:#cccccc;
+    font-size:110%;
+    text-align: center;
+
+}
+.section7>#boton7_1{
+    position: absolute;
+    margin-left:0.5%;
+    top:50%;
+    height: 2.5%;
+    width:1.5%;
+    z-index:1000;
+}
+.section7>#imgP{
+    position: relative;
+    top:5%;
+    width:20%;
+    left:40%;
+
+}
+.section7>.btnG{
+    position: relative;
+    background: transparent;
+    width:17%;
+    height:5%;
+    right: -42%;
+    top:9%;
+}
+.section7>.btnG>input{
+    position:absolute;
+    font-size: 12px;
+    font-style: bold;
+    background-color:#459fff;
+    color:white;
+    padding-bottom: 4px;
+    text-decoration:none;
+    text-align:center;
+    height:100%;
+    padding-top:0.5%;
+    width: 100%;
+    left: 0%;
+    border: 2px solid #459fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    top:1px;
+    z-index: 4;
+}
+
+
+
+
+
+
+
+@media handheld, only screen and (max-width: 900px) {
+
+/*Es la primera pantalla donde subes tu imagen Section1*/
+    .section1>#recom_1{
+      margin-top: -10.5%;
+
+    }
+
+    .section1>#recom_1>#conten_1>h1{
+        text-align: center;
+        font-size:20px;
+        color:#ff718d;
+        
+    }
+
+    .section1>#recom_1>#conten_1{
+        text-align: center;
+        font-size:15px;
+            
+    }
+
+    .section1>#recom_2>#conten_2>h1{
+        text-align: center;
+        font-size:20px;
+        color:#3f9cff;
+        
+    }
+    .section1>#recom_2>#conten_2{
+        text-align: center;
+        font-size:15px;
+            
+    }
+    /*Fin de la primera pantalla"Section1"*/
+
+    /*Segunda pantalla "Datos PErsonales"*/
+       
+    .section2>#camposP>input:nth-child(4){
+        position:absolute;
+        padding-left: 2%;
+        top:9%;
+        left:58%;
+        border:solid 1px #cccccc;
+        width:25%;
+        height:10%;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+    }
+    .section2>#camposP>input:nth-child(5){
+        position:absolute;
+        padding-left: 2%;
+        top:28%;
+        left:58%;
+        border:solid 1px #cccccc;
+        width:25%;
+        height:10%;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+    }
+    .section2>#camposP>input:nth-child(6){
+        position:absolute;
+        padding-left: 2%;
+        top:48%;
+        left:58%;
+        border:solid 1px #cccccc;
+        width:25%;
+        height:10%;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+    }
+    .section2>#camposP>#nombre{
+        position:absolute;
+        top:9%;
+        margin-left:12%;
+        
+
+    }
+    .section2>#camposP>#profesion{
+        position:absolute;
+        top:28%;
+        margin-left:12%;
+        
+        
+    }
+    .section2>#camposP>#edad{
+        position:absolute;
+        top:48%;
+        margin-left:12%;
+        
+        
+    }
+
+
+    /*Fin de la segunda pantalla*/
+
+    /*Tercer pantalla de habilidades*/
+    .section3>#editarH{
+        position:relative;
+        left:25%;
+        top:4%;
+        height:40%;
+        width: 50%;
+        border:solid 1px #cccccc; 
+        z-index:3;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        display: block;
+     }
+    /*Fin de las pantallas de habilidades*/
+
+    /*Cuarta pantalla de herramientas*/
+     .section4>#editarH2{
+        position:relative;
+        left:25%;
+        top:4%;
+        height:40%;
+        width: 50%;
+        border:solid 1px #cccccc; 
+        z-index:3;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        display: block;
+     }
+     .section6>.Proyectos{
+        position: relative;
+        background:white;
+        width:70%;
+        z-index:222222;
+        display:block;
+        height:50%;
+        left:15%;
+        top:7%; 
+        border:solid 1px #459fff;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px; 
+    }
+    .section7>#imgP{
+        position: relative;
+        top:5%;
+        width:30%;
+        left:35%;
+
+    }
+    .section7>input{
+        position:relative;
+        font-size: 12px;
+        font-style: bold;
+        background-color:#ff718d;
+        color:white;
+        padding-bottom: 4px;
+        text-decoration:none;
+        text-align:center;
+        height:5%;
+        padding-top:0.5%;
+        width: 15%;
+        right: -43%;
+        border: 2px solid #ff718d;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        top:45px;
+        z-index: 4;
+    }
+
+
+
+
+}
+
+
+@media handheld, only screen and (max-width: 768px) {
+    /*Segunda pantalla "Datos PErsonales"*/
+    .section2>#camposP>input:nth-child(1){
+        position: absolute;
+        padding-left: 2%;
+        top:9%;
+        left:14%;
+        border:solid 1px #cccccc;
+        width:33%;
+        height:10%;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+    }
+    .section2>#camposP>input:nth-child(2){
+        position: absolute; 
+        padding-left: 2%;
+        top:28%;
+        left:14%;
+        border:solid 1px #cccccc;
+        width:33%;
+        height:10%;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+    }
+    .section2>#camposP>input:nth-child(3){
+        position:absolute;
+        padding-left: 2%;
+        top:48%;
+        left:14%;
+        border:solid 1px #cccccc;
+        width:33%;
+        height:10%;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+    }
+       
+    .section2>#camposP>input:nth-child(4){
+        position:absolute;
+        padding-left: 2%;
+        top:9%;
+        left:58%;
+        border:solid 1px #cccccc;
+        width:33%;
+        height:10%;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+    }
+    .section2>#camposP>input:nth-child(5){
+        position:absolute;
+        padding-left: 2%;
+        top:28%;
+        left:58%;
+        border:solid 1px #cccccc;
+        width:33%;
+        height:10%;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+    }
+    .section2>#camposP>input:nth-child(6){
+        position:absolute;
+        padding-left: 2%;
+        top:48%;
+        left:58%;
+        border:solid 1px #cccccc;
+        width:33%;
+        height:10%;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+    }
+    .section2>#camposP>#nombre{
+        position:absolute;
+        top:9%;
+        margin-left:6%;
+        
+
+    }
+    .section2>#camposP>#profesion{
+        position:absolute;
+        top:28%;
+        margin-left:6%;
+        
+        
+    }
+    .section2>#camposP>#edad{
+        position:absolute;
+        top:48%;
+        margin-left:6%;
+        
+        
+    }
+
+
+    /*Fin de la segunda pantalla*/
+
+    /*Tercer pantalla de habilidades*/
+    .section3>#editarH{
+        position:relative;
+        left:20%;
+        top:4%;
+        height:40%;
+        width: 60%;
+        border:solid 1px #cccccc; 
+        z-index:3;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        display: block;
+     }
+    /*Fin de las pantallas de habilidades*/
+
+    /*Cuarta pantalla de herramientas*/
+     .section4>#editarH2{
+        position:relative;
+        left:20%;
+        top:4%;
+        height:40%;
+        width: 60%;
+        border:solid 1px #cccccc; 
+        z-index:3;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        display: block;
+     }
+     /*Quinta pantalla hobbies*/
+     .section5>.hobbies{
+        position:relative;
+        margin-left:20%;
+        margin-top:4%;
+        height:50%;
+        width:60%;
+        background:white;
+      }
+    /*Fin quinta patalla hobbies*/
+     .section6>.Proyectos{
+        position: relative;
+        background:white;
+        width:80%;
+        z-index:222222;
+        display:block;
+        height:50%;
+        left:10%;
+        top:7%; 
+        border:solid 1px #459fff;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px; 
+    }
+    .section7>input{
+        position:relative;
+        font-size: 12px;
+        font-style: bold;
+        background-color:#ff718d;
+        color:white;
+        padding-bottom: 4px;
+        text-decoration:none;
+        text-align:center;
+        height:5%;
+        padding-top:0.5%;
+        width: 17%;
+        right: -42%;
+        border: 2px solid #ff718d;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        top:45px;
+        z-index: 4;
+    }
+
+}
+@media handheld, only screen and (max-width: 480px) {
+  
+    /*Es la primera pantalla donde subes tu imagen Section1*/
+   
+    .section1>#recom_1{
+       display: none;
+            
+    }
+
+ 
+    .section1>#recom_2{
+       display:none;
+            
+    }
+    .section1>#tex_B{
+      font-size:20px;
+    }
+
+    .section1>#tex_p{
+       font-size:15px;
+
+    }
+/*Fin de la primera pantalla"Section1"*/
+
+/*Segunda pantalla "Datos PErsonales"*/
+    .section2>#camposP{
+        position: relative;
+        top:4%;
+        left:20%;
+        width:60%;
+        height:70%;
+
+    }
+    .section2>#camposP>input:nth-child(1){
+        position: absolute;
+        padding-left: 2%;
+        top:5%;
+        left:19%;
+        border:solid 1px #cccccc;
+        width:60%;
+        height:6%;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+    }
+    .section2>#camposP>input:nth-child(2){
+        position: absolute; 
+        padding-left: 2%;
+        top:17%;
+        left:19%;
+        border:solid 1px #cccccc;
+        width:60%;
+        height:6%;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+    }
+    .section2>#camposP>input:nth-child(3){
+        position:absolute;
+        padding-left: 2%;
+        top:29%;
+        left:19%;
+        border:solid 1px #cccccc;
+        width:60%;
+        height:6%;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+    }
+       
+    .section2>#camposP>input:nth-child(4){
+        position:absolute;
+        padding-left: 2%;
+        top:41%;
+        left:19%;
+        border:solid 1px #cccccc;
+        width:60%;
+        height:6%;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+    }
+    .section2>#camposP>input:nth-child(5){
+        position:absolute;
+        padding-left: 2%;
+        top:53%;
+        left:19%;
+        border:solid 1px #cccccc;
+        width:60%;
+        height:6%;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+    }
+    .section2>#camposP>input:nth-child(6){
+        position:absolute;
+        padding-left: 2%;
+        top:65%;
+        left:19%;
+        border:solid 1px #cccccc;
+        width:60%;
+        height:6%;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+    }
+    .section2>#camposP>#nombre{
+        position:absolute;
+        top:5%;
+        margin-left:6%;
+        
+
+    }
+    .section2>#camposP>#profesion{
+        position:absolute;
+        top:17%;
+        margin-left:6%;
+        
+        
+    }
+    .section2>#camposP>#edad{
+        position:absolute;
+        top:29%;
+        margin-left:6%;
+        
+        
+    }
+    .section2>#camposP>#telefono{
+        position:absolute;
+        top:41%;
+        margin-left:6%;
+        
+    }
+
+    .section2>#camposP>#mail{
+        position:absolute;
+        top:53%;
+        margin-left:6%;
+    }
+
+    .section2>#camposP>#trabajo{
+        position:absolute;
+        top:65%;
+        margin-left:6%;
+    }
+    .section2>#tex_B2{
+      font-size:20px;
+    }
+
+    .section2>#tex_p2{
+       font-size:15px;
+
+    }
+   
+
+
+/*Fin de la segunda pantalla*/
+
+/*Tercer pantalla de habilidades*/
+   .section3>#tex_B3{
+      font-size:20px;
+    }
+
+    .section3>#tex_p3{
+       font-size:15px;
+
+    }
+    .section3>#editarH{
+        position:relative;
+        left:10%;
+        top:4%;
+        height:40%;
+        width: 80%;
+        border:solid 1px #cccccc; 
+        z-index:3;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        display: block;
+    }
+    .section3>#editarH>.Nherramientas>#mas{
+        display:none;
+    }
+    .section3>#editarH>.Nherramientas>input:nth-child(2){
+        position:absolute;
+        top:24%;
+        left:83%;
+        width:15%;
+        height:55%;
+        background:rgba(255,255,255,0.6);
+        color:#3f9cff;
+        border:0px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+/*Fin de las pantallas de habilidades*/
+
+/*Cuarta pantalla de herramientas*/
+   .section4>#tex_B4{
+      font-size:20px;
+    }
+
+    .section4>#tex_p4{
+       font-size:15px;
+
+    }
+     .section4>#editarH2{
+        position:relative;
+        left:10%;
+        top:4%;
+        height:40%;
+        width: 80%;
+        border:solid 1px #cccccc; 
+        z-index:3;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        display: block;
+     }
+    .section4>#editarH2>.formrow>#mas2{
+        display:none;
+    }
+    .section4>#editarH2>.formrow>input:nth-child(2){
+        position:absolute;
+        top:24%;
+        left:83%;
+        width:15%;
+        height:55%;
+        background:rgba(255,255,255,0.6);
+        color:#ff718d;
+        border:0px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+
+    .section5>#tex_B5{
+      font-size:20px;
+    }
+
+    .section5>#tex_p5{
+       font-size:15px;
+
+    }
+    .section5>.hobbies{
+        position:relative;
+        margin-left:10%;
+        margin-top:4%;
+        height:70%;
+        width:80%;
+        background:white;
+  }
+    .hobbies>#h1{
+        position: absolute;
+        left:0%;
+        top:5%;
+     
+    }
+ 
+
+    .hobbies>#h2{
+        position: absolute;
+        left:25%;
+        top:5%;
+      
+    }
+
+ 
+
+    .hobbies>#h3{
+        position: absolute;
+        left:50%;
+        top:5%;
+     
+    }
+
+    .hobbies>#h4{
+        position: absolute;
+        left:75%;
+        top:5%;
+
+    }
+
+    .hobbies>#h5{
+        position: absolute;
+        left:0%;
+        top:30%;
+     
+    }
+   
+
+    .hobbies>#h6{
+        position: absolute;
+        left:25%;
+        top:30%;
+   
+    }
+
+    .hobbies>#h7{
+        position: absolute;
+        left:50%;
+        top:30%;
+
+    }
+
+    .hobbies>#h8{
+        position: absolute;
+        left:75%;
+        top:30%;
+
+    }
+
+    .hobbies>#h9{
+        position: absolute;
+        left:25%;
+        top:55%;
+   
+    }
+
+    .hobbies>#h10{
+        position: absolute;
+        left:50%;
+        top:55%;
+     
+    }
+    .section7>#tex_B7{
+      font-size:20px;
+    }
+
+    .section7>#tex_p7{
+       font-size:15px;
+
+    }
+
+    .section7>#imgP{
+        position: relative;
+        top:5%;
+        width:40%;
+        left:35%;
+
+    }
+    .section7>input{
+        position:relative;
+        font-size: 12px;
+        font-style: bold;
+        background-color:#ff718d;
+        color:white;
+        padding-bottom: 4px;
+        text-decoration:none;
+        text-align:center;
+        height:5%;
+        padding-top:0.5%;
+        width: 30%;
+        right: -40%;
+        border: 2px solid #ff718d;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        top:45px;
+        z-index: 4;
+    }
+    .section6>#tex_B6{
+      font-size:20px;
+    }
+
+    .section6>#tex_p6{
+       font-size:15px;
+
+    }
+    .section6>.Proyectos{
+        position: relative;
+        background:white;
+        width:80%;
+        z-index:222222;
+        display:block;
+        height:65%;
+        left:10%;
+        top:7%; 
+        border:solid 1px #459fff;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px; 
+    }
+    .Proyectos>#agregarP{
+        position: absolute;
+        background:  #459fff;
+        bottom:0%;
+        left:0%;
+        z-index:22222;
+        -webkit-border-bottom-left-radius: 10px;
+        -webkit-border-bottom-right-radius: 10px;
+        -moz-border-radius-topleft: 10px;
+        -moz-border-radius-topright: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        height:40%;
+        width:100%;
+    }
+
+
+    .Proyectos>#agregarP>textarea:nth-child(1){
+        position: absolute;
+        left: 10%;
+        top: 5%;
+        width:80%;
+        height:18%;
+        border: solid 1px #cccccc;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px; 
+        
+    }
+
+    .Proyectos>#agregarP>textarea:nth-child(2){
+        position: absolute;
+        left: 10%;
+        top: 27%;
+        width:80%;
+        height:18%;
+        border: solid 1px #cccccc;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px; 
+
+    }
+    .Proyectos>#agregarP>textarea:nth-child(3){
+        position: absolute;
+        left: 10%;
+        top: 50%;
+        width:80%;
+        height:18%;
+        border: solid 1px #cccccc;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px; 
+
+    }
+    #aproyecto{
+        position:absolute;
+        top:75%;
+        right:10%;
+        height:20%;
+        width:80%;
+        background:rgba(255,255,255,0.6);
+        color:#459fff;
+        border:0px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+
+
+}
