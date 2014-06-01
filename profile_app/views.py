@@ -86,9 +86,9 @@ def registerUser(request):
 			last_name=request.POST['lastname'],
 			username=request.POST['email'],
 			email=request.POST['email'],
-			password=request.POST['password'],
 			telefono='545678',
 			certificaciones='no se que esta pasando')
+	user.set_password(request.POST['password'])
 
 	try:
 		user.save()

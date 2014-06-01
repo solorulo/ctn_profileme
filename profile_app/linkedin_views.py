@@ -149,13 +149,13 @@ def oauth_authenticated(request):
 		user = PersonalData(
 			first_name=firstname,
 			last_name=lastname,
-			username=idetifier,
+			username=identifier,
 			email=email,
-			password=access_token['oauth_token_secret'],
 			telefono='545678',
 			certificaciones='no se que esta pasando',
 			oauth_token=access_token['oauth_token'],
 			oauth_secret=access_token['oauth_token_secret'])
+		user.set_password(access_token['oauth_token_secret'])
 		user.save()
 
 		# Authenticate the user and log them in using Django's pre-built
