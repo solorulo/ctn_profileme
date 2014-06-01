@@ -1,805 +1,772 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-        <title>Perfiles</title>
+	<title>Perfiles</title>
 
-        <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-        <link href="{{MEDIA_URL}}css/menuP.css" rel="stylesheet">
-        <link rel="stylesheet" href="{{MEDIA_URL}}css/style.css">
-        <link rel="stylesheet" href="{{MEDIA_URL}}css/slicknav.css">
-         
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>    
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<link href="{{MEDIA_URL}}css/menuP.css" rel="stylesheet">
+	<link rel="stylesheet" href="{{MEDIA_URL}}css/style.css">
+	<link rel="stylesheet" href="{{MEDIA_URL}}css/slicknav.css">
 
-         
-        <script>
-          $(document).ready(function(){
-
-                $('.explode2').click(function(){
-                    $('#contenido').toggle('fade',500);
-                    $('#habilidades').toggle('fade',500);
-                });
-               
-                $('.explode3').click(function(){
-                    $('#contenido2').toggle('fade',500);
-                    $('.herramientas').toggle('fade',500) 
-                });  
-
-                $('.explode').click(function(){
-                    $('.contenido').toggle('fade',500);
-                    $('#datos1').toggle('fade',500);
-                    
-                });
-
-                $('.explode4').click(function(){
-                    $('#hobbies').toggle('fade',500);
-                    $('.EditH').toggle('fade',500);
-                });
-
-                $('.explode5').click(function(){
-                    $('#contenido4').toggle('fade',500);
-                    $('.escolaridad').toggle('fade',500);
-                });
-
-                $('.explode6').click(function(){
-                    $('.contenido5').toggle('fade',500);
-                    $('#datosP').toggle('fade',500);
-                });
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>    
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
 
-                  // Create function outside loop
-              function dynamicEvent() {
-                this.innerHTML = $('.dynamic-link').hide(400);
-                this.className += ' dynamic-success';
-              }
-                function dynamicEvent2(obj3) {
-                  obj3.hide(400);
-                }
-                
-          
-              $('.generate').submit ( function() {
-                // Grab the input value
-                var dynamicValue = $('.generate-input').val();
-                var dynamicValue2 = $('.generate-input2').val();
-                
-                // If empty value
-                if(!dynamicValue2) {
-                
-                  alert('Please enter something.');
-                  
-                } else {
-                  // Change the submit value
-                  $('.generate-submit').val( 'Agregar');
-                  
-                  // Create the links with the input value as innerHTML
-                  var li = document.createElement('li');
-                  li.className = 'dynamic-link';
-                  li.innerHTML = dynamicValue2 + "<input type='submit'class='borrar'value='X'>"+"<br>" + dynamicValue + "%";
-                  
-                  // Append it and attach the event (via onclick)
-                  $('#links').append(li);
+	<script>
+	$(document).ready(function(){
 
-                  li.onclick = function() {
-                    dynamicEvent2($(li))
-                  }
-                  $('form')[0].habilidad.value="";
-                }
-                
-                // Prevent the form submitting
-                return false;
-              });
-        // Create function outside loop
-              function Aherramientas() {
-                this.innerHTML = $('.lista').hide(400);
-                this.className += 'lista-success2';
-              }
-              function Aherramientas2(obj) {
-                obj.hide(400);
-              }
-                
-          
-              $('.formulario2').submit ( function(e) {
-                e.preventDefault();
-                // Grab the input value
-                var valor1 = $('.text').val();
-                var valor2 = $('.range').val();
-                
-                // If empty value
-                if(!valor1) {
-                
-                  alert('Please enter something.');
-                  
-                } 
-                else {
-                  // Change the submit value
-                  $('.agregarV').val( 'Agregar');
-                  
-                  // Create the links with the input value as innerHTML
-                  var li = document.createElement('li');
-                  li.className = 'lista';
-                  li.innerHTML = valor1 + "<input type='submit'class='borrar'value='X'>"+"<br>" + valor2 + "%";
-                  
-                  // Append it and attach the event (via onclick)
-                  $('#h').append(li);
-                  // li.onclick = Aherramientas;
-                  li.onclick = function() { 
-                    Aherramientas2($(li)); 
-                  }
-                  $('form')[0].herramientas.value="";
-                }
-                
-                // Prevent the form submitting
-                return false;
-              });
+		$('.explode2').click(function(){
+			$('#contenido').toggle('fade',500);
+			$('#habilidades').toggle('fade',500);
+		});
 
-        // Create function outside loop
-              function Aproyectos() {
-                this.innerHTML = $('.proyecto').hide(400);
-                this.className += 'proyecto-success2';
-              }
-              function Aproyectos2(obj2) {
-                obj2.hide(400);
-              }
-                
-          
-              $('.formulario3').submit ( function(e) {
-                e.preventDefault();
-                // Grab the input value
-                var val1 = $('.nombre').val();
-                var val2 = $('.descripcion').val();
-                var val3 = $('.enlace').val();
+		$('.explode3').click(function(){
+			$('#contenido2').toggle('fade',500);
+			$('.herramientas').toggle('fade',500) 
+		});  
 
-                // If empty value
-                if(!val1) {
-                
-                  alert('Please enter something.');
-                  
-                } 
-                else {
-                  // Change the submit value
-                  $('.agregarP').val( 'Agregar');
-                  
-                  // Create the links with the input value as innerHTML
-                  var li = document.createElement('li');
-                  li.className = 'proyecto';
-                  li.innerHTML = val1 + "<input type='submit'class='borrar2'value='X'>"+"<br>" + val2 + "<br><br>"+ val3;
-                  
-                  // Append it and attach the event (via onclick)
-                  $('#p').append(li);
-                  li.onclick = function(){
-                    Aproyectos2($(li)); 
-                  }
-                  $('.nombre').val('');
-                  $('.descripcion').val('');
-                  $('.enlace').val('');
-                }
-                
-                // Prevent the form submitting
-                return false;
-              });
+		$('.explode').click(function(){
+			$('.contenido').toggle('fade',500);
+			$('#datos1').toggle('fade',500);
 
-                $('#container2').highcharts({
-                  chart: {
-                      type: 'column',
-                      backgroundColor: 'transparent',
-                      margin: [ 60, 60, 100, 80],
-                  },
-                  credits: {
-                      enabled: false
-                  },
+		});
 
-                  title: {
-                      text: 'Herramientas',
+		$('.explode4').click(function(){
+			$('#hobbies').toggle('fade',500);
+			$('.EditH').toggle('fade',500);
+		});
 
-                      style: {
-                        marginleft:'0px',
-                        color: '#ff738f',
-                        fontWeight:'Verdana, sans-serif'
-                      }
+		$('.explode5').click(function(){
+			$('#contenido4').toggle('fade',500);
+			$('.escolaridad').toggle('fade',500);
+		});
 
-                  },
+		$('.explode6').click(function(){
+			$('.contenido5').toggle('fade',500);
+			$('#datosP').toggle('fade',500);
+		});
 
-                  xAxis: {
-                      categories: [
-                          'Java',
-                          'JavaScript',
-                      ],
+		// Create function outside loop
+		function dynamicEvent() {
+			this.innerHTML = $('.dynamic-link').hide(400);
+			this.className += ' dynamic-success';
+		}
+		function dynamicEvent2(obj3) {
+			obj3.hide(400);
+		}
+			
+		$('.generate').submit ( function() {
+			// Grab the input value
+			var dynamicValue = $('.generate-input').val();
+			var dynamicValue2 = $('.generate-input2').val();
+			
+			// If empty value
+			if(!dynamicValue2) {
 
-                      labels: {
-                          rotation: -90,
-                          align: 'right',
-                          style: {
-                              color: '#ff738f',
-                              fontSize: '11px',
-                              fontFamily:'Verdana, sans-serif'
-                          }
-                      }
-                  },
-                  yAxis: {
-                      min: 0,
-                      title: {
-                        style: {
-                            color: '#ff738f',
-                            fontWeight:'Verdana, sans-serif'
-                        }
-                          
-                      }
-            
-                  },
+				alert('Please enter something.');
 
-                  legend: {
-                      enabled: false
-                  },
+			} else {
+				// Change the submit value
+				$('.generate-submit').val( 'Agregar');
 
-                  tooltip: {
-                        formatter: function() {
-                          return '<b>'+ this.x +'</b><br/>'+
-                          Highcharts.numberFormat(this.y) ;
-                        }
-                  },
-                  exporting: {
-                      enabled: false
-                  },
+				// Create the links with the input value as innerHTML
+				var li = document.createElement('li');
+				li.className = 'dynamic-link';
+				li.innerHTML = dynamicValue2 + "<input type='submit'class='borrar'value='X'>"+"<br>" + dynamicValue + "%";
 
-                  series: [{
-                      name: 'Population',
-                      data: [100,200],
-                      color:'#459fff',
-                    dataLabels: {
-                        enabled: true,
-                        rotation: -90,
-                        color: 'white',
-                        align: 'right',
-                        x: 4,
-                        y: 10,
+				// Append it and attach the event (via onclick)
+				$('#links').append(li);
 
-                      style: {
-                        fontSize: '10px',
-                        fontFamily:'Verdana, sans-serif'
-                      }
-                    }
-                  }]
-              });
-            });
+				li.onclick = function() {
+					dynamicEvent2($(li))
+				}
+				$('form')[0].habilidad.value="";
+			}
+			
+			// Prevent the form submitting
+			return false;
+		});
+		// Create function outside loop
+		function Aherramientas() {
+			this.innerHTML = $('.lista').hide(400);
+			this.className += 'lista-success2';
+		}
+		function Aherramientas2(obj) {
+			obj.hide(400);
+		}
 
-               
-        </script>
 
-      
-      <script>
-        
-          $('.foo1').carouFredSel({
+		$('.formulario2').submit ( function(e) {
+			e.preventDefault();
+			// Grab the input value
+			var valor1 = $('.text').val();
+			var valor2 = $('.range').val();
+			
+			// If empty value
+			if(!valor1) {
 
-              auto : false,
+				alert('Please enter something.');
 
-              prev : "#foo1_prev",
+			} 
+			else {
+			  // Change the submit value
+			  $('.agregarV').val( 'Agregar');
+			  
+			  // Create the links with the input value as innerHTML
+			  var li = document.createElement('li');
+			  li.className = 'lista';
+			  li.innerHTML = valor1 + "<input type='submit'class='borrar'value='X'>"+"<br>" + valor2 + "%";
+			  
+			  // Append it and attach the event (via onclick)
+			  $('#h').append(li);
+			  // li.onclick = Aherramientas;
+			  li.onclick = function() { 
+			  	Aherramientas2($(li)); 
+			  }
+			  $('form')[0].herramientas.value="";
+			}
+			
+			// Prevent the form submitting
+			return false;
+		});
 
-              next : "#foo1_next"
+		// Create function outside loop
+		function Aproyectos() {
+			this.innerHTML = $('.proyecto').hide(400);
+			this.className += 'proyecto-success2';
+		}
+		function Aproyectos2(obj2) {
+			obj2.hide(400);
+		}
 
-          });
-      </script>
-      <script src="{{MEDIA_URL}}js/highcharts.js"></script>
-      <script src="{{MEDIA_URL}}js/highcharts-more.js"></script>
-      <script>
-            $(document).ready(nalgasychichis);
 
-            function nalgasychichis()
-            {
-              $('#container').highcharts({
+		$('.formulario3').submit ( function(e) {
+			e.preventDefault();
+			// Grab the input value
+			var val1 = $('.nombre').val();
+			var val2 = $('.descripcion').val();
+			var val3 = $('.enlace').val();
 
-                      
-              chart: {
-                  polar: true,
-                  backgroundColor: 'transparent',
-                  type: 'line'
+			// If empty value
+			if(!val1) {
 
-              },
-                credits: {
-                  enabled: false
-              },
-              title: {
-                  text: 'Habilidades',
-                  x: -80,
-                   style: {
-                      color: '#459fff',
-                      fontWeight: 'Verdana, sans-serif'
-                  }
+				alert('Please enter something.');
 
-              },
-              
-              pane: {
-                  size: '80%'
-              },
-              
-              xAxis: {
-                  categories: ['Pert,CPM', 'Business Intelligence', 'Gantt', 'Canvas Bussiness Model', 
-                          'Plan de negocios'],
-                              labels: {
-                          align: 'right',
-                          style: {
-                            color: '#459fff',
-                              fontSize: '11px',
-                              fontFamily: 'Verdana, sans-serif'
-                          }
-                      },
-                  tickmarkPlacement: 'on',
-                  lineWidth: 0
+			} 
+			else {
+				// Change the submit value
+				$('.agregarP').val( 'Agregar');
+				  
+				// Create the links with the input value as innerHTML
+				var li = document.createElement('li');
+				li.className = 'proyecto';
+				li.innerHTML = val1 + "<input type='submit'class='borrar2'value='X'>"+"<br>" + val2 + "<br><br>"+ val3;
+				  
+				// Append it and attach the event (via onclick)
+				$('#p').append(li);
+				li.onclick = function(){
+					Aproyectos2($(li)); 
+				}
+				$('.nombre').val('');
+				$('.descripcion').val('');
+				$('.enlace').val('');
+			}
+			
+			// Prevent the form submitting
+			return false;
+		});
 
-              },
+		$('#container2').highcharts({
+			chart: {
+				type: 'column',
+				backgroundColor: 'transparent',
+				margin: [ 60, 60, 100, 80],
+			},
+			credits: {
+				enabled: false
+			},
 
-                  
-              yAxis: {
-                  gridLineInterpolation: 'polygon',
-                  lineWidth: 0,
-                  min: 0
-              },
-              
-              tooltip: {
-                  shared: true,
-                  pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}</b><br/>'
-              },
-              
-              legend: {
-                enabled:false,
-                  align: 'right',
-                  verticalAlign: 'top',
-                  y: 70,
-                  layout: 'vertical'
-              },
+			title: {
+				text: 'Herramientas',
 
-              exporting: {
-                  enabled: false
-                  
-              },
-              
-              series: [{
-             
-                  name: "Choko",
-                  data: [990,4440,660,770,1000],
-                  color:'#459fff',
-                  pointPlacement: 'on',
+				style: {
+					marginleft:'0px',
+					color: '#ff738f',
+					fontWeight:'Verdana, sans-serif'
+				}
 
-             }]
-           });
-                 // the button action
-           var i = 0;
-          $('#button').click(function() {
-              var chart = $('#agregar').highcharts();
-              chart.data[0].addPoint(50 * (i % 3));
-              i++;
-          });
-      }
+			},
 
-          
+			xAxis: {
+				categories: [
+				'Java',
+				'JavaScript',
+				],
 
-        $(function () {
-              $('#container2').highcharts({
-                  chart: {
-                      type: 'column',
-                      backgroundColor: 'transparent',
-                      margin: [ 60, 60, 100, 80],
-                  },
-                    credits: {
-                  enabled: false
-              },
-                  title: {
-                      text: 'Herramientas',
-                       style: {
-                        marginleft:'0px',
-                        color: '#ff738f',
-                        fontWeight:'Verdana, sans-serif'
-                    }
+				labels: {
+					rotation: -90,
+					align: 'right',
+					style: {
+						color: '#ff738f',
+						fontSize: '11px',
+						fontFamily:'Verdana, sans-serif'
+					}
+				}
+			},
+			yAxis: {
+				min: 0,
+				title: {
+					style: {
+						color: '#ff738f',
+						fontWeight:'Verdana, sans-serif'
+					}
 
-                  },
-                  xAxis: {
-                      categories: [
-                          'Java',
-                          'JavaScript',
-                          'CSS',
-                          'HTML',
-                          'C#',
-                          'jQuery'
-                         
-                      ],
-                      labels: {
-                          rotation: -90,
-                          align: 'right',
-                          style: {
-                            color: '#ff738f',
-                              fontSize: '11px',
-                              fontFamily:'Verdana, sans-serif'
+				}
 
-                          }
-                      }
-                  },
-                  yAxis: {
-                      min: 0,
-                      title: {
-                        style: {
-                      color: '#ff738f',
-                      fontWeight:'Verdana, sans-serif'
-                  }
-                          
-                      }
-            
-                  },
-                  legend: {
-                      enabled: false
-                  },
-                  tooltip: {
-                      formatter: function() {
-                          return '<b>'+ this.x +'</b><br/>'+
-                               Highcharts.numberFormat(this.y) ;
-                      }
-                  },
-                  exporting: {
-                  enabled: false
-                  
-              },
-                  series: [{
-                      name: 'Population',
-                      data: [100,60,50, 80, 10, 50],
-                      color:'#459fff',
-                      dataLabels: {
-                          enabled: true,
-                          rotation: -90,
-                          color: 'white',
-                          align: 'right',
-                          x: 4,
-                          y: 10,
-                          style: {
-                              fontSize: '10px',
-                              fontFamily:'Verdana, sans-serif'
-                          }
-                      }
-                  }]
-              });
-          });
-          
-      </script>
-  </head>
+			},
+
+			legend: {
+				enabled: false
+			},
+
+			tooltip: {
+				formatter: function() {
+					return '<b>'+ this.x +'</b><br/>'+
+					Highcharts.numberFormat(this.y) ;
+				}
+			},
+			exporting: {
+				enabled: false
+			},
+
+			series: [{
+				name: 'Population',
+				data: [100,200],
+				color:'#459fff',
+				dataLabels: {
+					enabled: true,
+					rotation: -90,
+					color: 'white',
+					align: 'right',
+					x: 4,
+					y: 10,
+
+					style: {
+						fontSize: '10px',
+						fontFamily:'Verdana, sans-serif'
+					}
+				}
+			}]
+		});
+	});
+</script>
+
+
+	<script>
+
+	$('.foo1').carouFredSel({
+
+		auto : false,
+
+		prev : "#foo1_prev",
+
+		next : "#foo1_next"
+
+	});
+	</script>
+	<script src="{{MEDIA_URL}}js/highcharts.js"></script>
+	<script src="{{MEDIA_URL}}js/highcharts-more.js"></script>
+	<script>
+	$(document).ready(nalgasychichis);
+
+	function nalgasychichis() {
+		$('#container').highcharts({
+			chart: {
+				polar: true,
+				backgroundColor: 'transparent',
+				type: 'line'
+
+			},
+			credits: {
+				enabled: false
+			},
+			title: {
+				text: 'Habilidades',
+				x: -80,
+				style: {
+					color: '#459fff',
+					fontWeight: 'Verdana, sans-serif'
+				}
+
+			},
+			pane: {
+				size: '80%'
+			},
+			xAxis: {
+				categories: ['Pert,CPM', 'Business Intelligence', 'Gantt', 'Canvas Bussiness Model', 
+				'Plan de negocios'],
+				labels: {
+					align: 'right',
+					style: {
+						color: '#459fff',
+						fontSize: '11px',
+						fontFamily: 'Verdana, sans-serif'
+					}
+				},
+				tickmarkPlacement: 'on',
+				lineWidth: 0
+
+			},
+			yAxis: {
+				gridLineInterpolation: 'polygon',
+				lineWidth: 0,
+				min: 0
+			},
+			tooltip: {
+				shared: true,
+				pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}</b><br/>'
+			},
+			legend: {
+				enabled:false,
+				align: 'right',
+				verticalAlign: 'top',
+				y: 70,
+				layout: 'vertical'
+			},
+			exporting: {
+				enabled: false
+
+			},
+			series: [{
+
+				name: "Choko",
+				data: [990,4440,660,770,1000],
+				color:'#459fff',
+				pointPlacement: 'on',
+
+			}]
+		});
+		// the button action
+		var i = 0;
+		$('#button').click(function() {
+		 	var chart = $('#agregar').highcharts();
+		 	chart.data[0].addPoint(50 * (i % 3));
+		 	i++;
+		});
+	}
+
+	$(function () {
+		$('#container2').highcharts({
+			chart: {
+				type: 'column',
+				backgroundColor: 'transparent',
+				margin: [ 60, 60, 100, 80],
+			},
+			credits: {
+				enabled: false
+			},
+			title: {
+				text: 'Herramientas',
+				style: {
+					marginleft:'0px',
+					color: '#ff738f',
+					fontWeight:'Verdana, sans-serif'
+				}
+			},
+			xAxis: {
+				categories: [
+				'Java',
+				'JavaScript',
+				'CSS',
+				'HTML',
+				'C#',
+				'jQuery'
+				],
+				labels: {
+					rotation: -90,
+					align: 'right',
+					style: {
+						color: '#ff738f',
+						fontSize: '11px',
+						fontFamily:'Verdana, sans-serif'
+
+					}
+				}
+			},
+			yAxis: {
+				min: 0,
+				title: {
+					style: {
+						color: '#ff738f',
+						fontWeight:'Verdana, sans-serif'
+					}
+
+				}
+
+			},
+			legend: {
+				enabled: false
+			},
+			tooltip: {
+				formatter: function() {
+					return '<b>'+ this.x +'</b><br/>'+
+					Highcharts.numberFormat(this.y) ;
+				}
+			},
+			exporting: {
+				enabled: false
+
+			},
+			series: [{
+				name: 'Population',
+				data: [100,60,50, 80, 10, 50],
+				color:'#459fff',
+				dataLabels: {
+					enabled: true,
+					rotation: -90,
+					color: 'white',
+					align: 'right',
+					x: 4,
+					y: 10,
+					style: {
+						fontSize: '10px',
+						fontFamily:'Verdana, sans-serif'
+					}
+				}
+			}]
+		});
+	});
+
+	</script>
+</head>
 
 
 
 
 <body>
-    <!--menu de la pagina de perfiles-->
-    <nav>
-        <ul id="menu">
-          <li><a href="#"class="imprimir"><img src="{{MEDIA_URL}}img/profile-me-blanco.png" alt="" ></a></li>
-          <li><a href="trabajos.html"><img src="{{MEDIA_URL}}img/casa.png" alt=""></a></li>
-          <li><a href="perfil.html"><img src="{{MEDIA_URL}}img/perfil.png" alt=""></a></li>
-          <li><input type="text"><img src="{{MEDIA_URL}}img/buscar.png" alt=""id="buscar"></li>
-        </ul>
-    </nav>
-
-
-    <section class="container1">
-            
-              <!--Datos personales del usuario (nombre,campo de trabajo y edad)-->
-              <div id="datos1">
-                    <div id="fperfil">
-                     <img src="{{MEDIA_URL}}img/choko.png" alt="image del perfil">
-                    </div>
-                    <div id="nombre">{{ user.get_full_name }}</div>
-                    <div id="profesion">Desarrollador</div>
-                    <div id="edad">{{ user.personaldata.age }}</div>
-                    <div id="numero"> {{ user.personaldata.telefono }}</div>
-                    <div id="correo">{{ user.email }}</div>
-                    <div id="trabajo">Ctin</div>
-                    <div id="live">{{ user.personaldata.ciudad.nombre }}/{{ user.personaldata.ciudad.estado.nombre }}</div>
-                    <!--boton y div para editar todos los datos personales -->
-                    <input type="button" value="Editar información"class="explode">
-                    <!--input para editar los campos-->
-             </div>
-
-             
-              <div id="datos2">
-                   <img src="{{MEDIA_URL}}img/nombre.png" alt=""id="nombre1">
-                    <img src="{{MEDIA_URL}}img/profesion.png" alt=""id="profesion1">
-                    <img src="{{MEDIA_URL}}img/edad.png" alt=""id="edad1">
-                    <img src="{{MEDIA_URL}}img/telefono.png" alt=""id="numero1"> 
-                    <img src="{{MEDIA_URL}}img/mail-propio.png" alt=""id="correo1"> 
-                    <img src="{{MEDIA_URL}}img/trabajo.png" alt=""id="trabajo1"> 
-                    <img src="{{MEDIA_URL}}img/ubicacion.png"id="pais"> 
-              </div>
-
-
-              <div class="contenido" id="camposD">
-                  <input type="text"placeholder="Nombre Completo">
-                  <input type="text"placeholder="Campo de Trabajo">
-                  <input type="text"placeholder="Edad">
-                  <input type="text"placeholder="Telefono">
-                  <input type="text"placeholder="Correo Electronico">
-                  <input type="text"placeholder="Trabajo">
-                  <input type="text"placeholder="Pais/municipio">
-                  <input type="button" value="Guardar"class="explode">
-                  <img src="{{MEDIA_URL}}img/foto-perfil.png" alt="">
-
-              </div>
-           
-               <hr>
-
-      </section>
-
-
-
-           
-
-    <section class="container2">
-
-                <!--esta es la grafica de las habilidades-->
-              <div id="habilidades">
-                    <!--boton de editar-->
-                    <input type="button" value="Editar" class="explode2">
-                        <div id="container"class="verticalLine" style="min-width: 300px; max-width: 800px; height: 420px; margin: 1 auto"> </div>
-              </div>
-          <!--editable de las habilidades -->
-
-              <div class="chabilidades"id="contenido">
-                  <!--es el div donde contiene todas las habilidades agregadas-->
-                     <div id="Totalh">
-                        <ul id="links">
-          
-                         </ul>
-                      
-                     </div> 
-                     <!--es el div donde agregas habilidades-->
-
-                  <div class="Nhabilidad">
-                    
-                      <!--es el slider de putos que tienes en cada habilidad-->
-                      
-                        <div id="slider">
-                            <!--slider-->
-                              <form oninput="amount.value=rangeInput.value"class="generate">
-
-                                <input name="habilidad" type="text"placeholder="Habilidades" class="generate-input2">
-
-                                <input type="submit"value="Agregar"class="generate-submit">
-
-                               <input id="rangeInput"name="rangeInput" type="range" min="1" max="100" class="generate-input" />
-                               <!--numero que elige el usuario en el slider-->
-                              <output name="amount" for="rangeInput" class="num1">50</output>
-                              </form>
-                        </div>
-
-                   </div>
-
-                   <input type="button"value="Guardar Cambios"class="explode2">
-                     
-              </div>
-
-                     
-
-
-                <!--Es la grafica de las herramientas-->
-              <div class="herramientas">
-                    <input type="button" value="Editar"class="explode3">
-
-                  <div  id="container2" class="verticalLine2" style="height: 390px; min-width:350px; max-width: 1000px; margin: 1 auto"></div>
-              </div>
-                <!--editable de las herramientas -->
-
-            <div class="cherramientas"id="contenido2">
-                  <!--es el div donde contiene todas las habilidades agregadas-->
-              <div id="Totalhe">
-                  <ul id="h">
-          
-          
-                  </ul>
-                      
-              </div> 
-                     <!--es el div donde agregas habilidades-->
-
-                     <div class="Nherramientas">
-                    
-                      <!--es el slider de putos que tienes en cada habilidad-->
-                      
-                        <div id="slider2">
-                            <!--slider-->
-                              <form oninput="amount.value=rangeInput.value"class="formulario2">
-                              <input name="herramientas" type="text" placeholder="Herramientas"class="text">
-                              <input type="submit"value="Agregar" class="agregarV">
-                               <input id="rangeInput"name="rangeInput" type="range" min="1" max="100" class="range" />
-                               <!--numero que elige el usuario en el slider-->
-                              <output name="amount" for="rangeInput" class="num2">50</output>
-                              </form>
-                        </div>
-
-                   </div>
-
-                  <input type="button"value="Guardar Cambios"class="explode3">
-                     
-          </div>
-
-      <hr>
-      <!--fin del container2-->            
- </section>
-
-
-
-<section class="container3">
-       
-        <div class="escolaridad">
-                      <!--boton editar-->
-                <input type="button" value="Editar"class="explode5">
-              
-
-
-                   <h1>Escolaridad</h1>
-                   <!--imagen del tipo de escuela que es-->
-                    <img src="{{MEDIA_URL}}img/ing..png" alt=""id="Esc">
-
-
-                  <!--nombre de escuela en la que esta actualmente-->
-                  <div id="nescuela">
-                      <p>Nombre de la escuela o carrera cursada</p>
-                  </div>
-                  
-                   <!--certificaciones del usuario-->
-                   <div id="certificaciones">
-                     <p>Aqui van todas las certificaciones del usuario</p>
-                   </div>   
-        </div>
-        <div id="contenido4">
-              <input type="button" value="Guardar Cambios" class="explode5">
-                  
-              <select>
-                  <option value="0">Escolaridad</option>
-                  <option value="1">Ingenieria</option>
-                  <option value="2">Doctorado</option>
-                  <option value="3">Licenciatura</option>
-                  <option value="4">Preparatoria</option>
-              </select>
-              <textarea id="carrera"name="comentarios" rows="10" cols="40"placeholder="Nombre de la carrera"></textarea>
-
-              <textarea id="certificaciones" name="comentarios" rows="10" cols="40"placeholder="certificaciónes"></textarea>
-
-        </div>
-
-
-
-    <div id="hobbies">
-          <!--boton editar-->
-            <input type="button" value="Editar"class="explode4">
-            
-              <!--hobbies que se muestran en el perfil-->
-             <h1>Hobbies</h1>
-              <ul>
-                   
-                    <li><img src="{{MEDIA_URL}}img/pintar.png"></li>
-                    <li><img src="{{MEDIA_URL}}img/ejercicio.png"></li>
-                    <li><img src="{{MEDIA_URL}}img/leer.png"></li>
-                    <li><img src="{{MEDIA_URL}}img/fotografia.png"></li>
-                    
-              </ul>
-      </div>
-      <!--elejir hobbies-->
-      <div class="EditH">
-           <input type="button"value="Guardar"class="explode4"id="btnG">
-            <div id="contenido3">
-                  
-                  <ul>
-                    <li><img src="{{MEDIA_URL}}img/cine.png"> <input type="checkbox" name="radio-btn"id="musica" /></li>
-                    <li><img src="{{MEDIA_URL}}img/leer.png"><input type="checkbox" name="radio-btn2" id="pintura"/></li>
-                    <li><img src="{{MEDIA_URL}}img/fotografia.png"><input type="checkbox" name="radio-btn3"id="gym"/></li>
-                    <li><img src="{{MEDIA_URL}}img/musica.png"><input type="checkbox" name="radio-btn4"id="futbol"/></li>
-                    <li><img src="{{MEDIA_URL}}img/viajar.png"><input type="checkbox" name="radio-btn5"id="soccer"/></li>
-                    <li><img src="{{MEDIA_URL}}img/pintar.png"><input type="checkbox" name="radio-btn6" id="leer"/></li>
-                    <li><img src="{{MEDIA_URL}}img/correr.png"><input type="checkbox" name="radio-btn7"id="correr"/></li>
-                    <li><img src="{{MEDIA_URL}}img/soccer.png"><input type="checkbox" name="radio-btn8" id="fumar"/></li>
-                    <li><img src="{{MEDIA_URL}}img/ejercicio.png"><input type="checkbox" name="radio-btn9"id="tomar" /></li>
-                    <li><img src="{{MEDIA_URL}}img/videojuegos.png"><input type="checkbox" name="radio-btn10"id="programar" /></li>
-                  </ul>
-            </div>
-        </div>
-      <hr>
-</section>
-
-
-
-<section class="container4">
-            <h1>Proyectos</h1>
-
-           <div id="editarPro"class="contenido5">
-
-             <div id="listaproyectos">
-                <ul id="p">
-          
-                </ul>
-            </div>
-
-                <input type="button" value="Guardar Cambios"class="explode6">
-
-                <form action=""class="formulario3">
-
-                <textarea placeholder="Nombre del proyecto"class="nombre"></textarea>
-
-                <textarea placeholder="Descripción del proyecto" class="descripcion"></textarea>
-
-                <textarea placeholder="Enlace"class="enlace"></textarea>
-
-                  <input type="submit"value="Agregar"id="aproyecto"class="agregarP">
-                      
-                </form> 
-
-            </div>
-
-
-
-          <div class="proyectos"id="datosP">
-            <input type="button" value="Editar"class="explode6">
-              <div id="NDE">
-                <ul>
-                  <li>Nombre</li>
-                  <li>Descripción</li>
-                  <li>Enlace</li>
-                </ul>
-              </div>
-
-              <div id="proyecto">
-                <ul>
-                  <li>Erbol</li>
-                  <li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
-                  <li>www.erbol.com</li>
-                </ul>
-                <ul>
-                  <li>Erbol</li>
-                  <li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
-                  <li>www.erbol.com</li>
-                </ul>
-                <ul>
-                  <li>Erbol</li>
-                  <li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
-                  <li>www.erbol.com</li>
-                </ul>
-                <ul>
-                  <li>Erbol</li>
-                  <li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
-                  <li>www.erbol.com</li>
-                </ul>
-                <ul>
-                  <li>Erbol</li>
-                  <li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
-                  <li>www.erbol.com</li>
-                </ul>
-                 <ul>
-                  <li>Erbol</li>
-                  <li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
-                  <li>www.erbol.com</li>
-                </ul>
-                 <ul>
-                  <li>Erbol</li>
-                  <li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
-                  <li>www.erbol.com</li>
-                </ul>
-              </div>
-
-          </div>
-          
- </section>
-
-
-
-
-
-
-
-
-<script src="{{MEDIA_URL}}js/jquery.slicknav.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function(){
-  $('#menu').slicknav();
-});
-</script>
+	<!--menu de la pagina de perfiles-->
+	<nav>
+		<ul id="menu">
+			<li><a href="#"class="imprimir"><img src="{{MEDIA_URL}}img/profile-me-blanco.png" alt="" ></a></li>
+			<li><a href="trabajos.html"><img src="{{MEDIA_URL}}img/casa.png" alt=""></a></li>
+			<li><a href="perfil.html"><img src="{{MEDIA_URL}}img/perfil.png" alt=""></a></li>
+			<li><input type="text"><img src="{{MEDIA_URL}}img/buscar.png" alt=""id="buscar"></li>
+		</ul>
+	</nav>
+
+
+	<section class="container1">
+
+		<!--Datos personales del usuario (nombre,campo de trabajo y edad)-->
+		<div id="datos1">
+			<div id="fperfil">
+				<img src="{{MEDIA_URL}}img/choko.png" alt="image del perfil">
+			</div>
+			<div id="nombre">{{ user.get_full_name }}</div>
+			<div id="profesion">Desarrollador</div>
+			<div id="edad">{{ user.personaldata.age }}</div>
+			<div id="numero"> {{ user.personaldata.telefono }}</div>
+			<div id="correo">{{ user.email }}</div>
+			<div id="trabajo">Ctin</div>
+			<div id="live">{{ user.personaldata.ciudad.nombre }}/{{ user.personaldata.ciudad.estado.nombre }}</div>
+			<!--boton y div para editar todos los datos personales -->
+			<input type="button" value="Editar información"class="explode">
+			<!--input para editar los campos-->
+		</div>
+
+
+		<div id="datos2">
+			<img src="{{MEDIA_URL}}img/nombre.png" alt=""id="nombre1">
+			<img src="{{MEDIA_URL}}img/profesion.png" alt=""id="profesion1">
+			<img src="{{MEDIA_URL}}img/edad.png" alt=""id="edad1">
+			<img src="{{MEDIA_URL}}img/telefono.png" alt=""id="numero1"> 
+			<img src="{{MEDIA_URL}}img/mail-propio.png" alt=""id="correo1"> 
+			<img src="{{MEDIA_URL}}img/trabajo.png" alt=""id="trabajo1"> 
+			<img src="{{MEDIA_URL}}img/ubicacion.png"id="pais"> 
+		</div>
+
+
+		<div class="contenido" id="camposD">
+			<input type="text"placeholder="Nombre Completo">
+			<input type="text"placeholder="Campo de Trabajo">
+			<input type="text"placeholder="Edad">
+			<input type="text"placeholder="Telefono">
+			<input type="text"placeholder="Correo Electronico">
+			<input type="text"placeholder="Trabajo">
+			<input type="text"placeholder="Pais/municipio">
+			<input type="button" value="Guardar"class="explode">
+			<img src="{{MEDIA_URL}}img/foto-perfil.png" alt="">
+
+		</div>
+
+		<hr>
+
+	</section>
+
+	<section class="container2">
+
+		<!--esta es la grafica de las habilidades-->
+		<div id="habilidades">
+			<!--boton de editar-->
+			<input type="button" value="Editar" class="explode2">
+			<div id="container"class="verticalLine" style="min-width: 300px; max-width: 800px; height: 420px; margin: 1 auto"> </div>
+		</div>
+		<!--editable de las habilidades -->
+
+		<div class="chabilidades"id="contenido">
+			<!--es el div donde contiene todas las habilidades agregadas-->
+			<div id="Totalh">
+				<ul id="links">
+
+				</ul>
+
+			</div> 
+			<!--es el div donde agregas habilidades-->
+
+			<div class="Nhabilidad">
+
+				<!--es el slider de putos que tienes en cada habilidad-->
+
+				<div id="slider">
+					<!--slider-->
+					<form oninput="amount.value=rangeInput.value"class="generate">
+
+						<input name="habilidad" type="text"placeholder="Habilidades" class="generate-input2">
+
+						<input type="submit"value="Agregar"class="generate-submit">
+
+						<input id="rangeInput"name="rangeInput" type="range" min="1" max="100" class="generate-input" />
+						<!--numero que elige el usuario en el slider-->
+						<output name="amount" for="rangeInput" class="num1">50</output>
+					</form>
+				</div>
+
+			</div>
+
+			<input type="button"value="Guardar Cambios"class="explode2">
+
+		</div>
+
+		<!--Es la grafica de las herramientas-->
+		<div class="herramientas">
+			<input type="button" value="Editar"class="explode3">
+
+			<div  id="container2" class="verticalLine2" style="height: 390px; min-width:350px; max-width: 1000px; margin: 1 auto"></div>
+		</div>
+
+		<!--editable de las herramientas -->
+		<div class="cherramientas"id="contenido2">
+			<!--es el div donde contiene todas las habilidades agregadas-->
+			<div id="Totalhe">
+				<ul id="h">
+
+
+				</ul>
+
+			</div> 
+			<!--es el div donde agregas habilidades-->
+
+			<div class="Nherramientas">
+
+				<!--es el slider de putos que tienes en cada habilidad-->
+
+				<div id="slider2">
+					<!--slider-->
+					<form oninput="amount.value=rangeInput.value"class="formulario2">
+						<input name="herramientas" type="text" placeholder="Herramientas"class="text">
+						<input type="submit"value="Agregar" class="agregarV">
+						<input id="rangeInput"name="rangeInput" type="range" min="1" max="100" class="range" />
+						<!--numero que elige el usuario en el slider-->
+						<output name="amount" for="rangeInput" class="num2">50</output>
+					</form>
+				</div>
+
+			</div>
+
+			<input type="button"value="Guardar Cambios"class="explode3">
+
+		</div>
+
+		<hr>
+		<!--fin del container2-->            
+	</section>
+
+
+
+	<section class="container3">
+
+		<div class="escolaridad">
+			<!--boton editar-->
+			<input type="button" value="Editar"class="explode5">
+
+
+
+			<h1>Escolaridad</h1>
+			<!--imagen del tipo de escuela que es-->
+			<img src="{{MEDIA_URL}}img/ing..png" alt=""id="Esc">
+
+
+			<!--nombre de escuela en la que esta actualmente-->
+			<div id="nescuela">
+				<p>Nombre de la escuela o carrera cursada</p>
+			</div>
+
+			<!--certificaciones del usuario-->
+			<div id="certificaciones">
+				<p>Aqui van todas las certificaciones del usuario</p>
+			</div>   
+		</div>
+		<div id="contenido4">
+			<input type="button" value="Guardar Cambios" class="explode5">
+
+			<select>
+				<option value="0">Escolaridad</option>
+				<option value="1">Ingenieria</option>
+				<option value="2">Doctorado</option>
+				<option value="3">Licenciatura</option>
+				<option value="4">Preparatoria</option>
+			</select>
+			<textarea id="carrera"name="comentarios" rows="10" cols="40"placeholder="Nombre de la carrera"></textarea>
+
+			<textarea id="certificaciones" name="comentarios" rows="10" cols="40"placeholder="certificaciónes"></textarea>
+
+		</div>
+
+
+
+		<div id="hobbies">
+			<!--boton editar-->
+			<input type="button" value="Editar"class="explode4">
+			
+			<!--hobbies que se muestran en el perfil-->
+			<h1>Hobbies</h1>
+			<ul>
+
+				<li><img src="{{MEDIA_URL}}img/pintar.png"></li>
+				<li><img src="{{MEDIA_URL}}img/ejercicio.png"></li>
+				<li><img src="{{MEDIA_URL}}img/leer.png"></li>
+				<li><img src="{{MEDIA_URL}}img/fotografia.png"></li>
+
+			</ul>
+		</div>
+		<!--elejir hobbies-->
+		<div class="EditH">
+			<input type="button"value="Guardar"class="explode4"id="btnG">
+			<div id="contenido3">
+
+				<ul>
+					<li><img src="{{MEDIA_URL}}img/cine.png"> <input type="checkbox" name="radio-btn"id="musica" /></li>
+					<li><img src="{{MEDIA_URL}}img/leer.png"><input type="checkbox" name="radio-btn2" id="pintura"/></li>
+					<li><img src="{{MEDIA_URL}}img/fotografia.png"><input type="checkbox" name="radio-btn3"id="gym"/></li>
+					<li><img src="{{MEDIA_URL}}img/musica.png"><input type="checkbox" name="radio-btn4"id="futbol"/></li>
+					<li><img src="{{MEDIA_URL}}img/viajar.png"><input type="checkbox" name="radio-btn5"id="soccer"/></li>
+					<li><img src="{{MEDIA_URL}}img/pintar.png"><input type="checkbox" name="radio-btn6" id="leer"/></li>
+					<li><img src="{{MEDIA_URL}}img/correr.png"><input type="checkbox" name="radio-btn7"id="correr"/></li>
+					<li><img src="{{MEDIA_URL}}img/soccer.png"><input type="checkbox" name="radio-btn8" id="fumar"/></li>
+					<li><img src="{{MEDIA_URL}}img/ejercicio.png"><input type="checkbox" name="radio-btn9"id="tomar" /></li>
+					<li><img src="{{MEDIA_URL}}img/videojuegos.png"><input type="checkbox" name="radio-btn10"id="programar" /></li>
+				</ul>
+			</div>
+		</div>
+		<hr>
+	</section>
+
+
+
+	<section class="container4">
+		<h1>Proyectos</h1>
+
+		<div id="editarPro"class="contenido5">
+
+			<div id="listaproyectos">
+				<ul id="p">
+
+				</ul>
+			</div>
+
+			<input type="button" value="Guardar Cambios"class="explode6">
+
+			<form action=""class="formulario3">
+
+				<textarea placeholder="Nombre del proyecto"class="nombre"></textarea>
+
+				<textarea placeholder="Descripción del proyecto" class="descripcion"></textarea>
+
+				<textarea placeholder="Enlace"class="enlace"></textarea>
+
+				<input type="submit"value="Agregar"id="aproyecto"class="agregarP">
+
+			</form> 
+
+		</div>
+
+
+
+		<div class="proyectos"id="datosP">
+			<input type="button" value="Editar"class="explode6">
+			<div id="NDE">
+				<ul>
+					<li>Nombre</li>
+					<li>Descripción</li>
+					<li>Enlace</li>
+				</ul>
+			</div>
+
+			<div id="proyecto">
+				<ul>
+					<li>Erbol</li>
+					<li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
+					<li>www.erbol.com</li>
+				</ul>
+				<ul>
+					<li>Erbol</li>
+					<li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
+					<li>www.erbol.com</li>
+				</ul>
+				<ul>
+					<li>Erbol</li>
+					<li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
+					<li>www.erbol.com</li>
+				</ul>
+				<ul>
+					<li>Erbol</li>
+					<li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
+					<li>www.erbol.com</li>
+				</ul>
+				<ul>
+					<li>Erbol</li>
+					<li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
+					<li>www.erbol.com</li>
+				</ul>
+				<ul>
+					<li>Erbol</li>
+					<li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
+					<li>www.erbol.com</li>
+				</ul>
+				<ul>
+					<li>Erbol</li>
+					<li>es una plataforma que su principal funcion es reforestar y sembrar productos organicos</li>
+					<li>www.erbol.com</li>
+				</ul>
+			</div>
+
+		</div>
+
+	</section>
+
+	<script src="{{MEDIA_URL}}js/jquery.slicknav.js"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#menu').slicknav();
+	});
+	</script>
 
 
 
