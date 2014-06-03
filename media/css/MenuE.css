@@ -231,7 +231,7 @@ img{
 .Dtrabajador{
 	position: relative;
 	width:50%;
-	height:50%;
+	height:400px;
 	left:25%;
 }
 .Dtrabajador>#puesto{
@@ -326,7 +326,7 @@ img{
 .Htrabajador{
 	position: relative;
 	width:50%;
-	height:50%;
+	height:350px;
 	left:25%;
 }
 .Htrabajador>#hab{
@@ -430,7 +430,7 @@ img{
     padding-bottom: 4px;
     text-decoration:none;
     text-align:center;
-    height:5%;
+    height:32px;
     padding-top:0.5%;
     width: 10%;
     right: -45%;
@@ -442,6 +442,14 @@ img{
     z-index: 4;
 }
 @media handheld, only screen and (max-width: 900px) {
+	.sec1>#camposP{
+		position: relative;
+		margin-top:8%;
+		left:25%;
+	 	width:50%;
+		height:320px;
+
+	}
 
 	.sec1>#camposP>input:nth-child(1){
 		position:absolute;
@@ -538,7 +546,7 @@ img{
 	.Dtrabajador{
 		position: relative;
 		width:70%;
-		height:50%;
+		height:350px;
 		top:5%;
 		left:15%;
 	}
@@ -546,7 +554,7 @@ img{
 	.Htrabajador{
 		position: relative;
 		width:80%;
-		height:50%;
+		height:35opx;
 		top:5%;
 		left:10%;
 	}
@@ -557,6 +565,7 @@ img{
 	
 }
 @media handheld, only screen and (max-width: 768px) {
+
 
 	.sec1>#camposP>input:nth-child(1){
 		position:absolute;
@@ -653,7 +662,7 @@ img{
 	.Dtrabajador{
 		position: relative;
 		width:80%;
-		height:50%;
+		height:350px;
 		top:5%;
 		left:10%;
 	}
@@ -661,7 +670,7 @@ img{
 	.Htrabajador{
 		position: relative;
 		width:90%;
-		height:50%;
+		height:350px;
 		top:5%;
 		left:5%;
 	}
@@ -672,9 +681,9 @@ img{
 }
 @media handheld, only screen and (max-width: 480px) {
 
- 	.sec1{
-		background:red;
- 	}
+	.sec1{
+		background: black;
+	}
  	.sec1>#tex_B{
 		font-size:20px;
 	}
@@ -778,7 +787,7 @@ img{
 	.Dtrabajador{
 		position: relative;
 		width:50%;
-		height:50%;
+		height:350px;
 		left:25%;
 	}
 	.Dtrabajador>#puesto{
@@ -812,7 +821,7 @@ img{
 	.Htrabajador{
 		position: relative;
 		width:50%;
-		height:50%;
+		height:350px;
 		left:25%;
 	}
 	.Htrabajador>#hab{

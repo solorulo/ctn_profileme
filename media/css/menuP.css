@@ -2031,6 +2031,35 @@ nav>ul>li:nth-child(4)>#buscar{
     .container1>hr{
         top:95%;
     }
+    nav>ul>li:nth-child(2){
+        position: absolute;
+        top:13%;
+        left:40%;
+        display: inline-block;
+        padding-right: 5%;
+    }
+    nav>ul>li:nth-child(3){
+        position: absolute;
+        top:13%;
+        left:52%;
+        display: inline-block;
+        padding-right: 5%;
+    }
+    nav>ul>li:nth-child(4){
+        position: absolute;
+        top:20%;
+        left:65%;
+        display: inline-block;
+        padding-left: 5%;
+        background: white;
+        width: 25%;
+        height: 50%;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        z-index: -3;
+    }
+
 
     #datos1>input{
         top:-10%;

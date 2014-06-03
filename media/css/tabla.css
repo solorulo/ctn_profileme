@@ -177,9 +177,14 @@ body{
     position:absolute;
     top: 50%;
     margin-left:95%;
-    height: 2.5%;
-    width:1.5%;
+    height: 5%;
+    width:3%;
     z-index:133333;
+}
+.section>#boton1>a{
+    position: absolute;
+    width: 100%;
+    height:100%;
 }
 .section>input{
     position:absolute;
@@ -242,16 +247,16 @@ body{
 }
 .section2>#camposP{
     position: relative;
-    top:4%;
-    left:20%;
+    margin-top:4%;
+    margin-left:20%;
     width:60%;
-    height:50%;
+    height:400px;
 
 }
 .section2>#camposP>input:nth-child(1){
     position: absolute;
     padding-left: 2%;
-    top:9%;
+    top:8%;
     left:20%;
     border:solid 1px #cccccc;
     width:25%;
@@ -287,7 +292,7 @@ body{
 .section2>#camposP>input:nth-child(4){
     position:absolute;
     padding-left: 2%;
-    top:9%;
+    top:8%;
     left:55%;
     border:solid 1px #cccccc;
     width:25%;
@@ -366,18 +371,28 @@ body{
     position: absolute;
     margin-left:0.5%;
     top:50%;
-    height: 2.5%;
-    width:1.5%;
+    height: 4.5%;
+    width:0.5%;
     z-index:1000;
+}
+.section2>#boton2_1>a{
+    position: absolute;
+    width: 100%;
+    height:100%;
 }
 
 .section2>#boton2_2{
     position: absolute;
     margin-left:13.5%;
     top:50%;
-    height: 2.5%;
-    width:1.5%;
+    height: 4.5%;
+    width:0.5%;
     z-index:3333333;
+}
+.section2>#boton2_2>a{
+    position: absolute;
+    width: 100%;
+    height:100%;
 }
 
 .section2>#boton2_2>img{
@@ -424,9 +439,9 @@ body{
 
 .section3>#editarH{
     position:relative;
-    left:30%;
-    top:4%;
-    height:40%;
+    margin-left:30%;
+    margin-top:4%;
+    height:300px;
     width: 40%;
     border:solid 1px #cccccc; 
     z-index:3;
@@ -497,20 +512,24 @@ body{
     border-radius: 4px;
 }
 .section3>#editarH>.Nherramientas>.generate>input:hover:nth-child(2){
-   
-    background:rgba(255,255,255,0.9);
-    
+   background:rgba(255,255,255,0.9);
 }
 
 .section3>#editarH>.Nherramientas>.generate>#slider{
      position: absolute;
      top:30%;
      left:40%;
-      
 }
 .section3>#editarH>.Nherramientas>#slider>.generate>input[type="range"]{
     background: blue;
 }
+.section3>#editarH>.Nherramientas>.generate>#slider>.num1{
+    position: absolute;
+    color:white;
+    margin-left:115%;
+    margin-top:-15%;
+}
+
 
 .section3>#editarH>input:nth-child(1){
    position:absolute;
@@ -520,27 +539,32 @@ body{
    z-index: 1;
 
 }
-.section3>#editarH>.Nherramientas>#mas{
-    position: absolute;
-    right:4%;
-    top:25%;
-}
 
 .section3>#boton3_1{
     position: absolute;
     margin-left:0.5%;
     top:50%;
     height: 10%;
-    width:10%;
+    width:0.5%;
     z-index:22222;
+}
+.section3>#boton3_1>a{
+    position: absolute;
+    width: 100%;
+    height:100%;
 }
 .section3>#boton3_2{
     position: absolute;
     margin-left:13.5%;
     top:50%;
     height: 4.5%;
-    width:1.5%;
+    width:0.5%;
     z-index:1000;
+}
+.section3>#boton3_2>a{
+    position: absolute;
+    width: 100%;
+    height:100%;
 }
 
 
@@ -578,9 +602,9 @@ body{
 }
 .section4>#editarH2{
     position:relative;
-    left:30%;
-    top:4%;
-    height:40%;
+    margin-left:30%;
+    margin-top:4%;
+    height:300px;
     width: 40%;
     border:solid 1px #cccccc; 
     z-index:3;
@@ -669,6 +693,12 @@ body{
     left:40%;
     top: 25%;
 }
+.section4>#editarH2>.formrow>.formulario2>.num2{
+    position: absolute;
+    color:white;
+    margin-left:69%;
+    margin-top:2%;
+}
 
 .section4>#editarH2>>input:nth-child(1){
    position:absolute;
@@ -683,19 +713,28 @@ body{
     position: absolute;
     margin-left:0.5%;
     top:50%;
-    height: 2.5%;
-    width:1.5%;
+    height: 4.5%;
+    width:0.5%;
     z-index:1000;
+}
+.section4>#boton4_1>a{
+    position: absolute;
+    width: 100%;
+    height:100%;
 }
 .section4>#boton4_2{
     position: absolute;
     margin-left:13.5%;
     top:50%;
-    height: 2.5%;
-    width:1.5%;
+    height:4.5%;
+    width:0.5%;
     z-index:1000;
 }
-
+.section4>#boton4_2>a{
+    position: absolute;
+    width: 100%;
+    height:100%;
+}
 
 
 
@@ -730,15 +769,15 @@ body{
     position:relative;
     margin-left:25%;
     margin-top:4%;
-    height:50%;
+    height:330px;
     width:50%;
-    background:white;
   }
 .hobbies>#h1{
     position: absolute;
     left:0%;
     top:5%;
 }
+
 #h1>input{
     position: absolute;
     top:0%;
@@ -850,17 +889,27 @@ body{
     position: absolute;
     margin-left:0.5%;
     top:50%;
-    height: 2.5%;
-    width:1.5%;
+    height: 4.5%;
+    width:0.5%;
     z-index:1000;
+}
+.section5>#boton5_1>a{
+    position: absolute;
+    width: 100%;
+    height:100%;
 }
 .section5>#boton5_2{
     position: absolute;
     margin-left:13.5%;
     top:50%;
-    height: 2.5%;
-    width:1.5%;
+    height:4.5%;
+    width:0.5%;
     z-index:1000;
+}
+.section5>#boton5_2>a{
+    position: absolute;
+    width: 100%;
+    height:100%;
 }
 
 .section6{
@@ -891,11 +940,10 @@ body{
 }
 .section6>.Proyectos{
     position: relative;
-    background:white;
     width:60%;
     z-index:222222;
     display:block;
-    height:50%;
+    height:315px;
     left:20%;
     top:7%; 
     border:solid 1px #459fff;
@@ -1009,18 +1057,34 @@ body{
     position: absolute;
     margin-left:0.5%;
     top:50%;
-    height: 2.5%;
-    width:1.5%;
+    height: 4.5%;
+    width:0.5%;
     z-index:1000;
+}
+.section6>#boton6_1>a{
+    position: absolute;
+    width: 100%;
+    height:100%;
 }
 .section6>#boton6_2{
     position: absolute;
     margin-left:13.5%;
     top:50%;
-    height: 2.5%;
-    width:1.5%;
+    height:4.5%;
+    width:0.5%;
     z-index:1000;
 }
+.section6>#boton6_2>a{
+    position: absolute;
+    width: 100%;
+    height:100%;
+}
+
+
+
+
+
+
 .section7{
     background:transparent;
 }
@@ -1050,9 +1114,14 @@ body{
     position: absolute;
     margin-left:0.5%;
     top:50%;
-    height: 2.5%;
-    width:1.5%;
+    height:4.5%;
+    width:0.5%;
     z-index:1000;
+}
+.section7>#boton7_1>a{
+    position: absolute;
+    width: 100%;
+    height:100%;
 }
 .section7>#imgP{
     position: relative;
@@ -1064,9 +1133,9 @@ body{
 .section7>.btnG{
     position: relative;
     background: transparent;
-    width:17%;
+    width:100%;
     height:5%;
-    right: -42%;
+    left:0%;
     top:9%;
 }
 .section7>.btnG>input{
@@ -1080,14 +1149,18 @@ body{
     text-align:center;
     height:100%;
     padding-top:0.5%;
-    width: 100%;
-    left: 0%;
+    width: 15%;
+    left: 42.5%;
     border: 2px solid #459fff;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
     top:1px;
     z-index: 4;
+}
+.section7>.btnG>input:hover{
+    background-color:#ff718d;
+
 }
 
 
@@ -1131,42 +1204,28 @@ body{
     /*Fin de la primera pantalla"Section1"*/
 
     /*Segunda pantalla "Datos PErsonales"*/
+    .section2>#camposP>input:nth-child(1){
+        top:8%;
+    }
+    .section2>#camposP>input:nth-child(2){
+        top:28%;
+    }
+    .section2>#camposP>input:nth-child(3){
+        top:48%;
+    }
        
     .section2>#camposP>input:nth-child(4){
-        position:absolute;
-        padding-left: 2%;
-        top:9%;
+        top:8%;
         left:58%;
-        border:solid 1px #cccccc;
-        width:25%;
-        height:10%;
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        border-radius: 6px;
     }
     .section2>#camposP>input:nth-child(5){
-        position:absolute;
-        padding-left: 2%;
         top:28%;
         left:58%;
-        border:solid 1px #cccccc;
-        width:25%;
-        height:10%;
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        border-radius: 6px;
+ 
     }
     .section2>#camposP>input:nth-child(6){
-        position:absolute;
-        padding-left: 2%;
         top:48%;
         left:58%;
-        border:solid 1px #cccccc;
-        width:25%;
-        height:10%;
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        border-radius: 6px;
     }
     .section2>#camposP>#nombre{
         position:absolute;
@@ -1195,35 +1254,56 @@ body{
 
     /*Tercer pantalla de habilidades*/
     .section3>#editarH{
-        position:relative;
-        left:25%;
-        top:4%;
-        height:40%;
+        margin-left:25%;
         width: 50%;
-        border:solid 1px #cccccc; 
-        z-index:3;
-        -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
-        border-radius: 8px;
-        display: block;
+   
      }
     /*Fin de las pantallas de habilidades*/
 
     /*Cuarta pantalla de herramientas*/
      .section4>#editarH2{
-        position:relative;
-        left:25%;
-        top:4%;
-        height:40%;
+        margin-left:25%;
         width: 50%;
-        border:solid 1px #cccccc; 
-        z-index:3;
-        -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
-        border-radius: 8px;
-        display: block;
      }
-     .section6>.Proyectos{
+    .section4>#editarH2>.formrow>.formulario2>.num2{
+        margin-left:73%;
+    }
+    .section5>.hobbies{
+        position:relative;
+        margin-left:15%;
+        width:70%;
+    }
+    #h1>img{
+        width:85%;
+    }
+    #h2>img{
+        width:85%;
+    }
+    #h3>img{
+        width:85%;
+    }
+    #h4>img{
+        width:85%;
+    }
+    #h5>img{
+        width:90%;
+    }
+    #h6>img{
+        width:85%;
+    }
+    #h7>img{
+        width:85%;
+    }
+    #h8>img{
+        width:85%;
+    }
+    #h9>img{
+        width:85%;
+    }
+    #h10>img{
+        width:85%;
+    }
+    .section6>.Proyectos{
         position: relative;
         background:white;
         width:70%;
@@ -1272,98 +1352,73 @@ body{
 
 
 @media handheld, only screen and (max-width: 768px) {
-    /*Segunda pantalla "Datos PErsonales"*/
-    .section2>#camposP>input:nth-child(1){
-        position: absolute;
-        padding-left: 2%;
-        top:9%;
-        left:14%;
-        border:solid 1px #cccccc;
-        width:33%;
-        height:10%;
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        border-radius: 6px;
+
+    /*Es la primera pantalla donde subes tu imagen Section1*/
+    .section1>#recom_1{
+      margin-top: -10.5%;
+
     }
-    .section2>#camposP>input:nth-child(2){
-        position: absolute; 
-        padding-left: 2%;
-        top:28%;
-        left:14%;
-        border:solid 1px #cccccc;
-        width:33%;
-        height:10%;
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        border-radius: 6px;
+
+    .section1>#recom_1>#conten_1>h1{
+        text-align: center;
+        font-size:20px;
+        color:#ff718d;
+        
     }
-    .section2>#camposP>input:nth-child(3){
-        position:absolute;
-        padding-left: 2%;
-        top:48%;
-        left:14%;
-        border:solid 1px #cccccc;
-        width:33%;
-        height:10%;
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        border-radius: 6px;
+
+    .section1>#recom_1>#conten_1{
+        text-align: center;
+        font-size:15px;
+            
     }
-       
+
+    .section1>#recom_2>#conten_2>h1{
+        text-align: center;
+        font-size:20px;
+        color:#3f9cff;
+        
+    }
+    .section1>#recom_2>#conten_2{
+        text-align: center;
+        font-size:15px;
+            
+    }
+    /*Fin de la primera pantalla"Section1"*/
+     .section2>#camposP{
+        height:400px;
+     }
+
     .section2>#camposP>input:nth-child(4){
-        position:absolute;
-        padding-left: 2%;
-        top:9%;
+        top:8%;
         left:58%;
-        border:solid 1px #cccccc;
-        width:33%;
-        height:10%;
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        border-radius: 6px;
     }
     .section2>#camposP>input:nth-child(5){
-        position:absolute;
-        padding-left: 2%;
         top:28%;
         left:58%;
-        border:solid 1px #cccccc;
-        width:33%;
-        height:10%;
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        border-radius: 6px;
+ 
     }
     .section2>#camposP>input:nth-child(6){
-        position:absolute;
-        padding-left: 2%;
-        top:48%;
+        top:47%;
         left:58%;
-        border:solid 1px #cccccc;
-        width:33%;
-        height:10%;
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        border-radius: 6px;
     }
     .section2>#camposP>#nombre{
         position:absolute;
         top:9%;
-        margin-left:6%;
+        margin-left:12%;
         
 
     }
     .section2>#camposP>#profesion{
         position:absolute;
         top:28%;
-        margin-left:6%;
+        margin-left:12%;
         
         
     }
     .section2>#camposP>#edad{
         position:absolute;
         top:48%;
-        margin-left:6%;
+        margin-left:12%;
         
         
     }
@@ -1373,51 +1428,61 @@ body{
 
     /*Tercer pantalla de habilidades*/
     .section3>#editarH{
-        position:relative;
-        left:20%;
-        top:4%;
-        height:40%;
+        margin-left:20%;
         width: 60%;
-        border:solid 1px #cccccc; 
-        z-index:3;
-        -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
-        border-radius: 8px;
-        display: block;
+   
      }
     /*Fin de las pantallas de habilidades*/
 
     /*Cuarta pantalla de herramientas*/
      .section4>#editarH2{
-        position:relative;
-        left:20%;
-        top:4%;
-        height:40%;
-        width: 60%;
-        border:solid 1px #cccccc; 
-        z-index:3;
-        -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
-        border-radius: 8px;
-        display: block;
-     }
-     /*Quinta pantalla hobbies*/
-     .section5>.hobbies{
-        position:relative;
         margin-left:20%;
-        margin-top:4%;
-        height:50%;
-        width:60%;
-        background:white;
-      }
-    /*Fin quinta patalla hobbies*/
-     .section6>.Proyectos{
+        width: 60%;
+     }
+    .section4>#editarH2>.formrow>.formulario2>.num2{
+        margin-left:73%;
+    }
+    .section5>.hobbies{
+        position:relative;
+        margin-left:15%;
+        width:70%;
+    }
+    #h1>img{
+        width:80%;
+    }
+    #h2>img{
+        width:80%;
+    }
+    #h3>img{
+        width:80%;
+    }
+    #h4>img{
+        width:80%;
+    }
+    #h5>img{
+        width:95%;
+    }
+    #h6>img{
+        width:80%;
+    }
+    #h7>img{
+        width:80%;
+    }
+    #h8>img{
+        width:80%;
+    }
+    #h9>img{
+        width:80%;
+    }
+    #h10>img{
+        width:95%;
+    }
+    .section6>.Proyectos{
         position: relative;
         background:white;
         width:80%;
         z-index:222222;
         display:block;
-        height:50%;
         left:10%;
         top:7%; 
         border:solid 1px #459fff;
@@ -1425,31 +1490,41 @@ body{
         -moz-border-radius: 10px;
         border-radius: 10px; 
     }
-    .section7>input{
+    .section7>#imgP{
+        position: relative;
+        top:5%;
+        width:30%;
+        left:35%;
+
+    }
+    .section7>.btnG>input{
         position:relative;
         font-size: 12px;
         font-style: bold;
-        background-color:#ff718d;
+        background-color:#459fff;
         color:white;
         padding-bottom: 4px;
         text-decoration:none;
         text-align:center;
-        height:5%;
         padding-top:0.5%;
-        width: 17%;
-        right: -42%;
-        border: 2px solid #ff718d;
+        width: 20%;
+        border: 2px solid #459fff;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         border-radius: 10px;
-        top:45px;
+        right:2%;
         z-index: 4;
     }
 
+
 }
 @media handheld, only screen and (max-width: 480px) {
+    .section1{
+        background: red;
+    }
   
     /*Es la primera pantalla donde subes tu imagen Section1*/
+
    
     .section1>#recom_1{
        display: none;
@@ -1475,40 +1550,26 @@ body{
     .section2>#camposP{
         position: relative;
         top:4%;
-        left:20%;
         width:60%;
-        height:70%;
+        height:400px;
 
     }
     .section2>#camposP>input:nth-child(1){
-        position: absolute;
-        padding-left: 2%;
         top:5%;
-        left:19%;
-        border:solid 1px #cccccc;
+        left:21%;
         width:60%;
         height:6%;
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        border-radius: 6px;
     }
     .section2>#camposP>input:nth-child(2){
-        position: absolute; 
-        padding-left: 2%;
         top:17%;
-        left:19%;
+        left:21%;
         border:solid 1px #cccccc;
         width:60%;
         height:6%;
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        border-radius: 6px;
     }
     .section2>#camposP>input:nth-child(3){
-        position:absolute;
-        padding-left: 2%;
         top:29%;
-        left:19%;
+        left:21%;
         border:solid 1px #cccccc;
         width:60%;
         height:6%;
@@ -1518,34 +1579,20 @@ body{
     }
        
     .section2>#camposP>input:nth-child(4){
-        position:absolute;
-        padding-left: 2%;
         top:41%;
-        left:19%;
-        border:solid 1px #cccccc;
+        left:22%;
         width:60%;
         height:6%;
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        border-radius: 6px;
     }
     .section2>#camposP>input:nth-child(5){
-        position:absolute;
-        padding-left: 2%;
         top:53%;
-        left:19%;
-        border:solid 1px #cccccc;
+        left:22%;
         width:60%;
         height:6%;
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        border-radius: 6px;
     }
     .section2>#camposP>input:nth-child(6){
-        position:absolute;
-        padding-left: 2%;
         top:65%;
-        left:19%;
+        left:22%;
         border:solid 1px #cccccc;
         width:60%;
         height:6%;
@@ -1616,24 +1663,32 @@ body{
     }
     .section3>#editarH{
         position:relative;
-        left:10%;
+        margin-left:10%;
         top:4%;
-        height:40%;
         width: 80%;
-        border:solid 1px #cccccc; 
-        z-index:3;
+    }
+
+    .section3>#editarH>.Nherramientas{
+        position: absolute;
+        bottom: 0%;
+        width: 100%;
+        height:15%;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
         border-radius: 8px;
-        display: block;
+        background:#3f9cff;
+
     }
-    .section3>#editarH>.Nherramientas>#mas{
-        display:none;
+    .section3>#editarH>.Nherramientas>.generate>input:nth-child(1){
+        left:1%;
+        width:30%;
+        height:50%;
     }
-    .section3>#editarH>.Nherramientas>input:nth-child(2){
+    /*boton agregar habilidad*/
+    .section3>#editarH>.Nherramientas>.generate>input:nth-child(2){
         position:absolute;
         top:24%;
-        left:83%;
+        left:82%;
         width:15%;
         height:55%;
         background:rgba(255,255,255,0.6);
@@ -1643,6 +1698,39 @@ body{
         -moz-border-radius: 4px;
         border-radius: 4px;
     }
+    .section3>#editarH>.Nherramientas>.generate>input:hover:nth-child(2){
+       background:rgba(255,255,255,0.9);
+    }
+
+    .section3>#editarH>.Nherramientas>.generate>#slider{
+         position: absolute;
+         top:25%;
+         left:35%;
+    }
+    .section3>#editarH>.Nherramientas>#slider>input[type="range"]{
+        background: blue;
+        margin-left:30%;
+    }
+    .section3>#editarH>.Nherramientas>.generate>#slider>.num1{
+        position: absolute;
+        color:white;
+        margin-left:107%;
+        margin-top:-15%;
+    }
+
+
+    .section3>#editarH>input:nth-child(1){
+       position:absolute;
+       top:0%;
+       right:28%;
+       width:28%;
+       z-index: 1;
+
+    }
+
+
+
+
 /*Fin de las pantallas de habilidades*/
 
 /*Cuarta pantalla de herramientas*/
@@ -1654,26 +1742,66 @@ body{
        font-size:15px;
 
     }
-     .section4>#editarH2{
+    .section4>#editarH2{
         position:relative;
-        left:10%;
-        top:4%;
-        height:40%;
+        margin-left:10%;
+        margin-top:9.5%;
         width: 80%;
-        border:solid 1px #cccccc; 
-        z-index:3;
-        -webkit-border-radius: 8px;
+     }
+    .section4>#editarH2>#Totalhe2{
+        position: relative;
+        top:0%;
+        left:0%;
+        width: 100%;
+        height:85%;
+        display: inline-block;
+        overflow: scroll;
+        z-index: 3;
+        background:transparent;
+        -webkit-border-top-right-radius: 8px;
+        -webkit-border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+
+    }
+    .section4>#editarH2>#Totalhe2>#h>.lista{
+        cursor:pointer;
+        color: #ff718d;
+        font-family: arial;
+        font-size: 15px;
+        padding:15px;
+        margin:5px 0;
+        border-bottom: solid 1px #ff718d;
+    }
+    .section4>#editarH2>.formrow{
+        position: absolute;
+        bottom: 0%;
+        width: 100%;
+        height:15%;
+       -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
         border-radius: 8px;
-        display: block;
-     }
-    .section4>#editarH2>.formrow>#mas2{
-        display:none;
+        background:#ff718d;
+
     }
-    .section4>#editarH2>.formrow>input:nth-child(2){
+    .section4>#editarH2>.formrow>.formulario2>input:nth-child(1){
+        position:absolute;
+        top:20%;
+        left:1%;
+        width:30%;
+        height:50%;
+        padding-left:2%;
+        border:solid 1px #cccccc;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+
+    }
+    /*boton agregar habilidad*/
+    .section4>#editarH2>.formrow>.formulario2>input:nth-child(2){
         position:absolute;
         top:24%;
-        left:83%;
+        left:80%;
         width:15%;
         height:55%;
         background:rgba(255,255,255,0.6);
@@ -1684,95 +1812,201 @@ body{
         border-radius: 4px;
     }
 
-    .section5>#tex_B5{
-      font-size:20px;
+
+    .section4>#editarH2>.formrow>.formulario2>{
+         position: absolute;
+         top:30%;
+         left:37%;
+          
+    }
+    .section4>#editarH2>.formrow>.formulario2>input[type="range"]{
+        position: absolute;
+        left:35%;
+        top: 25%;
+    }
+    .section4>#editarH2>.formrow>.formulario2>.num2{
+        position: absolute;
+        color:white;
+        margin-left:72%;
+        margin-top:2%;
     }
 
-    .section5>#tex_p5{
-       font-size:15px;
+    .section4>#editarH2>>input:nth-child(1){
+       position:absolute;
+       top:0%;
+       right:28%;
+       width:28%;
+       z-index: 1;
 
     }
     .section5>.hobbies{
         position:relative;
         margin-left:10%;
-        margin-top:4%;
-        height:70%;
+        margin-top:12%;
         width:80%;
-        background:white;
-  }
+    }
+    .section5>#tex_B5{
+        position: relative;
+        margin-top:4%;
+        color:#cccccc;
+        font-size:20px;
+        text-align: center;
+
+    }
+    .section5>#tex_p5{
+        position: relative;
+        margin-top:1%;
+        color:#cccccc;
+        font-size:15px;
+        text-align: center;
+
+    }
+
     .hobbies>#h1{
         position: absolute;
         left:0%;
         top:5%;
-     
     }
- 
+
+    #h1>input{
+        position: absolute;
+        top:0%;
+    }
+
 
     .hobbies>#h2{
         position: absolute;
-        left:25%;
+        left:26%;
         top:5%;
-      
+
+    }
+    #h2>input{
+        position: absolute;
+        top:0%;  
     }
 
- 
+
 
     .hobbies>#h3{
         position: absolute;
-        left:50%;
+        left:53%;
         top:5%;
-     
+
+    }
+    #h3>input{
+        position: absolute;
+        top:0%; 
     }
 
     .hobbies>#h4{
         position: absolute;
-        left:75%;
+        left:78%;
         top:5%;
 
+    }
+    #h4>input{
+        position: absolute;
+        top:0%; 
     }
 
     .hobbies>#h5{
         position: absolute;
         left:0%;
-        top:30%;
-     
+        top:40%;
+
     }
-   
+    #h5>input{
+        position: absolute;
+        top:0%; 
+    }
+
 
     .hobbies>#h6{
         position: absolute;
-        left:25%;
-        top:30%;
-   
+        left:26%;
+        top:40%;
+    }
+    #h6>input{
+        position: absolute;
+        top:0%; 
     }
 
     .hobbies>#h7{
         position: absolute;
-        left:50%;
-        top:30%;
+        left:53%;
+        top:40%;
 
+    }
+    #h7>input{
+        position: absolute;
+        top:0%; 
     }
 
     .hobbies>#h8{
         position: absolute;
-        left:75%;
-        top:30%;
-
+        left:78%;
+        top:40%;
+    }
+    #h8>input{
+        position: absolute;
+        top:0%; 
     }
 
     .hobbies>#h9{
         position: absolute;
-        left:25%;
-        top:55%;
-   
+        left:26%;
+        top:70%;
+        
+    }
+    #h9>input{
+        position: absolute;
+        top:0%; 
     }
 
     .hobbies>#h10{
         position: absolute;
-        left:50%;
-        top:55%;
-     
+        left:53%;
+        top:70%;
+
     }
+    #h10>input{
+        position: absolute;
+        top:0%; 
+    }
+
+    #h1>img{
+        width:70%;
+    }
+    #h2>img{
+        width:70%;
+    }
+    #h3>img{
+        width:70%;
+    }
+    #h4>img{
+        width:70%;
+    }
+    #h5>img{
+        width:70%;
+    }
+    #h6>img{
+        width:70%;
+    }
+    #h7>img{
+        width:70%;
+    }
+    #h8>img{
+        width:70%;
+    }
+    #h9>img{
+        width:70%;
+    }
+    #h10>img{
+        width:70%;
+    }
+    
+
+    
     .section7>#tex_B7{
       font-size:20px;
     }
@@ -1847,38 +2081,36 @@ body{
         width:100%;
     }
 
-
-    .Proyectos>#agregarP>textarea:nth-child(1){
+    .Proyectos>#agregarP>.formulario3>textarea:nth-child(1){
         position: absolute;
         left: 10%;
         top: 5%;
         width:80%;
-        height:18%;
+        height:16%;
         border: solid 1px #cccccc;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         border-radius: 10px; 
         
     }
-
-    .Proyectos>#agregarP>textarea:nth-child(2){
+    .Proyectos>#agregarP>.formulario3>textarea:nth-child(2){
         position: absolute;
         left: 10%;
         top: 27%;
         width:80%;
-        height:18%;
+        height:16%;
         border: solid 1px #cccccc;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         border-radius: 10px; 
 
     }
-    .Proyectos>#agregarP>textarea:nth-child(3){
+    .Proyectos>#agregarP>.formulario3>textarea:nth-child(3){
         position: absolute;
         left: 10%;
         top: 50%;
         width:80%;
-        height:18%;
+        height:16%;
         border: solid 1px #cccccc;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
@@ -1897,6 +2129,35 @@ body{
         -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
         border-radius: 4px;
+    }
+    .section7>#imgP{
+        position: relative;
+        top:5%;
+        width:40%;
+        left:30%;
+
+    }
+    .section7>.btnG{
+        position: relative;
+        background: transparent;
+        width:100%;
+        height:5%;
+        left:0%;
+        top:9%;
+    }
+    .section7>.btnG>input{
+        position:absolute;
+        font-size: 12px;
+        font-style: bold;
+        background-color:#459fff;
+        color:white;
+        padding-bottom: 4px;
+        text-decoration:none;
+        text-align:center;
+        height:100%;
+        padding-top:0.5%;
+        width: 40%;
+        left:30%;
     }
 
 
