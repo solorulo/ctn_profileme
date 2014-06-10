@@ -56,6 +56,17 @@ def index(request):
 	#return HttpResponse("Inicio")
 	if (request.user.is_authenticated()) :
 		return redirect('profile')
+	if request.method == 'POST':
+		try:
+			username = request.POST['user']
+			password = request.POST['pass']
+			user = authenticate(username=username, password=password)
+			if not user:
+				return render(request,'inicio.html', {'incorrect_password':True})
+			auth_login(request, user)
+			return redirect('profile')
+		except:
+			pass
 	return render(request,'inicio.html')
 
 def registro(request):
@@ -82,8 +93,7 @@ def registerUser(request):
 		return render(request, 'simple_post_response.html', {'response_message': 'email_missmatch'})
 
 	user = PersonalData(
-			first_name=request.POST['name'],
-			last_name=request.POST['lastname'],
+			first_name=request.POST['name'] + ' ' + request.POST['lastname'],
 			username=request.POST['email'],
 			email=request.POST['email'],
 			telefono='545678',

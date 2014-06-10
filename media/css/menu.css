@@ -50,7 +50,7 @@ body{
     z-index: 4;
 }
 
-.video>a:nth-child(3) {
+.video>input:nth-child(3) {
     position:absolute;
     font-size: 14px;
     font-style: bold;

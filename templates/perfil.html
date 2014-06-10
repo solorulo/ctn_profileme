@@ -463,9 +463,9 @@
 		<!--Datos personales del usuario (nombre,campo de trabajo y edad)-->
 		<div id="datos1">
 			<div id="fperfil">
-				<img src="{{MEDIA_URL}}img/choko.png" alt="image del perfil">
+				<img src="{{ user.personaldata.img }}" alt="Profile image">
 			</div>
-			<div id="nombre">{{ user.get_full_name }}</div>
+			<div id="nombre">{{ user.first_name }}</div>
 			<div id="profesion">{{ user.personaldata.profesion }}</div>
 			<div id="edad">{{ user.personaldata.age }}</div>
 			<div id="numero"> {{ user.personaldata.telefono }}</div>
