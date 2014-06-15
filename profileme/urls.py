@@ -23,9 +23,13 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
 
     url(r'^postTest$', 'profile_app.views.postTest', name='postTest'),
-    url(r'^registerUser$', 'profile_app.views.registerUser', name='registerUser'),
-    url(r'^createJobOffer$', 'profile_app.views.createJobOffer', name='createJobOffer'),
+
     url(r'^registro$', 'profile_app.views.registro', name='registro'),
 
-    url(r'^uploadUserPhoto$', 'profile_app.views.uploadUserPhoto', name='uploadUserPhoto'),    
+    url(r'^registerUser$', 'profile_app.views.registerUser', name='registerUser'),
+    url(r'^uploadUserPhoto$', 'profile_app.views.uploadUserPhoto', name='uploadUserPhoto'),
+
+    url(r'^publicar_oferta$', 'profile_app.views.publicarOferta', name='publicarOferta'),
+    # url(r'^publicarOferta$', 'profile_app.views.publicarOferta', name='publicarOferta'),
+    url(r'^createJobOffer$', 'profile_app.views.createJobOffer', name='createJo bOffer'),
 )

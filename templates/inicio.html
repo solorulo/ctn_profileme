@@ -65,9 +65,24 @@
           </div>
 
           <div id="OfreceE">
-              <input type="text"placeholder="Nombre de la empresa">
-              <input type="text"placeholder="Correo electrónico">
-              <a href="Empleados.html">Continuar</a>
+
+            <form id="companyRegisterForm" action="/publicar_oferta" method="post">
+              {% csrf_token %}
+              <input id="companyNameText" name="companyName" type="text" placeholder="Nombre de la empresa">
+              <input id="companyEmailText" name="companyEmail" type="text" placeholder="Correo electrónico">
+              <input type="submit">
+            </form>
+              <!-- <a href="#" onClick="$.ajax({
+              url:APP_URL + 'companyLogin',
+              type:'POST',
+              data:{
+                name:$('#cName').val(),
+                email:$('#cEmail').val(),
+              },
+              headers:{'X-CSRFToken':csrftoken},
+              success: function(data){onCompanyLoginResponse(data)},
+            });">Continuar</a> -->
+            <a id="companyRegistrationButton" href="" onclick="">Continuar</a>
           </div>
            
       </div>
@@ -156,9 +171,6 @@
 
   </div>
 <!--finde la segunda pantalla-->
-
-
-
 
   <!--inicio de la 3 pantalla-->
   <div class="pantalla2"id="2">
@@ -255,9 +267,7 @@
           <img src="{{MEDIA_URL}}img/flecha-hacia-arriba.png" alt="">
         </div>
       </a>
-
-  </div>
-
+  </div>  
 
   <!--script de Jquery-->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>    
@@ -267,6 +277,13 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
     <script id="django-stuff" type="text/javascript">
+        $("#companyRegistrationButton").click(function() {
+          alert('before');
+          $('#companyRegisterForm').submit(function(){
+            alert('callback');
+          });
+          alert('after')
+        });
 
         var APP_URL = "http://127.0.0.1:8000/"
 
@@ -291,6 +308,14 @@
             window.location = APP_URL + "registro"
           } else {
             alert(responseMessage)
+          }
+        }
+
+        function onCompanyLoginResponse(responseMessage) {
+          company = JSON.parse(responseMessage)
+
+          if ( company.id != -1 ) {
+            window.location = APP_URL + "publicarOferta"
           }
         }
 
