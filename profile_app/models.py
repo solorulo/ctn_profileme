@@ -21,12 +21,6 @@ class Ciudad(models.Model):
 	def __unicode__(self):
 		return self.nombre
 
-class CampoTrabajo(models.Model):
-	nombre = models.CharField(max_length=50)
-
-	def __unicode__(self):
-		return self.nombre
-
 class Proyecto(models.Model):
 	nombre = models.CharField(max_length=50)
 	descripcion = models.CharField(max_length=200)
@@ -66,13 +60,13 @@ class Herramienta(models.Model):
 	def __unicode__(self):
 		return self.nombre
 
-class Trabajo(models.Model):
-	nombre = models.CharField(max_length=100)
-	descripcion = models.CharField(max_length=400)
-	puesto = models.CharField(max_length=400)
+# class Trabajo(models.Model):
+# 	nombre = models.CharField(max_length=100)
+# 	descripcion = models.CharField(max_length=400)
+# 	puesto = models.CharField(max_length=400)
 
-	def __unicode__(self):
-		return self.nombre	
+# 	def __unicode__(self):
+# 		return self.nombre	
 
 class Educacion(models.Model):
 	centroEstudios = models.ForeignKey(CentroEstudios)
@@ -90,7 +84,8 @@ class Hobbie(models.Model):
 class PersonalData(User):
 	telefono = models.CharField(max_length=15,null=True,blank=True)
 	certificaciones = models.CharField(max_length=400,null=True,blank=True)
-	camposTrabajo = models.ManyToManyField(CampoTrabajo,null=True,blank=True)
+	trabajo = models.CharField(max_length=140,null=True,blank=True)
+	profesion = models.CharField(max_length=140,null=True,blank=True)
 	img = models.CharField(max_length=100,null=True,blank=True)
 	hobbies = models.CharField(max_length=200,null=True,blank=True)
 	idiomas = models.ManyToManyField(Idioma,null=True,blank=True)

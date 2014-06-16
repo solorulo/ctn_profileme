@@ -463,14 +463,14 @@
 		<!--Datos personales del usuario (nombre,campo de trabajo y edad)-->
 		<div id="datos1">
 			<div id="fperfil">
-				<img src="{{MEDIA_URL}}img/choko.png" alt="image del perfil">
+				<img src="{{ user.personaldata.img }}" alt="Profile image">
 			</div>
-			<div id="nombre">{{ user.get_full_name }}</div>
-			<div id="profesion">Desarrollador</div>
+			<div id="nombre">{{ user.first_name }}</div>
+			<div id="profesion">{{ user.personaldata.profesion }}</div>
 			<div id="edad">{{ user.personaldata.age }}</div>
 			<div id="numero"> {{ user.personaldata.telefono }}</div>
 			<div id="correo">{{ user.email }}</div>
-			<div id="trabajo">Ctin</div>
+			<div id="trabajo">{{ user.personaldata.trabajo}}</div>
 			<div id="live">{{ user.personaldata.ciudad.nombre }}/{{ user.personaldata.ciudad.estado.nombre }}</div>
 			<!--boton y div para editar todos los datos personales -->
 			<input type="button" value="Editar información"class="explode">
@@ -490,14 +490,14 @@
 
 
 		<div class="contenido" id="camposD">
-			<input type="text"placeholder="Nombre Completo">
-			<input type="text"placeholder="Campo de Trabajo">
-			<input type="text"placeholder="Edad">
-			<input type="text"placeholder="Telefono">
-			<input type="text"placeholder="Correo Electronico">
-			<input type="text"placeholder="Trabajo">
-			<input type="text"placeholder="Pais/municipio">
-			<input type="button" value="Guardar"class="explode">
+			<input type="text" placeholder="Nombre" value="{{ user.first_name }}"> 
+			<input type="text" placeholder="Campo de Trabajo" value="{{ user.personaldata.profesion }}">
+			<input type="text" placeholder="Fecha de nacimiento" value="{{ user.personaldata.age }}" >
+			<input type="text" placeholder="Telefono" value="{{ user.personaldata.telefono }}">
+			<input type="text" placeholder="Correo Electronico" value="{{ user.email }}">
+			<input type="text" placeholder="Trabajo" value="{{ user.personaldata.trabajo}}">
+			<input type="text" placeholder="Pais/municipio" value="{{ user.personaldata.ciudad.nombre }}/{{ user.personaldata.ciudad.estado.nombre }}">
+			<input type="button" value="Guardar"class="explode" value="">
 			<img src="{{MEDIA_URL}}img/foto-perfil.png" alt="">
 
 		</div>

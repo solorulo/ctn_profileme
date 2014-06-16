@@ -18,11 +18,16 @@
  
 <div class="video"id="0">
 		
-		 <!-- estos son los input para accesar ala aplicacion-->
-		 
-			<input type="text"placeholder="Usuario">
-			 <input type="password" placeholder="Contraseña" style="color:black;">
-			 <a href="perfil.html">Entrar</a>
+
+			<input form="login_form" name="user" type="text" placeholder="Usuario">
+			<input form="login_form" name="pass" type="password" placeholder="Contraseña" style="color:black;">
+			
+			 <input form="login_form" type="submit" value="Entrar" />
+			{% if incorrect_password %}
+				<p style="color:red;">Usuario/Contraseña inválido</p>
+			{% endif %}
+
+			<form id="login_form" action"/" method="post">{% csrf_token %}</form>
 
 			<!--este es el logo "de profileMe que se muestra al centro de la pantalla-->  
 			<div class="logo"id="imagenD">
