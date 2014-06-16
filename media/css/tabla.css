@@ -2,6 +2,9 @@
     margin:0;
     padding:0;
 }
+html,body{
+    overflow: hidden;
+}
 .box {
     display:block;
     width:100%;
@@ -36,7 +39,7 @@
 }
 
 body{
-    width:700%;
+    width:801%;
     height:100%;
     position:absolute;
     top:0px;
@@ -72,7 +75,7 @@ body{
     background:white;
     margin:0px;
     bottom:0px;
-    width:14.28%;
+    width:12.48%;
     float:left;
     height:100%;
     text-shadow:1px 1px 2px #f0f0f0;
@@ -85,7 +88,6 @@ body{
     float:left;
     height:100%;
     text-shadow:1px 1px 2px #f0f0f0;
-    background:white;
 }
 .section1>#logo{
     position:relative;
@@ -210,18 +212,6 @@ body{
  
 
 
-
-
-
-
-
-
-
-
-
-.section2{
-    background:white;
-}
 .section2>#logo2{
     position: relative;
     margin-top:2%;
@@ -383,7 +373,7 @@ body{
 
 .section2>#boton2_2{
     position: absolute;
-    margin-left:13.5%;
+    margin-left:12%;
     top:50%;
     height: 4.5%;
     width:0.5%;
@@ -555,7 +545,7 @@ body{
 }
 .section3>#boton3_2{
     position: absolute;
-    margin-left:13.5%;
+    margin-left:12%;
     top:50%;
     height: 4.5%;
     width:0.5%;
@@ -724,7 +714,7 @@ body{
 }
 .section4>#boton4_2{
     position: absolute;
-    margin-left:13.5%;
+    margin-left:12%;
     top:50%;
     height:4.5%;
     width:0.5%;
@@ -740,9 +730,6 @@ body{
 
 
 
-.section5{
-    background:white;
-}
 .section5>#logo5{
     position: relative;
     margin-top:2%;
@@ -900,7 +887,7 @@ body{
 }
 .section5>#boton5_2{
     position: absolute;
-    margin-left:13.5%;
+    margin-left:12%;
     top:50%;
     height:4.5%;
     width:0.5%;
@@ -1068,7 +1055,7 @@ body{
 }
 .section6>#boton6_2{
     position: absolute;
-    margin-left:13.5%;
+    margin-left:12%;
     top:50%;
     height:4.5%;
     width:0.5%;
@@ -1084,10 +1071,6 @@ body{
 
 
 
-
-.section7{
-    background:transparent;
-}
 .section7>#logo7{
     position: relative;
     margin-top:2%;
@@ -1160,9 +1143,97 @@ body{
 }
 .section7>.btnG>input:hover{
     background-color:#ff718d;
+    border: 2px solid #ff718d;
+
 
 }
 
+
+.section8>#logo8{
+    position: relative;
+    margin-top:2%;
+    text-align: center;
+
+}
+.section8>#tex_B8{
+    position: relative;
+    margin-top:4%;
+    color:#cccccc;
+    font-size:150%;
+    text-align: center;
+
+}
+.section8>#tex_p8{
+    position: relative;
+    margin-top:1%;
+    color:#cccccc;
+    font-size:110%;
+    text-align: center;
+
+}
+.section8>#escolaridad{
+    position: relative;
+    margin-left:20%;
+    margin-top:2%;
+    width:60%;
+    height:300px; 
+}
+.section8>#escolaridad>select{
+    position: absolute;
+    margin-left:35%;
+    margin-top:4%;
+    width:30%; 
+    height:20%;
+}
+.section8>#escolaridad>textarea:nth-child(2){
+    position: absolute;
+    margin-left:35%;
+    margin-top:10%;
+    width:30%;
+    height:15%;
+    border:1px solid #cccccc;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+
+}
+.section8>#escolaridad>textarea:nth-child(3){
+    position: absolute;
+    margin-left:35%;
+    margin-top:20%;
+    width: 30%;
+    height:15%;
+    border:1px solid #cccccc;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.section8>#boton8_1{
+    position: absolute;
+    margin-left:0.5%;
+    top:50%;
+    height: 4.5%;
+    width:0.5%;
+    z-index:1000;
+}
+.section8>#boton8_1>a{
+    position: absolute;
+    width: 100%;
+    height:100%;
+}
+.section8>#boton8_2{
+    position: absolute;
+    margin-left:12%;
+    top:50%;
+    height:4.5%;
+    width:0.5%;
+    z-index:1000;
+}
+.section8>#boton8_2>a{
+    position: absolute;
+    width: 100%;
+    height:100%;
+}
 
 
 
@@ -1258,6 +1329,10 @@ body{
         width: 50%;
    
      }
+    .section3>#editarH>.Nherramientas>.generate>#slider>.num1{
+        margin-left:109%;
+        margin-top:-15%;
+}
     /*Fin de las pantallas de habilidades*/
 
     /*Cuarta pantalla de herramientas*/
@@ -1266,7 +1341,7 @@ body{
         width: 50%;
      }
     .section4>#editarH2>.formrow>.formulario2>.num2{
-        margin-left:73%;
+        margin-left:71%;
     }
     .section5>.hobbies{
         position:relative;
@@ -1343,6 +1418,13 @@ body{
         border-radius: 10px;
         top:45px;
         z-index: 4;
+    }
+    .section8>#escolaridad{
+        position: relative;
+        margin-left:10%;
+        margin-top:4%;
+        width:80%;
+        height:300px; 
     }
 
 
@@ -1519,9 +1601,6 @@ body{
 
 }
 @media handheld, only screen and (max-width: 480px) {
-    .section1{
-        background: red;
-    }
   
     /*Es la primera pantalla donde subes tu imagen Section1*/
 

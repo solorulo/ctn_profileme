@@ -7,6 +7,9 @@ body{
   overflow-y:none;
   font-family: 'Raleway'
 }
+html,body{
+    overflow: hidden;
+}
 
 
 .video{
@@ -123,10 +126,10 @@ body{
 .Registro1{
       background-color:rgba(69,159,255,0.7);
       position: absolute;
-      left: 35%;
-      top:35%;
+      margin-left: 35%;
+      margin-top:15%;
       width: 40%;
-      height: 50%;
+      height: 300px;
       -webkit-border-radius: 31px;
       -moz-border-radius: 31px;
       border-radius: 31px;
@@ -138,7 +141,6 @@ body{
 /*boton Buscas Empleo*/
 .Registro1>input:nth-child(1){
     position: absolute;
-   
     font-size:15px;
     font-style: bold;
     background: #ff738f;
@@ -155,8 +157,7 @@ body{
 /*input Ofreces Empleo*/
 .Registro1>input:nth-child(2){
     position: absolute;
-   
-     background: #ff738f;
+    background: #ff738f;
     font-size:15px;
     font-style: bold;
     color:white;
@@ -171,10 +172,10 @@ body{
 }
 /*input boton cancelar*/
 
+/*input boton Unirse*/
 .Registro1>input:nth-child(3){
     background: #ff738f;
     color:white;
-   
     font-size:15px;
     font-style: bold;
     position: absolute;
@@ -187,28 +188,10 @@ body{
     -moz-border-radius: 10px;
     border-radius: 10px;
 }
-/*input boton Unirse*/
-.Registro1>input:nth-child(4){
-    background: #ff738f;
-    color:white;
-   
-    font-size:15px;
-    font-style: bold;
-    position: absolute;
-    top:80%;
-    right:15%;
-    width: 30%;
-    height: 9%;
-    border:solid 0px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-}
 
 /*input Nombre*/
 .Registro1>#BEmpleados>input:nth-child(1){
     position: absolute;
-   
     font-size:15px;
     padding-left:10px;
     top:10%;
@@ -224,7 +207,6 @@ body{
 
 .Registro1>#BEmpleados>input:nth-child(2){
     position: absolute;
-   
     font-size:15px;
     padding-left:10px;
     top:10%;
@@ -240,7 +222,6 @@ body{
 
 .Registro1>#BEmpleados>input:nth-child(3){
     position: absolute;
-   
     font-size:15px;
     padding-left:10px;
     top:28%;
@@ -256,7 +237,6 @@ body{
 
 .Registro1>#BEmpleados>input:nth-child(4){
     position: absolute;
-   
     font-size:15px;
     padding-left:10px;
     top:46%;
@@ -272,7 +252,6 @@ body{
 
 .Registro1>#BEmpleados>input:nth-child(5){
     position: absolute;
-   
     font-size:15px;
     padding-left:10px;
     top:64%;
@@ -287,7 +266,6 @@ body{
 .Registro1>#BEmpleados>a:nth-child(6){
     background: #ff738f;
     color:white;
-   
     font-size:15px;
     font-style: bold;
     position: absolute;
@@ -306,7 +284,6 @@ body{
 }
 .Registro1>#OfreceE>input:nth-child(1){
     position: absolute;
-   
     font-size:15px;
     padding-left:10px;
     top:30%;
@@ -321,7 +298,6 @@ body{
 
 .Registro1>#OfreceE>input:nth-child(2){
     position: absolute;
-   
     font-size:15px;
     padding-left:10px;
     top:48%;
@@ -340,7 +316,6 @@ body{
 .Registro1>#OfreceE>a:nth-child(3){
     background: #ff738f;
     color:white;
-   
     font-size:15px;
     font-style: bold;
     position: absolute;
