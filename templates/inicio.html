@@ -12,6 +12,7 @@
 
 
 <body>
+	{% csrf_token %}
 
 	<!-- primera pantalla de login page-->
  
@@ -19,7 +20,7 @@
 		
 		 <!-- estos son los input para accesar ala aplicacion-->
 		 
-				<input type="text"placeholder="Usuario">
+			<input type="text"placeholder="Usuario">
 			 <input type="password" placeholder="Contraseña" style="color:black;">
 			 <a href="perfil.html">Entrar</a>
 
@@ -41,10 +42,10 @@
 
 			<!-- este es la pantalla que aparece con el clic ala imagen de registro-->
 			<div class="Registro1 contenido" style="display:none;"> 
-					{% csrf_token %}
+					
 					<input type="button" value="Buscas Empleo" class="BuscasE">
 					<input type="button" value="Ofreces Empleo" class="Ofrece">
-					<input type="button" value="Omitir" class="restore fade2">
+					<input type="button" value="Omitir" class="fade2">
 
 					<div id="BEmpleados">
 							<input id="uName" type="text"placeholder="Nombre">
