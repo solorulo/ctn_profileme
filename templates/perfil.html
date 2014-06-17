@@ -13,6 +13,22 @@
         <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
         <script src="{{MEDIA_URL}}js/highcharts.js"></script>
         <script src="{{MEDIA_URL}}js/highcharts-more.js"></script>
+        <script src="{{MEDIA_URL}}js/gHabilidades.js"></script>
+        <script src="{{MEDIA_URL}}js/gHerramientas.js"></script>
+        <script type="text/javascript">
+        categoriasHabilidades = ['Pert,CPM', 'Business Intelligence', 'Gantt', 'Canvas Bussiness Model',
+                'Plan de negocios', 'Otra'
+            ];
+        dataHabilidades = [990, 440, 660, 770, 1000, 150];
+        categoriasHerramientas = [
+                'Java',
+                'JavaScript',
+                'CSS',
+                'HTML',
+                'C#',
+                'Scalando'
+            ];
+        </script>
     </head>
     <body>
         <!--menu de la pagina de perfiles-->
@@ -82,9 +98,9 @@
                     <!--es el slider de putos que tienes en cada habilidad-->
                     <div id="slider">
                         <!--slider-->
-                        <form oninput="amount.value=rangeInput.value"class="generate">
-                            <input name="habilidad" type="text"placeholder="Habilidades" class="generate-input2">
-                            <input type="submit"value="Agregar"class="generate-submit">
+                        <form oninput="amount.value=rangeInput.value" class="generate">
+                            <input name="habilidad" type="text" placeholder="Habilidades" class="generate-input2" />
+                            <input type="submit" value="Agregar" class="generate-submit" />
                             <input id="rangeInput"name="rangeInput" type="range" min="1" max="100" class="generate-input" />
                             <!--numero que elige el usuario en el slider-->
                             <output name="amount" for="rangeInput" class="num1">50</output>
@@ -111,7 +127,7 @@
                     <div id="slider2">
                         <!--slider-->
                         <form oninput="amount.value=rangeInput.value"class="formulario2">
-                            <input name="herramientas" type="text" placeholder="Herramientas"class="text">
+                            <input name="herramientas" type="text" placeholder="Herramientas" class="text">
                             <input type="submit"value="Agregar" class="agregarV">
                             <input id="rangeInput"name="rangeInput" type="range" min="1" max="100" class="range" />
                             <!--numero que elige el usuario en el slider-->
@@ -162,6 +178,7 @@
                     <li><img src="{{MEDIA_URL}}img/ejercicio.png"></li>
                     <li><img src="{{MEDIA_URL}}img/leer.png"></li>
                     <li><img src="{{MEDIA_URL}}img/fotografia.png"></li>
+
                 </ul>
             </div>
             <!--elejir hobbies-->
