@@ -75,11 +75,6 @@ class Company(models.Model):
 	reclutador = models.TextField(max_length=100)
 
 class Trabajo(models.Model):
-<<<<<<< HEAD
-	nombre = models.CharField(max_length=100)
-	descripcion = models.CharField(max_length=400)
-	puesto = models.CharField(max_length=400)
-=======
 	"""docstring for Trabajo"""
 	def __init__(self, arg):
 		super(Trabajo, self).__init__()
@@ -95,7 +90,6 @@ class Trabajo(models.Model):
 	habilidades = models.TextField(max_length=400)
 	descripcion = models.TextField(max_length=400)
 	sueldo = models.CharField(max_length=100)
->>>>>>> master
 
 	def __unicode__(self):
 		return self.nombre
@@ -114,13 +108,10 @@ class Hobbie(models.Model):
 
 # Create your models here.
 class PersonalData(models.Model):
-<<<<<<< HEAD
-=======
 	"""docstring for PersonalData"""
 	# def __init__(self, arg):
 	# 	super(PersonalData, self).__init__()
 	# 	self.arg = arg
->>>>>>> master
 	user = models.OneToOneField(User, primary_key=True)
 	telefono = models.CharField(max_length=15,null=True,blank=True)
 	certificaciones = models.CharField(max_length=400,null=True,blank=True)
