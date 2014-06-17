@@ -6,10 +6,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="description" content="Website Horizontal Scrolling with jQuery" />
     <meta name="keywords" content="jquery, horizontal, scrolling, scroll, smooth"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0;">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0;">
 
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/menuE.css">
+    <link rel="stylesheet" href="{{MEDIA_URL}}css/menuE.css">
 	 <!--script de Jquery-->
 
 </head>
@@ -19,7 +19,7 @@
 	<div class="section sec1"id="1">
 
 		<div id="logo">
-			<img src="img/logo-pequeño.png" alt="">
+			<img src="{{MEDIA_URL}}img/logo-pequeño.png" alt="">
 		</div>
 
 		<div id="tex_B">
@@ -30,41 +30,35 @@
 			Compartenos la siguiente información
 		</div>
 
+		<!-- <form> -->
 		<div id="camposP">
 			<!--input para llenar registro de los datos personales del usuario-->
-			<input type="text"placeholder="Nombre de la empresa">
-			<input type="text"placeholder="Estado">
-			<input type="text"placeholder="Direccion">
-			<input type="text"placeholder="Teléfono">
-			<input type="text"placeholder="Correo">
-			<input type="text"placeholder="Nombre del reclutador">
+			<input id="name" name="" type="text"placeholder="Nombre de la empresa" value="{{company.nombre}}">
+			<input id="state" name="" type="text"placeholder="Estado">
+			<input id="address" name="" type="text"placeholder="Direccion">
+			<input id="telephone" name="" type="text"placeholder="Teléfono">
+			<input id="email" name="" type="text"placeholder="Correo" value="{{company.usuario.email}}">
+			<input id="recruiterName" name="" type="text"placeholder="Nombre del reclutador">
 
 			<!--imagenes representativas de cada campo de los datos personales-->
-			<img src="img/empresa.png" alt="" id="nombre">
-			<img src="img/pais.png" alt=""id="profesion">
-			<img src="img/ubicacion.png" alt=""id="edad">
-			<img src="img/telefono.png" alt=""id="telefono">
-			<img src="img/mail-propio.png" alt=""id="mail">
-			<img src="img/reclutador.png" alt=""id="trabajo">
+			<img src="{{MEDIA_URL}}img/empresa.png" alt="" id="nombre">
+			<img src="{{MEDIA_URL}}img/pais.png" alt=""id="profesion">
+			<img src="{{MEDIA_URL}}img/ubicacion.png" alt=""id="edad">
+			<img src="{{MEDIA_URL}}img/telefono.png" alt=""id="telefono">
+			<img src="{{MEDIA_URL}}img/mail-propio.png" alt=""id="mail">
+			<img src="{{MEDIA_URL}}img/reclutador.png" alt=""id="trabajo">
 		</div>
 
 		<!--boton de pantalla siguiente-->
 		<div id="boton1">
-		<a href="#2"><img src="img/siguiente.png" alt=""></a>
-		</div>
-
-		
-	
+		<a href="#2"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
+		</div>	
 	</div>
-
-
-
-
 
 
 	<div class="section sec2"id="2">
 		<div id="logo2">
-			<img src="img/logo-pequeño.png" alt="">
+			<img src="{{MEDIA_URL}}img/logo-pequeño.png" alt="">
 		</div>
 
 		<div id="tex_B2">
@@ -76,12 +70,12 @@
 		</div>
 
 		<div class="Dtrabajador">
-			<input type="text"placeholder="Puesto"id="puesto">
+			<input type="text"placeholder="Puesto" id="position">
 
-			<select name="Sexo" id="sexo">
-			<option value="Sexo">Sexo</option>
-			<option value="Masculino">Masculino</option>
-			<option value="Femenino">Femenino</option>
+			<select name="Sexo" id="gender">
+				<option value="Sexo">Sexo</option>
+				<option value="Masculino">Masculino</option>
+				<option value="Femenino">Femenino</option>
 			</select>
 
 			<select name="Edad" id="edad">
@@ -153,19 +147,17 @@
 
 
 		<div id="boton2_1">
-			<a href="#1"><img src="img/flecha-izq.png" alt=""></a>
+			<a href="#1"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt=""></a>
 		</div>
 		<div id="boton2_2">
-		<a href="#3"><img src="img/siguiente.png" alt=""></a>
+			<a href="#3"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
 		</div>
-
 	</div>
 
 	<div class="section sec3"id="3">
-
 		<!--en este div se coloco el logo de profileme-->
 		<div id="logo3">
-			<img src="img/logo-pequeño.png" alt="">
+			<img src="{{MEDIA_URL}}img/logo-pequeño.png" alt="">
 		</div>
 
 		<!--texto uno que aparece en este section-->
@@ -178,55 +170,110 @@
 		</div>
 
 		<div class="Htrabajador">
-
 			<textarea id="hab"name="comentarios" rows="10" cols="40"placeholder="Habilidades"></textarea>
 
 			<textarea id="Des"name="comentarios" rows="10" cols="40"placeholder="Descripción"></textarea>
 			<input type="text"placeholder="Sueldo"id="sueldo">
 		</div>
-
-
 		
-					<div id="boton3_1">
-						<a href="#2"><img src="img/flecha-izq.png" alt=""></a>
-					</div>
+		<div id="boton3_1">
+			<a href="#2"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt=""></a>
+		</div>
 
-					<div id="boton3_2">
-					<a href="#4"><img src="img/siguiente.png" alt=""></a>
-					</div>
+		<div id="boton3_2">
+		<a href="#4"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
+		</div>
 	</div>
 
 	<div class="section sec4"id="4">
 		<div id="logo4">
-			<img src="img/logo-pequeño.png" alt="">
+			<img src="{{MEDIA_URL}}img/logo-pequeño.png" alt="">
 		</div>
 		<div id="tex_B4">
 			¡Muchas Gracias!
 		</div>
 		<!--texto uno que aparece en este section-->
 		<div id="tex_p4">
-			sfjdhsdfjlfdsj
+			{{company.nombre}}
 		</div>
 		<div id="imgE">
-			<img src="img/empresaa.png" alt=""width="150%">
+			<img src="{{MEDIA_URL}}img/empresaa.png" alt=""width="150%">
 		</div>
-		<input type="button" value="Enviar Propuesta">
-
-
+		<input type="button" value="Enviar Propuesta" onClick="$.ajax({
+              url:APP_URL + 'createJobOffer',
+              type:'POST',
+              data:{
+                name:$('#name').val(),
+                state:$('#state').val(),
+                address:$('#address').val(),
+                telephone:$('#telephone').val(),
+                email:$('#email').val(),
+                recruiterName:$('#recruiterName').val(),
+                position:$('#position').val(),
+                gender:$('#gender').val(),
+                age:$('#edad').val(),
+                experience:$('#exp').val(),
+                schoolLevel:$('#Esc').val(),
+                skills:$('#hab').val(),
+                description:$('#Des').val(),
+                compensation:$('#sueldo').val(),
+              },
+              headers:{'X-CSRFToken':csrftoken},
+              success: function(data){jobOfferCreated(data)},
+            });
+		">
 
 		<div id="boton4_1">
-			<a href="#3"><img src="img/flecha-izq.png" alt="" ></a>
+			<a href="#3"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt="" ></a>
 		</div>
 
 	</div>
+	<!-- </form> -->
 
-
-	
-	 
   <!-- The JavaScript -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>      	
-        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-        <script type="text/javascript"src="js/scrollH.js"></script>
-      
+        <script type="text/javascript" src="{{MEDIA_URL}}js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript"src="{{MEDIA_URL}}js/scrollH.js"></script>
+
+        <script>
+
+        var APP_URL = "http://127.0.0.1:8000/"
+
+        function jobOfferCreated(response) {
+        	if (response == "ok") {
+        		alert("Oferta de empleo registrada")
+        	} else {
+        		alert(response)
+        	}
+        }
+
+        function onCompanyLoginResponse(responseMessage) {
+          if (responseMessage == "ok") {
+            alert("Oferta de empleo registrada")
+          } else {
+            alert(responseMessage)
+          }
+        }
+
+        function getCookie(name) {
+		    var cookieValue = null;
+		    if (document.cookie && document.cookie != '') {
+		        var cookies = document.cookie.split(';');
+		        for (var i = 0; i < cookies.length; i++) {
+		            var cookie = jQuery.trim(cookies[i]);
+		            // Does this cookie string begin with the name we want?
+		            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+		                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+		                break;
+		            }
+		        }
+		    }
+		    
+		    return cookieValue;
+		}
+
+		var csrftoken = getCookie('csrftoken');
+        </script>
+
     </body>
 </html>

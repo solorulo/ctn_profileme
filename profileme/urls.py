@@ -20,24 +20,22 @@ urlpatterns = patterns('',
 
 	# Uncomment the next line to enable the admin:
 	url(r'^admin/', include(admin.site.urls)),    
-
 )
 
 urlpatterns += patterns('profile_app.views',
-	url(r'^$','index'),
+	url(r'^postTest$', 'profile_app.views.postTest', name='postTest'),
 
-    url(r'^postTest$', 'postTest', name='postTest'),
-    url(r'^registerUser$', 'registerUser', name='registerUser'),
-    url(r'^createJobOffer$', 'createJobOffer', name='createJobOffer'),
-    url(r'^registro$', 'registro', name='registro'),
+    url(r'^registro$', 'profile_app.views.registro', name='registro'),
 
-    url(r'^uploadUserPhoto$', 'uploadUserPhoto', name='uploadUserPhoto'),
+    url(r'^registerUser$', 'profile_app.views.registerUser', name='registerUser'),
+    url(r'^uploadUserPhoto$', 'profile_app.views.uploadUserPhoto', name='uploadUserPhoto'),
 
+    url(r'^publicar_oferta$', 'profile_app.views.publicarOferta', name='publicarOferta'),
+    # url(r'^publicarOferta$', 'profile_app.views.publicarOferta', name='publicarOferta'),
+    url(r'^createJobOffer$', 'profile_app.views.createJobOffer', name='createJo bOffer'),
 )
 
 urlpatterns += patterns('profile_app.linkedin_views',
-
 	url(r'^login/linkedin/?$', 'oauth_login'),
 	url(r'^login/linkedin/authenticated/?$', 'oauth_authenticated'),
-
 )
