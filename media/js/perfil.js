@@ -80,17 +80,6 @@ $(document).ready(function() {
 		return false;
 	});
 
-	// Create function outside loop
-	function Aproyectos() {
-		this.innerHTML = $('.proyecto').hide(400);
-		this.className += 'proyecto-success2';
-	}
-
-	function Aproyectos2(obj2) {
-		obj2.hide(400);
-	}
-
-
 	$('.formulario3').submit(function(e) {
 		e.preventDefault();
 		// Grab the input value
@@ -116,6 +105,7 @@ $(document).ready(function() {
 			$('#p').append(li);
 			li.onclick = function() {
 				Aproyectos2($(li));
+				$(li).hide(400);
 			}
 			$('.nombre').val('');
 			$('.descripcion').val('');
