@@ -60,13 +60,33 @@ class Herramienta(models.Model):
 	def __unicode__(self):
 		return self.nombre
 
-# class Trabajo(models.Model):
-# 	nombre = models.CharField(max_length=100)
-# 	descripcion = models.CharField(max_length=400)
-# 	puesto = models.CharField(max_length=400)
+# Company model
+class Company(models.Model):
+	usuario = models.OneToOneField(User)
+	nombre = models.TextField(max_length=100)
+	direccion = models.TextField(max_length=150)
+	telefono = models.TextField(max_length=20)
+	reclutador = models.TextField(max_length=100)
 
-# 	def __unicode__(self):
-# 		return self.nombre	
+class Trabajo(models.Model):
+	"""docstring for Trabajo"""
+	def __init__(self, arg):
+		super(Trabajo, self).__init__()
+		self.arg = arg
+	empresa = models.ForeignKey(Company)
+
+	puesto = models.CharField(max_length=100)
+	genero = models.CharField(max_length=10)
+	edad = models.CharField(max_length=3)
+	experiencia = models.CharField(max_length=20)
+	escolaridad = models.CharField(max_length=50)
+	#
+	habilidades = models.TextField(max_length=400)
+	descripcion = models.TextField(max_length=400)
+	sueldo = models.CharField(max_length=100)
+
+	def __unicode__(self):
+		return self.nombre
 
 class Educacion(models.Model):
 	centroEstudios = models.ForeignKey(CentroEstudios)
@@ -82,6 +102,10 @@ class Hobbie(models.Model):
 
 # Create your models here.
 class PersonalData(User):
+	"""docstring for PersonalData"""
+	# def __init__(self, arg):
+	# 	super(PersonalData, self).__init__()
+	# 	self.arg = arg
 	telefono = models.CharField(max_length=15,null=True,blank=True)
 	certificaciones = models.CharField(max_length=400,null=True,blank=True)
 	trabajo = models.CharField(max_length=140,null=True,blank=True)

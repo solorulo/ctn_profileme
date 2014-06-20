@@ -5,3 +5,5 @@ staticfiles
 *.pyc
 local_settings.py
 .DS_Store
+*.db
+media
