@@ -76,9 +76,9 @@ class Company(models.Model):
 
 class Trabajo(models.Model):
 	"""docstring for Trabajo"""
-	def __init__(self, arg):
-		super(Trabajo, self).__init__()
-		self.arg = arg
+	# def __init__(self, arg):
+	# 	super(Trabajo, self).__init__()
+	# 	self.arg = arg
 	empresa = models.ForeignKey(Company)
 
 	puesto = models.CharField(max_length=100)
@@ -92,7 +92,7 @@ class Trabajo(models.Model):
 	sueldo = models.CharField(max_length=100)
 
 	def __unicode__(self):
-		return self.nombre
+		return self.puesto
 
 class Educacion(models.Model):
 	centroEstudios = models.ForeignKey(CentroEstudios)

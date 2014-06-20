@@ -11,19 +11,19 @@ from profileme import settings
 
 urlpatterns = patterns('',
 	url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+
 	url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 	
 	url(r'^logout/?$', 'profile_app.views.oauth_logout'),
 
-	# Uncomment the admin/doc line below to enable admin documentation:
-	# url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
 	# Uncomment the next line to enable the admin:
-	url(r'^admin/', include(admin.site.urls)),    
+	url(r'^admin/', include(admin.site.urls)),
 )
 
-urlpatterns += patterns('profile_app.views',
-	url(r'^postTest$', 'profile_app.views.postTest', name='postTest'),
+urlpatterns += patterns('',
+    url(r'^$', 'profile_app.views.index', name='index'),
+
+    url(r'^postTest$', 'profile_app.views.postTest', name='postTest'),
 
     url(r'^registro$', 'profile_app.views.registro', name='registro'),
 
@@ -32,7 +32,7 @@ urlpatterns += patterns('profile_app.views',
 
     url(r'^publicar_oferta$', 'profile_app.views.publicarOferta', name='publicarOferta'),
     # url(r'^publicarOferta$', 'profile_app.views.publicarOferta', name='publicarOferta'),
-    url(r'^createJobOffer$', 'profile_app.views.createJobOffer', name='createJo bOffer'),
+    url(r'^createJobOffer$', 'profile_app.views.createJobOffer', name='createJobOffer'),
 )
 
 urlpatterns += patterns('profile_app.linkedin_views',
