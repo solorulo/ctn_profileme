@@ -173,7 +173,7 @@ def publicarOferta(request):
 
 		company = None
 		try:
-			company = Company.objects.get(email=email)
+			company = User.objects.get(email=email)
 		except Exception, e:
 			user = User.objects.create_user(email, email)
 			user.save()
@@ -216,7 +216,8 @@ def createJobOffer(request):
 
 	empresa = None
 	try:
-		empresa = Empresa.objects.get(email=email)
+		empresa = User.objects.get(email=email).company
+		# return render(request, 'simple_post_response.html', {'response_message':'empresa encontrada'})
 	except Exception, e:
 		return render(request, 'simple_post_response.html', {'response_message':'error al obtener empresa'})
 
