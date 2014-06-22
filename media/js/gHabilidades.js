@@ -3,6 +3,15 @@ var categoriasHabilidades = ['Pert,CPM', 'Business Intelligence', 'Gantt', 'Canv
 ];
 var dataHabilidades = [990, 4440, 660, 770, 1000, 5];
 
+function tablaHabilidades() {
+	$('#links').empty();
+	for (i in categoriasHabilidades) {
+		var text = categoriasHabilidades[i];
+		var number = dataHabilidades[i];
+		var li = createFilaTabla(text, number, 'dynamic-link');
+		$('#links').append(li);
+	}
+}
 function graficaHabilidades() {
 	$('#container').highcharts({
 		chart: {
