@@ -313,7 +313,7 @@ html,body{
 
 
 
-.Registro1>#OfreceE>a:nth-child(3){
+.Registro1>#OfreceE>input[type="submit"]{
     background: #ff738f;
     color:white;
     font-size:15px;

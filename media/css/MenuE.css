@@ -11,7 +11,7 @@ body{
 	top:0px;
     left:0px;
     bottom:0px;
-	
+	overflow: hidden;
 }
 
 img{ 
@@ -234,7 +234,7 @@ img{
 	height:400px;
 	left:25%;
 }
-.Dtrabajador>#puesto{
+.Dtrabajador>#position{
 	position: absolute;
 	left:40%;
 	border:solid 1px #cccccc;
@@ -246,7 +246,7 @@ img{
 	-moz-border-radius: 6px;
 	border-radius: 6px;
 }
-.Dtrabajador>#sexo{
+.Dtrabajador>#gender{
 	position: absolute;
 	left:40%;
 	border:solid 1px #cccccc;

@@ -24,7 +24,7 @@ urlpatterns += patterns('profile_app.views',
 	url(r'^$','index'),
 
 	url(r'^profile$', 'profile', name='profile'),
-	url(r'^postTest$', 'postTest', name='postTest'),
+	url(r'^jobs$', 'jobs', name='jobs'),
 
     url(r'^postTest$', 'postTest', name='postTest'),
     url(r'^registerUser$', 'registerUser', name='registerUser'),

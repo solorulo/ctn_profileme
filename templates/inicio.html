@@ -36,10 +36,11 @@
 			</div>
 			<!-- este es la pantalla que aparece con el clic ala imagen de registro-->
 			<div class="Registro1 contenido" style="display:none;">
-				{% csrf_token %}
+				
 				<input type="button" value="Buscas Empleo" class="BuscasE">
 				<input type="button" value="Ofreces Empleo" class="Ofrece">
 				<input type="button" value="Omitir" class="restore fade2">
+				{% csrf_token %}
 				<div id="BEmpleados">
 					<input id="uName" type="text"placeholder="Nombre">
 					<input id="uLastName" type="text"placeholder="Apellido">
@@ -61,11 +62,12 @@
 					});">Unirme</a>
 				</div>
 				<div id="OfreceE">
+					
+					<input form="companyRegisterForm" id="companyNameText" name="companyName" type="text" placeholder="Nombre de la empresa">
+					<input form="companyRegisterForm" id="companyEmailText" name="companyEmail" type="text" placeholder="Correo electrónico">
+					<input form="companyRegisterForm" type="submit" value="Continuar" />
 					<form id="companyRegisterForm" action="/publicar_oferta" method="post">
 						{% csrf_token %}
-						<input id="companyNameText" name="companyName" type="text" placeholder="Nombre de la empresa">
-						<input id="companyEmailText" name="companyEmail" type="text" placeholder="Correo electrónico">
-						<input type="submit">
 					</form>
 					<!-- <a href="#" onClick="$.ajax({
 								url:APP_URL + 'companyLogin',
@@ -76,8 +78,8 @@
 								},
 								headers:{'X-CSRFToken':csrftoken},
 								success: function(data){onCompanyLoginResponse(data)},
-					});">Continuar</a> -->
-					<a id="companyRegistrationButton" href="" onclick="">Continuar</a>
+					});">Continuar</a>
+					<a id="companyRegistrationButton" href="" onclick="">Continuar</a> -->
 				</div>
 				
 			</div>
