@@ -35,6 +35,9 @@ urlpatterns += patterns('profile_app.views',
 
     url(r'^uploadUserPhoto$', 'uploadUserPhoto', name='uploadUserPhoto'),
 
+
+    url(r'^error$','error_page'),
+
 )
 
 urlpatterns += patterns('profile_app.linkedin_views',

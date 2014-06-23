@@ -146,3 +146,6 @@ def uploadUserPhoto(request):
 	pd.save();
 
 	return HttpResponse(response, content_type="application/json")
+
+def error_page(request):
+	return render(request, 'error_page.html')
