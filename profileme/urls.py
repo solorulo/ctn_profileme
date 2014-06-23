@@ -38,6 +38,10 @@ urlpatterns += patterns('profile_app.views',
     # url(r'^publicarOferta$', 'profile_app.views.publicarOferta', name='publicarOferta'),
     
     url(r'^createJobOffer$', 'createJobOffer', name='createJobOffer'),
+
+
+    url(r'^error$','error_page'),
+
 )
 
 urlpatterns += patterns('profile_app.linkedin_views',
