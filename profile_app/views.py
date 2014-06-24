@@ -146,7 +146,6 @@ def uploadUserPhoto(request):
 	pd.save();
 
 	return HttpResponse(response, content_type="application/json")
-
 # 
 def companyLogin(request):
 	if request.method == "POST":
@@ -233,3 +232,6 @@ def createJobOffer(request):
 
 def ofertas(request):
 	return render(request, 'trabajos.html')
+
+def error_page(request):
+	return render(request, 'error_page.html')
