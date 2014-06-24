@@ -182,8 +182,10 @@ def publicarOferta(request):
 
 		company = None
 		try:
-			company = User.objects.get(email=email)
-			return render(request, 'simple_post_response.html', {'response_message': 'Ya estaba registrado ese correo'})
+			company = User.objects.get(email=email).company
+
+			responseParams = {"company":company}
+			# return render(request, 'simple_post_response.html', {'response_message': 'Ya estaba registrado ese correo'})
 		except Exception, e:
 			user = User.objects.create_user(email, email)
 			user.save()
@@ -242,7 +244,10 @@ def createJobOffer(request):
 	return render(request, 'simple_post_response.html', {'response_message':'ok'})
 
 def ofertas(request):
-	return render(request, 'trabajos.html')
+	jobOffers = Trabajo.objects.all()
+	boxNum = ["2", "3"]
+
+	return render(request, 'trabajos.html', {"jobOffers":jobOffers, "boxNum":boxNum})
 
 def error_page(request):
 	return render(request, 'error_page.html')

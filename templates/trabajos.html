@@ -29,69 +29,54 @@
 
 		<div id='grid'>
 			
-			<div class='box'>
-			<h1>puto</h1>
-			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
+			{% for jobOffer in jobOffers %}
+				{% ifequal jobOffer jobOffers.0 %}
+				<div class="box">
+				{% else %}
+				<div class="box{{boxNum|random}}">
+				{% endifequal %}
+					<h1>{{jobOffer.puesto}}</h1>
+					<p>{{jobOffer.descripcion}}</p>
+				</div>
+			{% endfor %}
+
+			<!-- <div class='box'>
+			<h1>box1</h1>
+			<p>box1</p>
 			</div>
 		
-			<div class='box'>
-			<h1>box1</h1>
-			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
+			<div class='box2'>
+			<h1>box2</h1>
+			<p>box2</p>
 			</div>
-			<div class='box'>
-			<h1>box1</h1>
-			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
+
+			<div class='box3'>
+			<h1>box3</h1>
+			<p>box3</p>
 			</div>
-			<div class='box'>
-			<h1>box1</h1>
-			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
-			</div>
-		
+
+			<div class='box2'>
+			<h1>box22</h1>
+			<p>box22</p>
+			</div> -->
+
 		</div>
-		<div id='fillers'>
-			<div class='fillerBox'>
-			<h1>filler</h1>
-			</div>
-			<div class='box2'>
-			<h1>box2</h1>
-			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
-			</div>
-			<div class='box2'>
-			<h1>box2</h1>
-			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
-			</div>
-			<div class='box2'>
-			<h1>box2</h1>
-			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
-			</div>
-			<div class='box3'>
-			<h1>box3</h1>
-			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
-			</div>
-			<div class='box3'>
-			<h1>box3</h1>
-			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
-			</div>
-			<div class='box3'>
-			<h1>box3</h1>
-			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
-			</div>
-			<div class='fillerBox'>
-			<h1>filler</h1>
-			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
-			</div>
-			<div class='box2'>
-			<h1>box2</h1>
-			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
-			</div>
-			<div class='fillerBox'>
-			<h1>filler</h1>
-			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
 
+		<!-- <div id='fillers'>
+			<div class='fillerBox'>
+			<h1>filler</h1>
 			</div>
-		</div> 
-	
 
+			<div class='fillerBox'>
+			<h1>filler</h1>
+			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
+			</div>
+
+			<div class='fillerBox'>
+			<h1>filler</h1>
+			<p>fkbnvm,nmv,mndnvd,ndkldndn</p>
+			</div>
+		</div>  -->
 
 		<script>
 		$(function(){
