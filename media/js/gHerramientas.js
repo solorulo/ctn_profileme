@@ -8,7 +8,13 @@ var categoriasHerramientas = [
 			];
 var dataHerramientas = [100, 60, 50, 80, 10, 50];
 function tablaHerramientas() {
-	
+	$('#h').empty();
+	for (i in categoriasHerramientas) {
+		var text = categoriasHerramientas[i];
+		var number = dataHerramientas[i];
+		var li = createFilaTabla(text, number, 'lista');
+		$('#h').append(li);
+	}
 }
 function graficaHerramientas() {
 	$('#container2').highcharts({

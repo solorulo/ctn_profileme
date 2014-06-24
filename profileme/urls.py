@@ -30,6 +30,7 @@ urlpatterns += patterns('profile_app.views',
     url(r'^publicar_oferta$', 'publicarOferta', name='publicarOferta'),
     # url(r'^publicarOferta$', 'profile_app.views.publicarOferta', name='publicarOferta'),
     url(r'^ofertas$', 'ofertas', name='ofertas'),
+    url(r'^jobs$', 'jobs', name='jobs'),
 
     url(r'^registerUser$', 'registerUser', name='registerUser'),
     url(r'^createJobOffer$', 'createJobOffer', name='createJobOffer'),

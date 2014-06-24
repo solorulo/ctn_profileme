@@ -72,7 +72,14 @@ def index(request):
 def registro(request):
 	return render(request, 'Registro.html')
 
-def postTest(request):
+def registrarHabilidad(request):
+	name = request.POST['name']
+	pass
+
+def registrarHerramienta(request):
+	pass
+
+def jobs(request):
 	return render(request, 'trabajos.html')
 
 # Register User
@@ -112,6 +119,8 @@ def registerUser(request):
 
 	return render(request, 'simple_post_response.html', {'response_message': 'ok'})
 
+
+
 # Create Job Offer
 @login_required
 def createJobOffer(request):
@@ -122,6 +131,7 @@ def createJobOffer(request):
 
 	return render(request, 'simple_post_response.html', context)
 
+@login_required
 def uploadUserPhoto(request):
 	file = None
 	fName = None
@@ -173,6 +183,7 @@ def publicarOferta(request):
 		company = None
 		try:
 			company = User.objects.get(email=email)
+			return render(request, 'simple_post_response.html', {'response_message': 'Ya estaba registrado ese correo'})
 		except Exception, e:
 			user = User.objects.create_user(email, email)
 			user.save()
