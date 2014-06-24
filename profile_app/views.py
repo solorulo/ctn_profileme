@@ -230,3 +230,6 @@ def createJobOffer(request):
 	jobOffer.save();
 
 	return render(request, 'simple_post_response.html', {'response_message':'ok'})
+
+def ofertas(request):
+	return render(request, 'trabajos.html')

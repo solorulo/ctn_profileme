@@ -22,21 +22,19 @@ urlpatterns = patterns('',
 
 urlpatterns += patterns('profile_app.views',
 	url(r'^$','index'),
-	url(r'^postTest$', 'profile_app.views.postTest', name='postTest'),
+	# url(r'^postTest$', 'profile_app.views.postTest', name='postTest'),
+    url(r'^postTest$', 'postTest', name='postTest'),
 
 	url(r'^profile$','profile', name='profile'),
-
-    url(r'^postTest$', 'postTest', name='postTest'),
-    url(r'^registerUser$', 'registerUser', name='registerUser'),
-    url(r'^createJobOffer$', 'createJobOffer', name='createJobOffer'),
     url(r'^registro$', 'registro', name='registro'),
-
-    url(r'^registerUser$', 'registerUser', name='registerUser'),
-    url(r'^uploadUserPhoto$', 'uploadUserPhoto', name='uploadUserPhoto'),
-
     url(r'^publicar_oferta$', 'publicarOferta', name='publicarOferta'),
     # url(r'^publicarOferta$', 'profile_app.views.publicarOferta', name='publicarOferta'),
-    
+    url(r'^ofertas$', 'ofertas', name='ofertas'),
+
+    url(r'^registerUser$', 'registerUser', name='registerUser'),
+    url(r'^createJobOffer$', 'createJobOffer', name='createJobOffer'),
+    url(r'^registerUser$', 'registerUser', name='registerUser'),
+    url(r'^uploadUserPhoto$', 'uploadUserPhoto', name='uploadUserPhoto'),
     url(r'^createJobOffer$', 'createJobOffer', name='createJobOffer'),
 )
 
