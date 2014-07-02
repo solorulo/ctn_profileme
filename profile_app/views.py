@@ -69,6 +69,9 @@ def index(request):
 			pass
 	return render(request,'inicio.html')
 
+def postTest(request):
+	return render(request, 'trabajos.html')
+
 def registro(request):
 	return render(request, 'Registro.html')
 
