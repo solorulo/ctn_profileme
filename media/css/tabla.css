@@ -752,14 +752,14 @@ body{
     text-align: center;
 
 }
-.section5>.hobbies{
+.section5>.EditH{
     position:relative;
     margin-left:25%;
     margin-top:4%;
     height:330px;
     width:50%;
   }
-.hobbies>#h1{
+.EditH>#h1{
     position: absolute;
     left:0%;
     top:5%;
@@ -771,7 +771,7 @@ body{
 }
 
 
-.hobbies>#h2{
+.EditH>#h2{
     position: absolute;
     left:22%;
     top:5%;
@@ -782,9 +782,7 @@ body{
     top:0%;  
 }
 
-
-
-.hobbies>#h3{
+.EditH>#h3{
     position: absolute;
     left:43%;
     top:5%;
@@ -795,7 +793,7 @@ body{
     top:0%; 
 }
 
-.hobbies>#h4{
+.EditH>#h4{
     position: absolute;
     left:65%;
     top:5%;
@@ -806,7 +804,7 @@ body{
     top:0%; 
 }
 
-.hobbies>#h5{
+.EditH>#h5{
     position: absolute;
     left:86.5%;
     top:5%;
@@ -818,7 +816,7 @@ body{
 }
 
 
-.hobbies>#h6{
+.EditH>#h6{
     position: absolute;
     left:0%;
     top:50%;
@@ -829,7 +827,7 @@ body{
     top:0%; 
 }
 
-.hobbies>#h7{
+.EditH>#h7{
     position: absolute;
     left:22%;
     top:50%;
@@ -840,7 +838,7 @@ body{
     top:0%; 
 }
 
-.hobbies>#h8{
+.EditH>#h8{
     position: absolute;
     left:43%;
     top:50%;
@@ -850,7 +848,7 @@ body{
     top:0%; 
 }
 
-.hobbies>#h9{
+.EditH>#h9{
     position: absolute;
     left:65%;
     top:50%;
@@ -861,7 +859,7 @@ body{
     top:0%; 
 }
 
-.hobbies>#h10{
+.EditH>#h10{
     position: absolute;
     left:86.5%;
     top:50%;
@@ -1343,7 +1341,7 @@ body{
     .section4>#editarH2>.formrow>.formulario2>.num2{
         margin-left:71%;
     }
-    .section5>.hobbies{
+    .section5>.EditH{
         position:relative;
         margin-left:15%;
         width:70%;
@@ -1524,7 +1522,7 @@ body{
     .section4>#editarH2>.formrow>.formulario2>.num2{
         margin-left:73%;
     }
-    .section5>.hobbies{
+    .section5>.EditH{
         position:relative;
         margin-left:15%;
         width:70%;
@@ -1918,7 +1916,7 @@ body{
        z-index: 1;
 
     }
-    .section5>.hobbies{
+    .section5>.EditH{
         position:relative;
         margin-left:10%;
         margin-top:12%;
@@ -1941,7 +1939,7 @@ body{
 
     }
 
-    .hobbies>#h1{
+    .EditH>#h1{
         position: absolute;
         left:0%;
         top:5%;
@@ -1953,7 +1951,7 @@ body{
     }
 
 
-    .hobbies>#h2{
+    .EditH>#h2{
         position: absolute;
         left:26%;
         top:5%;
@@ -1966,7 +1964,7 @@ body{
 
 
 
-    .hobbies>#h3{
+    .EditH>#h3{
         position: absolute;
         left:53%;
         top:5%;
@@ -1977,7 +1975,7 @@ body{
         top:0%; 
     }
 
-    .hobbies>#h4{
+    .EditH>#h4{
         position: absolute;
         left:78%;
         top:5%;
@@ -1988,7 +1986,7 @@ body{
         top:0%; 
     }
 
-    .hobbies>#h5{
+    .EditH>#h5{
         position: absolute;
         left:0%;
         top:40%;
@@ -2000,7 +1998,7 @@ body{
     }
 
 
-    .hobbies>#h6{
+    .EditH>#h6{
         position: absolute;
         left:26%;
         top:40%;
@@ -2010,7 +2008,7 @@ body{
         top:0%; 
     }
 
-    .hobbies>#h7{
+    .EditH>#h7{
         position: absolute;
         left:53%;
         top:40%;
@@ -2021,7 +2019,7 @@ body{
         top:0%; 
     }
 
-    .hobbies>#h8{
+    .EditH>#h8{
         position: absolute;
         left:78%;
         top:40%;
@@ -2031,7 +2029,7 @@ body{
         top:0%; 
     }
 
-    .hobbies>#h9{
+    .EditH>#h9{
         position: absolute;
         left:26%;
         top:70%;
@@ -2042,7 +2040,7 @@ body{
         top:0%; 
     }
 
-    .hobbies>#h10{
+    .EditH>#h10{
         position: absolute;
         left:53%;
         top:70%;

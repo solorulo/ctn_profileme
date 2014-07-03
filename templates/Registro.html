@@ -5,426 +5,366 @@
 		<title>Document</title>
 		<link rel="stylesheet" href="{{MEDIA_URL}}css/tabla.css">
 		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-		</head>
-		<body>
-			<div class="section section1"id="1">
-				<div id="logo">
-					<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
-				</div>
-				<div id="tex_B">
-					Bienvenido {{request.user.first_name}} !
-				</div>
-				<div id="tex_p">
-					queremos saber cómo te ves
-				</div>
-				<!--insertar imagenes-->
-				<div id="imagen_N">
-					<img id="userPhoto" style="display:block;margin:0 auto 0 auto;" src="{{MEDIA_URL}}img/foto-perfil.png" alt=""
-					style="">
-					<input input id="fileupload" type="file" name="files[]" multiple style="
-					cursor: pointer;
-					height: 200px;
-					opacity: 0;
-					position: absolute;
-					right:42%;
-					top: 0px;
-					width: 200px;">
-				</div>
-				<div id="files"></div>
-				<!--texto de abajo de la imagen-->
-				<div id="tex_nf">
-					Sube tu fotografia
-				</div>
-				<div id="recom_1">
-					<div id="conten_1">
-						<h1>Recomendación</h1>
-						Sube una foto que refleje tu personalidad recuerda que la primera impresión es la que mas cuenta.
-					</div>
-				</div>
-				<div id="recom_2">
-					<div id="conten_2">
-						<h1>Recomendación</h1>
-						Lo ideal es el "plano americano", en donde se vean bien los rasgos de tu rostro.
-					</div>
-					
-				</div>
-				<!--boton de pantalla siguiente-->
-				<div id="boton1">
-					<a href="#2"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="{{MEDIA_URL}}js/utilities.js"></script>
+		<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.easing.1.3.js"></script>
+		<script src="{{MEDIA_URL}}js/csrf.js"></script>
+		<script src="{{MEDIA_URL}}js/gHabilidades.js"></script>
+		<script src="{{MEDIA_URL}}js/gHerramientas.js"></script>
+		<script type="text/javascript">
+		categoriasHabilidades = ['Pert,CPM', 'Business Intelligence', 'Gantt', 'Canvas Bussiness Model',
+			'Plan de negocios', 'Otra'
+		];
+		dataHabilidades = [99, 44, 66, 77, 100, 15];
+		categoriasHerramientas = [
+			'Java',
+			'JavaScript',
+			'CSS',
+			'HTML',
+			'C#',
+			'Scalando'
+		];
+		</script>
+	</head>
+	<body>
+		<div class="section section1"id="1">
+			<div id="logo">
+				<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
+			</div>
+			<div id="tex_B">
+				Bienvenido {{request.user.first_name}} !
+			</div>
+			<div id="tex_p">
+				queremos saber cómo te ves
+			</div>
+			<!--insertar imagenes-->
+			<div id="imagen_N">
+				<img id="userPhoto" style="display:block;margin:0 auto 0 auto;" src="{{MEDIA_URL}}img/foto-perfil.png" alt=""
+				style="">
+				<input input id="fileupload" type="file" name="files[]" multiple style="
+				cursor: pointer;
+				height: 200px;
+				opacity: 0;
+				position: absolute;
+				right:42%;
+				top: 0px;
+				width: 200px;">
+			</div>
+			<div id="files"></div>
+			<!--texto de abajo de la imagen-->
+			<div id="tex_nf">
+				Sube tu fotografia
+			</div>
+			<div id="recom_1">
+				<div id="conten_1">
+					<h1>Recomendación</h1>
+					Sube una foto que refleje tu personalidad recuerda que la primera impresión es la que mas cuenta.
 				</div>
 			</div>
-			<div class="section section2"id="2">
-				<div id="logo2">
-					<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
-				</div>
-				<div id="tex_B2">
-					¡Necesitamos saber más sobre ti!
-				</div>
-				<div id="tex_p2">
-					compartenos la siguiente información
-				</div>
-				<div id="camposP">
-					<!--input para llenar registro de los datos personales del usuario-->
-					<input type="text" placeholder="Nombre" value="{{ user.first_name }}"> 
-					<input type="text" placeholder="Campo de Trabajo" value="{{ user.personaldata.profesion |default_if_none:""}}">
-					<input type="text" placeholder="Fecha de nacimiento" value="{{ user.personaldata.age |default_if_none:""}}" >
-					<input type="text" placeholder="Telefono" value="{{ user.personaldata.telefono |default_if_none:""}}">
-					<input type="text" placeholder="Correo Electrónico" value="{{ user.email }}">
-					<input type="text" placeholder="Trabajo actual" value="{{ user.personaldata.trabajo |default_if_none:""}}">
-
-					<!--imagenes representativas de cada campo de los datos personales-->
-					<img src="{{MEDIA_URL}}img/nombre.png" alt="" id="nombre">
-					<img src="{{MEDIA_URL}}img/profesion.png" alt=""id="profesion">
-					<img src="{{MEDIA_URL}}img/edad.png" alt=""id="edad">
-					<img src="{{MEDIA_URL}}img/telefono.png" alt=""id="telefono">
-					<img src="{{MEDIA_URL}}img/mail-propio.png" alt=""id="mail">
-					<img src="{{MEDIA_URL}}img/trabajo.png" alt=""id="trabajo">
-				</div>
-				<div id="boton2_1">
-					<a href="#1"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt=""></a>
-				</div>
-				<div id="boton2_2">
-					<a href="#3"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
+			<div id="recom_2">
+				<div id="conten_2">
+					<h1>Recomendación</h1>
+					Lo ideal es el "plano americano", en donde se vean bien los rasgos de tu rostro.
 				</div>
 				
+			</div>
+			<!--boton de pantalla siguiente-->
+			<div id="boton1">
+				<a href="#2"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
+			</div>
+		</div>
+		<div class="section section2"id="2">
+			<div id="logo2">
+				<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
+			</div>
+			<div id="tex_B2">
+				¡Necesitamos saber más sobre ti!
+			</div>
+			<div id="tex_p2">
+				compartenos la siguiente información
+			</div>
+			<div id="camposP">
+				<!--input para llenar registro de los datos personales del usuario-->
+				<input type="text" placeholder="Nombre" value="{{ user.first_name }}"> 
+				<input type="text" placeholder="Campo de Trabajo" value="{{ user.personaldata.profesion |default_if_none:""}}">
+				<input type="text" placeholder="Fecha de nacimiento" value="{{ user.personaldata.age |default_if_none:""}}" >
+				<input type="text" placeholder="Telefono" value="{{ user.personaldata.telefono |default_if_none:""}}">
+				<input type="text" placeholder="Correo Electrónico" value="{{ user.email }}">
+				<input type="text" placeholder="Trabajo actual" value="{{ user.personaldata.trabajo |default_if_none:""}}">
+
+				<!--imagenes representativas de cada campo de los datos personales-->
+				<img src="{{MEDIA_URL}}img/nombre.png" alt="" id="nombre">
+				<img src="{{MEDIA_URL}}img/profesion.png" alt=""id="profesion">
+				<img src="{{MEDIA_URL}}img/edad.png" alt=""id="edad">
+				<img src="{{MEDIA_URL}}img/telefono.png" alt=""id="telefono">
+				<img src="{{MEDIA_URL}}img/mail-propio.png" alt=""id="mail">
+				<img src="{{MEDIA_URL}}img/trabajo.png" alt=""id="trabajo">
+			</div>
+			<div id="boton2_1">
+				<a href="#1"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt=""></a>
+			</div>
+			<div id="boton2_2">
+				<a href="#3"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
 			</div>
 			
-			<div class="section section3"id="3">
-				
-				<!--en este div se coloco el logo de profileme-->
-				<div id="logo3">
-					<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
-				</div>
-				<!--texto uno que aparece en este section-->
-				<div id="tex_B3">
-					¡Queremos saber en qué eres bueno!
-				</div>
-				<!--texto uno que aparece en este section-->
-				<div id="tex_p3">
-					Agrega todas tus habilidades
-				</div>
-				<div id="editarH">
-					<div id="Totalhe">
-						<ul id="links">
-							
-						</ul>
-					</div>
-					<!--es el div donde agregas habilidades-->
-					<div class="Nherramientas">
-						<form oninput="amount.value=rangeInput.value"class="generate">
-							<input type="text"placeholder="Habilidades" class="generate-input2" name="habilidad">
-							<input type="submit"value="Agregar"class="generate-submit">
-							<!--es el slider de putos que tienes en cada habilidad-->
-							
-							<div id="slider">
-								<!--slider-->
-								
-								<input id="rangeInput"name="rangeInput" type="range" min="1" max="100" class="generate-input"/>
-								<!--numero que elige el usuario en el slider-->
-								<output name="amount" for="rangeInput" class="num1">50</output>
-								
-							</div>
-						</form>
-					</div>
-				</div>
-				<div id="boton3_1">
-					<a href="#2"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt=""></a>
-				</div>
-				<div id="boton3_2">
-					<a href="#4"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
-				</div>
+		</div>
+		
+		<div class="section section3"id="3">
+			
+			<!--en este div se coloco el logo de profileme-->
+			<div id="logo3">
+				<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
 			</div>
-			<div class="section section4"id="4">
-				<div id="logo4">
-					<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
+			<!--texto uno que aparece en este section-->
+			<div id="tex_B3">
+				¡Queremos saber en qué eres bueno!
+			</div>
+			<!--texto uno que aparece en este section-->
+			<div id="tex_p3">
+				Agrega todas tus habilidades
+			</div>
+			<div id="editarH">
+				<div id="Totalhe">
+					<ul id="links">
+						
+					</ul>
 				</div>
-				<div id="tex_B4">
-					¡Queremos saber que herramientas utilizas!
-				</div>
-				<div id="tex_p4">
-					Agrega todas las herramientas con las que trabajas
-				</div>
-				<div id="editarH2">
-					<div id="Totalhe2">
-						<ul id="h">
-							
-							
-						</ul>
-					</div>
-					<!--es el div donde agregas habilidades-->
-					<div class="formrow">
-						<form oninput="amount.value=rangeInput.value"class="formulario2">
-							<input type="text" placeholder="herramientas" class="text" name="herramientas">
-							<input type="submit" value="Agregar" class="agregarV">
-							<!--es el slider de putos que tienes en cada habilidad-->
+				<!--es el div donde agregas habilidades-->
+				<div class="Nherramientas">
+					<form oninput="amount.value=rangeInput.value"class="generate">
+						<input type="text"placeholder="Habilidades" class="generate-input2" name="habilidad">
+						<input type="submit"value="Agregar"class="generate-submit">
+						<!--es el slider de putos que tienes en cada habilidad-->
+						
+						<div id="slider">
 							<!--slider-->
 							
-							<input id="rangeInput" name="rangeInput" type="range" min="1" max="100" class="range">
+							<input id="rangeInput"name="rangeInput" type="range" min="1" max="100" class="generate-input"/>
 							<!--numero que elige el usuario en el slider-->
-							<output name="amount" for="rangeInput" class="num2">50</output>
-						</form>
-					</div>
-				</div>
-				
-				<div id="boton4_1">
-					<a href="#3"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt=""></a>
-				</div>
-				<div id="boton4_2">
-					<a href="#5"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
-				</div>
-			</div>
-			<div class="section section5"id="5">
-				<div id="logo5">
-					<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
-				</div>
-				<div id="tex_B5">
-					¡Cuéntanos que te gusta hacer en tu tiempo libre!
-				</div>
-				<div id="tex_p5">
-					Selecciona los hobbies que más disfrutas
-				</div>
-				<div class="hobbies">
-					<div id="h1"><img src="{{MEDIA_URL}}img/iconosG/cine-g.png" alt=""><input type="checkbox"></div>
-					<div id="h2"><img src="{{MEDIA_URL}}img/iconosG/leer-g.png" alt=""><input type="checkbox"></div>
-					<div id="h3"><img src="{{MEDIA_URL}}img/iconosG/correr-g.png" alt=""><input type="checkbox"></div>
-					<div id="h4"><img src="{{MEDIA_URL}}img/iconosG/musica-g.png" alt=""><input type="checkbox"></div>
-					<div id="h5"><img src="{{MEDIA_URL}}img/iconosG/fotografia-g.png" alt=""><input type="checkbox"></div>
-					<div id="h6"><img src="{{MEDIA_URL}}img/iconosG/videojuegos-g.png" alt=""><input type="checkbox"></div>
-					<div id="h7"><img src="{{MEDIA_URL}}img/iconosG/viajar-g.png" alt=""><input type="checkbox"></div>
-					<div id="h8"><img src="{{MEDIA_URL}}img/iconosG/soccer-g.png" alt=""><input type="checkbox"></div>
-					<div id="h9"><img src="{{MEDIA_URL}}img/iconosG/ejercicio-g.png" alt=""><input type="checkbox"></div>
-					
-					<div id="h10"><img src="{{MEDIA_URL}}img/iconosG/pintar-g.png" alt=""><input type="checkbox"></div>
-				</div>
-				<div id="boton5_1">
-					<a href="#4"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt=""></a>
-				</div>
-				<div id="boton5_2">
-					<a href="#8"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
-				</div>
-				
-			</div>
-			
-			<div class="section section8"id="8">
-				
-				<div id="boton8_1">
-					<a href="#5"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt=""></a>
-				</div>
-				
-				<div id="logo8">
-					<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
-				</div>
-				
-				<div id="tex_B8">
-					¡Cuéntanos en que proyectos has trabajado!
-				</div>
-				
-				<div id="tex_p8">
-					Agrega en los proyectos que has participado
-				</div>
-				
-				<div id="escolaridad">
-					<select>
-						<option value="0">Escolaridad</option>
-						<option value="1">Ingenieria</option>
-						<option value="2">Doctorado</option>
-						<option value="3">Licenciatura</option>
-						<option value="4">Preparatoria</option>
-					</select>
-					<textarea id="carrera"name="comentarios" rows="10" cols="40"placeholder="Nombre de la carrera"></textarea>
-					
-					<textarea id="certificaciones" name="comentarios" rows="10" cols="40"placeholder="certificaciónes"></textarea>
-				</div>
-				
-				<div id="boton8_2">
-					<a href="#6"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
-				</div>
-			</div>
-			<div class="section section6"id="6">
-				<div id="logo6">
-					<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
-				</div>
-				<div id="tex_B6">
-					¡Cuéntanos en que proyectos has trabajado!
-				</div>
-				<div id="tex_p6">
-					Agrega en los proyectos que has participado
-				</div>
-				<div class="Proyectos">
-					<div id="listaproyectos">
-						<ul id="p">
+							<output name="amount" for="rangeInput" class="num1">50</output>
 							
-						</ul>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div id="boton3_1">
+				<a href="#2"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt=""></a>
+			</div>
+			<div id="boton3_2">
+				<a href="#4"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
+			</div>
+		</div>
+		<div class="section section4"id="4">
+			<div id="logo4">
+				<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
+			</div>
+			<div id="tex_B4">
+				¡Queremos saber que herramientas utilizas!
+			</div>
+			<div id="tex_p4">
+				Agrega todas las herramientas con las que trabajas
+			</div>
+			<div id="editarH2">
+				<div id="Totalhe2">
+					<ul id="h">
 						
-					</div>
-					<div id="agregarP">
-						<form class="formulario3">
-							<textarea placeholder="Nombre del proyecto"class="nombre"></textarea>
-							<textarea placeholder="Descripción del proyecto"class="descripcion"></textarea>
-							<textarea placeholder="Enlace"class="enlace"></textarea>
-							<input type="submit"value="Agregar"id="aproyecto"class="agregarP">
-						</form>
-					</div>
+						
+					</ul>
 				</div>
-				<div id="boton6_1">
-					<a href="#8"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt=""></a>
-				</div>
-				<div id="boton6_2">
-					<a href="#7"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
-				</div>
-			</div>
-			<div class="section section7"id="7">
-				<div id="logo7">
-					<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
-				</div>
-				<div id="tex_B7">
-					¡Muchas Grácias!
-				</div>
-				<div id="tex_p7">
-					hdfskjhwkj
-				</div>
-				<div id="imgP">
-					<img src="{{MEDIA_URL}}img/personaa.png" alt=""width="100%">
-				</div>
-				<div class="btnG">
-					<input type="button" value="Guardar y Continuar">
-				</div>
-				<div id="boton7_1">
-					<a href="#6"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt=""></a>
+				<!--es el div donde agregas habilidades-->
+				<div class="formrow">
+					<form oninput="amount.value=rangeInput.value"class="formulario2">
+						<input type="text" placeholder="herramientas" class="text" name="herramientas">
+						<input type="submit" value="Agregar" class="agregarV">
+						<!--es el slider de putos que tienes en cada habilidad-->
+						<!--slider-->
+						
+						<input id="rangeInput" name="rangeInput" type="range" min="1" max="100" class="range">
+						<!--numero que elige el usuario en el slider-->
+						<output name="amount" for="rangeInput" class="num2">50</output>
+					</form>
 				</div>
 			</div>
-			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-			<script src="{{MEDIA_URL}}js/utilities.js"></script>
-			<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.easing.1.3.js"></script>
-			<script type="text/javascript"src="{{MEDIA_URL}}js/scrollH.js"></script>
-			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-			<!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
-			<script src="{{MEDIA_URL}}js/vendor/jquery.ui.widget.js"></script>
-			<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-			<script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.min.js"></script>
-			<!-- The Canvas to Blob plugin is included for image resizing functionality -->
-			<script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
-			<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
-			<script src="{{MEDIA_URL}}js/jquery.iframe-transport.js"></script>
-			<!-- The basic File Upload plugin -->
-			<script src="{{MEDIA_URL}}js/jquery.fileupload.js"></script>
-			<!-- The File Upload processing plugin -->
-			<script src="{{MEDIA_URL}}js/jquery.fileupload-process.js"></script>
-			<!-- The File Upload image preview & resize plugin -->
-			<script src="{{MEDIA_URL}}js/jquery.fileupload-image.js"></script>
-			<!-- The File Upload validation plugin -->
-			<script src="{{MEDIA_URL}}js/jquery.fileupload-validate.js"></script>
-
-        	<script src="{{MEDIA_URL}}js/gHabilidades.js"></script>
-	        <script src="{{MEDIA_URL}}js/gHerramientas.js"></script>
-	        <script src="{{MEDIA_URL}}js/tables.profileme.js"></script>
-	        <script src="{{MEDIA_URL}}js/csrf.js"></script>
-			<script>
-			 /*jslint unparam: true, regexp: true */
-			/*global window, $ */
-			$(function() {
-				'use strict';
-				// Change this to the location of your server-side upload handler:
-				var url = '/uploadUserPhoto',
-					uploadButton = $('<button/>')
-					.addClass('btn btn-primary')
-					.prop('disabled', true)
-					.text('Processing...')
-					.on('click', function() {
-						var $this = $(this),
-							data = $this.data();
-						$this
-							.off('click')
-							.text('Abort')
-							.on('click', function() {
-								$this.remove();
-								data.abort();
-							});
-						data.submit().always(function() {
-							$this.remove();
-						});
-					});
-				$('#fileupload').fileupload({
-					formData: [{
-						name: 'csrfmiddlewaretoken',
-						value: csrftoken
-					}, ],
-					url: url,
-					dataType: 'json',
-					autoUpload: false,
-					acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
-					maxFileSize: 5000000, // 5 MB
-					// Enable image resizing, except for Android and Opera,
-					// which actually support image resizing, but fail to
-					// send Blob objects via XHR requests:
-					disableImageResize: /Android(?!.*Chrome)|Opera/
-						.test(window.navigator.userAgent),
-					previewMaxWidth: 200,
-					previewMaxHeight: 200,
-					previewCrop: true
-				}).on('fileuploadadd', function(e, data) {
-					data.context = $('<div/>').appendTo('#files');
-					$.each(data.files, function(index, file) {
-						var node = $('<p/>');
-						node.appendTo(data.context);
-						data.submit();
-					});
-				}).on('fileuploadprocessalways', function(e, data) {
-					var index = data.index,
-						file = data.files[index],
-						node = $(data.context.children()[index]);
-					if (file.preview) {
-						// $('#imagen_N').prepend(file.preview);
-						// $('#tex_nf').hide();
-						// $('#userPhoto').hide();
-					}
-					if (file.error) {
-						node
-							.append('<br>')
-							.append($('<span class="text-danger"/>').text(file.error));
-					}
-					if (index + 1 === data.files.length) {
-						data.context.find('button')
-							.text('Upload')
-							.prop('disabled', !!data.files.error);
-					}
-				}).on('fileuploadprogressall', function(e, data) {
-					var progress = parseInt(data.loaded / data.total * 100, 10);
-					$('#progress .progress-bar').css(
-						'width',
-						progress + '%'
-					);
-				}).on('fileuploaddone', function(e, data) {
-					$.each(data.result.files, function(index, file) {
-						if (file.url) {
-							var link = $('<a>')
-								.attr('target', '_blank')
-								.prop('href', file.url);
-							$(data.context.children()[index])
-								.wrap(link);
-						} else if (file.error) {
-							var error = $('<span class="text-danger"/>').text(file.error);
-							$(data.context.children()[index])
-								.append('<br>')
-								.append(error);
-						}
-					});
-				}).on('fileuploadfail', function(e, data) {
-					$.each(data.files, function(index, file) {
-						var imgUrl = 'http://localhost:8000/media/' + file.name;
-						$('#userPhoto').attr('onError', "alert('error')");
-						$('#userPhoto').attr('src', imgUrl);
-						//$('#userPhoto').attr('src', imgUrl);
-						var error = $('<span/>').text('File upload failed.');
-						$(data.context.children()[index])
-							.append('<br>')
-							.append(error);
-					});
-				}).prop('disabled', !$.support.fileInput)
-					.parent().addClass($.support.fileInput ? undefined : 'disabled');
-			});
-
 			
-			</script>
-		</body>
-	</html>
+			<div id="boton4_1">
+				<a href="#3"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt=""></a>
+			</div>
+			<div id="boton4_2">
+				<a href="#5"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
+			</div>
+		</div>
+		<div class="section section5"id="5">
+			<div id="logo5">
+				<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
+			</div>
+			<div id="tex_B5">
+				¡Cuéntanos que te gusta hacer en tu tiempo libre!
+			</div>
+			<div id="tex_p5">
+				Selecciona los hobbies que más disfrutas
+			</div>
+			<div class="EditH">
+				<div id="h1">
+					<img src="{{MEDIA_URL}}img/iconosG/cine-g.png" alt="">
+					<input class="checkHb" type="checkbox" id="cine">
+				</div>
+				<div id="h2">
+					<img src="{{MEDIA_URL}}img/iconosG/leer-g.png" alt="">
+					<input class="checkHb" type="checkbox" id="leer">
+				</div>
+				<div id="h3">
+					<img src="{{MEDIA_URL}}img/iconosG/correr-g.png" alt="">
+					<input class="checkHb" type="checkbox" id="correr">
+				</div>
+				<div id="h4">
+					<img src="{{MEDIA_URL}}img/iconosG/musica-g.png" alt="">
+					<input class="checkHb" type="checkbox" id="musica">
+				</div>
+				<div id="h5">
+					<img src="{{MEDIA_URL}}img/iconosG/fotografia-g.png" alt="">
+					<input class="checkHb" type="checkbox" id="fotografia">
+				</div>
+				<div id="h6">
+					<img src="{{MEDIA_URL}}img/iconosG/videojuegos-g.png" alt="">
+					<input class="checkHb" type="checkbox" id="videojuegos">
+				</div>
+				<div id="h7">
+					<img src="{{MEDIA_URL}}img/iconosG/viajar-g.png" alt="">
+					<input class="checkHb" type="checkbox" id="viajar">
+				</div>
+				<div id="h8">
+					<img src="{{MEDIA_URL}}img/iconosG/soccer-g.png" alt="">
+					<input class="checkHb" type="checkbox" id="deporte">
+				</div>
+				<div id="h9">
+					<img src="{{MEDIA_URL}}img/iconosG/ejercicio-g.png" alt="">
+					<input class="checkHb" type="checkbox" id="gimnasio">
+				</div>
+				
+				<div id="h10">
+					<img src="{{MEDIA_URL}}img/iconosG/pintar-g.png" alt="">
+					<input class="checkHb" type="checkbox" id="pintar">
+				</div>
+			</div>
+			<div id="boton5_1">
+				<a href="#4"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt=""></a>
+			</div>
+			<div id="boton5_2">
+				<a href="#8"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
+			</div>
+			
+		</div>
+		
+		<div class="section section8"id="8">
+			
+			<div id="boton8_1">
+				<a href="#5"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt=""></a>
+			</div>
+			
+			<div id="logo8">
+				<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
+			</div>
+			
+			<div id="tex_B8">
+				¡Cuéntanos en que proyectos has trabajado!
+			</div>
+			
+			<div id="tex_p8">
+				Agrega en los proyectos que has participado
+			</div>
+			
+			<div id="escolaridad">
+				<select>
+					<option value="0">Escolaridad</option>
+					<option value="1">Ingenieria</option>
+					<option value="2">Doctorado</option>
+					<option value="3">Licenciatura</option>
+					<option value="4">Preparatoria</option>
+				</select>
+				<textarea id="carrera"name="comentarios" rows="10" cols="40"placeholder="Nombre de la carrera"></textarea>
+				
+				<textarea id="certificaciones" name="comentarios" rows="10" cols="40"placeholder="certificaciónes"></textarea>
+			</div>
+			
+			<div id="boton8_2">
+				<a href="#6"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
+			</div>
+		</div>
+		<div class="section section6"id="6">
+			<div id="logo6">
+				<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
+			</div>
+			<div id="tex_B6">
+				¡Cuéntanos en que proyectos has trabajado!
+			</div>
+			<div id="tex_p6">
+				Agrega en los proyectos que has participado
+			</div>
+			<div class="Proyectos">
+				<div id="listaproyectos">
+					<ul id="p">
+						
+					</ul>
+					
+				</div>
+				<div id="agregarP">
+					<form class="formulario3">
+						<textarea placeholder="Nombre del proyecto"class="nombre"></textarea>
+						<textarea placeholder="Descripción del proyecto"class="descripcion"></textarea>
+						<textarea placeholder="Enlace"class="enlace"></textarea>
+						<input type="submit"value="Agregar"id="aproyecto"class="agregarP">
+					</form>
+				</div>
+			</div>
+			<div id="boton6_1">
+				<a href="#8"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt=""></a>
+			</div>
+			<div id="boton6_2">
+				<a href="#7"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
+			</div>
+		</div>
+		<div class="section section7" id="7">
+			<div id="logo7">
+				<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
+			</div>
+			<div id="tex_B7">
+				¡Muchas Grácias!
+			</div>
+			<div id="tex_p7">
+				hdfskjhwkj
+			</div>
+			<div id="imgP">
+				<img src="{{MEDIA_URL}}img/personaa.png" alt=""width="100%">
+			</div>
+			<div class="btnG">
+				<input type="button" value="Guardar y Continuar">
+			</div>
+			<div id="boton7_1">
+				<a href="#6"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt=""></a>
+			</div>
+		</div>
+		<script type="text/javascript"src="{{MEDIA_URL}}js/scrollH.js"></script>
+		
+		<!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
+		<script src="{{MEDIA_URL}}js/vendor/jquery.ui.widget.js"></script>
+		<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+		<script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.min.js"></script>
+		<!-- The Canvas to Blob plugin is included for image resizing functionality -->
+		<script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+		<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+		<script src="{{MEDIA_URL}}js/jquery.iframe-transport.js"></script>
+		<!-- The basic File Upload plugin -->
+		<script src="{{MEDIA_URL}}js/jquery.fileupload.js"></script>
+		<!-- The File Upload processing plugin -->
+		<script src="{{MEDIA_URL}}js/jquery.fileupload-process.js"></script>
+		<!-- The File Upload image preview & resize plugin -->
+		<script src="{{MEDIA_URL}}js/jquery.fileupload-image.js"></script>
+		<!-- The File Upload validation plugin -->
+		<script src="{{MEDIA_URL}}js/jquery.fileupload-validate.js"></script>
+
+        <script src="{{MEDIA_URL}}js/tables.profileme.js"></script>
+        <script src="{{MEDIA_URL}}js/hobbies.profileme.js"></script>
+        <script src="{{MEDIA_URL}}js/registro.js"></script>
+		<script src="{{MEDIA_URL}}js/fileup.profileme.js"></script>
+	</body>
+</html>
