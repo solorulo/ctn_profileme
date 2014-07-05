@@ -1,22 +1,16 @@
 function setupHerramientas() {
-	graficaHerramientas();
 	tablaHerramientas();
 }
 function setupHabilidades() {
-	graficaHabilidades();
 	tablaHabilidades();
 }
 function setupProyectos() {
 	tablaProyectos();
-	listaProyectos();
 }
 function setupHobbies() {
 	fillChecks();
-	showHobbies();
 }
 $(document).ready(function() {
-	$('#menu').slicknav();
-	setupExplodes();
 	setupHerramientas();
 	setupHabilidades();
 	setupProyectos();
@@ -27,7 +21,6 @@ $(document).ready(function() {
 		if (insertFilaTabla($('.generate-input2'), $('.generate-input'), $('#links'), 'dynamic-link')) {
 			categoriasHabilidades.push(texto);
 			dataHabilidades.push(numero);
-			graficaHabilidades();
 			$('#Totalh').animate({ scrollTop: $('#links').height() }, "slow");
 		}
 		else {
@@ -44,7 +37,6 @@ $(document).ready(function() {
 		if (insertFilaTabla($('.text'), $('.range'), $('#h'), 'lista')) {
 			categoriasHerramientas.push(texto);
 			dataHerramientas.push(numero);
-			graficaHerramientas();
 			$('#Totalhe').animate({ scrollTop: $('#h').height() }, "slow");
 		}
 		else {
@@ -88,43 +80,7 @@ $(document).ready(function() {
 		// Prevent the form submitting
 		return false;
 	});
-
+	$('.section7>.btnG>input[type=button]').click(function(event){
+		window.location.replace("/")
+	});
 });
-
-function setupExplodes() {
-
-	$('.explode2').click(function() {
-		$('#contenido').toggle('fade', 500);
-		$('#habilidades').toggle('fade', 500);
-	});
-
-	$('.explode3').click(function() {
-		$('#contenido2').toggle('fade', 500);
-		$('.herramientas').toggle('fade', 500)
-	});
-
-	$('.explode').click(function() {
-		$('.contenido').toggle('fade', 500);
-		$('#datos1').toggle('fade', 500);
-
-	});
-
-	$('.explode4').click(function() {
-		$('#hobbies').toggle('fade', 500);
-		$('.EditH').toggle('fade', 500);
-	});
-
-	$('.explode5').click(function() {
-		$('#contenido4').toggle('fade', 500);
-		$('.escolaridad').toggle('fade', 500);
-	});
-
-	$('.explode6').click(function() {
-		$('.contenido5').toggle('fade', 500);
-		$('#datosP').toggle('fade', 500);
-	});
-}
-function showError(msg) {
-	$('.error > p').text(msg || 'Error');
-	$('.error').fadeIn(400).delay(3000).fadeOut(400);
-}

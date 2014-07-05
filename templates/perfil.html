@@ -16,6 +16,8 @@
 		<script src="{{MEDIA_URL}}js/csrf.js"></script>
 		<script src="{{MEDIA_URL}}js/gHabilidades.js"></script>
 		<script src="{{MEDIA_URL}}js/gHerramientas.js"></script>
+		<script src="{{MEDIA_URL}}js/hobbies.profileme.js"></script>
+		<script src="{{MEDIA_URL}}js/proyectos.profileme.js"></script>
 		<script type="text/javascript">
 		categoriasHabilidades = ['Pert,CPM', 'Business Intelligence', 'Gantt', 'Canvas Bussiness Model',
 			'Plan de negocios', 'Otra'
@@ -160,13 +162,17 @@
 			<div id="contenido4">
 				<input type="button" value="Guardar Cambios" class="explode5">
 				<select>
+					<!-- 
 					<option value="0">Escolaridad</option>
 					<option value="1">Ingenieria</option>
 					<option value="2">Doctorado</option>
 					<option value="3">Licenciatura</option>
-					<option value="4">Preparatoria</option>
+					<option value="4">Preparatoria</option>-->
+					{% for key, item in escolaridad %}
+					    <option value="{{ key }}">{{item}}</option>
+					{% endfor %}
 				</select>
-				<textarea id="carrera"name="comentarios" rows="10" cols="40"placeholder="Nombre de la carrera"></textarea>
+				<textarea id="carrera" name="comentarios" rows="10" cols="40"placeholder="Nombre de la carrera"></textarea>
 				<textarea id="certificaciones" name="comentarios" rows="10" cols="40"placeholder="certificaciónes"></textarea>
 			</div>
 			<div id="hobbies">
@@ -216,11 +222,11 @@
 						</li>
 						<li>
 							<img src="{{MEDIA_URL}}img/iconosG/soccer-g.png">
-							<input type="checkbox" name="radio-btn8" id="deporte"/>
+							<input type="checkbox" name="radio-btn8" id="soccer"/>
 						</li>
 						<li>
 							<img src="{{MEDIA_URL}}img/iconosG/ejercicio-g.png">
-							<input type="checkbox" name="radio-btn9" id="gimnasio" />
+							<input type="checkbox" name="radio-btn9" id="ejercicio" />
 						</li>
 						<li>
 							<img src="{{MEDIA_URL}}img/iconosG/videojuegos-g.png">

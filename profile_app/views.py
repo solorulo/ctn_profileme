@@ -49,7 +49,8 @@ def oauth_logout(request):
 
 @login_required
 def profile (request):
-	return render(request,'perfil.html')
+	esc_opt = Educacion.TIPO_CHOICES
+	return render(request,'perfil.html', { 'escolaridad' : esc_opt })
 
 # Create your views here.
 def index(request):

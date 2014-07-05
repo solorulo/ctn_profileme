@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -26,25 +27,6 @@ class Proyecto(models.Model):
 	descripcion = models.CharField(max_length=200)
 	url = models.CharField(max_length=100)
 	persona = models.ForeignKey(User)
-
-class CentroEstudios(models.Model):
-	nombre = models.CharField(max_length=50)
-	logo = models.CharField(max_length=100)
-
-	def __unicode__(self):
-		return self.nombre
-
-class Titulo(models.Model):
-	nombre = models.CharField(max_length=50)
-
-	def __unicode__(self):
-		return self.nombre	
-
-class Idioma(models.Model):
-	nombre = models.CharField(max_length=50)
-
-	def __unicode__(self):
-		return self.nombre	
 
 class Habilidad(models.Model):
 	nombre = models.CharField(max_length=100)
@@ -89,8 +71,22 @@ class Trabajo(models.Model):
 		return self.puesto
 
 class Educacion(models.Model):
-	centroEstudios = models.ForeignKey(CentroEstudios)
-	titulo = models.ForeignKey(Titulo)
+	NONE = 0
+	DOCTORADO = 1
+	INGENIERIA = 2
+	LICENCIATURA = 3
+	PREPARATORIA = 4
+	# USUARIO = 2
+	TIPO_CHOICES = (
+		(NONE, "Escolaridad"),
+		(DOCTORADO, "Doctorado"),
+		(INGENIERIA, "Ingeniería"),
+		(LICENCIATURA, "Licenciatura"),
+		(PREPARATORIA, "Preparatoria"),
+		# (USUARIO, "Usuario"),
+	)
+	escolaridad = models.IntegerField(choices=TIPO_CHOICES, default=NONE)
+	carrera = models.CharField(max_length=400,null=True,blank=True)
 	persona = models.ForeignKey(User)
 
 class Hobbie(models.Model):	
@@ -106,15 +102,15 @@ class PersonalData(User):
 	# def __init__(self, arg):
 	# 	super(PersonalData, self).__init__()
 	# 	self.arg = arg
-	telefono = models.CharField(max_length=15,null=True,blank=True)
-	certificaciones = models.CharField(max_length=400,null=True,blank=True)
-	trabajo = models.CharField(max_length=140,null=True,blank=True)
+	birthday = models.DateField(null=True,blank=True)
 	profesion = models.CharField(max_length=140,null=True,blank=True)
+	telefono = models.CharField(max_length=15,null=True,blank=True)
+	ciudad = models.ForeignKey(Ciudad,null=True,blank=True)
+	trabajo = models.CharField(max_length=140,null=True,blank=True)
+
+	certificaciones = models.CharField(max_length=400,null=True,blank=True)
 	img = models.CharField(max_length=100,null=True,blank=True)
 	hobbies = models.CharField(max_length=200,null=True,blank=True)
-	idiomas = models.ManyToManyField(Idioma,null=True,blank=True)
-	ciudad = models.ForeignKey(Ciudad,null=True,blank=True)
-	birthday = models.DateField(null=True,blank=True)
 
 	oauth_token = models.CharField(max_length=200)
 	oauth_secret = models.CharField(max_length=200)

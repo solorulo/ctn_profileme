@@ -22,14 +22,14 @@ admin.site.unregister(User)
 admin.site.register(PersonalData)
 admin.site.register(Proyecto)
 
-admin.site.register(CentroEstudios)
-admin.site.register(Titulo)
-admin.site.register(Idioma)
 admin.site.register(Habilidad)
 admin.site.register(Herramienta)
+admin.site.register(Hobbie)
 
 admin.site.register(Educacion)
-admin.site.register(Hobbie)
+
+admin.site.register(Company)
+admin.site.register(Trabajo)
 
 admin.site.register(Pais)
 admin.site.register(Estado)
