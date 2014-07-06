@@ -74,7 +74,8 @@ def postTest(request):
 	return render(request, 'trabajos.html')
 
 def registro(request):
-	return render(request, 'Registro.html')
+	esc_opt = Educacion.TIPO_CHOICES
+	return render(request, 'Registro.html', { 'escolaridad' : esc_opt })
 
 def registrarHabilidad(request):
 	name = request.POST['name']

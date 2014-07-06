@@ -168,8 +168,6 @@
 			<div id="editarH2">
 				<div id="Totalhe2">
 					<ul id="h">
-						
-						
 					</ul>
 				</div>
 				<!--es el div donde agregas habilidades-->
@@ -276,11 +274,14 @@
 			
 			<div id="escolaridad">
 				<select>
-					<option value="0">Escolaridad</option>
+					<!--<option value="0">Escolaridad</option>
 					<option value="1">Ingenieria</option>
 					<option value="2">Doctorado</option>
 					<option value="3">Licenciatura</option>
-					<option value="4">Preparatoria</option>
+					<option value="4">Preparatoria</option>-->
+					{% for key, item in escolaridad %}
+					    <option value="{{ key }}">{{item}}</option>
+					{% endfor %}
 				</select>
 				<textarea id="carrera"name="comentarios" rows="10" cols="40"placeholder="Nombre de la carrera"></textarea>
 				
