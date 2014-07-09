@@ -86,11 +86,11 @@ STATICFILES_DIRS = (
 
 # List of finder classes that know how to find static files in
 # various locations.
-STATICFILES_FINDERS = (
-	'django.contrib.staticfiles.finders.FileSystemFinder',
-	'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+# STATICFILES_FINDERS = (
+# 	'django.contrib.staticfiles.finders.FileSystemFinder',
+# 	'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
-)
+# )
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'fq=#o618#koqnmdkbrb^ziet_3df-mu*qzum*uu3^2pz!dv)^x'

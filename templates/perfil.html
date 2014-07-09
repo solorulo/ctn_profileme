@@ -9,7 +9,7 @@
 		<title>Perfiles</title>
 		
 		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-		<link href="{{MEDIA_URL}}css/menuP.css" rel="stylesheet">
+		<link href="{{ STATIC_URL }}css/menuP.css" rel="stylesheet">
 
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
@@ -17,12 +17,12 @@
 		<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
 		<script type="text/javascript" src="http://code.highcharts.com/highcharts-more.js"></script>
 
-		<script type="text/javascript" src="{{MEDIA_URL}}js/csrf.js"></script>
-		<script type="text/javascript" src="{{MEDIA_URL}}js/escolaridad.profileme.js"></script>
-		<script type="text/javascript" src="{{MEDIA_URL}}js/habilidades.profileme.js"></script>
-		<script type="text/javascript" src="{{MEDIA_URL}}js/herramientas.profileme.js"></script>
-		<script type="text/javascript" src="{{MEDIA_URL}}js/hobbies.profileme.js"></script>
-		<script type="text/javascript" src="{{MEDIA_URL}}js/proyectos.profileme.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/csrf.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/escolaridad.profileme.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/habilidades.profileme.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/herramientas.profileme.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/hobbies.profileme.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/proyectos.profileme.js"></script>
 		<script type="text/javascript">
 		categoriasHabilidades = ['Pert,CPM', 'Business Intelligence', 'Gantt', 'Canvas Bussiness Model',
 			'Plan de negocios', 'Otra'
@@ -42,10 +42,10 @@
 		<!--menu de la pagina de perfiles-->
 		<nav>
 			<ul id="menu">
-				<li><a href="/"class="imprimir"><img src="{{MEDIA_URL}}img/profile-me-blanco.png" alt="" ></a></li>
-				<li><a href="jobs"><img src="{{MEDIA_URL}}img/casa.png" alt=""></a></li>
-				<li><a href="profile"><img src="{{MEDIA_URL}}img/perfil.png" alt=""></a></li>
-				<li><input type="text"><img src="{{MEDIA_URL}}img/buscar.png" alt=""id="buscar"></li>
+				<li><a href="/"class="imprimir"><img src="{{ STATIC_URL }}img/profile-me-blanco.png" alt="" ></a></li>
+				<li><a href="jobs"><img src="{{ STATIC_URL }}img/casa.png" alt=""></a></li>
+				<li><a href="profile"><img src="{{ STATIC_URL }}img/perfil.png" alt=""></a></li>
+				<li><input type="text"><img src="{{ STATIC_URL }}img/buscar.png" alt=""id="buscar"></li>
 			</ul>
 		</nav>
 		<section class="container1">
@@ -66,13 +66,13 @@
 				<!--input para editar los campos-->
 			</div>
 			<div id="datos2">
-				<img src="{{MEDIA_URL}}img/nombre.png" alt=""id="nombre1">
-				<img src="{{MEDIA_URL}}img/profesion.png" alt=""id="profesion1">
-				<img src="{{MEDIA_URL}}img/edad.png" alt=""id="edad1">
-				<img src="{{MEDIA_URL}}img/telefono.png" alt=""id="numero1">
-				<img src="{{MEDIA_URL}}img/mail-propio.png" alt=""id="correo1">
-				<img src="{{MEDIA_URL}}img/trabajo.png" alt=""id="trabajo1">
-				<img src="{{MEDIA_URL}}img/ubicacion.png"id="pais">
+				<img src="{{ STATIC_URL }}img/nombre.png" alt=""id="nombre1">
+				<img src="{{ STATIC_URL }}img/profesion.png" alt=""id="profesion1">
+				<img src="{{ STATIC_URL }}img/edad.png" alt=""id="edad1">
+				<img src="{{ STATIC_URL }}img/telefono.png" alt=""id="numero1">
+				<img src="{{ STATIC_URL }}img/mail-propio.png" alt=""id="correo1">
+				<img src="{{ STATIC_URL }}img/trabajo.png" alt=""id="trabajo1">
+				<img src="{{ STATIC_URL }}img/ubicacion.png"id="pais">
 			</div>
 			<div class="contenido" id="camposD">
 				<input type="text" placeholder="Nombre" value="{{ user.first_name }}">
@@ -83,7 +83,7 @@
 				<input type="text" placeholder="Trabajo" value="{{ user.personaldata.trabajo}}">
 				<input type="text" placeholder="Pais/municipio" value="{{ user.personaldata.ciudad.nombre }}/{{ user.personaldata.ciudad.estado.nombre }}">
 				<input type="button" value="Guardar"class="explode" value="">
-				<img src="{{MEDIA_URL}}img/foto-perfil.png" alt="">
+				<img src="{{ STATIC_URL }}img/foto-perfil.png" alt="">
 			</div>
 			<hr>
 		</section>
@@ -154,7 +154,7 @@
 				<input type="button" value="Editar"class="explode5">
 				<h1>Escolaridad</h1>
 				<!--imagen del tipo de escuela que es-->
-				<img src="{{MEDIA_URL}}img/ing..png" alt=""id="Esc">
+				<img src="{{ STATIC_URL }}img/ing..png" alt=""id="Esc">
 				<!--nombre de escuela en la que esta actualmente-->
 				<div id="nescuela">
 					<p>Nombre de la escuela o carrera cursada</p>
@@ -186,10 +186,10 @@
 				<!--hobbies que se muestran en el perfil-->
 				<h1>Hobbies</h1>
 				<ul>
-					<li><img src="{{MEDIA_URL}}img/iconosG/pintar-g.png"></li>
-					<li><img src="{{MEDIA_URL}}img/iconosG/ejercicio-g.png"></li>
-					<li><img src="{{MEDIA_URL}}img/iconosG/leer-g.png"></li>
-					<li><img src="{{MEDIA_URL}}img/iconosG/fotografia-g.png"></li>
+					<li><img src="{{ STATIC_URL }}img/iconosG/pintar-g.png"></li>
+					<li><img src="{{ STATIC_URL }}img/iconosG/ejercicio-g.png"></li>
+					<li><img src="{{ STATIC_URL }}img/iconosG/leer-g.png"></li>
+					<li><img src="{{ STATIC_URL }}img/iconosG/fotografia-g.png"></li>
 				</ul>
 			</div>
 			<!--elejir hobbies-->
@@ -198,43 +198,43 @@
 				<div id="contenido3">
 					<ul>
 						<li>
-							<img src="{{MEDIA_URL}}img/iconosG/cine-g.png"> 
+							<img src="{{ STATIC_URL }}img/iconosG/cine-g.png"> 
 							<input type="checkbox" name="radio-btn" id="cine" />
 						</li>
 						<li>
-							<img src="{{MEDIA_URL}}img/iconosG/leer-g.png">
+							<img src="{{ STATIC_URL }}img/iconosG/leer-g.png">
 							<input type="checkbox" name="radio-btn2" id="leer"/>
 						</li>
 						<li>
-							<img src="{{MEDIA_URL}}img/iconosG/fotografia-g.png">
+							<img src="{{ STATIC_URL }}img/iconosG/fotografia-g.png">
 							<input type="checkbox" name="radio-btn3" id="fotografia"/>
 						</li>
 						<li>
-							<img src="{{MEDIA_URL}}img/iconosG/musica-g.png">
+							<img src="{{ STATIC_URL }}img/iconosG/musica-g.png">
 							<input type="checkbox" name="radio-btn4" id="musica"/>
 						</li>
 						<li>
-							<img src="{{MEDIA_URL}}img/iconosG/viajar-g.png">
+							<img src="{{ STATIC_URL }}img/iconosG/viajar-g.png">
 							<input type="checkbox" name="radio-btn5" id="viajar"/>
 						</li>
 						<li>
-							<img src="{{MEDIA_URL}}img/iconosG/pintar-g.png">
+							<img src="{{ STATIC_URL }}img/iconosG/pintar-g.png">
 							<input type="checkbox" name="radio-btn6" id="pintar"/>
 						</li>
 						<li>
-							<img src="{{MEDIA_URL}}img/iconosG/correr-g.png">
+							<img src="{{ STATIC_URL }}img/iconosG/correr-g.png">
 							<input type="checkbox" name="radio-btn7" id="correr"/>
 						</li>
 						<li>
-							<img src="{{MEDIA_URL}}img/iconosG/soccer-g.png">
+							<img src="{{ STATIC_URL }}img/iconosG/soccer-g.png">
 							<input type="checkbox" name="radio-btn8" id="soccer"/>
 						</li>
 						<li>
-							<img src="{{MEDIA_URL}}img/iconosG/ejercicio-g.png">
+							<img src="{{ STATIC_URL }}img/iconosG/ejercicio-g.png">
 							<input type="checkbox" name="radio-btn9" id="ejercicio" />
 						</li>
 						<li>
-							<img src="{{MEDIA_URL}}img/iconosG/videojuegos-g.png">
+							<img src="{{ STATIC_URL }}img/iconosG/videojuegos-g.png">
 							<input type="checkbox" name="radio-btn10" id="videojuegos" />
 						</li>
 					</ul>
@@ -306,8 +306,8 @@
 			</div>
 		</section>
 		<div id="errorMessage" class='error' style='display:none'><p>Error</p></div>
-		<script src="{{MEDIA_URL}}js/jquery.slicknav.js"></script>
-		<script src="{{MEDIA_URL}}js/tables.profileme.js"></script>
-		<script src="{{MEDIA_URL}}js/perfil.js" type="text/javascript"></script>
+		<script src="{{ STATIC_URL }}js/jquery.slicknav.js"></script>
+		<script src="{{ STATIC_URL }}js/tables.profileme.js"></script>
+		<script src="{{ STATIC_URL }}js/perfil.js" type="text/javascript"></script>
 	</body>
 </html>

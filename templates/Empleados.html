@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0;">
 
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{MEDIA_URL}}css/menuE.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/menuE.css">
 	 <!--script de Jquery-->
 
 </head>
@@ -19,7 +19,7 @@
 	<div class="section sec1"id="1">
 
 		<div id="logo">
-			<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
+			<img src="{{ STATIC_URL }}img/logo-pequenio.png" alt="">
 		</div>
 
 		<div id="tex_B">
@@ -41,24 +41,24 @@
 			<input id="recruiterName" name="" type="text"placeholder="Nombre del reclutador">
 
 			<!--imagenes representativas de cada campo de los datos personales-->
-			<img src="{{MEDIA_URL}}img/empresa.png" alt="" id="nombre">
-			<img src="{{MEDIA_URL}}img/pais.png" alt=""id="profesion">
-			<img src="{{MEDIA_URL}}img/ubicacion.png" alt=""id="edad">
-			<img src="{{MEDIA_URL}}img/telefono.png" alt=""id="telefono">
-			<img src="{{MEDIA_URL}}img/mail-propio.png" alt=""id="mail">
-			<img src="{{MEDIA_URL}}img/reclutador.png" alt=""id="trabajo">
+			<img src="{{ STATIC_URL }}img/empresa.png" alt="" id="nombre">
+			<img src="{{ STATIC_URL }}img/pais.png" alt=""id="profesion">
+			<img src="{{ STATIC_URL }}img/ubicacion.png" alt=""id="edad">
+			<img src="{{ STATIC_URL }}img/telefono.png" alt=""id="telefono">
+			<img src="{{ STATIC_URL }}img/mail-propio.png" alt=""id="mail">
+			<img src="{{ STATIC_URL }}img/reclutador.png" alt=""id="trabajo">
 		</div>
 
 		<!--boton de pantalla siguiente-->
 		<div id="boton1">
-		<a href="#2"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
+		<a href="#2"><img src="{{ STATIC_URL }}img/siguiente.png" alt=""></a>
 		</div>	
 	</div>
 
 
 	<div class="section sec2"id="2">
 		<div id="logo2">
-			<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
+			<img src="{{ STATIC_URL }}img/logo-pequenio.png" alt="">
 		</div>
 
 		<div id="tex_B2">
@@ -144,17 +144,17 @@
 
 
 		<div id="boton2_1">
-			<a href="#1"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt=""></a>
+			<a href="#1"><img src="{{ STATIC_URL }}img/flecha-izq.png" alt=""></a>
 		</div>
 		<div id="boton2_2">
-			<a href="#3"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
+			<a href="#3"><img src="{{ STATIC_URL }}img/siguiente.png" alt=""></a>
 		</div>
 	</div>
 
 	<div class="section sec3"id="3">
 		<!--en este div se coloco el logo de profileme-->
 		<div id="logo3">
-			<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
+			<img src="{{ STATIC_URL }}img/logo-pequenio.png" alt="">
 		</div>
 
 		<!--texto uno que aparece en este section-->
@@ -174,17 +174,17 @@
 		</div>
 		
 		<div id="boton3_1">
-			<a href="#2"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt=""></a>
+			<a href="#2"><img src="{{ STATIC_URL }}img/flecha-izq.png" alt=""></a>
 		</div>
 
 		<div id="boton3_2">
-		<a href="#4"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
+		<a href="#4"><img src="{{ STATIC_URL }}img/siguiente.png" alt=""></a>
 		</div>
 	</div>
 
 	<div class="section sec4"id="4">
 		<div id="logo4">
-			<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
+			<img src="{{ STATIC_URL }}img/logo-pequenio.png" alt="">
 		</div>
 		<div id="tex_B4">
 			¡Muchas Gracias!
@@ -194,7 +194,7 @@
 			{{company.nombre}}
 		</div>
 		<div id="imgE">
-			<img src="{{MEDIA_URL}}img/empresaa.png" alt=""width="150%">
+			<img src="{{ STATIC_URL }}img/empresaa.png" alt=""width="150%">
 		</div>
 
 		<input type="button" value="Enviar Propuesta" onClick="$.ajax({
@@ -222,7 +222,7 @@
 		" >
 
 		<div id="boton4_1">
-			<a href="#3"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt="" ></a>
+			<a href="#3"><img src="{{ STATIC_URL }}img/flecha-izq.png" alt="" ></a>
 		</div>
 
 	</div>
@@ -230,8 +230,8 @@
 
   <!-- The JavaScript -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>      	
-        <script type="text/javascript" src="{{MEDIA_URL}}js/jquery.easing.1.3.js"></script>
-        <script type="text/javascript"src="{{MEDIA_URL}}js/scrollH.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript"src="{{ STATIC_URL }}js/scrollH.js"></script>
 
         <script>
 
