@@ -6,7 +6,6 @@ TEMPLATE_DEBUG = DEBUG
 
 LOGIN_URL='/'
 
-AUTH_PROFILE_MODULE='profile_app.PersonalData'
 LINKEDIN_TOKEN='75jjffqcztuv6i'
 LINKEDIN_SECRET='6ouOGh6oozhhEB8g'
 # Add email to requested authorizations.

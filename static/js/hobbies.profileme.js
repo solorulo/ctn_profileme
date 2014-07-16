@@ -14,7 +14,7 @@ function showHobbies() {
 		if (hobbies[i]) {
 			var $li = $(document.createElement('li'));
 			var img = document.createElement('img');
-			img.src = "/media/img/iconosG/" + i + "-g.png";
+			img.src = "/static/img/iconosG/" + i + "-g.png";
 			$li.append(img);
 			lista.append($li);
 		}

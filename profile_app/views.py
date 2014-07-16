@@ -50,7 +50,8 @@ def oauth_logout(request):
 @login_required
 def profile (request):
 	esc_opt = Educacion.TIPO_CHOICES
-	return render(request,'perfil.html', { 'escolaridad' : esc_opt })
+	hobbies = Hobbie.objects.all()
+	return render(request,'perfil.html', { 'escolaridad' : esc_opt, 'hobbies' : hobbies})
 
 # Create your views here.
 def index(request):

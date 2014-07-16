@@ -13,7 +13,7 @@
 
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 		<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
 		<script type="text/javascript" src="http://code.highcharts.com/highcharts-more.js"></script>
 
@@ -23,6 +23,7 @@
 		<script type="text/javascript" src="{{ STATIC_URL }}js/herramientas.profileme.js"></script>
 		<script type="text/javascript" src="{{ STATIC_URL }}js/hobbies.profileme.js"></script>
 		<script type="text/javascript" src="{{ STATIC_URL }}js/proyectos.profileme.js"></script>
+		
 		<script type="text/javascript">
 		categoriasHabilidades = ['Pert,CPM', 'Business Intelligence', 'Gantt', 'Canvas Bussiness Model',
 			'Plan de negocios', 'Otra'
@@ -194,9 +195,10 @@
 			</div>
 			<!--elejir hobbies-->
 			<div class="EditH">
-				<input type="button"value="Guardar"class="explode4"id="btnG">
+				<input type="button"value="Guardar" class="explode4"id="btnG">
 				<div id="contenido3">
 					<ul>
+						<!--
 						<li>
 							<img src="{{ STATIC_URL }}img/iconosG/cine-g.png"> 
 							<input type="checkbox" name="radio-btn" id="cine" />
@@ -236,7 +238,13 @@
 						<li>
 							<img src="{{ STATIC_URL }}img/iconosG/videojuegos-g.png">
 							<input type="checkbox" name="radio-btn10" id="videojuegos" />
+						</li>-->
+						{% for item in hobbies %}
+					    <li>
+							<img src="{{ STATIC_URL }}{{ item.foto }}">
+							<input class="tachado" type="checkbox" name="radio-btn10" id="{{ item.nombre }}" />
 						</li>
+						{% endfor %}
 					</ul>
 				</div>
 			</div>
