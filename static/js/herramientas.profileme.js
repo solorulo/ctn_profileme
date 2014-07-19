@@ -1,12 +1,12 @@
-var categoriasHerramientas = [
+var categoriasHerramientas /*= [
 				'Java',
 				'JavaScript',
 				'CSS',
 				'HTML',
 				'C#',
 				'jQuery'
-			];
-var dataHerramientas = [100, 60, 50, 80, 10, 50];
+			]*/;
+var dataHerramientas /*= [100, 60, 50, 80, 10, 50]*/;
 function tablaHerramientas() {
 	$('#h').empty();
 	for (i in categoriasHerramientas) {

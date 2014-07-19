@@ -1,7 +1,7 @@
-var categoriasHabilidades = ['Pert,CPM', 'Business Intelligence', 'Gantt', 'Canvas Bussiness Model',
+var categoriasHabilidades /*= ['Pert,CPM', 'Business Intelligence', 'Gantt', 'Canvas Bussiness Model',
 	'Plan de negocios', 'Otra'
-];
-var dataHabilidades = [990, 4440, 660, 770, 1000, 5];
+]*/;
+var dataHabilidades /*= [990, 4440, 660, 770, 1000, 5]*/;
 
 function tablaHabilidades() {
 	$('#links').empty();

@@ -1,5 +1,5 @@
 var hobbies = {};
-hobbies["soccer"]=true;
+hobbies["soccer"] = true;
 
 function fillChecks() {
 	for (var i in hobbies) {
@@ -23,6 +23,12 @@ function showHobbies() {
 
 $(document).ready(function(event) {
 	$(".checkHb").click(function() {
-		hobbies[$(this).attr("id")] = $(this).is(':checked');
+		var id = $(this).attr("id");
+		hobbies[id] = $(this).is(':checked');
+		if (!hobbies[id]) {
+			try {
+				delete hobbies[id];
+			} catch (e) { }
+		}
 	});
 });

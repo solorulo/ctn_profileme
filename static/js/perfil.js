@@ -21,6 +21,9 @@ $(document).ready(function() {
 	setupHabilidades();
 	setupProyectos();
 	setupHobbies();
+	$(".checkHb").click(function() {
+		showHobbies();
+	});
 	$('.generate').submit(function() {
 		var texto = $('.generate-input2').val();
 		var numero = parseInt($('.generate-input').val());

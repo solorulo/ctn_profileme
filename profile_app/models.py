@@ -22,26 +22,6 @@ class Ciudad(models.Model):
 	def __unicode__(self):
 		return self.nombre
 
-class Proyecto(models.Model):
-	nombre = models.CharField(max_length=50)
-	descripcion = models.CharField(max_length=200)
-	url = models.CharField(max_length=100)
-	persona = models.ForeignKey(User)
-
-class Habilidad(models.Model):
-	nombre = models.CharField(max_length=100)
-	puntos = models.IntegerField()
-
-	def __unicode__(self):
-		return self.nombre
-
-class Herramienta(models.Model):
-	nombre = models.CharField(max_length=100)
-	puntos = models.IntegerField()
-
-	def __unicode__(self):
-		return self.nombre
-
 # Company model
 class Company(models.Model):
 	usuario = models.OneToOneField(User)
@@ -124,3 +104,25 @@ class PersonalData(User):
 	def age(self):
 		import datetime
 		return int((datetime.date.today() - self.birthday).days / 365.25  )
+
+class Habilidad(models.Model):
+	user = models.ForeignKey(PersonalData)
+	nombre = models.CharField(max_length=100)
+	puntos = models.IntegerField()
+
+	def __unicode__(self):
+		return self.nombre
+
+class Herramienta(models.Model):
+	user = models.ForeignKey(PersonalData)
+	nombre = models.CharField(max_length=100)
+	puntos = models.IntegerField()
+
+	def __unicode__(self):
+		return self.nombre
+
+class Proyecto(models.Model):
+	nombre = models.CharField(max_length=50)
+	descripcion = models.CharField(max_length=200)
+	url = models.CharField(max_length=100)
+	persona = models.ForeignKey(PersonalData)

@@ -15,6 +15,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.shortcuts import redirect
+from django.utils import simplejson
 from django.views.defaults import page_not_found
 from django.views.generic import View
 import cgi
@@ -51,7 +52,27 @@ def oauth_logout(request):
 def profile (request):
 	esc_opt = Educacion.TIPO_CHOICES
 	hobbies = Hobbie.objects.all()
-	return render(request,'perfil.html', { 'escolaridad' : esc_opt, 'hobbies' : hobbies})
+	db_herramientas = Herramienta.objects.filter(user=request.user).values()
+	db_habilidades = Habilidad.objects.filter(user=request.user).values()
+	herramientas = {
+		'names' : [],
+		'values' : []
+	}
+	for h in db_herramientas:
+		herramientas.names.append(h.nombre)
+		herramientas.values.append(h.puntos)
+	habilidades = {
+		'names' : [],
+		'values' : []
+	}
+	for h in db_habilidades:
+		habilidades.names.append(h.nombre)
+		habilidades.values.append(h.puntos)
+	return render(request, 'perfil.html', { 
+		'escolaridad' : esc_opt, 
+		'hobbies' : hobbies, 
+		'herramientas':simplejson.dumps(herramientas), 
+		'habilidades' : simplejson.dumps(habilidades) })
 
 # Create your views here.
 def index(request):
