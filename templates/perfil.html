@@ -11,11 +11,22 @@
 		<link href='//fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 		<link href="{{ STATIC_URL }}css/menuP.css" rel="stylesheet">
 
+		<% if debug %>
+		<!-- Este desmadre es para cuando no hay conexión a internet en las pruebas -->
+		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.min.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/modernizr.min.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/highcharts.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/highcharts-more.js"></script>
+		<% else %>
+		<!-- bibliotecas con cdn -->
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 		<script type="text/javascript" src="//code.highcharts.com/highcharts.js"></script>
 		<script type="text/javascript" src="//code.highcharts.com/highcharts-more.js"></script>
+
+		<% endif %>
 		
 		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.slicknav.js"></script>
 

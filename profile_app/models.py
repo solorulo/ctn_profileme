@@ -92,8 +92,8 @@ class PersonalData(User):
 	img = models.CharField(max_length=100,null=True,blank=True)
 	hobbies = models.CharField(max_length=200,null=True,blank=True)
 
-	oauth_token = models.CharField(max_length=200)
-	oauth_secret = models.CharField(max_length=200)
+	oauth_token = models.CharField(max_length=200,null=True,blank=True)
+	oauth_secret = models.CharField(max_length=200,null=True,blank=True)
 
 	def __unicode__(self):
 		return self.username
