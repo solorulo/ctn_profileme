@@ -67,7 +67,6 @@ class Educacion(models.Model):
 	)
 	escolaridad = models.IntegerField(choices=TIPO_CHOICES, default=NONE)
 	carrera = models.CharField(max_length=400,null=True,blank=True)
-	persona = models.ForeignKey(User)
 
 class Hobbie(models.Model):	
 	nombre = models.CharField(max_length=100)
@@ -87,6 +86,7 @@ class PersonalData(User):
 	telefono = models.CharField(max_length=15,null=True,blank=True)
 	ciudad = models.ForeignKey(Ciudad,null=True,blank=True)
 	trabajo = models.CharField(max_length=140,null=True,blank=True)
+	educacion = models.ForeignKey(Educacion,null=True,blank=True)
 
 	certificaciones = models.CharField(max_length=400,null=True,blank=True)
 	img = models.CharField(max_length=100,null=True,blank=True)
