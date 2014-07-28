@@ -54,25 +54,30 @@ def profile (request):
 	hobbies = Hobbie.objects.all()
 	db_herramientas = Herramienta.objects.filter(user=request.user).values()
 	db_habilidades = Habilidad.objects.filter(user=request.user).values()
-	herramientas = {
-		'names' : [],
-		'values' : []
-	}
-	for h in db_herramientas:
-		herramientas.names.append(h.nombre)
-		herramientas.values.append(h.puntos)
-	habilidades = {
-		'names' : [],
-		'values' : []
-	}
-	for h in db_habilidades:
-		habilidades.names.append(h.nombre)
-		habilidades.values.append(h.puntos)
+	herramientas = None
+	if db_herramientas.count() > 0:
+		herramientas = {
+			'names' : [],
+			'values' : []
+		}
+		for h in db_herramientas:
+			herramientas.names.append(h.nombre)
+			herramientas.values.append(h.puntos)
+	habilidades = None
+	if db_habilidades.count() > 0:
+		habilidades = {
+			'names' : [],
+			'values' : []
+		}
+		for h in db_habilidades:
+			habilidades.names.append(h.nombre)
+			habilidades.values.append(h.puntos)
+	
 	return render(request, 'perfil.html', { 
 		'escolaridad' : esc_opt, 
 		'hobbies' : hobbies, 
-		'herramientas':simplejson.dumps(herramientas), 
-		'habilidades' : simplejson.dumps(habilidades) })
+		'herramientas':herramientas, 
+		'habilidades' : habilidades })
 
 # Create your views here.
 def index(request):
@@ -99,12 +104,69 @@ def registro(request):
 	esc_opt = Educacion.TIPO_CHOICES
 	return render(request, 'Registro.html', { 'escolaridad' : esc_opt })
 
-def registrarHabilidad(request):
-	name = request.POST['name']
-	pass
+# Verificar que funcione bien
+@login_required
+def registrarHobbies(request):
+	if request.method != "POST":
+		return render(request, 'simple_post_response.html', {'response_message': 'invalid_http_method'})
+	data = request.POST['data']
+	obdata = simplejson.loads(data)
+	all_hobbies = Hobbie.objects.all()
+	last_objects = request.user.hobbies
+	for ob in obdata:
+		hob = all_hobbies.get(nombre=ob)
+		request.user.hobbies.add(hob)
+	last_objects.clear()
+	return render(request, 'simple_post_response.html', {'response_message': 'ok'}, content_type='application/json')
 
-def registrarHerramienta(request):
-	pass
+@login_required
+def registrarHabilidades(request):
+	if request.method != "POST":
+		return render(request, 'simple_post_response.html', {'response_message': 'invalid_http_method'})
+	data = request.POST['data']
+	obdata = simplejson.loads(data)
+	last_objects = Habilidad.objects.filter(user=request.user)
+	for ob in obdata:
+		nhab = Habilidad(
+			user=request.user,
+			nombre=ob.nombre,
+			puntos=ob.puntos)
+		nhab.save()
+	last_objects.delete()
+	return render(request, 'simple_post_response.html', {'response_message': 'ok'}, content_type='application/json')
+
+@login_required
+def registrarHerramientas(request):
+	if request.method != "POST":
+		return render(request, 'simple_post_response.html', {'response_message': 'invalid_http_method'})
+	data = request.POST['data']
+	obdata = simplejson.loads(data)
+	last_objects = Herramienta.objects.filter(user=request.user)
+	for ob in obdata:
+		nhab = Herramienta(
+			user=request.user,
+			nombre=ob.nombre,
+			puntos=ob.puntos)
+		nhab.save()
+	last_objects.delete()
+	return render(request, 'simple_post_response.html', {'response_message': 'ok'}, content_type='application/json')
+
+@login_required
+def registrarProyectos(request):
+	if request.method != "POST":
+		return render(request, 'simple_post_response.html', {'response_message': 'invalid_http_method'})
+	data = request.POST['data']
+	obdata = simplejson.loads(data)
+	last_objects = Proyecto.objects.filter(user=request.user)
+	for ob in obdata:
+		nhab = Habilidad(
+			persona=request.user,
+			nombre=ob.nombre,
+			descripcion=ob.descripcion,
+			url=ob.url)
+		nhab.save()
+	last_objects.delete()
+	return render(request, 'simple_post_response.html', {'response_message': 'ok'}, content_type='application/json')
 
 def jobs(request):
 	return render(request, 'trabajos.html')

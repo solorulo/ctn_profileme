@@ -37,6 +37,10 @@ urlpatterns += patterns('profile_app.views',
     url(r'^registerUser$', 'registerUser', name='registerUser'),
     url(r'^uploadUserPhoto$', 'uploadUserPhoto', name='uploadUserPhoto'),
 
+	url(r'^registrarHabilidades$', 'registrarHabilidades', name='registrarHabilidades'), 
+	url(r'^registrarHerramientas$', 'registrarHerramientas', name='registrarHerramientas'), 
+	url(r'^registrarProyectos$', 'registrarProyectos', name='registrarProyectos'),    
+
     url(r'^error$','error_page'),
 )
 

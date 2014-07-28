@@ -40,10 +40,10 @@
 		<script type="text/javascript" src="{{ STATIC_URL }}js/perfil.js" type="text/javascript"></script>
 		
 		<script type="text/javascript">
-		categoriasHabilidades = {{habilidades.names|escape|safe |default_if_none:"[]"}};
-		dataHabilidades = {{habilidades.values|escape|safe|default_if_none:"[]"}};
-		categoriasHerramientas = {{herramientas.names|escape|safe|default_if_none:"[]"}};
-		dataHerramientas = {{herramientas.values|escape|safe|default_if_none:"[]"}};
+		categoriasHabilidades = {{habilidades.names|default:"[]"|escape|safe}};
+		dataHabilidades = {{habilidades.values|default:"[]"|escape|safe}};
+		categoriasHerramientas = {{herramientas.names|default:"[]"|escape|safe}};
+		dataHerramientas = {{herramientas.values|default:"[]"|escape|safe}};
 		</script>
 	</head>
 	<body>
