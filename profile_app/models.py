@@ -90,7 +90,7 @@ class PersonalData(User):
 
 	certificaciones = models.CharField(max_length=400,null=True,blank=True)
 	img = models.CharField(max_length=100,null=True,blank=True)
-	hobbies = models.ManyToMany(Hobbie,null=True,blank=True)
+	hobbies = models.ManyToManyField(Hobbie,null=True,blank=True)
 
 	oauth_token = models.CharField(max_length=200,null=True,blank=True)
 	oauth_secret = models.CharField(max_length=200,null=True,blank=True)

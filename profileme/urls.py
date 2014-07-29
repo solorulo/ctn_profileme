@@ -37,11 +37,15 @@ urlpatterns += patterns('profile_app.views',
     url(r'^registerUser$', 'registerUser', name='registerUser'),
     url(r'^uploadUserPhoto$', 'uploadUserPhoto', name='uploadUserPhoto'),
 
-	url(r'^registrarHabilidades$', 'registrarHabilidades', name='registrarHabilidades'), 
-	url(r'^registrarHerramientas$', 'registrarHerramientas', name='registrarHerramientas'), 
-	url(r'^registrarProyectos$', 'registrarProyectos', name='registrarProyectos'),    
+	url(r'^registrarHabilidades$', 'registrarHabilidades', name='registrarHabilidades'),
+	url(r'^registrarHerramientas$', 'registrarHerramientas', name='registrarHerramientas'),
+	url(r'^registrarProyectos$', 'registrarProyectos', name='registrarProyectos'),
+	url(r'^registrarHobbies$', 'registrarHobbies', name='registrarHobbies'),
+	url(r'^registrarEscolaridad$', 'registrarEscolaridad', name='registrarEscolaridad'),
 
     url(r'^error$','error_page'),
+
+    url(r'^updateUserBasicInfo$', 'updateUserBasicInfo', name='updateUserBasicInfo'),
 )
 
 urlpatterns += patterns('profile_app.linkedin_views',

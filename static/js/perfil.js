@@ -17,6 +17,7 @@ function setupHobbies() {
     fillChecks();
     showHobbies();
 }
+
 $(document).ready(function() {
     $('#menu').slicknav();
     setupExplodes();
@@ -33,6 +34,7 @@ $(document).ready(function() {
         if (insertFilaTabla($('.generate-input2'), $('.generate-input'), $('#links'), 'dynamic-link')) {
             categoriasHabilidades.push(texto);
             dataHabilidades.push(numero);
+
             graficaHabilidades();
             $('#Totalh').animate({
                 scrollTop: $('#links').height()
@@ -82,6 +84,15 @@ $(document).ready(function() {
             // Change the submit value
             $('.agregarP').val('Agregar');
 
+            // Add to dataProjects array
+            project = new Object();
+
+            project.nombre = val1;
+            project.descripcion = val2;
+            project.url = val3;
+
+            dataProyectos.push(project);
+
             // Create the links with the input value as innerHTML
             var li = document.createElement('li');
             li.className = 'proyecto';
@@ -102,6 +113,7 @@ $(document).ready(function() {
     });
     $('#editarPro .explode6').click(function(event) {
         // guardar proyectos
+
     });
     $('.contenido4 .explode5').click(function(event) {
         // guardar escolaridad
@@ -111,37 +123,196 @@ $(document).ready(function() {
     });
 });
 
+var editingBasicInfo = false;
+var editingAbilities = false;
+var editingTools = false;
+var editingHobbies = false;
+var editingSchool = false;
+var editingProjects = false;
+
 function setupExplodes() {
 
-    $('.explode2').click(function() {
-        $('#contenido').toggle('fade', 500);
-        $('#habilidades').toggle('fade', 500);
-    });
-
-    $('.explode3').click(function() {
-        $('#contenido2').toggle('fade', 500);
-        $('.herramientas').toggle('fade', 500)
-    });
-
-    $('.explode').click(function() {
+    // Edit/Save basic info button
+    $('.explode').click(function(e) {
         $('.contenido').toggle('fade', 500);
         $('#datos1').toggle('fade', 500);
 
+        /*
+         * Save function
+         */
+        if ( editingBasicInfo ) {
+            var name = $('#nameText').val();
+            var profesion = $('#profesionText').val();
+            var age = $('#ageText').val();
+            var tel = $('#telephoneText').val();
+            var email = $('#emailText').val();
+            var job = $('#jobText').val();
+            var locality = $('#localityText').val();
+
+            // if ( !name || !profesion || !age || !tel || !email || !job || !locality ) {
+            //     return;
+            // }
+
+            $.ajax({
+              url: 'updateUserBasicInfo',
+              type:'POST',
+              data:{
+                'name':name,
+                'profesion':profesion,
+                'age':age,
+                'tel':tel,
+                'email':email,
+                'job':job,
+                'locality':locality,
+              },
+              headers:{'X-CSRFToken':csrftoken},
+              success: function(data){ },
+            });
+        }
+
+        editingBasicInfo = !editingBasicInfo;
+    });
+
+    // Edit/Save abilities
+    $('.explode2').click(function() {
+        $('#contenido').toggle('fade', 500);
+        $('#habilidades').toggle('fade', 500);
+
+        /*
+         *
+         */
+        if ( editingAbilities ) {
+            var abilitiesJSObj = new Array();
+            var abilitiesLength = categoriasHabilidades.length;
+
+            for (var i=0; i<abilitiesLength; i++) {
+                var ability = new Object();
+                ability.nombre = categoriasHabilidades[i];
+                ability.puntos = dataHabilidades[i];
+                
+                abilitiesJSObj.push(ability);
+            }
+
+            $.ajax({
+              url: 'registrarHabilidades',
+              type:'POST',
+              data:{
+                'data':JSON.stringify(abilitiesJSObj),
+              },
+              headers:{'X-CSRFToken':csrftoken},
+              success: function(data){ },
+            });
+        }
+
+        editingAbilities = !editingAbilities;
+    });
+
+    // Edit/Save tools
+    $('.explode3').click(function() {
+        $('#contenido2').toggle('fade', 500);
+        $('.herramientas').toggle('fade', 500);
+
+        /*
+         *
+         */
+        if ( editingTools ) {
+            var toolsJSObj = new Array();
+            var toolsLength = categoriasHerramientas.length;
+
+            for (var i=0; i<toolsLength; i++) {
+                var tool = new Object();
+                tool.nombre = categoriasHerramientas[i];
+                tool.puntos = dataHerramientas[i];
+                
+                toolsJSObj.push(tool);
+            }
+
+            $.ajax({
+              url: 'registrarHerramientas',
+              type:'POST',
+              data:{
+                'data':JSON.stringify(toolsJSObj),
+              },
+              headers:{'X-CSRFToken':csrftoken},
+              success: function(data){ },
+            });
+        }
+
+        editingTools = !editingTools;
     });
 
     $('.explode4').click(function() {
         $('#hobbies').toggle('fade', 500);
         $('.EditH').toggle('fade', 500);
+
+        /*
+         *
+         */
+         if ( editingHobbies ) {
+            var hobbiesJSObj = new Array();
+
+            for ( var i in hobbies ) {
+                hobbiesJSObj.push(i);
+            }
+
+            $.ajax({
+              url: 'registrarHobbies',
+              type:'POST',
+              data:{
+                'data':JSON.stringify(hobbiesJSObj),
+              },
+              headers:{'X-CSRFToken':csrftoken},
+              success: function(data){ },
+            });
+         }
+
+         editingHobbies = !editingHobbies
     });
 
     $('.explode5').click(function() {
         $('#contenido4').toggle('fade', 500);
         $('.escolaridad').toggle('fade', 500);
+
+        /*
+         *
+         */
+         if ( editingSchool ) {
+            $.ajax({
+              url: 'registrarEscolaridad',
+              type:'POST',
+              data:{
+                'escolaridad':$('#escolaridadSelect').val(),
+                'carrera':$('#carrera').val(),
+                'certificaciones':$('#certificaciones').val(),
+              },
+              headers:{'X-CSRFToken':csrftoken},
+              success: function(data){ },
+            });
+         }
+
+         editingSchool = !editingSchool
     });
 
     $('.explode6').click(function() {
         $('.contenido5').toggle('fade', 500);
         $('#datosP').toggle('fade', 500);
+
+        /*
+         *
+         */
+        if ( editingProjects ) {
+            $.ajax({
+              url: 'registrarProyectos',
+              type:'POST',
+              data:{
+                'data' : JSON.stringify(dataProyectos),
+              },
+              headers:{'X-CSRFToken':csrftoken},
+              success: function(data){ },
+            });
+        }
+
+        editingProjects = !editingProjects;
     });
 }
 
@@ -149,3 +320,22 @@ function showError(msg) {
     $('.error > p').text(msg || 'Error');
     $('.error').fadeIn(400).delay(3000).fadeOut(400);
 }
+
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    
+    return cookieValue;
+}
+
+var csrftoken = getCookie('csrftoken');

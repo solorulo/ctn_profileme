@@ -83,15 +83,15 @@
 				<img src="{{ STATIC_URL }}img/ubicacion.png"id="pais">
 			</div>
 			<div class="contenido" id="camposD">
-				<input type="text" placeholder="Nombre" value="{{ user.first_name }}">
-				<input type="text" placeholder="Campo de Trabajo" value="{{ user.personaldata.profesion }}">
-				<input type="text" placeholder="Fecha de nacimiento" value="{{ user.personaldata.age }}" >
-				<input type="text" placeholder="Telefono" value="{{ user.personaldata.telefono }}">
-				<input type="text" placeholder="Correo Electronico" value="{{ user.email }}">
-				<input type="text" placeholder="Trabajo" value="{{ user.personaldata.trabajo}}">
-				<input type="text" placeholder="Pais/municipio" value="{{ user.personaldata.ciudad.nombre }}/{{ user.personaldata.ciudad.estado.nombre }}">
-				<input type="button" value="Guardar"class="explode" value="">
-				<img src="{{ STATIC_URL }}img/foto-perfil.png" alt="">
+				<input id="nameText" type="text" placeholder="Nombre" value="{{ user.first_name }}">
+				<input id="profesionText" type="text" placeholder="Campo de Trabajo" value="{{ user.personaldata.profesion }}">
+				<input id="ageText" type="text" placeholder="Fecha de nacimiento" value="{{ user.personaldata.age }}" >
+				<input id="telephoneText" type="text" placeholder="Telefono" value="{{ user.personaldata.telefono }}">
+				<input id="emailText" type="text" placeholder="Correo Electronico" value="{{ user.email }}">
+				<input id="jobText" type="text" placeholder="Trabajo" value="{{ user.personaldata.trabajo}}">
+				<input id="localityText" type="text" placeholder="Pais/municipio" value="{{ user.personaldata.ciudad.nombre }}/{{ user.personaldata.ciudad.estado.nombre }}">
+				<input id="saveBasicInfoButton" type="button" value="Guardar" class="explode" value="">
+				<img id="userPhoto" src="{{ STATIC_URL }}img/foto-perfil.png" alt="">
 			</div>
 			<hr>
 		</section>
@@ -174,13 +174,7 @@
 			</div>
 			<div id="contenido4">
 				<input type="button" value="Guardar Cambios" class="explode5">
-				<select>
-					<!-- 
-					<option value="0">Escolaridad</option>
-					<option value="1">Ingenieria</option>
-					<option value="2">Doctorado</option>
-					<option value="3">Licenciatura</option>
-					<option value="4">Preparatoria</option>-->
+				<select id="escolaridadSelect">
 					{% for key, item in escolaridad %}
 					    <option value="{{ key }}">{{item}}</option>
 					{% endfor %}

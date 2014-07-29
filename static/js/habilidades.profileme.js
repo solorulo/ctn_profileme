@@ -12,6 +12,7 @@ function tablaHabilidades() {
 		$('#links').append(li);
 	}
 }
+
 function graficaHabilidades() {
 	$('#container').highcharts({
 		chart: {

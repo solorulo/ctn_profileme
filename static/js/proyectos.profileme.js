@@ -1,14 +1,11 @@
 var dataProyectos = [
-{ 
-	'nombre':'Erbol', 
-	'descripcion':'es una plataforma que su principal funcion es reforestar y sembrar productos organicos', 
-	'url':'erbol.com.mx' 
-}, 
-{ 
-	'nombre':'Erbol1', 
-	'descripcion':'es una plataforma que su principal funcion es reforestar y sembrar productos organicos', 
-	'url':'erbol.com.mx' 
-}, ]
+	{ 
+		'nombre':'Erbol', 
+		'descripcion':'es una plataforma que su principal funcion es reforestar y sembrar productos organicos', 
+		'url':'erbol.com.mx' 
+	}, 
+]
+
 function tablaProyectos() {
 	$('#p').empty();
 	for (i in dataProyectos) {
@@ -19,6 +16,7 @@ function tablaProyectos() {
 		$('#p').append(li);
 	}
 }
+
 function listaProyectos() {
 	var lista = $('#proyecto');
 	lista.empty();

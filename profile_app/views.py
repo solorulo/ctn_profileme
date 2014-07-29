@@ -112,10 +112,10 @@ def registrarHobbies(request):
 	data = request.POST['data']
 	obdata = simplejson.loads(data)
 	all_hobbies = Hobbie.objects.all()
-	last_objects = request.user.hobbies
+	last_objects = request.user.personaldata.hobbies
 	for ob in obdata:
 		hob = all_hobbies.get(nombre=ob)
-		request.user.hobbies.add(hob)
+		request.user.personaldata.hobbies.add(hob)
 	last_objects.clear()
 	return render(request, 'simple_post_response.html', {'response_message': 'ok'}, content_type='application/json')
 
@@ -127,10 +127,10 @@ def registrarHabilidades(request):
 	obdata = simplejson.loads(data)
 	last_objects = Habilidad.objects.filter(user=request.user)
 	for ob in obdata:
-		nhab = Habilidad(
-			user=request.user,
-			nombre=ob.nombre,
-			puntos=ob.puntos)
+		nhab = Habilidad.objects.create(
+			user=request.user.personaldata,
+			nombre=ob['nombre'],
+			puntos=ob['puntos'])
 		nhab.save()
 	last_objects.delete()
 	return render(request, 'simple_post_response.html', {'response_message': 'ok'}, content_type='application/json')
@@ -139,14 +139,18 @@ def registrarHabilidades(request):
 def registrarHerramientas(request):
 	if request.method != "POST":
 		return render(request, 'simple_post_response.html', {'response_message': 'invalid_http_method'})
+
 	data = request.POST['data']
+
+	# return render(request, 'simple_post_response.html', {'response_message': data})
+
 	obdata = simplejson.loads(data)
 	last_objects = Herramienta.objects.filter(user=request.user)
 	for ob in obdata:
-		nhab = Herramienta(
-			user=request.user,
-			nombre=ob.nombre,
-			puntos=ob.puntos)
+		nhab = Herramienta.objects.create(
+			user=request.user.personaldata,
+			nombre=ob['nombre'],
+			puntos=ob['puntos'])
 		nhab.save()
 	last_objects.delete()
 	return render(request, 'simple_post_response.html', {'response_message': 'ok'}, content_type='application/json')
@@ -157,16 +161,43 @@ def registrarProyectos(request):
 		return render(request, 'simple_post_response.html', {'response_message': 'invalid_http_method'})
 	data = request.POST['data']
 	obdata = simplejson.loads(data)
-	last_objects = Proyecto.objects.filter(user=request.user)
+	last_objects = Proyecto.objects.filter(persona=request.user.personaldata)
 	for ob in obdata:
-		nhab = Habilidad(
-			persona=request.user,
-			nombre=ob.nombre,
-			descripcion=ob.descripcion,
-			url=ob.url)
+		nhab = Proyecto.objects.create(
+			persona=request.user.personaldata,
+			nombre=ob['nombre'],
+			descripcion=['descripcion'],
+			url=ob['url'])
 		nhab.save()
 	last_objects.delete()
 	return render(request, 'simple_post_response.html', {'response_message': 'ok'}, content_type='application/json')
+
+@login_required
+def registrarEscolaridad(request):
+	if request.method != "POST":
+		return render(request, 'simple_post_response.html', {'response_message': 'invalid_http_method'})
+
+	escolaridad = request.POST.get('escolaridad', '').strip()
+	carrera = request.POST.get('carrera', '').strip()
+	certificaciones = request.POST.get('certificaciones', '').strip()
+
+	user = request.user
+
+	if request.user.personaldata.educacion == None:
+		educacion = Educacion.objects.create(escolaridad=escolaridad, carrera=carrera)
+	else:
+		educacion = user.personaldata.educacion
+		educacion.escolaridad = escolaridad
+		educacion.carrera = carrera
+
+	educacion.save()
+
+	user.personaldata.certificaciones = certificaciones
+	user.personaldata.save()
+	user.save()
+
+	return render(request, 'simple_post_response.html', {'response_message': 'ok'}, content_type='application/json')
+
 
 def jobs(request):
 	return render(request, 'trabajos.html')
@@ -340,3 +371,40 @@ def ofertas(request):
 
 def error_page(request):
 	return render(request, 'error_page.html')
+
+#
+def updateUserBasicInfo(request):
+	name = request.POST.get('name').strip()
+	profesion = request.POST.get('profesion').strip()
+	age = request.POST.get('age').strip()
+	tel = request.POST.get('tel').strip()
+	email = request.POST.get('email').strip()
+	job = request.POST.get('job').strip()
+	locality = request.POST.get('locality').strip()
+
+	user = request.user
+
+	user.first_name = name
+	user.personaldata.profesion = profesion
+	user.personaldata.age = age
+	user.personaldata.telefono = tel
+	user.email = email
+	user.personaldata.trabajo = job
+
+	if user.personaldata.ciudad == None:
+		pais = Pais.objects.create(nombre=locality)
+		estado = Estado.objects.create(nombre=locality, pais=pais)
+		user.personaldata.ciudad = Ciudad.objects.create(nombre=locality, estado=estado)
+	else:
+		user.personaldata.ciudad.estado.pais = locality
+		user.personaldata.ciudad.estado = locality
+		user.personaldata.ciudad = locality
+
+	success = True
+
+	try:
+		user.save()
+	except:
+		success = False
+
+	return render(request, 'simple_post_response.html', {'response_message':success})
