@@ -1,5 +1,5 @@
 var hobbies = {};
-hobbies["soccer"] = true;
+// hobbies["soccer"] = true;
 
 function fillChecks() {
 	for (var i in hobbies) {

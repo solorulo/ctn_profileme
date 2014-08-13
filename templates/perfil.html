@@ -44,6 +44,7 @@
 		dataHabilidades = {{habilidades.values|default:"[]"|escape|safe}};
 		categoriasHerramientas = {{herramientas.names|default:"[]"|escape|safe}};
 		dataHerramientas = {{herramientas.values|default:"[]"|escape|safe}};
+		dataProyectos = {{proyectos|default:"[]"|escape|safe}};
 		</script>
 	</head>
 	<body>
@@ -162,14 +163,24 @@
 				<input type="button" value="Editar"class="explode5">
 				<h1>Escolaridad</h1>
 				<!--imagen del tipo de escuela que es-->
-				<img src="{{ STATIC_URL }}img/ing..png" alt=""id="Esc">
+				{% if user.personaldata.educacion.escolaridad %}
+					
+					{% for key, item in escolaridad %}
+						{% if user.personaldata.educacion.escolaridad == key %}
+        					<p>{{ value}}</p>
+    					{% endif %}
+					{% endfor %}
+				{% else %}
+					<img src="{{ STATIC_URL }}img/ing..png" alt="" id="Esc">
+				{% endif %}
+				
 				<!--nombre de escuela en la que esta actualmente-->
 				<div id="nescuela">
-					<p>Nombre de la escuela o carrera cursada</p>
+					<p>{{ user.personaldata.educacion.carrera |default_if_none:"Nombre de la escuela o carrera cursada" }}</p>
 				</div>
 				<!--certificaciones del usuario-->
 				<div id="certificaciones">
-					<p>Aqui van todas las certificaciones del usuario</p>
+					<p>{{ user.personaldata.certificaciones |default_if_none:"Aqui van todas las certificaciones del usuario" }}</p>
 				</div>
 			</div>
 			<div id="contenido4">

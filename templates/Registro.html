@@ -29,20 +29,17 @@
 		<script type="text/javascript" src="{{ STATIC_URL }}js/habilidades.profileme.js"></script>
 		<script type="text/javascript" src="{{ STATIC_URL }}js/herramientas.profileme.js"></script>
 		<script type="text/javascript" src="{{ STATIC_URL }}js/proyectos.profileme.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/scrollH.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/tables.profileme.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/hobbies.profileme.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/registro.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/fileup.profileme.js"></script>
 		<script type="text/javascript">
-		categoriasHabilidades = ['Pert,CPM', 'Business Intelligence', 'Gantt', 'Canvas Bussiness Model',
-			'Plan de negocios', 'Otra'
-		];
-		dataHabilidades = [99, 44, 66, 77, 100, 15];
-		categoriasHerramientas = [
-			'Java',
-			'JavaScript',
-			'CSS',
-			'HTML',
-			'C#',
-			'Scalando'
-		];
-		dataHerramientas = [99, 44, 66, 77, 100, 15];
+		categoriasHabilidades = {{habilidades.names|default:"[]"|escape|safe}};
+		dataHabilidades = {{habilidades.values|default:"[]"|escape|safe}};
+		categoriasHerramientas = {{herramientas.names|default:"[]"|escape|safe}};
+		dataHerramientas = {{herramientas.values|default:"[]"|escape|safe}};
+		dataProyectos = {{proyectos|default:"[]"|escape|safe}};
 		</script>
 	</head>
 	<body>
@@ -363,11 +360,5 @@
 				<a href="#6"><img src="{{ STATIC_URL }}img/flecha-izq.png" alt=""></a>
 			</div>
 		</div>
-		<script type="text/javascript" src="{{ STATIC_URL }}js/scrollH.js"></script>
-
-        <script type="text/javascript" src="{{ STATIC_URL }}js/tables.profileme.js"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }}js/hobbies.profileme.js"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }}js/registro.js"></script>
-		<script type="text/javascript" src="{{ STATIC_URL }}js/fileup.profileme.js"></script>
 	</body>
 </html>

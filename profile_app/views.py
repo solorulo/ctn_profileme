@@ -51,33 +51,43 @@ def oauth_logout(request):
 @login_required
 def profile (request):
 	esc_opt = Educacion.TIPO_CHOICES
-	hobbies = Hobbie.objects.all()
-	db_herramientas = Herramienta.objects.filter(user=request.user).values()
-	db_habilidades = Habilidad.objects.filter(user=request.user).values()
-	herramientas = None
+	hobbies = Hobbie.objects.all().values()
+	db_herramientas = Herramienta.objects.filter(user=request.user.personaldata)
+	db_habilidades = Habilidad.objects.filter(user=request.user.personaldata)
+	herramientas = {
+		'names' : [],
+		'values' : []
+	}
 	if db_herramientas.count() > 0:
-		herramientas = {
-			'names' : [],
-			'values' : []
-		}
 		for h in db_herramientas:
-			herramientas.names.append(h.nombre)
-			herramientas.values.append(h.puntos)
-	habilidades = None
+			herramientas['names'].append(str(h.nombre))
+			herramientas['values'].append(h.puntos)
+	habilidades = {
+		'names' : [],
+		'values' : []
+	}
 	if db_habilidades.count() > 0:
-		habilidades = {
-			'names' : [],
-			'values' : []
-		}
 		for h in db_habilidades:
-			habilidades.names.append(h.nombre)
-			habilidades.values.append(h.puntos)
-	
+			habilidades['names'].append(str(h.nombre))
+			habilidades['values'].append(h.puntos)
+
+	db_proyectos = Proyecto.objects.filter(persona=request.user.personaldata)
+	proyectos = []
+	if db_proyectos.count() > 0:
+		for h in db_proyectos:
+			proyectos.append({
+				'nombre':str(h.nombre),
+				'descripcion':str(h.descripcion),
+				'url':str(h.url),
+			});
+
 	return render(request, 'perfil.html', { 
 		'escolaridad' : esc_opt, 
 		'hobbies' : hobbies, 
 		'herramientas':herramientas, 
-		'habilidades' : habilidades })
+		'habilidades' : habilidades,
+		'proyectos':proyectos
+		})
 
 # Create your views here.
 def index(request):
@@ -100,9 +110,36 @@ def index(request):
 def postTest(request):
 	return render(request, 'trabajos.html')
 
+@login_required
 def registro(request):
 	esc_opt = Educacion.TIPO_CHOICES
-	return render(request, 'Registro.html', { 'escolaridad' : esc_opt })
+	hobbies = Hobbie.objects.all().values()
+	db_herramientas = Herramienta.objects.filter(user=request.user.personaldata)
+	db_habilidades = Habilidad.objects.filter(user=request.user.personaldata)
+	herramientas = {
+		'names' : [],
+		'values' : []
+	}
+	if db_herramientas.count() > 0:
+		for h in db_herramientas:
+			herramientas['names'].append(str(h.nombre))
+			herramientas['values'].append(h.puntos)
+	habilidades = {
+		'names' : [],
+		'values' : []
+	}
+	if db_habilidades.count() > 0:
+		for h in db_habilidades:
+			habilidades['names'].append(str(h.nombre))
+			habilidades['values'].append(h.puntos)
+	print habilidades
+	print herramientas
+	return render(request, 'Registro.html', { 
+		'escolaridad' : esc_opt, 
+		'hobbies' : hobbies, 
+		'herramientas':herramientas, 
+		'habilidades' : habilidades  
+		})
 
 # Verificar que funcione bien
 @login_required
@@ -113,11 +150,17 @@ def registrarHobbies(request):
 	obdata = simplejson.loads(data)
 	all_hobbies = Hobbie.objects.all()
 	last_objects = request.user.personaldata.hobbies
+	print 'registrar hobbies'
 	for ob in obdata:
-		hob = all_hobbies.get(nombre=ob)
-		request.user.personaldata.hobbies.add(hob)
+		try:
+			# hob = all_hobbies.get(nombre=ob)
+			# request.user.personaldata.hobbies.add(hob)
+			print ob
+		except Exception, e:
+			# raise e
+			pass
 	last_objects.clear()
-	return render(request, 'simple_post_response.html', {'response_message': 'ok'}, content_type='application/json')
+	return render(request, 'simple_post_response.html', {'response_message': 'ok'})
 
 @login_required
 def registrarHabilidades(request):
@@ -125,15 +168,15 @@ def registrarHabilidades(request):
 		return render(request, 'simple_post_response.html', {'response_message': 'invalid_http_method'})
 	data = request.POST['data']
 	obdata = simplejson.loads(data)
-	last_objects = Habilidad.objects.filter(user=request.user)
+	last_objects = Habilidad.objects.filter(user=request.user.personaldata)
+	last_objects.delete()
 	for ob in obdata:
 		nhab = Habilidad.objects.create(
 			user=request.user.personaldata,
 			nombre=ob['nombre'],
 			puntos=ob['puntos'])
 		nhab.save()
-	last_objects.delete()
-	return render(request, 'simple_post_response.html', {'response_message': 'ok'}, content_type='application/json')
+	return render(request, 'simple_post_response.html', {'response_message': 'ok'})
 
 @login_required
 def registrarHerramientas(request):
@@ -145,15 +188,15 @@ def registrarHerramientas(request):
 	# return render(request, 'simple_post_response.html', {'response_message': data})
 
 	obdata = simplejson.loads(data)
-	last_objects = Herramienta.objects.filter(user=request.user)
+	last_objects = Herramienta.objects.filter(user=request.user.personaldata)
+	last_objects.delete()
 	for ob in obdata:
 		nhab = Herramienta.objects.create(
 			user=request.user.personaldata,
 			nombre=ob['nombre'],
 			puntos=ob['puntos'])
 		nhab.save()
-	last_objects.delete()
-	return render(request, 'simple_post_response.html', {'response_message': 'ok'}, content_type='application/json')
+	return render(request, 'simple_post_response.html', {'response_message': 'ok'})
 
 @login_required
 def registrarProyectos(request):
@@ -161,42 +204,48 @@ def registrarProyectos(request):
 		return render(request, 'simple_post_response.html', {'response_message': 'invalid_http_method'})
 	data = request.POST['data']
 	obdata = simplejson.loads(data)
+	# print data
+	print obdata
 	last_objects = Proyecto.objects.filter(persona=request.user.personaldata)
+	last_objects.delete()
 	for ob in obdata:
 		nhab = Proyecto.objects.create(
-			persona=request.user.personaldata,
-			nombre=ob['nombre'],
-			descripcion=['descripcion'],
-			url=ob['url'])
+			persona=	request.user.personaldata,
+			nombre=		ob['nombre'],
+			descripcion=ob['descripcion'],
+			url=		ob['url'])
 		nhab.save()
-	last_objects.delete()
-	return render(request, 'simple_post_response.html', {'response_message': 'ok'}, content_type='application/json')
+	return render(request, 'simple_post_response.html', {'response_message': 'ok'})
 
 @login_required
 def registrarEscolaridad(request):
 	if request.method != "POST":
 		return render(request, 'simple_post_response.html', {'response_message': 'invalid_http_method'})
 
-	escolaridad = request.POST.get('escolaridad', '').strip()
+	escolaridad = int(request.POST.get('escolaridad', '0').strip())
 	carrera = request.POST.get('carrera', '').strip()
 	certificaciones = request.POST.get('certificaciones', '').strip()
 
+	print escolaridad
+	print certificaciones
+	print carrera
+
 	user = request.user
 
-	if request.user.personaldata.educacion == None:
+	if user.personaldata.educacion == None:
 		educacion = Educacion.objects.create(escolaridad=escolaridad, carrera=carrera)
+		user.personaldata.educacion = educacion
 	else:
 		educacion = user.personaldata.educacion
 		educacion.escolaridad = escolaridad
 		educacion.carrera = carrera
-
-	educacion.save()
-
+		
+	user.personaldata.educacion.save()
 	user.personaldata.certificaciones = certificaciones
 	user.personaldata.save()
 	user.save()
 
-	return render(request, 'simple_post_response.html', {'response_message': 'ok'}, content_type='application/json')
+	return render(request, 'simple_post_response.html', {'response_message': 'ok'})
 
 
 def jobs(request):
@@ -264,11 +313,13 @@ def uploadUserPhoto(request):
 	if file == None:
 		return HttpResponseRedirect('/')
 
-	with open('/Users/mkfnx/dev/ctn_profileme/media/' + file.name, 'wb+') as d:
+	from profileme.settings import MEDIA_ROOT
+	print MEDIA_ROOT
+	with open(MEDIA_ROOT + file.name, 'wb+') as d:
 		for c in file.chunks():
 			d.write(c)
 
-	response = "{'files': [{'name':'newFile.png','size': "+ str(file.size) +",'url': 'http://localhost:8000/media/" + file.name + "','thumbnailUrl':'','deleteUrl':'','deleteType': 'DELETE'}]}"
+	response = "{'files': [{'name':'newFile.png','size': "+ str(file.size) +",'url': 'http://127.0.0.1:8000/media/" + file.name + "','thumbnailUrl':'','deleteUrl':'','deleteType': 'DELETE'}]}"
 
 	pd = PersonalData.objects.create(user=request.user, img="/media/" + file.name)
 	# pd.user = request.user
@@ -374,13 +425,13 @@ def error_page(request):
 
 #
 def updateUserBasicInfo(request):
-	name = request.POST.get('name').strip()
-	profesion = request.POST.get('profesion').strip()
-	age = request.POST.get('age').strip()
-	tel = request.POST.get('tel').strip()
-	email = request.POST.get('email').strip()
-	job = request.POST.get('job').strip()
-	locality = request.POST.get('locality').strip()
+	name = request.POST.get('name', '').strip()
+	profesion = request.POST.get('profesion', '').strip()
+	age = request.POST.get('age', '').strip()
+	tel = request.POST.get('tel', '').strip()
+	email = request.POST.get('email', '').strip()
+	job = request.POST.get('job', '').strip()
+	locality = request.POST.get('locality', '').strip()
 
 	user = request.user
 
@@ -395,14 +446,15 @@ def updateUserBasicInfo(request):
 		pais = Pais.objects.create(nombre=locality)
 		estado = Estado.objects.create(nombre=locality, pais=pais)
 		user.personaldata.ciudad = Ciudad.objects.create(nombre=locality, estado=estado)
-	else:
-		user.personaldata.ciudad.estado.pais = locality
-		user.personaldata.ciudad.estado = locality
-		user.personaldata.ciudad = locality
+	# else:
+	# 	user.personaldata.ciudad.estado.pais = locality
+	# 	user.personaldata.ciudad.estado = locality
+	# 	user.personaldata.ciudad = locality
 
 	success = True
 
 	try:
+		user.personaldata.save()
 		user.save()
 	except:
 		success = False

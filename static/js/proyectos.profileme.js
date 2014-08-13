@@ -1,9 +1,9 @@
 var dataProyectos = [
-	{ 
-		'nombre':'Erbol', 
-		'descripcion':'es una plataforma que su principal funcion es reforestar y sembrar productos organicos', 
-		'url':'erbol.com.mx' 
-	}, 
+	// { 
+	// 	'nombre':'Erbol', 
+	// 	'descripcion':'es una plataforma que su principal funcion es reforestar y sembrar productos organicos', 
+	// 	'url':'erbol.com.mx' 
+	// }, 
 ]
 
 function tablaProyectos() {
