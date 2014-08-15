@@ -2,6 +2,7 @@
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 DEBUG = True
+
 TEMPLATE_DEBUG = DEBUG
 
 LOGIN_URL='/'
@@ -23,17 +24,32 @@ LINKEDIN_EXTRA_DATA = [('id', 'id'),
 					   ('courses', 'courses'),
 					   ('phone-numbers', 'phone-numbers') ]
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'profileme.db',                      # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
-    }
-}
+LOCAL_DEV = False
+
+if LOCAL_DEV :
+	DATABASES = {
+	    'default': {
+	        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+	        'NAME': 'profileme.db',                      # Or path to database file if using sqlite3.
+	        # The following settings are not used with sqlite3:
+	        'USER': '',
+	        'PASSWORD': '',
+	        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+	        'PORT': '',                      # Set to empty string for default.
+	    }
+	}
+else :
+	DATABASES = {
+	    'default': {
+	        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+	        'NAME': 'd1oi983566bgig',                      # Or path to database file if using sqlite3.
+	        # The following settings are not used with sqlite3:
+	        'USER': 'fyftokdfbgpnwd',
+	        'PASSWORD': 'LVpti1WINBgcT71SMutscLA-md',
+	        'HOST': 'ec2-54-197-241-79.compute-1.amazonaws.com',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+	        'PORT': '',                      # Set to empty string for default.
+	    }
+	}
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
