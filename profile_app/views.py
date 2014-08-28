@@ -51,7 +51,6 @@ def oauth_logout(request):
 @login_required
 def profile (request):
 	esc_opt = Educacion.TIPO_CHOICES
-	hobbies = Hobbie.objects.all().values()
 	db_herramientas = Herramienta.objects.filter(user=request.user.personaldata)
 	db_habilidades = Habilidad.objects.filter(user=request.user.personaldata)
 	herramientas = {
@@ -81,9 +80,13 @@ def profile (request):
 				'url':str(h.url),
 			});
 
+	usr_hobbies = {}
+	for hb in request.user.personaldata.hobbies.all():
+		usr_hobbies[hb.nombre] = True
 	return render(request, 'perfil.html', { 
 		'escolaridad' : esc_opt, 
-		'hobbies' : hobbies, 
+		'hobbies' : simplejson.dumps(usr_hobbies), 
+		'dbhobbies' : Hobbie.objects.all().values(), 
 		'herramientas':herramientas, 
 		'habilidades' : habilidades,
 		'proyectos':proyectos
@@ -153,13 +156,13 @@ def registrarHobbies(request):
 	print 'registrar hobbies'
 	for ob in obdata:
 		try:
-			# hob = all_hobbies.get(nombre=ob)
-			# request.user.personaldata.hobbies.add(hob)
+			hob = all_hobbies.get(nombre=ob)
+			request.user.personaldata.hobbies.add(hob)
 			print ob
 		except Exception, e:
 			# raise e
 			pass
-	last_objects.clear()
+	# last_objects.clear()
 	return render(request, 'simple_post_response.html', {'response_message': 'ok'})
 
 @login_required
@@ -167,6 +170,7 @@ def registrarHabilidades(request):
 	if request.method != "POST":
 		return render(request, 'simple_post_response.html', {'response_message': 'invalid_http_method'})
 	data = request.POST['data']
+	print data
 	obdata = simplejson.loads(data)
 	last_objects = Habilidad.objects.filter(user=request.user.personaldata)
 	last_objects.delete()

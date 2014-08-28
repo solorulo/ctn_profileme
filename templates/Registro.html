@@ -55,7 +55,7 @@
 			</div>
 			<!--insertar imagenes-->
 			<div id="imagen_N">
-				<img id="userPhoto" style="display:block;margin:0 auto 0 auto;" src="{{ STATIC_URL }}img/foto-perfil.png" alt=""
+				<img id="userPhoto" style="display:block;margin:0 auto 0 auto;" src="media/{{ user.personaldata.img |default_if_none:"" }}" alt=""
 				style="">
 				<input input id="fileupload" type="file" name="files[]" multiple style="
 				cursor: pointer;

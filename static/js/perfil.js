@@ -48,6 +48,13 @@ $(document).ready(function() {
     $('.formulario2').submit(function(e) {
         var texto = $('.text').val();
         var numero = parseInt($('.range').val());
+        function removeHer() {
+            var indexRm = categoriasHerramientas.indexOf(texto);
+            if (index > -1) {
+                categoriasHerramientas.splice(indexRm, 1);
+                dataHerramientas.splice(indexRm, 1);
+            }
+        }
         // TODO verifica que no exista ya el texto
         if (insertFilaTabla($('.text'), $('.range'), $('#h'), 'lista')) {
             categoriasHerramientas.push(texto);
@@ -198,6 +205,7 @@ $(document).ready(function() {
                 'X-CSRFToken': csrftoken
             },
         });
+        // showHobbies();
     });
     $('#contenido4 .explode5').click(function(event) {
         // guardar escolaridad
@@ -207,7 +215,11 @@ $(document).ready(function() {
         $.ajax({
             url: 'registrarEscolaridad',
             type: 'POST',
-            // success: successF,
+            // success: function () {
+            //     $('#nescuela p').text(cr);
+            //     $('#certificaciones p').text(ce);
+            //     $('img#Esc').attr("src","static/img/escolaridad/"+es+".png");
+            // },
             // error: errorF,
             //contentType: 'application/json',
             data: {
@@ -219,6 +231,9 @@ $(document).ready(function() {
                 'X-CSRFToken': csrftoken
             },
         });
+        $('#nescuela p').text(cr);
+        $('#certificaciones p').text(ce);
+        $('img#Esc').attr("src","static/img/escolaridad/"+es+".png");
     });
 });
 

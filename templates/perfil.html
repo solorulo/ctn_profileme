@@ -45,6 +45,7 @@
 		categoriasHerramientas = {{herramientas.names|default:"[]"|escape|safe}};
 		dataHerramientas = {{herramientas.values|default:"[]"|escape|safe}};
 		dataProyectos = {{proyectos|default:"[]"|escape|safe}};
+		hobbies = {{hobbies|default:"{}"|escape|safe}}
 		</script>
 	</head>
 	<body>
@@ -61,7 +62,7 @@
 			<!--Datos personales del usuario (nombre,campo de trabajo y edad)-->
 			<div id="datos1">
 				<div id="fperfil">
-					<img src="{{ user.personaldata.img |default_if_none:"" }}" alt="Profile image">
+					<img src="media/{{ user.personaldata.img |default_if_none:"" }}" alt="Profile image">
 				</div>
 				<div id="nombre">{{ user.first_name }}</div>
 				<div id="profesion">{{ user.personaldata.profesion |default_if_none:"" }}</div>
@@ -164,19 +165,20 @@
 				<h1>Escolaridad</h1>
 				<!--imagen del tipo de escuela que es-->
 				{% if user.personaldata.educacion.escolaridad %}
-					
+					{% comment "No sirve ahora" %}
 					{% for key, item in escolaridad %}
 						{% if user.personaldata.educacion.escolaridad == key %}
         					<p>{{ value}}</p>
     					{% endif %}
 					{% endfor %}
+					{% endcomment %}
+					<img src="static/img/escolaridad/{{ user.personaldata.educacion.escolaridad}}.png" alt="" id="Esc">
 				{% else %}
-					<img src="{{ STATIC_URL }}img/ing..png" alt="" id="Esc">
 				{% endif %}
 				
 				<!--nombre de escuela en la que esta actualmente-->
 				<div id="nescuela">
-					<p>{{ user.personaldata.educacion.carrera |default_if_none:"Nombre de la escuela o carrera cursada" }}</p>
+					<p>{{ user.personaldata.educacion.carrera |default_if_none:"Nombre de la carrera" }}</p>
 				</div>
 				<!--certificaciones del usuario-->
 				<div id="certificaciones">
@@ -187,11 +189,15 @@
 				<input type="button" value="Guardar Cambios" class="explode5">
 				<select id="escolaridadSelect">
 					{% for key, item in escolaridad %}
-					    <option value="{{ key }}">{{item}}</option>
+						{% if user.personaldata.educacion.escolaridad == key %}
+							<option value="{{ key }}" selected>{{item}}</option>
+						{% else%}
+        					<option value="{{ key }}">{{item}}</option>
+    					{% endif %}
 					{% endfor %}
 				</select>
-				<textarea id="carrera" name="comentarios" rows="10" cols="40"placeholder="Nombre de la carrera"></textarea>
-				<textarea id="certificaciones" name="comentarios" rows="10" cols="40"placeholder="certificaciónes"></textarea>
+				<textarea id="carrera" name="comentarios" rows="10" cols="40"placeholder="Nombre de la carrera">{{ user.personaldata.educacion.carrera |default_if_none:"" }}</textarea>
+				<textarea id="certificaciones" name="comentarios" rows="10" cols="40"placeholder="Aqui van todas las certificaciones del usuario">{{ user.personaldata.certificaciones |default_if_none:"" }}</textarea>
 			</div>
 			<div id="hobbies">
 				<!--boton editar-->
@@ -251,7 +257,7 @@
 							<img src="{{ STATIC_URL }}img/iconosG/videojuegos-g.png">
 							<input type="checkbox" name="radio-btn10" id="videojuegos" />
 						</li>-->
-						{% for item in hobbies %}
+						{% for item in dbhobbies %}
 					    <li>
 							<img src="{{ STATIC_URL }}{{ item.foto }}">
 							<input class="tachado checkHb" type="checkbox" name="radio-btn10" id="{{ item.nombre }}" />

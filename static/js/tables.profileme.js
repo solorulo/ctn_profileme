@@ -1,4 +1,4 @@
-function insertFilaTabla(textInput, numberInput, listContainer, liClass) {
+function insertFilaTabla(textInput, numberInput, listContainer, liClass, onhide) {
 	// Grab the input value
 	var dynamicValue = numberInput.val();
 	var dynamicValue2 = textInput.val();
@@ -9,7 +9,7 @@ function insertFilaTabla(textInput, numberInput, listContainer, liClass) {
 	} else {
 
 		// Create the links with the input value as innerHTML
-		var li = createFilaTabla(dynamicValue2, dynamicValue, liClass);
+		var li = createFilaTabla(dynamicValue2, dynamicValue, liClass, onhide);
 
 		// Append it and attach the event (via onclick)
 		listContainer.append(li);
@@ -17,7 +17,7 @@ function insertFilaTabla(textInput, numberInput, listContainer, liClass) {
 	}
 	return true;
 }
-function createFilaTabla(text, number, liClass) {
+function createFilaTabla(text, number, liClass, onhide) {
 
 	// Create the links with the input value as innerHTML
 	var li = document.createElement('li');
@@ -26,6 +26,9 @@ function createFilaTabla(text, number, liClass) {
 
 	li.onclick = function() {
 		$(li).hide(400);
+		if (onhide) {
+			onhide();
+		}
 	}
 	return li;
 }
