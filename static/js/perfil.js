@@ -254,39 +254,39 @@ function setupExplodes() {
         /*
          * Save function
          */
-        if (editingBasicInfo) {
-            var name = $('#nameText').val();
-            var profesion = $('#profesionText').val();
-            var age = $('#ageText').val();
-            var tel = $('#telephoneText').val();
-            var email = $('#emailText').val();
-            var job = $('#jobText').val();
-            var locality = $('#localityText').val();
+        // if (editingBasicInfo) {
+        //     var name = $('#nameText').val();
+        //     var profesion = $('#profesionText').val();
+        //     var age = $('#ageText').val();
+        //     var tel = $('#telephoneText').val();
+        //     var email = $('#emailText').val();
+        //     var job = $('#jobText').val();
+        //     var locality = $('#localityText').val();
 
-            // if ( !name || !profesion || !age || !tel || !email || !job || !locality ) {
-            //     return;
-            // }
+        //     // if ( !name || !profesion || !age || !tel || !email || !job || !locality ) {
+        //     //     return;
+        //     // }
 
-            $.ajax({
-                url: 'updateUserBasicInfo',
-                type: 'POST',
-                data: {
-                    'name': name,
-                    'profesion': profesion,
-                    'age': age,
-                    'tel': tel,
-                    'email': email,
-                    'job': job,
-                    'locality': locality,
-                },
-                headers: {
-                    'X-CSRFToken': csrftoken
-                },
-                success: function(data) {},
-            });
-        }
+        //     $.ajax({
+        //         url: 'updateUserBasicInfo',
+        //         type: 'POST',
+        //         data: {
+        //             'name': name,
+        //             'profesion': profesion,
+        //             'age': age,
+        //             'tel': tel,
+        //             'email': email,
+        //             'job': job,
+        //             'locality': locality,
+        //         },
+        //         headers: {
+        //             'X-CSRFToken': csrftoken
+        //         },
+        //         success: function(data) {},
+        //     });
+        // }
 
-        editingBasicInfo = !editingBasicInfo;
+        // editingBasicInfo = !editingBasicInfo;
     });
 
     // Edit/Save abilities
@@ -297,32 +297,32 @@ function setupExplodes() {
         /*
          *
          */
-        if (editingAbilities) {
-            var abilitiesJSObj = new Array();
-            var abilitiesLength = categoriasHabilidades.length;
+        // if (editingAbilities) {
+        //     var abilitiesJSObj = new Array();
+        //     var abilitiesLength = categoriasHabilidades.length;
 
-            for (var i = 0; i < abilitiesLength; i++) {
-                var ability = new Object();
-                ability.nombre = categoriasHabilidades[i];
-                ability.puntos = dataHabilidades[i];
+        //     for (var i = 0; i < abilitiesLength; i++) {
+        //         var ability = new Object();
+        //         ability.nombre = categoriasHabilidades[i];
+        //         ability.puntos = dataHabilidades[i];
 
-                abilitiesJSObj.push(ability);
-            }
+        //         abilitiesJSObj.push(ability);
+        //     }
 
-            $.ajax({
-                url: 'registrarHabilidades',
-                type: 'POST',
-                data: {
-                    'data': JSON.stringify(abilitiesJSObj),
-                },
-                headers: {
-                    'X-CSRFToken': csrftoken
-                },
-                success: function(data) {},
-            });
-        }
+        //     $.ajax({
+        //         url: 'registrarHabilidades',
+        //         type: 'POST',
+        //         data: {
+        //             'data': JSON.stringify(abilitiesJSObj),
+        //         },
+        //         headers: {
+        //             'X-CSRFToken': csrftoken
+        //         },
+        //         success: function(data) {},
+        //     });
+        // }
 
-        editingAbilities = !editingAbilities;
+        // editingAbilities = !editingAbilities;
     });
 
     // Edit/Save tools
@@ -333,32 +333,32 @@ function setupExplodes() {
         /*
          *
          */
-        if (editingTools) {
-            var toolsJSObj = new Array();
-            var toolsLength = categoriasHerramientas.length;
+        // if (editingTools) {
+        //     var toolsJSObj = new Array();
+        //     var toolsLength = categoriasHerramientas.length;
 
-            for (var i = 0; i < toolsLength; i++) {
-                var tool = new Object();
-                tool.nombre = categoriasHerramientas[i];
-                tool.puntos = dataHerramientas[i];
+        //     for (var i = 0; i < toolsLength; i++) {
+        //         var tool = new Object();
+        //         tool.nombre = categoriasHerramientas[i];
+        //         tool.puntos = dataHerramientas[i];
 
-                toolsJSObj.push(tool);
-            }
+        //         toolsJSObj.push(tool);
+        //     }
 
-            $.ajax({
-                url: 'registrarHerramientas',
-                type: 'POST',
-                data: {
-                    'data': JSON.stringify(toolsJSObj),
-                },
-                headers: {
-                    'X-CSRFToken': csrftoken
-                },
-                success: function(data) {},
-            });
-        }
+        //     $.ajax({
+        //         url: 'registrarHerramientas',
+        //         type: 'POST',
+        //         data: {
+        //             'data': JSON.stringify(toolsJSObj),
+        //         },
+        //         headers: {
+        //             'X-CSRFToken': csrftoken
+        //         },
+        //         success: function(data) {},
+        //     });
+        // }
 
-        editingTools = !editingTools;
+        // editingTools = !editingTools;
     });
 
     $('.explode4').click(function() {
@@ -368,27 +368,27 @@ function setupExplodes() {
         /*
          *
          */
-        if (editingHobbies) {
-            var hobbiesJSObj = new Array();
+        // if (editingHobbies) {
+        //     var hobbiesJSObj = new Array();
 
-            for (var i in hobbies) {
-                hobbiesJSObj.push(i);
-            }
+        //     for (var i in hobbies) {
+        //         hobbiesJSObj.push(i);
+        //     }
 
-            $.ajax({
-                url: 'registrarHobbies',
-                type: 'POST',
-                data: {
-                    'data': JSON.stringify(hobbiesJSObj),
-                },
-                headers: {
-                    'X-CSRFToken': csrftoken
-                },
-                success: function(data) {},
-            });
-        }
+        //     $.ajax({
+        //         url: 'registrarHobbies',
+        //         type: 'POST',
+        //         data: {
+        //             'data': JSON.stringify(hobbiesJSObj),
+        //         },
+        //         headers: {
+        //             'X-CSRFToken': csrftoken
+        //         },
+        //         success: function(data) {},
+        //     });
+        // }
 
-        editingHobbies = !editingHobbies
+        // editingHobbies = !editingHobbies
     });
 
     $('.explode5').click(function() {
@@ -398,23 +398,23 @@ function setupExplodes() {
         /*
          *
          */
-        if (editingSchool) {
-            $.ajax({
-                url: 'registrarEscolaridad',
-                type: 'POST',
-                data: {
-                    'escolaridad': $('#escolaridadSelect').val(),
-                    'carrera': $('#carrera').val(),
-                    'certificaciones': $('#certificaciones').val(),
-                },
-                headers: {
-                    'X-CSRFToken': csrftoken
-                },
-                success: function(data) {},
-            });
-        }
+        // if (editingSchool) {
+        //     $.ajax({
+        //         url: 'registrarEscolaridad',
+        //         type: 'POST',
+        //         data: {
+        //             'escolaridad': $('#escolaridadSelect').val(),
+        //             'carrera': $('#carrera').val(),
+        //             'certificaciones': $('#certificaciones').val(),
+        //         },
+        //         headers: {
+        //             'X-CSRFToken': csrftoken
+        //         },
+        //         success: function(data) {},
+        //     });
+        // }
 
-        editingSchool = !editingSchool
+        // editingSchool = !editingSchool
     });
 
     $('.explode6').click(function() {
@@ -424,21 +424,21 @@ function setupExplodes() {
         /*
          *
          */
-        if (editingProjects) {
-            $.ajax({
-                url: 'registrarProyectos',
-                type: 'POST',
-                data: {
-                    'data': JSON.stringify(dataProyectos),
-                },
-                headers: {
-                    'X-CSRFToken': csrftoken
-                },
-                success: function(data) {},
-            });
-        }
+        // if (editingProjects) {
+        //     $.ajax({
+        //         url: 'registrarProyectos',
+        //         type: 'POST',
+        //         data: {
+        //             'data': JSON.stringify(dataProyectos),
+        //         },
+        //         headers: {
+        //             'X-CSRFToken': csrftoken
+        //         },
+        //         success: function(data) {},
+        //     });
+        // }
 
-        editingProjects = !editingProjects;
+        // editingProjects = !editingProjects;
     });
 }
 

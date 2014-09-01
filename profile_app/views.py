@@ -33,26 +33,11 @@ def oauth_logout(request):
 	auth_logout(request)
 	return HttpResponseRedirect('/')
 
-# / (requires login)
-# @login_required
-# def home(request):
-# 	html = "<html><body>"
-# 	# token = oauth.Token(request.user.get_profile().oauth_token,request.user.get_profile().oauth_secret)
-# 	# client = oauth.Client(consumer,token)
-# 	# headers = {'x-li-format':'json'}
-# 	# url = "http://api.linkedin.com/v1/people/~:(id,first-name,last-name,headline)"
-# 	# resp, content = client.request(url, "GET", headers=headers)
-# 	# profile = json.loads(content)
-# 	# html += profile['firstName'] + " " + profile['lastName'] + "<br/>" + profile['headline']
-# 	user = request.user
-# 	html += user.first_name + " " + user.last_name + "<br/>" + user.email
-# 	return HttpResponse(html)
-
 @login_required
 def profile (request):
 	esc_opt = Educacion.TIPO_CHOICES
+	# Carga herramientas
 	db_herramientas = Herramienta.objects.filter(user=request.user.personaldata)
-	db_habilidades = Habilidad.objects.filter(user=request.user.personaldata)
 	herramientas = {
 		'names' : [],
 		'values' : []
@@ -61,6 +46,8 @@ def profile (request):
 		for h in db_herramientas:
 			herramientas['names'].append(str(h.nombre))
 			herramientas['values'].append(h.puntos)
+	# Carga habilidades
+	db_habilidades = Habilidad.objects.filter(user=request.user.personaldata)
 	habilidades = {
 		'names' : [],
 		'values' : []
@@ -69,7 +56,7 @@ def profile (request):
 		for h in db_habilidades:
 			habilidades['names'].append(str(h.nombre))
 			habilidades['values'].append(h.puntos)
-
+	# Carga proyectos
 	db_proyectos = Proyecto.objects.filter(persona=request.user.personaldata)
 	proyectos = []
 	if db_proyectos.count() > 0:
@@ -79,7 +66,7 @@ def profile (request):
 				'descripcion':str(h.descripcion),
 				'url':str(h.url),
 			});
-
+	# Carga hobbies
 	usr_hobbies = {}
 	for hb in request.user.personaldata.hobbies.all():
 		usr_hobbies[hb.nombre] = True
@@ -94,9 +81,10 @@ def profile (request):
 
 # Create your views here.
 def index(request):
-	#return HttpResponse("Inicio")
+	# usuario logueado
 	if (request.user.is_authenticated()) :
 		return redirect('profile')
+	# login
 	if request.method == 'POST':
 		try:
 			username = request.POST['user']
