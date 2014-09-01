@@ -48,7 +48,7 @@
 					<input id="uEmailVerif" type="text"placeholder="Vuelve escribir tu correo">
 					<input id="uPassword" type="password"placeholder="Contraseña">
 					<a href="#" onClick="$.ajax({
-						url:APP_URL + 'registerUser',
+						url:'/registerUser',
 						type:'POST',
 						data:{
 						name:$('#uName').val(),
@@ -241,7 +241,7 @@
 					});
 					alert('after')
 				});
-				var APP_URL = "http://127.0.0.1:8000/"
+				var APP_URL = "http://profileme.com.mx/"
 				function getCookie(name) {
 					var cookieValue = null;
 					if (document.cookie && document.cookie != '') {
