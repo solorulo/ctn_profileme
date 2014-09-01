@@ -311,12 +311,13 @@ def uploadUserPhoto(request):
 		for c in file.chunks():
 			d.write(c)
 
-	response = "{'files': [{'name':'newFile.png','size': "+ str(file.size) +",'url': 'http://127.0.0.1:8000/media/" + file.name + "','thumbnailUrl':'','deleteUrl':'','deleteType': 'DELETE'}]}"
+	response = "{'files': [{'name':'newFile.png','size': "+ str(file.size) +",'url': 'http://127.0.0.1:8000/media/usrs/" + file.name + "','thumbnailUrl':'','deleteUrl':'','deleteType': 'DELETE'}]}"
 
-	pd = PersonalData.objects.create(user=request.user, img="/media/" + file.name)
+	request.user.personaldata.img = "/usrs/" + file.name
+	# pd = PersonalData.objects.create(user=request.user, img="/media/" + file.name)
 	# pd.user = request.user
 	# pd.img = "/media/" + file.name
-	pd.save();
+	request.user.personaldata.save();
 
 	return HttpResponse(response, content_type="application/json")
 # 

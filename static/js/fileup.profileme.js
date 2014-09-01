@@ -89,7 +89,7 @@
  		});
  	}).on('fileuploadfail', function(e, data) {
  		$.each(data.files, function(index, file) {
- 			var imgUrl = 'http://localhost:8000/media/' + file.name;
+ 			var imgUrl = 'http://profileme.com.mx/media/' + file.name;
  			$('#userPhoto').attr('onError', "alert('error')");
  			$('#userPhoto').attr('src', imgUrl);
  			//$('#userPhoto').attr('src', imgUrl);
