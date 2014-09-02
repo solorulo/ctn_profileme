@@ -6,4 +6,5 @@ staticfiles
 local_settings.py
 .DS_Store
 *.db
-media/usrs/
+media/usrs/*.png
+media/usrs/*.jpg
