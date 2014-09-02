@@ -307,7 +307,7 @@ def uploadUserPhoto(request):
 
 	from profileme.settings import MEDIA_ROOT
 	print MEDIA_ROOT
-	with open(MEDIA_ROOT + file.name, 'wb+') as d:
+	with open(MEDIA_ROOT+ "usrs/" + file.name, 'wb+') as d:
 		for c in file.chunks():
 			d.write(c)
 
