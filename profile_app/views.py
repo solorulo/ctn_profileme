@@ -313,7 +313,7 @@ def uploadUserPhoto(request):
 
 	response = "{'files': [{'name':'newFile.png','size': "+ str(file.size) +",'url': 'http://127.0.0.1:8000/media/usrs/" + file.name + "','thumbnailUrl':'','deleteUrl':'','deleteType': 'DELETE'}]}"
 
-	request.user.personaldata.img = "/usrs/" + file.name
+	request.user.personaldata.img = "usrs/" + file.name
 	# pd = PersonalData.objects.create(user=request.user, img="/media/" + file.name)
 	# pd.user = request.user
 	# pd.img = "/media/" + file.name
