@@ -10,6 +10,7 @@ function fillChecks() {
 function showHobbies() {
 	var lista = $('#hobbies > ul');
 	lista.empty();
+	var i = 1;
 	for (var i in hobbies) {
 		if (hobbies[i]) {
 			var $li = $(document.createElement('li'));
@@ -17,6 +18,11 @@ function showHobbies() {
 			img.src = "/static/img/iconosG/" + i + "-g.png";
 			$li.append(img);
 			lista.append($li);
+			i ++;
+			if (i == 4) {
+				i = 0;
+				break;
+			}
 		}
 	}
 }
