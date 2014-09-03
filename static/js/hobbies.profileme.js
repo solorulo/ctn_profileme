@@ -20,7 +20,7 @@ function showHobbies() {
 			lista.append($li);
 			i ++;
 			if (i == 4) {
-				i = 0;
+				i = 1;
 				break;
 			}
 		}

@@ -101,12 +101,12 @@
 			</div>
 			<div id="camposP">
 				<!--input para llenar registro de los datos personales del usuario-->
-				<input id="nameText" type="text" placeholder="Nombre" value="{{ user.first_name }}">
-				<input id="profesionText" type="text" placeholder="Campo de Trabajo" value="{{ user.personaldata.profesion }}">
-				<input id="ageText" type="text" placeholder="Fecha de nacimiento" value="{{ user.personaldata.age }}" >
-				<input id="telephoneText" type="text" placeholder="Telefono" value="{{ user.personaldata.telefono }}">
-				<input id="emailText" type="text" placeholder="Correo Electronico" value="{{ user.email }}">
-				<input id="jobText" type="text" placeholder="Trabajo" value="{{ user.personaldata.trabajo}}">
+				<input id="nameText" type="text" placeholder="Nombre" value="{{ user.first_name|default:"" }}">
+				<input id="profesionText" type="text" placeholder="Campo de Trabajo" value="{{ user.personaldata.profesion|default:"" }}">
+				<input id="ageText" type="text" placeholder="Fecha de nacimiento" value="{{ user.personaldata.age|default:"" }}" >
+				<input id="telephoneText" type="text" placeholder="Telefono" value="{{ user.personaldata.telefono|default:"" }}">
+				<input id="emailText" type="text" placeholder="Correo Electronico" value="{{ user.email|default:"" }}">
+				<input id="jobText" type="text" placeholder="Trabajo" value="{{ user.personaldata.trabajo|default:""}}">
 				<!-- <input id="localityText" type="text" placeholder="Pais/municipio" value="{{ user.personaldata.ciudad.nombre }}/{{ user.personaldata.ciudad.estado.nombre }}"> -->
 
 				<!--imagenes representativas de cada campo de los datos personales-->

@@ -264,7 +264,7 @@ def registerUser(request):
 			first_name=request.POST['name'] + ' ' + request.POST['lastname'],
 			username=request.POST['email'],
 			email=request.POST['email'],
-			telefono='545678',
+			telefono='',
 			certificaciones='no se que esta pasando')
 	user.set_password(request.POST['password'])
 
