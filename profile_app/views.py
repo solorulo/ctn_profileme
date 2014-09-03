@@ -104,7 +104,11 @@ def postTest(request):
 @login_required
 def registro(request):
 	esc_opt = Educacion.TIPO_CHOICES
-	hobbies = Hobbie.objects.all().values()
+	# hobbies = Hobbie.objects.all().values()
+	# Carga hobbies
+	usr_hobbies = {}
+	for hb in request.user.personaldata.hobbies.all():
+		usr_hobbies[hb.nombre] = True
 	db_herramientas = Herramienta.objects.filter(user=request.user.personaldata)
 	db_habilidades = Habilidad.objects.filter(user=request.user.personaldata)
 	herramientas = {
@@ -123,13 +127,22 @@ def registro(request):
 		for h in db_habilidades:
 			habilidades['names'].append(str(h.nombre))
 			habilidades['values'].append(h.puntos)
-	print habilidades
-	print herramientas
+	# Carga proyectos
+	db_proyectos = Proyecto.objects.filter(persona=request.user.personaldata)
+	proyectos = []
+	if db_proyectos.count() > 0:
+		for h in db_proyectos:
+			proyectos.append({
+				'nombre':str(h.nombre),
+				'descripcion':str(h.descripcion),
+				'url':str(h.url),
+			});
 	return render(request, 'Registro.html', { 
 		'escolaridad' : esc_opt, 
-		'hobbies' : hobbies, 
+		'hobbies' : simplejson.dumps(usr_hobbies), 
 		'herramientas':herramientas, 
-		'habilidades' : habilidades  
+		'habilidades' : habilidades,
+		'proyectos':proyectos  
 		})
 
 # Verificar que funcione bien
