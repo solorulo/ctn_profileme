@@ -69,6 +69,15 @@ $(document).ready(function() {
             // Change the submit value
             $('.agregarP').val('Agregar');
 
+            // Add to dataProjects array
+            project = new Object();
+
+            project.nombre = val1;
+            project.descripcion = val2;
+            project.url = val3;
+
+            dataProyectos.push(project);
+
             // Create the links with the input value as innerHTML
             var li = document.createElement('li');
             li.className = 'proyecto';
