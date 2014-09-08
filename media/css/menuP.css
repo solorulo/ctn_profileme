@@ -5,8 +5,35 @@ body{
     margin-left:0%;
     min-height:100%;
     line-height:20px;
-    overflow-y:hidden;
 
+}
+input[type='range'] {
+        -webkit-appearance: none;
+        border-radius: 10px;
+        background-color: white;
+        height: 3px;
+        vertical-align: middle;
+}
+input[type='range']::-moz-range-track {
+        -moz-appearance: none;
+        border-radius: 10px;
+        background-color: white;
+        height: 3px;
+}
+input[type='range']::-webkit-slider-thumb {
+        -webkit-appearance: none !important;
+        border-radius: 20px;
+        background-color: white;
+        border: 1px solid #ff718d;
+        height: 15px;
+        width: 15px;
+}
+input[type='range']::-moz-range-thumb {
+        -moz-appearance: none;
+        border-radius: 20px;
+        border: 1px solid #ff718d;
+        height: 15px;
+        width: 15px;
 }
 
 
@@ -35,21 +62,21 @@ nav>ul>li:nth-child(1){
 nav>ul>li:nth-child(2){
      position: absolute;
      top:13%;
-    left:64%;
+    left:58%;
     display: inline-block;
     padding-right: 5%;
 }
 nav>ul>li:nth-child(3){
      position: absolute;
      top:13%;
-    left:69%;
+    left:63%;
     display: inline-block;
     padding-right: 5%;
 }
 nav>ul>li:nth-child(4){
      position: absolute;
      top:20%;
-    left:75%;
+    left:69%;
     display: inline-block;
     padding-left: 5%;
     background: white;
@@ -65,7 +92,7 @@ nav>ul>li:nth-child(4)>input{
     right:18%;
     border:0px;
     z-index: 4;
-     text-decoration: none;
+    text-decoration: none;
     width:80%;
     height:95%;
 }
@@ -75,11 +102,14 @@ nav>ul>li:nth-child(4)>#buscar{
      top:2%;
     
     z-index: 5000;
-
-   
-
 }
-
+nav>ul>li:nth-child(5){
+    position: absolute;
+    top:13%;
+    left:90%;
+    display: inline-block;
+    padding-right: 5%;
+}
 
 /*fin del menu*/
 
@@ -141,7 +171,7 @@ nav>ul>li:nth-child(4)>#buscar{
     top: 30%;
     width: 40%;
     height: 60%; 
-    display: none;    
+    display: none; 
 }
 #camposD>img{
     position: absolute;
@@ -181,11 +211,35 @@ nav>ul>li:nth-child(4)>#buscar{
     border-radius: 8px;   
 }
 
-#camposD>input:nth-child(3){
+#camposD>select:nth-child(3){
     position: absolute;
     left: 2%;
     top: 48%;
-    width:40%;
+    width:12%;
+    height:15%;
+    padding-left: 2%;
+    border:solid 1px #cccccc;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;   
+}
+#camposD>select:nth-child(4){
+    position: absolute;
+    left: 17%;
+    top: 48%;
+    width:12%;
+    height:15%;
+    padding-left: 2%;
+    border:solid 1px #cccccc;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;   
+}
+#camposD>select:nth-child(5){
+    position: absolute;
+    left: 32%;
+    top: 48%;
+    width:12%;
     height:15%;
     padding-left: 2%;
     border:solid 1px #cccccc;
@@ -194,7 +248,7 @@ nav>ul>li:nth-child(4)>#buscar{
     border-radius: 8px;   
 }
 
-#camposD>input:nth-child(4){
+#camposD>input:nth-child(6){
     position: absolute;
     left: 65%;
     top: -1%;
@@ -206,7 +260,7 @@ nav>ul>li:nth-child(4)>#buscar{
     -moz-border-radius: 8px;
     border-radius: 8px;   
 }
-#camposD>input:nth-child(5){
+#camposD>input:nth-child(7){
     position: absolute;
     left: 65%;
     top: 23%;
@@ -218,7 +272,7 @@ nav>ul>li:nth-child(4)>#buscar{
     -moz-border-radius: 8px;
     border-radius: 8px;   
 }
-#camposD>input:nth-child(6){
+#camposD>input:nth-child(8){
     position: absolute;
     left: 65%;
     top: 48%;
@@ -230,11 +284,11 @@ nav>ul>li:nth-child(4)>#buscar{
     -moz-border-radius: 8px;
     border-radius: 8px;   
 }
-#camposD>input:nth-child(7){
+#camposD>input:nth-child(9){
     position: absolute;
     top:70%;
     left:-45%;
-    width:25%;
+    width:15%;
     height:13%;
     padding-left: 2%;
     border:solid 1px #cccccc;
@@ -242,7 +296,19 @@ nav>ul>li:nth-child(4)>#buscar{
     -moz-border-radius: 8px;
     border-radius: 8px;   
 }
-#camposD>input:nth-child(8){
+#camposD>input:nth-child(10){
+    position: absolute;
+    top:70%;
+    left:-25%;
+    width:15%;
+    height:13%;
+    padding-left: 2%;
+    border:solid 1px #cccccc;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;   
+}
+#camposD>input:nth-child(11){
     position: absolute;
     top:2%;
     right:-45%;
@@ -256,7 +322,7 @@ nav>ul>li:nth-child(4)>#buscar{
     transition: background 0.5s;
     border-radius: 10px;
 }
-#camposD>input:nth-child(8):hover{
+#camposD>input:nth-child(11):hover{
     background: #ff738f;
     border: 1px solid #ff738f;
 
@@ -275,22 +341,23 @@ nav>ul>li:nth-child(4)>#buscar{
 .container1>#datos1>#fperfil{
     position: absolute;
     top:-16%;
-    left:-36%;
-    width:27%;
-    height:74%;
+    left:-38%;
     background: white;
-    -webkit-border-radius: 300px;
-    -moz-border-radius: 300px;
-    border-radius: 300px;
-    border:solid 2px #cccccc;;
+    border:solid 2px #cccccc;
+     width: 200px;
+    height: 200px;
+    -moz-border-radius: 50%; 
+    -webkit-border-radius: 50%; 
+    border-radius: 50%;
+   
 
 }
 .container1>#datos1>#fperfil>img{
-    height: 100%;
-    width: 100%;
-    -webkit-border-radius: 300px;
-    -moz-border-radius: 300px;
-    border-radius: 300px;
+    width: 200px;
+    height: 200px;
+    -moz-border-radius: 50%; 
+    -webkit-border-radius: 50%; 
+    border-radius: 50%;
 }
 /*especialidad o campo de trabajo*/
 
@@ -564,7 +631,6 @@ nav>ul>li:nth-child(4)>#buscar{
 }
 .chabilidades>.Nhabilidad>#slider>.generate>input[type="range"]{
     position: absolute;
-    background: blue;
     left: 40%;
     top: 40%;
 }
@@ -842,7 +908,7 @@ nav>ul>li:nth-child(4)>#buscar{
     height:18%;
     width:30%;
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0);
-    border:solid 1px #cccccc; 
+    border:solid 2px #459fff; 
     background:white;
    
   }
@@ -852,7 +918,7 @@ nav>ul>li:nth-child(4)>#buscar{
     right:10%;
     height:18%;
     width:35%;
-    border:solid 1px #cccccc; 
+    border:solid 2px #459fff; 
     padding-left:2%;
     padding-top:2%;
     -webkit-border-radius: 8px;
@@ -869,7 +935,7 @@ nav>ul>li:nth-child(4)>#buscar{
     width:35%;
     padding-left:2%;
     padding-top:2%;
-    border:solid 1px #cccccc; 
+    border:solid 2px #459fff; 
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     background: white;

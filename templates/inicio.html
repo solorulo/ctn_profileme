@@ -32,21 +32,33 @@
 			<!--este es el logo "de profileMe que se muestra al centro de la pantalla-->  
 			<div class="logo"id="imagenD">
 				<img src="{{MEDIA_URL}}img/logo.png" alt=""id="imagen">
+				<p>	Tus habilidades son tu marca</p>
 			</div>
 
-			<div class="slogan"id="slogan">
-				Tus habilidades son tu marca
-			</div>
+	
 
 			<!--este es el boton de registrar con su funcion de aparecer y desaparecer cuadro de dialogo-->
-			<div id="registro"class="fade2 ">
-					<img src="{{MEDIA_URL}}img/registrate.png" alt=""class="mover desaparecer"> 
+			<div id="registro">
+					<img src="{{MEDIA_URL}}img/registrate.png" alt=""class="fade2"> 
+
+					<!-- este es el boton de login de Linkedin -->
+					<div id="redesI">
+						<img src="{{MEDIA_URL}}img/linke3.png" alt=""class="mover desaparecer"> 
+
+					</div>
+
+
+					<!--este es el boton de login de facebook-->
+					<div id="redesF" >
+						<img src="{{MEDIA_URL}}img/face3.png" alt=""class="mover desaparecer"> 
+				 
+					</div>
 			</div>
 
 
 
 			<!-- este es la pantalla que aparece con el clic ala imagen de registro-->
-			<div class="Registro1 contenido" style="display:none;"> 
+			<div class="Registro1 contenido"> 
 					
 					<input type="button" value="Buscas Empleo" class="BuscasE">
 					<input type="button" value="Ofreces Empleo" class="Ofrece">
@@ -82,21 +94,14 @@
 			</div>
 
 
-			<!-- este es el boton de login de Linkedin -->
-			<div id="redesI">
-			</div>
-
-
-			<!--este es el boton de login de facebook-->
-			<div id="redesF" >
-		 
-			</div>
 
 			
 			<!--boton de pag Siguiente -->
+			<div class="siguiente">
 			<a href="#1">
-				<div class="siguiente"><img src="{{MEDIA_URL}}img/flecha-azul.png" alt=""></div>
+				<img src="{{MEDIA_URL}}img/flecha-azul.png" alt="">
 			</a>
+			</div>
 
 	</div>
 	<!--fin de la pantalla de login -->
@@ -159,9 +164,11 @@
 			</div>
 
 				<!--boton de pag2 Siguiente -->
+				<div class="siguiente2">
 				<a href="#2">
-						<div class="siguiente2"><img src="{{MEDIA_URL}}img/flecha-blanca.png" alt=""></div>
+					<img src="{{MEDIA_URL}}img/flecha-blanca.png" alt="">
 				</a>
+				</div>
 
 	</div>
 <!--finde la segunda pantalla-->
@@ -211,11 +218,11 @@
 
 			</div>
 					<!--boton de siguiente pag-->
+					<div class="siguiente3">
 					<a href="#3">
-						<div class="siguiente3">
 							<img src="{{MEDIA_URL}}img/flecha-blanca.png" alt="">
-						</div>
 					</a>
+					</div>
 	</div>
 	<!--fin de la pantalla-->
 
@@ -259,11 +266,11 @@
 
 
 			</div>
+			<div class="siguiente4">
 			<a href="#0">
-				<div class="siguiente4">
-					<img src="{{MEDIA_URL}}img/flecha-hacia-arriba.png" alt="">
-				</div>
+				<img src="{{MEDIA_URL}}img/flecha-hacia-arriba.png" alt="">
 			</a>
+			</div>
 
 </div>
 
