@@ -1,19 +1,17 @@
-$(document).ready(function(){
-  $('a[href*=#]').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
-    && location.hostname == this.hostname) {
-      var $target = $(this.hash);
-      $target = $target.length && $target
-      || $('[name=' + this.hash.slice(1) +']');
-      if ($target.length) {
-        var targetOffset = $target.offset().top;
-        $('html,body')
-        .stop().animate({scrollTop: targetOffset}, 2000, 'easeOutBounce');
-       return false;
-      }
-    }
-  });
-  $('#redesI').click(function() {
-    window.location = "/login/linkedin/";
-  });
+ $(document).ready(function() {
+    $('a[href*=#]').bind('click',function(event){
+        var $anchor = $(this);
+ 
+        /*
+        if you don't want to use the easing effects:
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 1000);
+        */
+    $('html, body').stop().animate({
+           scrollTop: $($anchor.attr('href')).offset().top
+        }, 2000,'easeInOutExpo');
+   
+        event.preventDefault();
+    });
 });
