@@ -1,64 +1,96 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Document</title>
-		<link href='//fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="{{ STATIC_URL }}css/tabla.css">
 
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script><!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
-		<script type="text/javascript" src="{{ STATIC_URL }}js/vendor/jquery.ui.widget.js"></script>
-		<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-		<script type="text/javascript" src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.min.js"></script>
-		<!-- The Canvas to Blob plugin is included for image resizing functionality -->
-		<script type="text/javascript" src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
-		<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
-		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.iframe-transport.js"></script>
-		<!-- The basic File Upload plugin -->
-		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.fileupload.js"></script>
-		<!-- The File Upload processing plugin -->
-		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.fileupload-process.js"></script>
-		<!-- The File Upload image preview & resize plugin -->
-		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.fileupload-image.js"></script>
-		<!-- The File Upload validation plugin -->
-		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.fileupload-validate.js"></script>
-		
-		<script type="text/javascript" src="{{ STATIC_URL }}js/utilities.js"></script>
-		<script type="text/javascript" src="{{ STATIC_URL }}js/csrf.js"></script>
-		<script type="text/javascript" src="{{ STATIC_URL }}js/habilidades.profileme.js"></script>
-		<script type="text/javascript" src="{{ STATIC_URL }}js/herramientas.profileme.js"></script>
-		<script type="text/javascript" src="{{ STATIC_URL }}js/proyectos.profileme.js"></script>
-		<script type="text/javascript" src="{{ STATIC_URL }}js/scrollH.js"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }}js/tables.profileme.js"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }}js/hobbies.profileme.js"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }}js/registro.js"></script>
-		<script type="text/javascript" src="{{ STATIC_URL }}js/fileup.profileme.js"></script>
-		<script type="text/javascript">
-		categoriasHabilidades = {{habilidades.names|default:"[]"|escape|safe}};
-		dataHabilidades = {{habilidades.values|default:"[]"|escape|safe}};
-		categoriasHerramientas = {{herramientas.names|default:"[]"|escape|safe}};
-		dataHerramientas = {{herramientas.values|default:"[]"|escape|safe}};
-		dataProyectos = {{proyectos|default:"[]"|escape|safe}};
-		hobbies = {{hobbies|default:"{}"|escape|safe}};
-		</script>
-	</head>
-	<body>
-		<div class="section section1"id="1">
-			<div id="logo">
-				<img src="{{ STATIC_URL }}img/logo-pequenio.png" alt="">
-			</div>
-			<div id="tex_B">
-				Bienvenido {{request.user.first_name}} !
-			</div>
-			<div id="tex_p">
-				queremos saber cómo te ves
-			</div>
-			<!--insertar imagenes-->
-			<div id="imagen_N">
-				<img id="userPhoto" style="display:block;margin:0 auto 0 auto;" src="media/{{ user.personaldata.img |default_if_none:"" }}" alt=""
-				style="">
-				<input input id="fileupload" type="file" name="files[]" multiple style="
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href='//fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/tabla.css">
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
+    <script type="text/javascript" src="{{ STATIC_URL }}js/vendor/jquery.ui.widget.js"></script>
+    <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+    <script type="text/javascript" src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.min.js"></script>
+    <!-- The Canvas to Blob plugin is included for image resizing functionality -->
+    <script type="text/javascript" src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+    <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.iframe-transport.js"></script>
+    <!-- The basic File Upload plugin -->
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.fileupload.js"></script>
+    <!-- The File Upload processing plugin -->
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.fileupload-process.js"></script>
+    <!-- The File Upload image preview & resize plugin -->
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.fileupload-image.js"></script>
+    <!-- The File Upload validation plugin -->
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.fileupload-validate.js"></script>
+
+    <script type="text/javascript" src="{{ STATIC_URL }}js/utilities.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/csrf.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/habilidades.profileme.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/herramientas.profileme.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/proyectos.profileme.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/scrollH.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/tables.profileme.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/hobbies.profileme.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/registro.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/fileup.profileme.js"></script>
+    <script type="text/javascript">
+    categoriasHabilidades = {
+        {
+            habilidades.names |
+            default: "[]" | escape | safe
+        }
+    };
+    dataHabilidades = {
+        {
+            habilidades.values |
+            default: "[]" | escape | safe
+        }
+    };
+    categoriasHerramientas = {
+        {
+            herramientas.names |
+            default: "[]" | escape | safe
+        }
+    };
+    dataHerramientas = {
+        {
+            herramientas.values |
+            default: "[]" | escape | safe
+        }
+    };
+    dataProyectos = {
+        {
+            proyectos |
+            default: "[]" | escape | safe
+        }
+    };
+    hobbies = {
+        {
+            hobbies |
+            default: "{}" | escape | safe
+        }
+    };
+    </script>
+</head>
+
+<body>
+    <div class="section section1" id="1">
+        <div id="logo">
+            <img src="{{ STATIC_URL }}img/logo-pequenio.png" alt="">
+        </div>
+        <div id="tex_B">
+            Bienvenido {{request.user.first_name}} !
+        </div>
+        <div id="tex_p">
+            queremos saber cómo te ves
+        </div>
+        <!--insertar imagenes-->
+        <div id="imagen_N">
+            <img id="userPhoto" style="display:block;margin:0 auto 0 auto;" src="media/{{ user.personaldata.img |default:"/static/img/foto-perfil.png" }}" alt="" style="">
+            <input input id="fileupload" type="file" name="files[]" multiple style="
 				cursor: pointer;
 				height: 200px;
 				opacity: 0;
@@ -66,589 +98,507 @@
 				right:42%;
 				top: 0px;
 				width: 200px;">
-			</div>
-			<div id="files"></div>
-			<!--texto de abajo de la imagen-->
-			<div id="tex_nf">
-				Sube tu fotografia
-			</div>
-			<div id="recom_1">
-				<div id="conten_1">
-					<h1>Recomendación</h1>
-					Sube una foto que refleje tu personalidad recuerda que la primera impresión es la que mas cuenta.
-				</div>
-			</div>
-			<div id="recom_2">
-				<div id="conten_2">
-					<h1>Recomendación</h1>
-					Lo ideal es el "plano americano", en donde se vean bien los rasgos de tu rostro.
-				</div>
-				
-			</div>
-			<!--boton de pantalla siguiente-->
-			<div id="boton1">
-				<a href="#2"><img src="{{ STATIC_URL }}img/siguiente.png" alt=""></a>
-			</div>
-	</div>
+        </div>
+        <div id="files"></div>
+        <!--texto de abajo de la imagen-->
+        <div id="tex_nf">
+            Sube tu fotografia
+        </div>
+        <div id="recom_1">
+            <div id="conten_1">
+                <h1>Recomendación</h1>
+                Sube una foto que refleje tu personalidad recuerda que la primera impresión es la que mas cuenta.
+            </div>
+        </div>
+        <div id="recom_2">
+            <div id="conten_2">
+                <h1>Recomendación</h1>
+                Lo ideal es el "plano americano", en donde se vean bien los rasgos de tu rostro.
+            </div>
+
+        </div>
+        <!--boton de pantalla siguiente-->
+        <div id="boton1">
+            <a href="#2">
+                <img src="{{ STATIC_URL }}img/siguiente.png" alt="">
+            </a>
+        </div>
+    </div>
 
 
-	<div class="section section2"id="2">
-		<div id="logo2">
-			<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
-		</div>
+    <div class="section section2" id="2">
+        <div id="logo2">
+            <img src="{{STATIC_URL}}img/logo-pequenio.png" alt="">
+        </div>
 
-		<div id="tex_B2">
-			¡Necesitamos saber más sobre ti!
-		</div>
+        <div id="tex_B2">
+            ¡Necesitamos saber más sobre ti!
+        </div>
 
-		<div id="tex_p2">
-			compartenos la siguiente información
-		</div>
+        <div id="tex_p2">
+            compartenos la siguiente información
+        </div>
 
-		<div id="camposP">
-			<!--input para llenar registro de los datos personales del usuario-->
-			<input type="text"placeholder="Nombre">
-			<input type="text"placeholder="Campo de trabajo">
-			<select name="Dia" id="dia">
-				<option value="0">Día</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                  <option value="19">19</option>
-                  <option value="20">20</option>
-                  <option value="21">21</option>
-                  <option value="22">22</option>
-                  <option value="23">23</option>
-                  <option value="24">24</option>
-                  <option value="25">25</option>
-                  <option value="26">26</option>
-                  <option value="27">27</option>
-                  <option value="28">28</option>
-                  <option value="29">29</option>
-                  <option value="30">30</option>
-                  <option value="31">31</option>
-			</select>
-			<select name="Mes" id="mes">
-				<option value="0">Mes</option>
-                  <option value="1">ene</option>
-                  <option value="2">feb</option>
-                  <option value="3">mar</option>
-                  <option value="4">abr</option>
-                  <option value="5">may</option>
-                  <option value="6">jun</option>
-                  <option value="7">jul</option>
-                  <option value="8">ago</option>
-                  <option value="9">sep</option>
-                  <option value="10">oct</option>
-                  <option value="11">nov</option>
-                  <option value="12">dic</option>
-				
-			</select>
-			<select name="Año" id="año">
-				<option value="año">Año</option>
-				<option value="2014">2014</option>
-				<option value="2013">2013</option>
-				<option value="2012">2012</option>
-				<option value="2011">2011</option>
-				<option value="2010">2010</option>
-				<option value="2009">2009</option>
-				<option value="2008">2008</option>
-				<option value="2007">2007</option>
-				<option value="2006">2006</option>
-				<option value="2005">2005</option>
-				<option value="2004">2004</option>
-				<option value="2003">2003</option>
-				<option value="2002">2002</option>
-				<option value="2001">2001</option>
-				<option value="2000">2000</option>
-				<option value="1999">1999</option>
-				<option value="1998">1998</option>
-				<option value="1997">1997</option>
-				<option value="1996">1996</option>
-				<option value="1995">1995</option>
-				<option value="1994">1994</option>
-				<option value="1993">1993</option>
-				<option value="1992">1992</option>
-				<option value="1991">1991</option>
-				<option value="1990">1990</option>
-				<option value="1989">1989</option>
-				<option value="1988">1988</option>
-				<option value="1987">1987</option>
-				<option value="1986">1986</option>
-				<option value="1985">1985</option>
-				<option value="1984">1984</option>
-				<option value="1983">1983</option>
-				<option value="1982">1982</option>
-				<option value="1981">1981</option>
-				<option value="1980">1980</option>
-				<option value="1979">1979</option>
-				<option value="1978">1978</option>
-				<option value="1977">1977</option>
-				<option value="1976">1976</option>
-				<option value="1975">1975</option>
-				<option value="1974">1974</option>
-				<option value="1973">1973</option>
-				<option value="1972">1972</option>
-				<option value="1971">1971</option>
-				<option value="1970">1970</option>
-				<option value="1969">1969</option>
-				<option value="1968">1968</option>
-				<option value="1967">1967</option>
-				<option value="1966">1966</option>
-				<option value="1965">1965</option>
-				<option value="1964">1964</option>
-				<option value="1963">1963</option>
-				<option value="1962">1962</option>
-				<option value="1961">1961</option>
-				<option value="1960">1960</option>
-				<option value="1959">1959</option>
-				<option value="1958">1958</option>
-				<option value="1957">1957</option>
-				<option value="1956">1956</option>
-				<option value="1955">1955</option>
-				<option value="1954">1954</option>
-				<option value="1953">1953</option>
-				<option value="1952">1952</option>
-				<option value="1951">1951</option>
-				<option value="1950">1950</option>
-				<option value="1949">1949</option>
-				<option value="1948">1948</option>
-				<option value="1947">1947</option>
-				<option value="1946">1946</option>
-				<option value="1945">1945</option>
-				<option value="1944">1944</option>
-				<option value="1943">1943</option>
-				<option value="1942">1942</option>
-				<option value="1941">1941</option>
-				<option value="1940">1940</option>
-				<option value="1939">1939</option>
-				<option value="1938">1938</option>
-				<option value="1937">1937</option>
-				<option value="1936">1936</option>
-				<option value="1935">1935</option>
-				<option value="1934">1934</option>
-				<option value="1933">1933</option>
-				<option value="1932">1932</option>
-				<option value="1931">1931</option>
-				<option value="1930">1930</option>
-				<option value="1929">1929</option>
-				<option value="1928">1928</option>
-				<option value="1927">1927</option>
-				<option value="1926">1926</option>
-				<option value="1925">1925</option>
-				<option value="1924">1924</option>
-				<option value="1923">1923</option>
-				<option value="1922">1922</option>
-				<option value="1921">1921</option>
-				<option value="1920">1920</option>
-				<option value="1919">1919</option>
-				<option value="1918">1918</option>
-				<option value="1917">1917</option>
-				<option value="1916">1916</option>
-				<option value="1915">1915</option>
-				<option value="1914">1914</option>
-				<option value="1913">1913</option>
-				<option value="1912">1912</option>
-				<option value="1911">1911</option>
-				<option value="1910">1910</option>
-				<option value="1909">1909</option>
-				<option value="1908">1908</option>
-				<option value="1907">1907</option>
-				<option value="1906">1906</option>
-				<option value="1905">1905</option>
-			</select>
-			<input type="text"placeholder="País"><input type="text"placeholder="Estado">
-			<input type="text"placeholder="Telefono">
-			<input type="text"placeholder="Correo">
-			<input type="text"placeholder="Trabajo actual/último">
+        <div id="camposP">
+            <!--input para llenar registro de los datos personales del usuario-->
+            <input type="text" placeholder="Nombre">
+            <input type="text" placeholder="Campo de trabajo">
+            <select name="Dia" id="dia">
+                <option value="0">Día</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+            <select name="Mes" id="mes">
+                <option value="0">Mes</option>
+                <option value="1">ene</option>
+                <option value="2">feb</option>
+                <option value="3">mar</option>
+                <option value="4">abr</option>
+                <option value="5">may</option>
+                <option value="6">jun</option>
+                <option value="7">jul</option>
+                <option value="8">ago</option>
+                <option value="9">sep</option>
+                <option value="10">oct</option>
+                <option value="11">nov</option>
+                <option value="12">dic</option>
 
-			<!--imagenes representativas de cada campo de los datos personales-->
-			<img src="{{MEDIA_URL}}img/nombre.png" alt="" id="nombre">
-			<img src="{{MEDIA_URL}}img/profesion.png" alt=""id="profesion">
-			<img src="{{MEDIA_URL}}img/edad.png" alt=""id="edad">
-			<img src="{{MEDIA_URL}}img/telefono.png" alt=""id="telefono">
-			<img src="{{MEDIA_URL}}img/mail-propio.png" alt=""id="mail">
-			<img src="{{MEDIA_URL}}img/trabajo.png" alt=""id="trabajo">
-			<img src="{{MEDIA_URL}}img/ubicacion.png"id="pais"> 
-		</div>
-		<div class="section section2"id="2">
-			<div id="logo2">
-				<img src="{{ STATIC_URL }}img/logo-pequenio.png" alt="">
-			</div>
-			<div id="tex_B2">
-				¡Necesitamos saber más sobre ti!
-			</div>
-			<div id="tex_p2">
-				compartenos la siguiente información
-			</div>
-			<div id="camposP">
-				<!--input para llenar registro de los datos personales del usuario-->
-				<input id="nameText" type="text" placeholder="Nombre" value="{{ user.first_name|default:"" }}">
-				<input id="profesionText" type="text" placeholder="Campo de Trabajo" value="{{ user.personaldata.profesion|default:"" }}">
-				<input id="ageText" type="text" placeholder="Fecha de nacimiento" value="{{ user.personaldata.age|default:"" }}" >
-				<input id="telephoneText" type="text" placeholder="Telefono" value="{{ user.personaldata.telefono|default:"" }}">
-				<input id="emailText" type="text" placeholder="Correo Electronico" value="{{ user.email|default:"" }}">
-				<input id="jobText" type="text" placeholder="Trabajo" value="{{ user.personaldata.trabajo|default:""}}">
-				<!-- <input id="localityText" type="text" placeholder="Pais/municipio" value="{{ user.personaldata.ciudad.nombre }}/{{ user.personaldata.ciudad.estado.nombre }}"> -->
+            </select>
+            <select name="Año" id="año">
+                <option value="año">Año</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="2010">2010</option>
+                <option value="2009">2009</option>
+                <option value="2008">2008</option>
+                <option value="2007">2007</option>
+                <option value="2006">2006</option>
+                <option value="2005">2005</option>
+                <option value="2004">2004</option>
+                <option value="2003">2003</option>
+                <option value="2002">2002</option>
+                <option value="2001">2001</option>
+                <option value="2000">2000</option>
+                <option value="1999">1999</option>
+                <option value="1998">1998</option>
+                <option value="1997">1997</option>
+                <option value="1996">1996</option>
+                <option value="1995">1995</option>
+                <option value="1994">1994</option>
+                <option value="1993">1993</option>
+                <option value="1992">1992</option>
+                <option value="1991">1991</option>
+                <option value="1990">1990</option>
+                <option value="1989">1989</option>
+                <option value="1988">1988</option>
+                <option value="1987">1987</option>
+                <option value="1986">1986</option>
+                <option value="1985">1985</option>
+                <option value="1984">1984</option>
+                <option value="1983">1983</option>
+                <option value="1982">1982</option>
+                <option value="1981">1981</option>
+                <option value="1980">1980</option>
+                <option value="1979">1979</option>
+                <option value="1978">1978</option>
+                <option value="1977">1977</option>
+                <option value="1976">1976</option>
+                <option value="1975">1975</option>
+                <option value="1974">1974</option>
+                <option value="1973">1973</option>
+                <option value="1972">1972</option>
+                <option value="1971">1971</option>
+                <option value="1970">1970</option>
+                <option value="1969">1969</option>
+                <option value="1968">1968</option>
+                <option value="1967">1967</option>
+                <option value="1966">1966</option>
+                <option value="1965">1965</option>
+                <option value="1964">1964</option>
+                <option value="1963">1963</option>
+                <option value="1962">1962</option>
+                <option value="1961">1961</option>
+                <option value="1960">1960</option>
+                <option value="1959">1959</option>
+                <option value="1958">1958</option>
+                <option value="1957">1957</option>
+                <option value="1956">1956</option>
+                <option value="1955">1955</option>
+                <option value="1954">1954</option>
+                <option value="1953">1953</option>
+                <option value="1952">1952</option>
+                <option value="1951">1951</option>
+                <option value="1950">1950</option>
+                <option value="1949">1949</option>
+                <option value="1948">1948</option>
+                <option value="1947">1947</option>
+                <option value="1946">1946</option>
+                <option value="1945">1945</option>
+                <option value="1944">1944</option>
+                <option value="1943">1943</option>
+                <option value="1942">1942</option>
+                <option value="1941">1941</option>
+                <option value="1940">1940</option>
+                <option value="1939">1939</option>
+                <option value="1938">1938</option>
+                <option value="1937">1937</option>
+                <option value="1936">1936</option>
+                <option value="1935">1935</option>
+                <option value="1934">1934</option>
+                <option value="1933">1933</option>
+                <option value="1932">1932</option>
+                <option value="1931">1931</option>
+                <option value="1930">1930</option>
+                <option value="1929">1929</option>
+                <option value="1928">1928</option>
+                <option value="1927">1927</option>
+                <option value="1926">1926</option>
+                <option value="1925">1925</option>
+                <option value="1924">1924</option>
+                <option value="1923">1923</option>
+                <option value="1922">1922</option>
+                <option value="1921">1921</option>
+                <option value="1920">1920</option>
+                <option value="1919">1919</option>
+                <option value="1918">1918</option>
+                <option value="1917">1917</option>
+                <option value="1916">1916</option>
+                <option value="1915">1915</option>
+                <option value="1914">1914</option>
+                <option value="1913">1913</option>
+                <option value="1912">1912</option>
+                <option value="1911">1911</option>
+                <option value="1910">1910</option>
+                <option value="1909">1909</option>
+                <option value="1908">1908</option>
+                <option value="1907">1907</option>
+                <option value="1906">1906</option>
+                <option value="1905">1905</option>
+            </select>
+            <input type="text" placeholder="País">
+            <input type="text" placeholder="Estado">
+            <input type="text" placeholder="Telefono">
+            <input type="text" placeholder="Correo">
+            <input type="text" placeholder="Trabajo actual/último">
 
-				<!--imagenes representativas de cada campo de los datos personales-->
-				<img src="{{ STATIC_URL }}img/nombre.png" alt="" id="nombre">
-				<img src="{{ STATIC_URL }}img/profesion.png" alt=""id="profesion">
-				<img src="{{ STATIC_URL }}img/edad.png" alt=""id="edad">
-				<img src="{{ STATIC_URL }}img/telefono.png" alt=""id="telefono">
-				<img src="{{ STATIC_URL }}img/mail-propio.png" alt=""id="mail">
-				<img src="{{ STATIC_URL }}img/trabajo.png" alt=""id="trabajo">
-			</div>
-			<div id="boton2_1">
-				<a href="#1"><img src="{{ STATIC_URL }}img/flecha-izq.png" alt=""></a>
-			</div>
-			<div id="boton2_2">
-				<a href="#3"><img src="{{ STATIC_URL }}img/siguiente.png" alt=""></a>
-			</div>
-			
-		</div>
-		
-		<div class="section section3"id="3">
-			
-			<!--en este div se coloco el logo de profileme-->
-			<div id="logo3">
-				<img src="{{ STATIC_URL }}img/logo-pequenio.png" alt="">
-			</div>
-			<!--texto uno que aparece en este section-->
-			<div id="tex_B3">
-				¡Queremos saber en qué eres bueno!
-			</div>
-			<!--texto uno que aparece en este section-->
-			<div id="tex_p3">
-				Agrega todas tus habilidades
-			</div>
-			<div id="editarH">
-				<div id="Totalhe">
-					<ul id="links">
-						
-					</ul>
-				</div>
-				<!--es el div donde agregas habilidades-->
-				<div class="Nherramientas">
-					<form oninput="amount.value=rangeInput.value"class="generate">
-						<input type="text"placeholder="Habilidades" class="generate-input2" name="habilidad">
-						<input type="submit"value="Agregar"class="generate-submit">
-						<!--es el slider de putos que tienes en cada habilidad-->
-						
-						<div id="slider">
-							<!--slider-->
-							
-							<input id="rangeInput"name="rangeInput" type="range" min="1" max="100" class="generate-input"/>
-							<!--numero que elige el usuario en el slider-->
-							<output name="amount" for="rangeInput" class="num1">50</output>
-							
-						</div>
-					</form>
-				</div>
+            <!--imagenes representativas de cada campo de los datos personales-->
+            <img src="{{STATIC_URL}}img/nombre.png" alt="" id="nombre">
+            <img src="{{STATIC_URL}}img/profesion.png" alt="" id="profesion">
+            <img src="{{STATIC_URL}}img/edad.png" alt="" id="edad">
+            <img src="{{STATIC_URL}}img/telefono.png" alt="" id="telefono">
+            <img src="{{STATIC_URL}}img/mail-propio.png" alt="" id="mail">
+            <img src="{{STATIC_URL}}img/trabajo.png" alt="" id="trabajo">
+            <img src="{{STATIC_URL}}img/ubicacion.png" id="pais">
+        </div>
 
-	</div>
+        <div id="boton2_1">
+            <a href="#1">
+                <img src="{{ STATIC_URL }}img/flecha-izq.png" alt="">
+            </a>
+        </div>
+        <div id="boton2_2">
+            <a href="#3">
+                <img src="{{ STATIC_URL }}img/siguiente.png" alt="">
+            </a>
+        </div>
+
+    </div>
+
+    <div class="section section3" id="3">
+
+        <!--en este div se coloco el logo de profileme-->
+        <div id="logo3">
+            <img src="{{ STATIC_URL }}img/logo-pequenio.png" alt="">
+        </div>
+        <!--texto uno que aparece en este section-->
+        <div id="tex_B3">
+            ¡Queremos saber en qué eres bueno!
+        </div>
+        <!--texto uno que aparece en este section-->
+        <div id="tex_p3">
+            Agrega todas tus habilidades
+        </div>
+        <div id="editarH">
+            <div id="Totalhe">
+                <ul id="links">
+
+                </ul>
+            </div>
+            <!--es el div donde agregas habilidades-->
+            <div class="Nherramientas">
+                <form oninput="amount.value=rangeInput.value" class="generate">
+                    <input type="text" placeholder="Habilidades" class="generate-input2" name="habilidad">
+                    <input type="submit" value="Agregar" class="generate-submit">
+                    <!--es el slider de putos que tienes en cada habilidad-->
+
+                    <div id="slider">
+                        <!--slider-->
+
+                        <input id="rangeInput" name="rangeInput" type="range" min="1" max="100" class="generate-input" />
+                        <!--numero que elige el usuario en el slider-->
+                        <output name="amount" for="rangeInput" class="num1">50</output>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="boton3_1">
+            <a href="#2">
+                <img src="{{STATIC_URL}}img/flecha-izq.png" alt="">
+            </a>
+        </div>
+
+        <div id="boton3_2">
+            <a href="#4">
+                <img src="{{STATIC_URL}}img/siguiente.png" alt="">
+            </a>
+        </div>
+    </div>
+
+    <div class="section section4" id="4">
+        <div id="logo4">
+            <img src="{{ STATIC_URL }}img/logo-pequenio.png" alt="">
+        </div>
+        <div id="tex_B4">
+            ¡Queremos saber que herramientas utilizas!
+        </div>
+        <div id="tex_p4">
+            Agrega todas las herramientas con las que trabajas
+        </div>
+        <div id="editarH2">
+            <div id="Totalhe2">
+                <ul id="h">
+                </ul>
+            </div>
+            <!--es el div donde agregas habilidades-->
+            <div class="formrow">
+                <form oninput="amount.value=rangeInput.value" class="formulario2">
+                    <input type="text" placeholder="herramientas" class="text" name="herramientas">
+                    <input type="submit" value="Agregar" class="agregarV">
+                    <!--es el slider de putos que tienes en cada habilidad-->
+                    <!--slider-->
+
+                    <input id="rangeInput" name="rangeInput" type="range" min="1" max="100" class="range">
+                    <!--numero que elige el usuario en el slider-->
+                    <output name="amount" for="rangeInput" class="num2">50</output>
+                </form>
+            </div>
+        </div>
+
+        <div id="boton4_1">
+            <a href="#3">
+                <img src="{{ STATIC_URL }}img/flecha-izq.png" alt="">
+            </a>
+        </div>
+        <div id="boton4_2">
+            <a href="#5">
+                <img src="{{ STATIC_URL }}img/siguiente.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="section section5" id="5">
+        <div id="logo5">
+            <img src="{{ STATIC_URL }}img/logo-pequenio.png" alt="">
+        </div>
+        <div id="tex_B5">
+            ¡Cuéntanos que te gusta hacer en tu tiempo libre!
+        </div>
+        <div id="tex_p5">
+            Selecciona los hobbies que más disfrutas
+        </div>
+        <div class="EditH">
+            <div id="h1">
+                <img src="{{ STATIC_URL }}img/iconosG/cine-g.png" alt="">
+                <input class="checkHb" type="checkbox" id="cine">
+            </div>
+            <div id="h2">
+                <img src="{{ STATIC_URL }}img/iconosG/leer-g.png" alt="">
+                <input class="checkHb" type="checkbox" id="leer">
+            </div>
+            <div id="h3">
+                <img src="{{ STATIC_URL }}img/iconosG/correr-g.png" alt="">
+                <input class="checkHb" type="checkbox" id="correr">
+            </div>
+            <div id="h4">
+                <img src="{{ STATIC_URL }}img/iconosG/musica-g.png" alt="">
+                <input class="checkHb" type="checkbox" id="musica">
+            </div>
+            <div id="h5">
+                <img src="{{ STATIC_URL }}img/iconosG/fotografia-g.png" alt="">
+                <input class="checkHb" type="checkbox" id="fotografia">
+            </div>
+            <div id="h6">
+                <img src="{{ STATIC_URL }}img/iconosG/videojuegos-g.png" alt="">
+                <input class="checkHb" type="checkbox" id="videojuegos">
+            </div>
+            <div id="h7">
+                <img src="{{ STATIC_URL }}img/iconosG/viajar-g.png" alt="">
+                <input class="checkHb" type="checkbox" id="viajar">
+            </div>
+            <div id="h8">
+                <img src="{{ STATIC_URL }}img/iconosG/soccer-g.png" alt="">
+                <input class="checkHb" type="checkbox" id="soccer">
+            </div>
+            <div id="h9">
+                <img src="{{ STATIC_URL }}img/iconosG/ejercicio-g.png" alt="">
+                <input class="checkHb" type="checkbox" id="ejercicio">
+            </div>
+
+            <div id="h10">
+                <img src="{{ STATIC_URL }}img/iconosG/pintar-g.png" alt="">
+                <input class="checkHb" type="checkbox" id="pintar">
+            </div>
+        </div>
+        <div id="boton5_1">
+            <a href="#4">
+                <img src="{{ STATIC_URL }}img/flecha-izq.png" alt="">
+            </a>
+        </div>
+        <div id="boton5_2">
+            <a href="#8">
+                <img src="{{ STATIC_URL }}img/siguiente.png" alt="">
+            </a>
+        </div>
+
+    </div>
 
 
 
 
-	<div class="section section5"id="5">
+    <div class="section section8" id="8">
 
-		<div id="logo5">
-			<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
-		</div>
+        <div id="boton8_1">
+            <a href="#5">
+                <img src="{{ STATIC_URL }}img/flecha-izq.png" alt="">
+            </a>
+        </div>
 
-		<div id="tex_B5">
-			¡Cuéntanos que te gusta hacer en tu tiempo libre!
-		</div>
+        <div id="logo8">
+            <img src="{{ STATIC_URL }}img/logo-pequenio.png" alt="">
+        </div>
 
-		<div id="tex_p5">
-			Selecciona los hobbies que más disfrutas
-		</div>
+        <div id="tex_B8">
+            ¡Cuéntanos en que proyectos has trabajado!
+        </div>
 
-		<div class="hobbies">
+        <div id="tex_p8">
+            Agrega en los proyectos que has participado
+        </div>
 
-			<div id="h1"><img src="{{MEDIA_URL}}img/iconosG/cine-g.png" alt=""><input type="checkbox"></div>
-
-			<div id="h2"><img src="{{MEDIA_URL}}img/iconosG/leer-g.png" alt=""><input type="checkbox"></div>
-
-			<div id="h3"><img src="{{MEDIA_URL}}img/iconosG/correr-g.png" alt=""><input type="checkbox"></div>
-
-			<div id="h4"><img src="{{MEDIA_URL}}img/iconosG/musica-g.png" alt=""><input type="checkbox"></div>
-
-			<div id="h5"><img src="{{MEDIA_URL}}img/iconosG/fotografia-g.png" alt=""><input type="checkbox"></div>
-
-			<div id="h6"><img src="{{MEDIA_URL}}img/iconosG/videojuegos-g.png" alt=""><input type="checkbox"></div>
-
-			<div id="h7"><img src="{{MEDIA_URL}}img/iconosG/viajar-g.png" alt=""><input type="checkbox"></div>
-
-			<div id="h8"><img src="{{MEDIA_URL}}img/iconosG/soccer-g.png" alt=""><input type="checkbox"></div>
-
-			<div id="h9"><img src="{{MEDIA_URL}}img/iconosG/ejercicio-g.png" alt=""><input type="checkbox"></div>
-					
-			<div id="h10"><img src="{{MEDIA_URL}}img/iconosG/pintar-g.png" alt=""><input type="checkbox"></div>
-
-		</div>
-
-		<div id="boton5_1">
-			<a href="#4"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt=""></a>
-		</div>
-
-		<div id="boton5_2">
-			<a href="#8"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
-		</div>
-
-	</div>
-
-	<div class="section section8"id="8">
-
-		<div id="boton8_1">
-			<a href="#5"><img src="{{MEDIA_URL}}img/flecha-izq.png" alt=""></a>
-		</div>
-
-		<div id="logo8">
-			<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
-		</div>
-
-		<div id="tex_B8">
-			¡Cuéntanos en que proyectos has trabajado!
-		</div>
-
-		<div id="tex_p8">
-			Agrega en los proyectos que has participado
-		</div>
-
-		<div id="escolaridad">
-			   <select>
-                  <option value="0">Escolaridad</option>
-                  <option value="1">Ingenieria</option>
-                  <option value="2">Doctorado</option>
-                  <option value="3">Licenciatura</option>
-                  <option value="4">Preparatoria</option>
-              </select>
-              <textarea id="carrera"name="comentarios" rows="10" cols="40"placeholder="Nombre de la carrera"></textarea>
-
-              <textarea id="certificaciones" name="comentarios" rows="10" cols="40"placeholder="Certificaciónes"></textarea>
-		</div>
-
-		<div id="boton8_2">
-			<a href="#6"><img src="{{MEDIA_URL}}img/siguiente.png" alt=""></a>
-		</div>
-
-	</div>
-
-
-
-	<div class="section section6"id="6">
-		<div id="logo6">
-			<img src="{{MEDIA_URL}}img/logo-pequenio.png" alt="">
-		</div>
-
-		<div id="tex_B6">
-			¡Cuéntanos en que proyectos has trabajado!
-		</div>
-		<div class="section section4"id="4">
-			<div id="logo4">
-				<img src="{{ STATIC_URL }}img/logo-pequenio.png" alt="">
-			</div>
-			<div id="tex_B4">
-				¡Queremos saber que herramientas utilizas!
-			</div>
-			<div id="tex_p4">
-				Agrega todas las herramientas con las que trabajas
-			</div>
-			<div id="editarH2">
-				<div id="Totalhe2">
-					<ul id="h">
-					</ul>
-				</div>
-				<!--es el div donde agregas habilidades-->
-				<div class="formrow">
-					<form oninput="amount.value=rangeInput.value"class="formulario2">
-						<input type="text" placeholder="herramientas" class="text" name="herramientas">
-						<input type="submit" value="Agregar" class="agregarV">
-						<!--es el slider de putos que tienes en cada habilidad-->
-						<!--slider-->
-						
-						<input id="rangeInput" name="rangeInput" type="range" min="1" max="100" class="range">
-						<!--numero que elige el usuario en el slider-->
-						<output name="amount" for="rangeInput" class="num2">50</output>
-					</form>
-				</div>
-			</div>
-			
-			<div id="boton4_1">
-				<a href="#3"><img src="{{ STATIC_URL }}img/flecha-izq.png" alt=""></a>
-			</div>
-			<div id="boton4_2">
-				<a href="#5"><img src="{{ STATIC_URL }}img/siguiente.png" alt=""></a>
-			</div>
-		</div>
-		<div class="section section5"id="5">
-			<div id="logo5">
-				<img src="{{ STATIC_URL }}img/logo-pequenio.png" alt="">
-			</div>
-			<div id="tex_B5">
-				¡Cuéntanos que te gusta hacer en tu tiempo libre!
-			</div>
-			<div id="tex_p5">
-				Selecciona los hobbies que más disfrutas
-			</div>
-			<div class="EditH">
-				<div id="h1">
-					<img src="{{ STATIC_URL }}img/iconosG/cine-g.png" alt="">
-					<input class="checkHb" type="checkbox" id="cine">
-				</div>
-				<div id="h2">
-					<img src="{{ STATIC_URL }}img/iconosG/leer-g.png" alt="">
-					<input class="checkHb" type="checkbox" id="leer">
-				</div>
-				<div id="h3">
-					<img src="{{ STATIC_URL }}img/iconosG/correr-g.png" alt="">
-					<input class="checkHb" type="checkbox" id="correr">
-				</div>
-				<div id="h4">
-					<img src="{{ STATIC_URL }}img/iconosG/musica-g.png" alt="">
-					<input class="checkHb" type="checkbox" id="musica">
-				</div>
-				<div id="h5">
-					<img src="{{ STATIC_URL }}img/iconosG/fotografia-g.png" alt="">
-					<input class="checkHb" type="checkbox" id="fotografia">
-				</div>
-				<div id="h6">
-					<img src="{{ STATIC_URL }}img/iconosG/videojuegos-g.png" alt="">
-					<input class="checkHb" type="checkbox" id="videojuegos">
-				</div>
-				<div id="h7">
-					<img src="{{ STATIC_URL }}img/iconosG/viajar-g.png" alt="">
-					<input class="checkHb" type="checkbox" id="viajar">
-				</div>
-				<div id="h8">
-					<img src="{{ STATIC_URL }}img/iconosG/soccer-g.png" alt="">
-					<input class="checkHb" type="checkbox" id="soccer">
-				</div>
-				<div id="h9">
-					<img src="{{ STATIC_URL }}img/iconosG/ejercicio-g.png" alt="">
-					<input class="checkHb" type="checkbox" id="ejercicio">
-				</div>
-				
-				<div id="h10">
-					<img src="{{ STATIC_URL }}img/iconosG/pintar-g.png" alt="">
-					<input class="checkHb" type="checkbox" id="pintar">
-				</div>
-			</div>
-			<div id="boton5_1">
-				<a href="#4"><img src="{{ STATIC_URL }}img/flecha-izq.png" alt=""></a>
-			</div>
-			<div id="boton5_2">
-				<a href="#8"><img src="{{ STATIC_URL }}img/siguiente.png" alt=""></a>
-			</div>
-			
-		</div>
-		
-		<div class="section section8"id="8">
-			
-			<div id="boton8_1">
-				<a href="#5"><img src="{{ STATIC_URL }}img/flecha-izq.png" alt=""></a>
-			</div>
-			
-			<div id="logo8">
-				<img src="{{ STATIC_URL }}img/logo-pequenio.png" alt="">
-			</div>
-			
-			<div id="tex_B8">
-				¡Cuéntanos en que proyectos has trabajado!
-			</div>
-			
-			<div id="tex_p8">
-				Agrega en los proyectos que has participado
-			</div>
-			
-			<div id="escolaridad">
-				<select>
-					<!--<option value="0">Escolaridad</option>
+        <div id="escolaridad">
+            <select>
+                <!--<option value="0">Escolaridad</option>
 					<option value="1">Ingenieria</option>
 					<option value="2">Doctorado</option>
 					<option value="3">Licenciatura</option>
 					<option value="4">Preparatoria</option>-->
-					{% for key, item in escolaridad %}
-					    <option value="{{ key }}">{{item}}</option>
-					{% endfor %}
-				</select>
-				<textarea id="carrera"name="comentarios" rows="10" cols="40"placeholder="Nombre de la carrera"></textarea>
-				
-				<textarea id="certificaciones" name="comentarios" rows="10" cols="40"placeholder="certificaciónes"></textarea>
-			</div>
-			
-			<div id="boton8_2">
-				<a href="#6"><img src="{{ STATIC_URL }}img/siguiente.png" alt=""></a>
-			</div>
-		</div>
-		<div class="section section6"id="6">
-			<div id="logo6">
-				<img src="{{ STATIC_URL }}img/logo-pequenio.png" alt="">
-			</div>
-			<div id="tex_B6">
-				¡Cuéntanos en que proyectos has trabajado!
-			</div>
-			<div id="tex_p6">
-				Agrega en los proyectos que has participado
-			</div>
-			<div class="Proyectos">
-				<div id="listaproyectos">
-					<ul id="p">
-					</ul>
-					
-				</div>
-				<div id="agregarP">
-					<form class="formulario3">
-						<textarea placeholder="Nombre del proyecto"class="nombre"></textarea>
-						<textarea placeholder="Descripción del proyecto"class="descripcion"></textarea>
-						<textarea placeholder="Enlace"class="enlace"></textarea>
-						<input type="submit"value="Agregar" id="aproyecto" class="agregarP">
-					</form>
-				</div>
-			</div>
-			<div id="boton6_1">
-				<a href="#8"><img src="{{ STATIC_URL }}img/flecha-izq.png" alt=""></a>
-			</div>
-			<div id="boton6_2">
-				<a href="#7"><img src="{{ STATIC_URL }}img/siguiente.png" alt=""></a>
-			</div>
-		</div>
-		<div class="section section7" id="7">
-			<div id="logo7">
-				<img src="{{ STATIC_URL }}img/logo-pequenio.png" alt="">
-			</div>
-			<div id="tex_B7">
-				¡Muchas Grácias!
-			</div>
-			<div id="tex_p7">
-				hdfskjhwkj
-			</div>
-			<div id="imgP">
-				<img src="{{ STATIC_URL }}img/personaa.png" alt=""width="100%">
-			</div>
-			<div class="btnG">
-				<input type="button" value="Guardar y Continuar">
-			</div>
-			<div id="boton7_1">
-				<a href="#6"><img src="{{ STATIC_URL }}img/flecha-izq.png" alt=""></a>
-			</div>
-		</div>
-	</body>
+                {% for key, item in escolaridad %}
+                <option value="{{ key }}">{{item}}</option>
+                {% endfor %}
+            </select>
+            <textarea id="carrera" name="comentarios" rows="10" cols="40" placeholder="Nombre de la carrera"></textarea>
+
+            <textarea id="certificaciones" name="comentarios" rows="10" cols="40" placeholder="certificaciónes"></textarea>
+        </div>
+
+        <div id="boton8_2">
+            <a href="#6">
+                <img src="{{ STATIC_URL }}img/siguiente.png" alt="">
+            </a>
+        </div>
+    </div>
+
+
+    <div class="section section6" id="6">
+        <div id="logo6">
+            <img src="{{ STATIC_URL }}img/logo-pequenio.png" alt="">
+        </div>
+        <div id="tex_B6">
+            ¡Cuéntanos en que proyectos has trabajado!
+        </div>
+        <div id="tex_p6">
+            Agrega en los proyectos que has participado
+        </div>
+        <div class="Proyectos">
+            <div id="listaproyectos">
+                <ul id="p">
+                </ul>
+
+            </div>
+            <div id="agregarP">
+                <form class="formulario3">
+                    <textarea placeholder="Nombre del proyecto" class="nombre"></textarea>
+                    <textarea placeholder="Descripción del proyecto" class="descripcion"></textarea>
+                    <textarea placeholder="Enlace" class="enlace"></textarea>
+                    <input type="submit" value="Agregar" id="aproyecto" class="agregarP">
+                </form>
+            </div>
+        </div>
+        <div id="boton6_1">
+            <a href="#8">
+                <img src="{{ STATIC_URL }}img/flecha-izq.png" alt="">
+            </a>
+        </div>
+        <div id="boton6_2">
+            <a href="#7">
+                <img src="{{ STATIC_URL }}img/siguiente.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="section section7" id="7">
+        <div id="logo7">
+            <img src="{{ STATIC_URL }}img/logo-pequenio.png" alt="">
+        </div>
+        <div id="tex_B7">
+            ¡Muchas Grácias!
+        </div>
+        <div id="tex_p7">
+            {{ user.first_name}}
+        </div>
+        <div id="imgP">
+            <img src="{{ STATIC_URL }}img/personaa.png" alt="" width="100%">
+        </div>
+        <div class="btnG">
+            <input type="button" value="Guardar y Continuar">
+        </div>
+        <div id="boton7_1">
+            <a href="#6">
+                <img src="{{ STATIC_URL }}img/flecha-izq.png" alt="">
+            </a>
+        </div>
+    </div>
+</body>
+
 </html>
