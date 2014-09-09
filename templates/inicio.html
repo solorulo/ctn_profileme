@@ -1,66 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="description" content="">
-		<meta name="author" content="">
-		<title>Login</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0">
-		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-			<link href="{{ STATIC_URL }}css/menu.css" rel="stylesheet"media="screen">
-		</head>
-		<body>
-			{% csrf_token %}
-			<!-- primera pantalla de login page-->
-			
-			<div class="video"id="0">
-				
-				<input form="login_form" name="user" type="text" placeholder="Usuario">
-				<input form="login_form" name="pass" type="password" placeholder="Contraseña" style="color:black;">
-				
-				<input form="login_form" type="submit" value="Entrar" />
-				{% if incorrect_password %}
-					<p style="color:red;">Usuario/Contraseña inválido</p>
-				{% endif %}
-			<form id="login_form" action"/" method="post">{% csrf_token %}</form>
-			<!--este es el logo "de profileMe que se muestra al centro de la pantalla-->
-			<div class="logo"id="imagenD">
-				<img src="{{ STATIC_URL }}img/logo.png" alt=""id="imagen">
-			</div>
-			<div class="slogan"id="slogan">
-				<p>	Tus habilidades son tu marca</p>
-			</div>
-			<!--este es el boton de registrar con su funcion de aparecer y desaparecer cuadro de dialogo-->
-			<div id="registro">
-					<img src="{{STATIC_URL}}img/registrate.png" alt=""class="fade2"> 
 
-					<!-- este es el boton de login de Linkedin -->
-					<div id="redesI">
-						<img src="{{STATIC_URL}}img/linke3.png" alt=""class="mover desaparecer"> 
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href="{{ STATIC_URL }}css/menu.css" rel="stylesheet" media="screen">
+</head>
 
-					</div>
+<body>
+    {% csrf_token %}
+    <!-- primera pantalla de login page-->
+
+    <div class="video" id="0">
+
+        <input form="login_form" name="user" type="text" placeholder="Usuario">
+        <input form="login_form" name="pass" type="password" placeholder="Contraseña" style="color:black;">
+
+        <input form="login_form" type="submit" value="Entrar" />{% if incorrect_password %}
+        <p style="color:red;">Usuario/Contraseña inválido</p>
+        {% endif %}
+        <form id="login_form" action "/" method="post">{% csrf_token %}</form>
+        <!--este es el logo "de profileMe que se muestra al centro de la pantalla-->
+        <div class="logo" id="imagenD">
+            <img src="{{ STATIC_URL }}img/logo.png" alt="" id="imagen">
+        </div>
+        <div class="slogan" id="slogan">
+            <p>Tus habilidades son tu marca</p>
+        </div>
+        <!--este es el boton de registrar con su funcion de aparecer y desaparecer cuadro de dialogo-->
+        <div id="registro">
+            <img src="{{STATIC_URL}}img/registrate.png" alt="" class="fade2">
+
+            <!-- este es el boton de login de Linkedin -->
+            <div id="redesI">
+                <img src="{{STATIC_URL}}img/linke3.png" alt="" class="mover desaparecer">
+
+            </div>
 
 
-					<!--este es el boton de login de facebook-->
-					<div id="redesF" >
-						<img src="{{STATIC_URL}}img/face3.png" alt=""class="mover desaparecer"> 
-				 
-					</div>
-			</div>
-			<!-- este es la pantalla que aparece con el clic ala imagen de registro-->
-			<div class="Registro1 contenido">
-				
-				<input type="button" value="Buscas Empleo" class="BuscasE">
-				<input type="button" value="Ofreces Empleo" class="Ofrece">
-				<input type="button" value="Omitir" class="restore fade2">
-				{% csrf_token %}
-				<div id="BEmpleados">
-					<input id="uName" type="text"placeholder="Nombre">
-					<input id="uLastName" type="text"placeholder="Apellido">
-					<input id="uEmail" type="text"placeholder="Correo electronico">
-					<input id="uEmailVerif" type="text"placeholder="Vuelve escribir tu correo">
-					<input id="uPassword" type="password"placeholder="Contraseña">
-					<a href="#" onClick="$.ajax({
+            <!--este es el boton de login de facebook-->
+            <div id="redesF">
+                <img src="{{STATIC_URL}}img/face3.png" alt="" class="mover desaparecer">
+
+            </div>
+        </div>
+        <!-- este es la pantalla que aparece con el clic ala imagen de registro-->
+        <div class="Registro1 contenido">
+
+            <input type="button" value="Buscas Empleo" class="BuscasE">
+            <input type="button" value="Ofreces Empleo" class="Ofrece">
+            <input type="button" value="Omitir" class="restore fade2">{% csrf_token %}
+            <div id="BEmpleados">
+                <input id="uName" type="text" placeholder="Nombre">
+                <input id="uLastName" type="text" placeholder="Apellido">
+                <input id="uEmail" type="text" placeholder="Correo electronico">
+                <input id="uEmailVerif" type="text" placeholder="Vuelve escribir tu correo">
+                <input id="uPassword" type="password" placeholder="Contraseña">
+                <a href="#" onClick="$.ajax({
 						url:'/registerUser',
 						type:'POST',
 						data:{
@@ -73,16 +73,16 @@
 						headers:{'X-CSRFToken':csrftoken},
 						success: function(data){onUserRegisterResponse(data)},
 					});">Unirme</a>
-				</div>
-				<div id="OfreceE">
-					
-					<input form="companyRegisterForm" id="companyNameText" name="companyName" type="text" placeholder="Nombre de la empresa">
-					<input form="companyRegisterForm" id="companyEmailText" name="companyEmail" type="text" placeholder="Correo electrónico">
-					<input form="companyRegisterForm" type="submit" value="Continuar" />
-					<form id="companyRegisterForm" action="/publicar_oferta" method="post">
-						{% csrf_token %}
-					</form>
-					<!-- <a href="#" onClick="$.ajax({
+            </div>
+            <div id="OfreceE">
+
+                <input form="companyRegisterForm" id="companyNameText" name="companyName" type="text" placeholder="Nombre de la empresa">
+                <input form="companyRegisterForm" id="companyEmailText" name="companyEmail" type="text" placeholder="Correo electrónico">
+                <input form="companyRegisterForm" type="submit" value="Continuar" />
+                <form id="companyRegisterForm" action="/publicar_oferta" method="post">
+                    {% csrf_token %}
+                </form>
+                <!-- <a href="#" onClick="$.ajax({
 								url:APP_URL + 'companyLogin',
 								type:'POST',
 								data:{
@@ -93,234 +93,247 @@
 								success: function(data){onCompanyLoginResponse(data)},
 					});">Continuar</a>
 					<a id="companyRegistrationButton" href="" onclick="">Continuar</a> -->
-				</div>
-				
-			</div>
-			
-			<!--boton de pag Siguiente -->
-			<div class="siguiente">
-			<a href="#1">
-				<img src="{{STATIC_URL}}img/flecha-azul.png" alt="">
-			</a>
-			</div>
+            </div>
 
-	</div>
-	<!--fin de la pantalla de login -->
+        </div>
 
+        <!--boton de pag Siguiente -->
+        <div class="siguiente">
+            <a href="#1">
+                <img src="{{STATIC_URL}}img/flecha-azul.png" alt="">
+            </a>
+        </div>
 
-
-
-	<!--segunda pantalla-->
-	<div class="pantalla1"id="1">
-			<div id="conteni">
-						<!--imagenes que aparecen en el segunda pag-->
-						<img src="{{STATIC_URL}}img/paso1.png" alt="">
-						<img src="{{STATIC_URL}}img/paso2.png" alt="">
-						<img src="{{STATIC_URL}}img/paso3.png" alt="">
-						<img src="{{STATIC_URL}}img/paso4.png" alt="">
-						<img src="{{STATIC_URL}}img/paso5.png" alt="">
-						<img src="{{STATIC_URL}}img/paso6.png" alt="">
-
-						<!--titulos o el texto que aparece en la segunda pag-->
-						<div id="titulo1">
-								<center>
-										<div id="L">en</div>
-										<div id="l"> tan sólo</div>
-								</center> 
-						</div>
-
-
-						<div id="titulo2">
-								<center>
-										<div id="L2">
-											no más
-										</div><br>
-
-										<div id="l2">
-											curriculums
-											<br>aburridos
-										</div>
-								</center> 
-						</div>
-
-						<div id="titulo3">
-								<center>
-										<div id="L3">
-											mejor<br>
-										</div>
-										<div id="l3">
-											métricas que<br>
-											de resultados
-										</div>
-								</center> 
-						</div>
-
-						<div id="titulo4">
-								<center>
-										<div id="L4">Sólo<br></div>
-										<div id="l4"> sigue<br>nuestros</div>
-								</center> 
-						</div>
-
-			</div>
-
-				<!--boton de pag2 Siguiente -->
-				<div class="siguiente2">
-				<a href="#2">
-					<img src="{{STATIC_URL}}img/flecha-blanca.png" alt="">
-				</a>
-				</div>
-
-	</div>
-<!--finde la segunda pantalla-->
+    </div>
+    <!--fin de la pantalla de login -->
 
 
 
 
-	<!--inicio de la 3 pantalla-->
-	<div class="pantalla2"id="2">
-			<div id="conteni2">
-					<!--primer imagen con su texto-->
-					<img src="{{STATIC_URL}}img/p2_1.png" alt="">
-					<img src="{{STATIC_URL}}img/p2_2.png" alt="">
-					<img src="{{STATIC_URL}}img/p2_3.png" alt="">
+    <!--segunda pantalla-->
+    <div class="pantalla1" id="1">
+        <div id="conteni">
+            <!--imagenes que aparecen en el segunda pag-->
+            <img src="{{STATIC_URL}}img/paso1.png" alt="">
+            <img src="{{STATIC_URL}}img/paso2.png" alt="">
+            <img src="{{STATIC_URL}}img/paso3.png" alt="">
+            <img src="{{STATIC_URL}}img/paso4.png" alt="">
+            <img src="{{STATIC_URL}}img/paso5.png" alt="">
+            <img src="{{STATIC_URL}}img/paso6.png" alt="">
 
-					<div id="L5">
-						Crea tu cuenta
-					</div>
-
-					<div id="l5">
-						ò conectate automáticamente<br>
-						información se mostrará de forma<br>
-						gráfica automáticamente en tu perfil
-					</div>
-
-					<!--segundo imagen con su texto-->
-					<div id="L6">
-						Si entraste
-					</div>
-
-					<div id="l6">
-						con tu cuenta de Linkedin,toda tu
-						<br>con Likedin
-					</div>
-					</center>
-				</div>
-				<div id="titulo3">
-					<center>
-					<div id="L3">
-						mejor<br>
-					</div>
-					<div id="l3">
-						métricas que<br>
-						de resultados
-					</div>
-					</center>
-				</div>
-				<div id="titulo4">
-					<center>
-					<div id="L4">Sólo<br></div>
-					<div id="l4"> sigue<br>nuestros</div>
-					</center>
-				</div>
-			</div>
-					<!--boton de siguiente pag-->
-					<div class="siguiente3">
-					<a href="#3">
-							<img src="{{STATIC_URL}}img/flecha-blanca.png" alt="">
-					</a>
-					</div>
-	</div>
-	<!--fin de la pantalla-->
+            <!--titulos o el texto que aparece en la segunda pag-->
+            <div id="titulo1">
+                <center>
+                    <div id="L">en</div>
+                    <div id="l">tan sólo</div>
+                </center>
+            </div>
 
 
+            <div id="titulo2">
+                <center>
+                    <div id="L2">
+                        no más
+                    </div>
+                    <br>
+
+                    <div id="l2">
+                        curriculums
+                        <br>aburridos
+                    </div>
+                </center>
+            </div>
+
+            <div id="titulo3">
+                <center>
+                    <div id="L3">
+                        mejor
+                        <br>
+                    </div>
+                    <div id="l3">
+                        métricas que
+                        <br>de resultados
+                    </div>
+                </center>
+            </div>
+
+            <div id="titulo4">
+                <center>
+                    <div id="L4">Sólo
+                        <br>
+                    </div>
+                    <div id="l4">sigue
+                        <br>nuestros</div>
+                </center>
+            </div>
+
+        </div>
+
+        <!--boton de pag2 Siguiente -->
+        <div class="siguiente2">
+            <a href="#2">
+                <img src="{{STATIC_URL}}img/flecha-blanca.png" alt="">
+            </a>
+        </div>
+
+    </div>
+    <!--finde la segunda pantalla-->
 
 
-	<!--pantalla 4-->
-	<div class="pantalla3"id="3">
-			<div id="conteni3">
-				<!--primer imagen con su texto-->
-				<img src="{{ STATIC_URL }}img/p3_1.png" alt="">
-				<img src="{{ STATIC_URL }}img/p3_2.png" alt="">
-				<img src="{{ STATIC_URL }}img/p3_3.png" alt="">
-				<div id="L8">
-					Es hora
-				</div>
-				<div id="l8">
-					de personalizar el diseño de tu CV<br>
-					con los temas disponibles
-				</div>
-				<!--segunda imagen con su texto-->
-				<div id="L9">
-					Así de secillo!!
-				</div>
-				<div id="l9">
-					Tu CV gráfico está terminando
-				</div>
-				<!--tercer imagen con su texto-->
-				<div id="L10">
-					Y listo
-				</div>
-				<div id="l10">
-					para compartirlo
-				</div>
-			</div>
-			<div class="siguiente4">
-			<a href="#0">
-				<img src="{{STATIC_URL}}img/flecha-hacia-arriba.png" alt="">
-			</a>
-			</div>
-
-</div>
 
 
-  <!--script de Jquery-->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>    
+    <!--inicio de la 3 pantalla-->
+    <div class="pantalla2" id="2">
+        <div id="conteni2">
+            <!--primer imagen con su texto-->
+            <img src="{{STATIC_URL}}img/p2_1.png" alt="">
+            <img src="{{STATIC_URL}}img/p2_2.png" alt="">
+            <img src="{{STATIC_URL}}img/p2_3.png" alt="">
+
+            <div id="L5">
+                Crea tu cuenta
+            </div>
+
+            <div id="l5">
+                ò conectate automáticamente
+                <br>información se mostrará de forma
+                <br>gráfica automáticamente en tu perfil
+            </div>
+
+            <!--segundo imagen con su texto-->
+            <div id="L6">
+                Si entraste
+            </div>
+
+            <div id="l6">
+                con tu cuenta de Linkedin,toda tu
+                <br>con Likedin
+            </div>
+            </center>
+        </div>
+        <div id="titulo3">
+            <center>
+                <div id="L3">
+                    mejor
+                    <br>
+                </div>
+                <div id="l3">
+                    métricas que
+                    <br>de resultados
+                </div>
+            </center>
+        </div>
+        <div id="titulo4">
+            <center>
+                <div id="L4">Sólo
+                    <br>
+                </div>
+                <div id="l4">sigue
+                    <br>nuestros</div>
+            </center>
+        </div>
+    </div>
+    <!--boton de siguiente pag-->
+    <div class="siguiente3">
+        <a href="#3">
+            <img src="{{STATIC_URL}}img/flecha-blanca.png" alt="">
+        </a>
+    </div>
+    </div>
+    <!--fin de la pantalla-->
+
+
+
+
+    <!--pantalla 4-->
+    <div class="pantalla3" id="3">
+        <div id="conteni3">
+            <!--primer imagen con su texto-->
+            <img src="{{ STATIC_URL }}img/p3_1.png" alt="">
+            <img src="{{ STATIC_URL }}img/p3_2.png" alt="">
+            <img src="{{ STATIC_URL }}img/p3_3.png" alt="">
+            <div id="L8">
+                Es hora
+            </div>
+            <div id="l8">
+                de personalizar el diseño de tu CV
+                <br>con los temas disponibles
+            </div>
+            <!--segunda imagen con su texto-->
+            <div id="L9">
+                Así de secillo!!
+            </div>
+            <div id="l9">
+                Tu CV gráfico está terminando
+            </div>
+            <!--tercer imagen con su texto-->
+            <div id="L10">
+                Y listo
+            </div>
+            <div id="l10">
+                para compartirlo
+            </div>
+        </div>
+        <div class="siguiente4">
+            <a href="#0">
+                <img src="{{STATIC_URL}}img/flecha-hacia-arriba.png" alt="">
+            </a>
+        </div>
+
+    </div>
+
+
+    <!--script de Jquery-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-    <script type="text/javascript"src="{{STATIC_URL}}js/movimientos.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/movimientos.js"></script>
     <script src="{{STATIC_URL}}js/script.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-		<script id="django-stuff" type="text/javascript">
-				$("#companyRegistrationButton").click(function() {
-					alert('before');
-					$('#companyRegisterForm').submit(function() {
-						alert('callback');
-					});
-					alert('after')
-				});
-				var APP_URL = "http://profileme.com.mx/"
-				function getCookie(name) {
-					var cookieValue = null;
-					if (document.cookie && document.cookie != '') {
-						var cookies = document.cookie.split(';');
-						for (var i = 0; i < cookies.length; i++) {
-							var cookie = jQuery.trim(cookies[i]);
-							// Does this cookie string begin with the name we want?
-							if (cookie.substring(0, name.length + 1) == (name + '=')) {
-								cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-								break;
-							}
-						}
-					}
-					return cookieValue;
-				}
-				function onUserRegisterResponse(responseMessage) {
-					alert(responseMessage);
-					if (responseMessage == "ok") {
-						window.location = APP_URL + "registro";
-					} else {
-						alert(responseMessage);
-					}
-				}
-				function onCompanyLoginResponse(responseMessage) {
-					company = JSON.parse(responseMessage)
-					if (company.id != -1) {
-						window.location = APP_URL + "publicarOferta"
-					}
-				}
-				var csrftoken = getCookie('csrftoken');
-				// alert("csrf "+csrftoken);
-		</script>
-	</body>
+    <script id="django-stuff" type="text/javascript">
+    $("#companyRegistrationButton").click(function() {
+        alert('before');
+        $('#companyRegisterForm').submit(function() {
+            alert('callback');
+        });
+        alert('after')
+    });
+    var APP_URL = "http://profileme.com.mx/"
+
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie != '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    function onUserRegisterResponse(responseMessage) {
+        alert(responseMessage);
+        if (responseMessage == "ok") {
+            window.location = APP_URL + "registro";
+        } else {
+            alert(responseMessage);
+        }
+    }
+
+    function onCompanyLoginResponse(responseMessage) {
+        company = JSON.parse(responseMessage)
+        if (company.id != -1) {
+            window.location = APP_URL + "publicarOferta"
+        }
+    }
+    var csrftoken = getCookie('csrftoken');
+    // alert("csrf "+csrftoken);
+    </script>
+</body>
+
 </html>
