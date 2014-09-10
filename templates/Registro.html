@@ -89,7 +89,11 @@
         </div>
         <!--insertar imagenes-->
         <div id="imagen_N">
+        	{% if user.personaldata.img %}
             <img id="userPhoto" style="display:block;margin:0 auto 0 auto;" src="media/{{ user.personaldata.img |default:"/static/img/foto-perfil.png" }}" alt="" style="">
+            {% else %}
+            <img id="userPhoto" style="display:block;margin:0 auto 0 auto;" src="/static/img/foto-perfil.png" alt="" style="">
+            {% endif %}
             <input input id="fileupload" type="file" name="files[]" multiple style="
 				cursor: pointer;
 				height: 200px;
@@ -141,8 +145,8 @@
 
         <div id="camposP">
             <!--input para llenar registro de los datos personales del usuario-->
-            <input type="text" placeholder="Nombre">
-            <input type="text" placeholder="Campo de trabajo">
+            <input id="nameText" type="text" placeholder="Nombre" value="{{ user.first_name|default:"" }}">
+			<input id="profesionText" type="text" placeholder="Campo de Trabajo" value="{{ user.personaldata.profesion|default:"" }}">
             <select name="Dia" id="dia">
                 <option value="0">Día</option>
                 <option value="1">1</option>
@@ -308,9 +312,9 @@
             </select>
             <input type="text" placeholder="País">
             <input type="text" placeholder="Estado">
-            <input type="text" placeholder="Telefono">
-            <input type="text" placeholder="Correo">
-            <input type="text" placeholder="Trabajo actual/último">
+            <input id="telephoneText" type="text" placeholder="Telefono" value="{{ user.personaldata.telefono|default:"" }}">
+			<input id="emailText" type="text" placeholder="Correo Electronico" value="{{ user.email|default:"" }}">
+			<input id="jobText" type="text" placeholder="Trabajo" value="{{ user.personaldata.trabajo|default:""}}">
 
             <!--imagenes representativas de cada campo de los datos personales-->
             <img src="{{STATIC_URL}}img/nombre.png" alt="" id="nombre">

@@ -255,7 +255,7 @@
 				<input id="emailText" type="text" placeholder="Correo Electronico" value="{{ user.email }}">
 				<input id="jobText" type="text" placeholder="Trabajo" value="{{ user.personaldata.trabajo}}">
 				<input id="localityText" type="text" placeholder="Pais/municipio" value="{{ user.personaldata.ciudad.nombre }}/{{ user.personaldata.ciudad.estado.nombre }}">
-				<!--<input id="localityText" type="text" placeholder="Pais/municipio" value="{{ user.personaldata.ciudad.nombre }}/{{ user.personaldata.ciudad.estado.nombre }}">-->
+				<input id="localityText" type="text" placeholder="Pais/municipio" value="{{ user.personaldata.ciudad.nombre }}/{{ user.personaldata.ciudad.estado.nombre }}">
 				<input id="saveBasicInfoButton" type="button" value="Guardar" class="explode" value="">
 				<img id="userPhoto" src="{{ STATIC_URL }}img/foto-perfil.png" alt="">
 			</div>
