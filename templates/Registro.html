@@ -37,42 +37,12 @@
     <script type="text/javascript" src="{{ STATIC_URL }}js/registro.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/fileup.profileme.js"></script>
     <script type="text/javascript">
-    categoriasHabilidades = {
-        {
-            habilidades.names |
-            default: "[]" | escape | safe
-        }
-    };
-    dataHabilidades = {
-        {
-            habilidades.values |
-            default: "[]" | escape | safe
-        }
-    };
-    categoriasHerramientas = {
-        {
-            herramientas.names |
-            default: "[]" | escape | safe
-        }
-    };
-    dataHerramientas = {
-        {
-            herramientas.values |
-            default: "[]" | escape | safe
-        }
-    };
-    dataProyectos = {
-        {
-            proyectos |
-            default: "[]" | escape | safe
-        }
-    };
-    hobbies = {
-        {
-            hobbies |
-            default: "{}" | escape | safe
-        }
-    };
+    categoriasHabilidades = {{ habilidades.names | default:"[]" | escape | safe }};
+    dataHabilidades = {{     habilidades.values |     default:"[]" | escape | safe }};
+    categoriasHerramientas = {{     herramientas.names |     default:"[]" | escape | safe }};
+    dataHerramientas = {{     herramientas.values |     default:"[]" | escape | safe }};
+    dataProyectos = {{     proyectos |     default:"[]" | escape | safe }};
+    hobbies = {{     hobbies |     default:"{}" | escape | safe }};
     </script>
 </head>
 
